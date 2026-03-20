@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install:*)",
+      "Bash(/usr/local/bin/npm install:*)",
+      "Bash(/opt/homebrew/bin/npm install:*)",
+      "Read(//usr/local/bin/**)",
+      "Read(//Users/davidconrads/**)",
+      "Bash(which node:*)",
+      "Bash(ls:*)",
+      "Bash(/usr/local/bin/npm --version 2>/dev/null || /opt/homebrew/bin/npm --version 2>/dev/null || ~/.nvm/versions/node/*/bin/npm --version 2>/dev/null || ~/.volta/bin/npm --version 2>/dev/null)"
+    ]
+  }
+}
