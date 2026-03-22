@@ -30,7 +30,7 @@ export function useAudio(promptId: string, speed: Speed, text?: string) {
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const stoppedRef = useRef(false)
 
-  const audioSrc = `/audio/${promptId}-${speed}.mp3`
+  const audioSrc = `audio/${promptId}-${speed}.mp3`
 
   const stop = useCallback(() => {
     stoppedRef.current = true
