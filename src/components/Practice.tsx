@@ -182,6 +182,9 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
                 <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                   {current.yourResponse}
                 </div>
+                <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
+                  {current.yourResponseEnglish}
+                </div>
               </div>
             </div>
           )}

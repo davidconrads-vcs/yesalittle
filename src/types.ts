@@ -6,6 +6,7 @@ export interface Prompt {
   english: string
   context: string
   yourResponse: string
+  yourResponseEnglish: string
   tags: string[]
   difficulty: number
 }
