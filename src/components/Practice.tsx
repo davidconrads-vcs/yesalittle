@@ -167,17 +167,19 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
                   textAlign: 'left',
                 }}
               >
-                <div
-                  style={{
-                    fontSize: 11,
-                    color: 'rgba(76, 175, 80, 0.6)',
-                    marginBottom: 4,
-                    fontFamily: "'JetBrains Mono', monospace",
-                    textTransform: 'uppercase',
-                    letterSpacing: 1,
-                  }}
-                >
-                  You could respond
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <div
+                    style={{
+                      fontSize: 11,
+                      color: 'rgba(76, 175, 80, 0.6)',
+                      fontFamily: "'JetBrains Mono', monospace",
+                      textTransform: 'uppercase',
+                      letterSpacing: 1,
+                    }}
+                  >
+                    You could respond
+                  </div>
+                  <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
                 </div>
                 <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                   {current.yourResponse}

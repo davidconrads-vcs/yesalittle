@@ -8,6 +8,7 @@ const ROOT = join(__dirname, '..')
 interface Prompt {
   id: string
   phrase: string
+  yourResponse: string
 }
 
 interface Scenario {
@@ -49,6 +50,15 @@ const lang = langArg ? langArg.split('=')[1] : 'es'
 
 if (!['es', 'pt'].includes(lang)) {
   console.error(`Error: unsupported language "${lang}". Use --lang=es or --lang=pt`)
+  process.exit(1)
+}
+
+// Parse --type flag (defaults to 'phrase')
+const typeArg = process.argv.find(a => a.startsWith('--type='))
+const type = typeArg ? typeArg.split('=')[1] : 'phrase'
+
+if (!['phrase', 'response', 'all'].includes(type)) {
+  console.error(`Error: unsupported type "${type}". Use --type=phrase, --type=response, or --type=all`)
   process.exit(1)
 }
 
@@ -101,16 +111,27 @@ async function generateAudio(promptId: string, text: string, speed: string, rate
 }
 
 async function main() {
-  console.log(`Language: ${lang} | Voice: ${VOICE_ID}`)
+  const generatePhrases = type === 'phrase' || type === 'all'
+  const generateResponses = type === 'response' || type === 'all'
+
+  console.log(`Language: ${lang} | Voice: ${VOICE_ID} | Type: ${type}`)
   console.log(`Generating audio for ${allPrompts.length} prompts × ${SPEEDS.length} speeds...`)
   console.log(`Output directory: ${audioDir}\n`)
 
   for (const prompt of allPrompts) {
-    console.log(`[${prompt.id}] "${prompt.phrase}"`)
-    for (const speed of SPEEDS) {
-      await generateAudio(prompt.id, prompt.phrase, speed.name, speed.rate)
-      // Rate limit: small delay between requests
-      await new Promise(resolve => setTimeout(resolve, 300))
+    if (generatePhrases) {
+      console.log(`[${prompt.id}] phrase: "${prompt.phrase}"`)
+      for (const speed of SPEEDS) {
+        await generateAudio(prompt.id, prompt.phrase, speed.name, speed.rate)
+        await new Promise(resolve => setTimeout(resolve, 300))
+      }
+    }
+    if (generateResponses) {
+      console.log(`[${prompt.id}] response: "${prompt.yourResponse}"`)
+      for (const speed of SPEEDS) {
+        await generateAudio(`${prompt.id}-response`, prompt.yourResponse, speed.name, speed.rate)
+        await new Promise(resolve => setTimeout(resolve, 300))
+      }
     }
   }
 
