@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import promptsData from './data/prompts.json'
-import { Scenario, PromptWithScenario, SessionMode, Speed, Screen } from './types'
+import esPromptsData from './data/prompts.json'
+import ptPromptsData from './data/prompts-pt.json'
+import { Scenario, PromptWithScenario, SessionMode, Speed, Screen, Language } from './types'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
 import Home from './components/Home'
@@ -8,17 +9,22 @@ import Practice from './components/Practice'
 import Summary from './components/Summary'
 import Progress from './components/Progress'
 
-const scenarios = promptsData.scenarios as Scenario[]
+const DATA: Record<Language, Scenario[]> = {
+  es: esPromptsData.scenarios as Scenario[],
+  pt: ptPromptsData.scenarios as Scenario[],
+}
 
-const allPrompts: PromptWithScenario[] = scenarios.flatMap(s =>
-  s.prompts.map(p => ({
-    ...p,
-    category: s.category,
-    icon: s.icon,
-    color: s.color,
-    scenarioId: s.id,
-  }))
-)
+function buildAllPrompts(scenarios: Scenario[]): PromptWithScenario[] {
+  return scenarios.flatMap(s =>
+    s.prompts.map(p => ({
+      ...p,
+      category: s.category,
+      icon: s.icon,
+      color: s.color,
+      scenarioId: s.id,
+    }))
+  )
+}
 
 interface SessionResult {
   prompt: PromptWithScenario
@@ -27,22 +33,39 @@ interface SessionResult {
 
 function getInitialSpeed(): Speed {
   try {
-    const saved = localStorage.getItem('spanish-trainer-speed')
+    const saved = localStorage.getItem('trainer-speed')
     if (saved === 'slow' || saved === 'normal' || saved === 'fast') return saved
   } catch {}
   return 'normal'
 }
 
+function getInitialLanguage(): Language {
+  try {
+    const saved = localStorage.getItem('trainer-language')
+    if (saved === 'es' || saved === 'pt') return saved
+  } catch {}
+  return 'es'
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>('home')
   const [speed, setSpeed] = useState<Speed>(getInitialSpeed)
+  const [language, setLanguage] = useState<Language>(getInitialLanguage)
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
-  const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress()
+  const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(language)
+
+  const scenarios = DATA[language]
+  const allPrompts = buildAllPrompts(scenarios)
 
   const handleSpeedChange = (s: Speed) => {
     setSpeed(s)
-    try { localStorage.setItem('spanish-trainer-speed', s) } catch {}
+    try { localStorage.setItem('trainer-speed', s) } catch {}
+  }
+
+  const handleLanguageChange = (l: Language) => {
+    setLanguage(l)
+    try { localStorage.setItem('trainer-language', l) } catch {}
   }
 
   const handleStart = (categories: Set<string>, mode: SessionMode) => {
@@ -64,7 +87,6 @@ export default function App() {
     const prompt = allPrompts.find(p => p.id === promptId)!
     const newResults = [...results, { prompt, understood }]
     setResults(newResults)
-    // Check if last prompt
     if (newResults.length >= queue.length) {
       markSessionComplete()
       setScreen('summary')
@@ -85,6 +107,9 @@ export default function App() {
       `}</style>
       {screen === 'home' && (
         <Home
+          scenarios={scenarios}
+          language={language}
+          onLanguageChange={handleLanguageChange}
           onStart={handleStart}
           streak={streak}
           speed={speed}
@@ -96,6 +121,7 @@ export default function App() {
         <Practice
           queue={queue}
           speed={speed}
+          lang={language}
           onSpeedChange={handleSpeedChange}
           onResult={handleResult}
           onExit={() => setScreen('home')}
@@ -105,12 +131,14 @@ export default function App() {
         <Summary
           results={results}
           speed={speed}
+          lang={language}
           onRetryMissed={handleRetryMissed}
           onNewSession={() => setScreen('home')}
         />
       )}
       {screen === 'progress' && (
         <Progress
+          scenarios={scenarios}
           progress={progress}
           streak={streak}
           allPrompts={allPrompts}

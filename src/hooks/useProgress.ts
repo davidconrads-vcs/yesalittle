@@ -1,39 +1,44 @@
-import { useState, useCallback } from 'react'
-import { ProgressData, PromptStats } from '../types'
-
-const STORAGE_KEY = 'spanish-trainer-progress'
-const STREAK_KEY = 'spanish-trainer-streak'
+import { useState, useCallback, useEffect } from 'react'
+import { ProgressData, PromptStats, Language } from '../types'
 
 interface StreakData {
   lastPracticed: string
   streak: number
 }
 
-function loadProgress(): ProgressData {
+function storageKey(lang: Language) {
+  return `trainer-progress-${lang}`
+}
+
+function streakKey(lang: Language) {
+  return `trainer-streak-${lang}`
+}
+
+function loadProgress(lang: Language): ProgressData {
   try {
-    const raw = localStorage.getItem(STORAGE_KEY)
+    const raw = localStorage.getItem(storageKey(lang))
     return raw ? JSON.parse(raw) : {}
   } catch {
     return {}
   }
 }
 
-function saveProgress(data: ProgressData) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data))
+function saveProgress(data: ProgressData, lang: Language) {
+  localStorage.setItem(storageKey(lang), JSON.stringify(data))
 }
 
-function loadStreak(): StreakData {
+function loadStreak(lang: Language): StreakData {
   try {
-    const raw = localStorage.getItem(STREAK_KEY)
+    const raw = localStorage.getItem(streakKey(lang))
     return raw ? JSON.parse(raw) : { lastPracticed: '', streak: 0 }
   } catch {
     return { lastPracticed: '', streak: 0 }
   }
 }
 
-function updateStreak(): number {
+function updateStreak(lang: Language): number {
   const today = new Date().toISOString().split('T')[0]
-  const data = loadStreak()
+  const data = loadStreak(lang)
   const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0]
 
   let newStreak: number
@@ -45,13 +50,18 @@ function updateStreak(): number {
     newStreak = 1
   }
 
-  localStorage.setItem(STREAK_KEY, JSON.stringify({ lastPracticed: today, streak: newStreak }))
+  localStorage.setItem(streakKey(lang), JSON.stringify({ lastPracticed: today, streak: newStreak }))
   return newStreak
 }
 
-export function useProgress() {
-  const [progress, setProgress] = useState<ProgressData>(loadProgress)
-  const [streak, setStreak] = useState<number>(() => loadStreak().streak)
+export function useProgress(language: Language) {
+  const [progress, setProgress] = useState<ProgressData>(() => loadProgress(language))
+  const [streak, setStreak] = useState<number>(() => loadStreak(language).streak)
+
+  useEffect(() => {
+    setProgress(loadProgress(language))
+    setStreak(loadStreak(language).streak)
+  }, [language])
 
   const recordResult = useCallback((promptId: string, understood: boolean) => {
     setProgress(prev => {
@@ -64,22 +74,22 @@ export function useProgress() {
         streak: newStreak,
       }
       const next = { ...prev, [promptId]: updated }
-      saveProgress(next)
+      saveProgress(next, language)
       return next
     })
-  }, [])
+  }, [language])
 
   const markSessionComplete = useCallback(() => {
-    const s = updateStreak()
+    const s = updateStreak(language)
     setStreak(s)
-  }, [])
+  }, [language])
 
   const resetProgress = useCallback(() => {
-    localStorage.removeItem(STORAGE_KEY)
-    localStorage.removeItem(STREAK_KEY)
+    localStorage.removeItem(storageKey(language))
+    localStorage.removeItem(streakKey(language))
     setProgress({})
     setStreak(0)
-  }, [])
+  }, [language])
 
   return { progress, streak, recordResult, markSessionComplete, resetProgress }
 }

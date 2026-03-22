@@ -7,7 +7,7 @@ const ROOT = join(__dirname, '..')
 
 interface Prompt {
   id: string
-  spanish: string
+  phrase: string
 }
 
 interface Scenario {
@@ -24,10 +24,18 @@ if (!ELEVENLABS_API_KEY) {
   process.exit(1)
 }
 
-// A natural Peninsular Spanish female voice from ElevenLabs
-// "Valentina" or use a suitable es-ES voice ID
-// You can list voices at: https://api.elevenlabs.io/v1/voices
-const VOICE_ID = process.env.ELEVENLABS_VOICE_ID ?? 'cgSgspJ2msm6clMCkdW9' // "Valentina" es-ES
+// Default voice IDs per language
+// Spanish: "Valentina" — Peninsular Spanish female
+// Portuguese: use ELEVENLABS_VOICE_ID_PT or fall back to a multilingual voice
+const VOICE_IDS: Record<string, string> = {
+  es: process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',   // Valentina es-ES
+  pt: process.env.ELEVENLABS_VOICE_ID_PT ?? 'pqHfZKP75CvOlD17v9ou',   // Multilingual voice — replace with a pt-PT voice ID
+}
+
+const DATA_FILES: Record<string, string> = {
+  es: join(ROOT, 'src', 'data', 'prompts.json'),
+  pt: join(ROOT, 'src', 'data', 'prompts-pt.json'),
+}
 
 const SPEEDS: Array<{ name: string; rate: number }> = [
   { name: 'slow', rate: 0.7 },
@@ -35,12 +43,24 @@ const SPEEDS: Array<{ name: string; rate: number }> = [
   { name: 'fast', rate: 1.0 },
 ]
 
+// Parse --lang flag (defaults to 'es')
+const langArg = process.argv.find(a => a.startsWith('--lang='))
+const lang = langArg ? langArg.split('=')[1] : 'es'
+
+if (!['es', 'pt'].includes(lang)) {
+  console.error(`Error: unsupported language "${lang}". Use --lang=es or --lang=pt`)
+  process.exit(1)
+}
+
+const VOICE_ID = VOICE_IDS[lang]
+const dataFile = DATA_FILES[lang]
+
 const audioDir = join(ROOT, 'public', 'audio')
 if (!existsSync(audioDir)) {
   mkdirSync(audioDir, { recursive: true })
 }
 
-const data: PromptsData = JSON.parse(readFileSync(join(ROOT, 'src', 'data', 'prompts.json'), 'utf-8'))
+const data: PromptsData = JSON.parse(readFileSync(dataFile, 'utf-8'))
 const allPrompts = data.scenarios.flatMap(s => s.prompts)
 
 async function generateAudio(promptId: string, text: string, speed: string, rate: number) {
@@ -81,13 +101,14 @@ async function generateAudio(promptId: string, text: string, speed: string, rate
 }
 
 async function main() {
+  console.log(`Language: ${lang} | Voice: ${VOICE_ID}`)
   console.log(`Generating audio for ${allPrompts.length} prompts × ${SPEEDS.length} speeds...`)
   console.log(`Output directory: ${audioDir}\n`)
 
   for (const prompt of allPrompts) {
-    console.log(`[${prompt.id}] "${prompt.spanish}"`)
+    console.log(`[${prompt.id}] "${prompt.phrase}"`)
     for (const speed of SPEEDS) {
-      await generateAudio(prompt.id, prompt.spanish, speed.name, speed.rate)
+      await generateAudio(prompt.id, prompt.phrase, speed.name, speed.rate)
       // Rate limit: small delay between requests
       await new Promise(resolve => setTimeout(resolve, 300))
     }

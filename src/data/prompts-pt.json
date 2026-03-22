@@ -1,0 +1,124 @@
+{
+  "scenarios": [
+    {
+      "id": "restaurant",
+      "category": "Restaurant",
+      "icon": "🍽️",
+      "color": "#E85D3A",
+      "prompts": [
+        { "id": "pt-rest-001", "phrase": "A mesa está reservada em nome de quem?", "english": "What name is the reservation under?", "context": "Hostess checking your reservation", "yourResponse": "Está em nome de [nome].", "tags": ["greeting", "arrival"], "difficulty": 1 },
+        { "id": "pt-rest-002", "phrase": "Já escolheram o que vão querer?", "english": "Have you decided what you'll have?", "context": "Waiter taking your order", "yourResponse": "Ainda não. Pode dar-nos mais um minuto?", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "pt-rest-003", "phrase": "Hoje temos bacalhau à brás como sugestão do chef.", "english": "Today we have bacalhau à brás as the chef's suggestion.", "context": "Waiter presenting the daily special", "yourResponse": "Boa, vou experimentar isso.", "tags": ["ordering", "specials"], "difficulty": 2 },
+        { "id": "pt-rest-004", "phrase": "O petisco vem para partilhar?", "english": "Is the appetiser for sharing?", "context": "Waiter clarifying your order", "yourResponse": "Sim, é para partilhar.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "pt-rest-005", "phrase": "Querem a conta juntos ou separada?", "english": "Do you want the bill together or split?", "context": "Waiter at the end of the meal", "yourResponse": "Pode ser juntos, obrigado.", "tags": ["end-meal", "payment"], "difficulty": 1 },
+        { "id": "pt-rest-006", "phrase": "Está tudo bem com a refeição?", "english": "Is everything alright with your meal?", "context": "Waiter checking in mid-meal", "yourResponse": "Sim, está ótimo, obrigado.", "tags": ["mid-meal"], "difficulty": 1 },
+        { "id": "pt-rest-007", "phrase": "Peço desculpa, mas esse prato já acabou.", "english": "I'm sorry, but that dish has sold out.", "context": "Waiter delivering disappointing news", "yourResponse": "Ah, que pena. Então traz-me o grelhado.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "pt-rest-008", "phrase": "Deseja sobremesa ou café?", "english": "Would you like dessert or coffee?", "context": "Waiter after the main course", "yourResponse": "Só um café, por favor.", "tags": ["end-meal"], "difficulty": 1 },
+        { "id": "pt-rest-009", "phrase": "O serviço está incluído na conta.", "english": "Service is included in the bill.", "context": "Waiter when you go to tip", "yourResponse": "Obrigado. Mesmo assim deixo uma gorjeta.", "tags": ["payment", "end-meal"], "difficulty": 2 },
+        { "id": "pt-rest-010", "phrase": "Temos vinho da casa, branco e tinto.", "english": "We have house wine, white and red.", "context": "Waiter presenting wine options", "yourResponse": "Traz-me um copo de branco, por favor.", "tags": ["ordering", "drinks"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "grocery",
+      "category": "Grocery Store",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "prompts": [
+        { "id": "pt-groc-001", "phrase": "Tem o cartão de fidelidade?", "english": "Do you have your loyalty card?", "context": "Cashier asking at checkout", "yourResponse": "Não tenho, mas gostava de aderir.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "pt-groc-002", "phrase": "Este peixe chegou hoje de manhã do mercado.", "english": "This fish came in from the market this morning.", "context": "Fishmonger describing fresh fish", "yourResponse": "Ótimo. Dá-me meio quilo, se faz favor.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "pt-groc-003", "phrase": "Esta fruta está em promoção até ao fim da semana.", "english": "This fruit is on offer until the end of the week.", "context": "Store employee pointing out a deal", "yourResponse": "Então levo um quilo.", "tags": ["promotions"], "difficulty": 1 },
+        { "id": "pt-groc-004", "phrase": "Precisa de ajuda para embalar?", "english": "Do you need help packing?", "context": "Cashier offering assistance", "yourResponse": "Não precisa, consigo sozinho, obrigado.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "pt-groc-005", "phrase": "Quer saco de pano ou usa o seu?", "english": "Do you want a cloth bag or are you using your own?", "context": "Cashier asking about bags", "yourResponse": "Trago o meu próprio, obrigado.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "pt-groc-006", "phrase": "Esse produto não está disponível neste momento.", "english": "That product is currently out of stock.", "context": "Store employee about an unavailable item", "yourResponse": "Quando esperam ter mais?", "tags": ["stock"], "difficulty": 2 },
+        { "id": "pt-groc-007", "phrase": "A fila do self-checkout está muito mais curta.", "english": "The self-checkout queue is much shorter.", "context": "Store employee directing you", "yourResponse": "Obrigado, vou para lá então.", "tags": ["checkout"], "difficulty": 2 },
+        { "id": "pt-groc-008", "phrase": "A validade deste produto é amanhã, tem a certeza?", "english": "This product expires tomorrow, are you sure?", "context": "Cashier flagging an expiry date", "yourResponse": "Ah, prefiro não. Tem outro mais fresco?", "tags": ["checkout"], "difficulty": 2 }
+      ]
+    },
+    {
+      "id": "getting-around",
+      "category": "Getting Around",
+      "icon": "🗺️",
+      "color": "#2196F3",
+      "prompts": [
+        { "id": "pt-around-001", "phrase": "O próximo autocarro demora cerca de vinte minutos.", "english": "The next bus is about twenty minutes away.", "context": "Passenger at the bus stop", "yourResponse": "Obrigado. Há algum metro por perto?", "tags": ["transport", "timing"], "difficulty": 1 },
+        { "id": "pt-around-002", "phrase": "Tem de validar o passe antes de entrar na carruagem.", "english": "You need to validate your pass before boarding the carriage.", "context": "Metro staff warning you", "yourResponse": "Ah, desculpe. Onde é que valido?", "tags": ["transport", "metro"], "difficulty": 2 },
+        { "id": "pt-around-003", "phrase": "Esta paragem fica mesmo ao pé do Castelo de São Jorge.", "english": "This stop is right next to Castelo de São Jorge.", "context": "Bus driver or fellow passenger informing you", "yourResponse": "Perfeito, saio aqui então. Obrigado.", "tags": ["directions", "landmark"], "difficulty": 2 },
+        { "id": "pt-around-004", "phrase": "O metro está parado por avaria na linha verde.", "english": "The metro has stopped due to a breakdown on the green line.", "context": "PA announcement at the metro station", "yourResponse": "Quanto tempo vai demorar a retomar?", "tags": ["transport", "delays"], "difficulty": 3 },
+        { "id": "pt-around-005", "phrase": "Vire à esquerda no segundo semáforo e siga em frente.", "english": "Turn left at the second traffic lights and carry on straight.", "context": "Pedestrian giving you directions", "yourResponse": "Muito obrigado. Fica longe daqui?", "tags": ["directions"], "difficulty": 2 },
+        { "id": "pt-around-006", "phrase": "Há obras na Avenida da Liberdade, é melhor desviar.", "english": "There are roadworks on Avenida da Liberdade, better to go around.", "context": "Taxi driver warning about road conditions", "yourResponse": "Então como é melhor ir?", "tags": ["transport", "directions"], "difficulty": 2 },
+        { "id": "pt-around-007", "phrase": "O elétrico 28 passa aqui de dez em dez minutos.", "english": "Tram 28 comes here every ten minutes.", "context": "Local giving you transport advice", "yourResponse": "Ótimo, vou esperar então. Obrigado.", "tags": ["transport", "tram"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "checkin",
+      "category": "Airbnb / Check-in",
+      "icon": "🏠",
+      "color": "#9C27B0",
+      "prompts": [
+        { "id": "pt-checkin-001", "phrase": "O check-in é a partir das três da tarde.", "english": "Check-in is from three in the afternoon.", "context": "Host explaining arrival time", "yourResponse": "Podemos deixar a bagagem antes?", "tags": ["check-in", "timing"], "difficulty": 1 },
+        { "id": "pt-checkin-002", "phrase": "As chaves ficam na caixa de segurança junto à porta.", "english": "The keys are in the lockbox next to the door.", "context": "Host giving access instructions", "yourResponse": "Qual é o código da caixa?", "tags": ["check-in", "access"], "difficulty": 2 },
+        { "id": "pt-checkin-003", "phrase": "A palavra-passe do Wi-Fi está num papel em cima da mesa.", "english": "The Wi-Fi password is on a piece of paper on the table.", "context": "Host providing connectivity details", "yourResponse": "Obrigado. E tem Netflix?", "tags": ["amenities"], "difficulty": 1 },
+        { "id": "pt-checkin-004", "phrase": "O lixo separa-se neste contentor verde aqui fora.", "english": "The rubbish is sorted in this green bin outside.", "context": "Host explaining waste separation", "yourResponse": "Está bem. E o papel vai para o contentor azul?", "tags": ["house-rules"], "difficulty": 3 },
+        { "id": "pt-checkin-005", "phrase": "Se precisar de toalhas extra, mande-me uma mensagem.", "english": "If you need extra towels, send me a message.", "context": "Host explaining how to request things", "yourResponse": "Perfeito. Obrigado pela hospitalidade.", "tags": ["amenities"], "difficulty": 1 },
+        { "id": "pt-checkin-006", "phrase": "O aquecimento liga-se com o botão ao lado da janela.", "english": "The heating is turned on with the button next to the window.", "context": "Host showing you how to use the heating", "yourResponse": "Obrigado. E funciona a gás ou elétrico?", "tags": ["amenities", "house-rules"], "difficulty": 2 },
+        { "id": "pt-checkin-007", "phrase": "O check-out tem de ser antes das onze da manhã.", "english": "Check-out must be before eleven in the morning.", "context": "Host reminding you of departure time", "yourResponse": "Sim, saímos antes disso. Obrigado.", "tags": ["check-out", "timing"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "shopping",
+      "category": "Shopping",
+      "icon": "🛍️",
+      "color": "#FF9800",
+      "prompts": [
+        { "id": "pt-shop-001", "phrase": "Quer experimentar no provador?", "english": "Would you like to try it on in the fitting room?", "context": "Shop assistant offering the fitting room", "yourResponse": "Sim, por favor. Onde é o provador?", "tags": ["shopping", "fitting-room"], "difficulty": 1 },
+        { "id": "pt-shop-002", "phrase": "As promoções terminam este fim de semana.", "english": "The sale ends this weekend.", "context": "Shop assistant about the ongoing sale", "yourResponse": "Então aproveito e levo mais um.", "tags": ["shopping", "promotions"], "difficulty": 1 },
+        { "id": "pt-shop-003", "phrase": "Fazemos troca mas não fazemos reembolso.", "english": "We do exchanges but no refunds.", "context": "Shop assistant explaining the return policy", "yourResponse": "Está bem. Posso trocar na loja?", "tags": ["shopping", "returns"], "difficulty": 2 },
+        { "id": "pt-shop-004", "phrase": "Este modelo está esgotado, mas posso encomendar para si.", "english": "This model is out of stock, but I can order it for you.", "context": "Shop assistant about stock levels", "yourResponse": "Quanto tempo demora a chegar?", "tags": ["shopping", "stock"], "difficulty": 2 },
+        { "id": "pt-shop-005", "phrase": "O desconto já está aplicado no preço da etiqueta.", "english": "The discount is already applied to the tag price.", "context": "Shop assistant clarifying pricing", "yourResponse": "Ah, ótimo. Então fica em quanto?", "tags": ["shopping", "payment"], "difficulty": 2 },
+        { "id": "pt-shop-006", "phrase": "Tem o talão de compra para fazer a troca?", "english": "Do you have the receipt to make the exchange?", "context": "Shop assistant asking for proof of purchase", "yourResponse": "Sim, tenho aqui.", "tags": ["shopping", "returns"], "difficulty": 2 }
+      ]
+    },
+    {
+      "id": "tickets",
+      "category": "Activities & Tickets",
+      "icon": "🎟️",
+      "color": "#E91E63",
+      "prompts": [
+        { "id": "pt-tickets-001", "phrase": "Os bilhetes para amanhã já estão esgotados.", "english": "Tomorrow's tickets are already sold out.", "context": "Box office staff about availability", "yourResponse": "E para depois de amanhã?", "tags": ["tickets", "availability"], "difficulty": 1 },
+        { "id": "pt-tickets-002", "phrase": "Com o passe turístico tem desconto de vinte por cento.", "english": "With the tourist pass you get a twenty percent discount.", "context": "Ticket vendor about tourist pass benefits", "yourResponse": "Tenho sim. Aqui está.", "tags": ["tickets", "discounts"], "difficulty": 2 },
+        { "id": "pt-tickets-003", "phrase": "A visita guiada começa daqui a meia hora.", "english": "The guided tour starts in half an hour.", "context": "Museum staff informing about a tour", "yourResponse": "Ótimo. Fazemos a visita livre e depois juntamo-nos.", "tags": ["tickets", "timing"], "difficulty": 2 },
+        { "id": "pt-tickets-004", "phrase": "Crianças com menos de doze anos não pagam entrada.", "english": "Children under twelve don't pay admission.", "context": "Ticket desk staff about children's entry", "yourResponse": "Perfeito. Somos dois adultos e uma criança de oito anos.", "tags": ["tickets", "pricing"], "difficulty": 1 },
+        { "id": "pt-tickets-005", "phrase": "Pode reservar online e pagar aqui na bilheteira.", "english": "You can book online and pay here at the ticket office.", "context": "Staff explaining the booking process", "yourResponse": "Não tenho reserva. Há bilhetes para hoje?", "tags": ["tickets", "booking"], "difficulty": 2 },
+        { "id": "pt-tickets-006", "phrase": "O espetáculo de hoje está completo mas há lugares para quinta.", "english": "Today's show is full but there are seats for Thursday.", "context": "Box office staff about show availability", "yourResponse": "Então queria dois bilhetes para quinta-feira.", "tags": ["tickets", "availability"], "difficulty": 2 }
+      ]
+    },
+    {
+      "id": "pharmacy",
+      "category": "Pharmacy",
+      "icon": "💊",
+      "color": "#00BCD4",
+      "prompts": [
+        { "id": "pt-pharm-001", "phrase": "Tem receita médica para este medicamento?", "english": "Do you have a prescription for this medicine?", "context": "Pharmacist asking for a prescription", "yourResponse": "Não tenho. É possível comprar sem receita?", "tags": ["pharmacy", "prescription"], "difficulty": 1 },
+        { "id": "pt-pharm-002", "phrase": "Para a dor de cabeça, recomendo este analgésico.", "english": "For the headache, I recommend this painkiller.", "context": "Pharmacist making a recommendation", "yourResponse": "Tem algum mais suave? Tenho o estômago sensível.", "tags": ["pharmacy", "medication"], "difficulty": 2 },
+        { "id": "pt-pharm-003", "phrase": "Tome um comprimido de oito em oito horas às refeições.", "english": "Take one tablet every eight hours with meals.", "context": "Pharmacist explaining dosage instructions", "yourResponse": "E posso tomar com outros medicamentos?", "tags": ["pharmacy", "dosage"], "difficulty": 2 },
+        { "id": "pt-pharm-004", "phrase": "Este medicamento pode causar sonolência.", "english": "This medicine may cause drowsiness.", "context": "Pharmacist warning about side effects", "yourResponse": "Obrigado pelo aviso. Vou tomar só à noite.", "tags": ["pharmacy", "side-effects"], "difficulty": 2 },
+        { "id": "pt-pharm-005", "phrase": "Temos a versão genérica que é mais acessível.", "english": "We have the generic version which is more affordable.", "context": "Pharmacist suggesting a cheaper alternative", "yourResponse": "Qual é a diferença? O genérico funciona igual?", "tags": ["pharmacy", "medication"], "difficulty": 2 },
+        { "id": "pt-pharm-006", "phrase": "Com receita do SNS, paga apenas a comparticipação.", "english": "With an NHS prescription, you only pay the co-payment.", "context": "Pharmacist explaining the health service co-payment", "yourResponse": "Ótimo. Aqui está a receita.", "tags": ["pharmacy", "payment", "prescription"], "difficulty": 3 }
+      ]
+    },
+    {
+      "id": "cafe",
+      "category": "Café & Bar",
+      "icon": "☕",
+      "color": "#795548",
+      "prompts": [
+        { "id": "pt-cafe-001", "phrase": "Uma bica ou prefere uma meia de leite?", "english": "An espresso or would you prefer a coffee with milk?", "context": "Barista asking about your coffee order", "yourResponse": "Uma bica, por favor. Bem quente.", "tags": ["cafe", "ordering", "coffee"], "difficulty": 1 },
+        { "id": "pt-cafe-002", "phrase": "Temos pastéis de nata acabados de sair do forno.", "english": "We have pastéis de nata fresh out of the oven.", "context": "Café staff advertising their pastries", "yourResponse": "Ótimo! Dá-me dois, por favor.", "tags": ["cafe", "food", "ordering"], "difficulty": 1 },
+        { "id": "pt-cafe-003", "phrase": "A imperial é de pressão ou prefere de garrafa?", "english": "Is draft beer okay or would you prefer bottled?", "context": "Bar staff asking about your beer preference", "yourResponse": "De pressão está bem. Uma caneca, por favor.", "tags": ["bar", "drinks", "ordering"], "difficulty": 2 },
+        { "id": "pt-cafe-004", "phrase": "A torrada vem com manteiga, quer também marmelada?", "english": "The toast comes with butter — would you also like marmalade?", "context": "Café staff about toast accompaniments", "yourResponse": "Sim, marmelada também, obrigado.", "tags": ["cafe", "food", "ordering"], "difficulty": 1 },
+        { "id": "pt-cafe-005", "phrase": "Já não há croissants, só temos pão de sementes.", "english": "There are no more croissants, we only have seeded bread.", "context": "Café staff about what's available", "yourResponse": "Está bem, traz-me uma sandes de fiambre então.", "tags": ["cafe", "food", "availability"], "difficulty": 2 },
+        { "id": "pt-cafe-006", "phrase": "O pequeno-almoço inclui uma bebida quente à escolha.", "english": "The breakfast includes a hot drink of your choice.", "context": "Staff explaining what's included in breakfast", "yourResponse": "Então quero chá de limão, por favor.", "tags": ["cafe", "breakfast", "ordering"], "difficulty": 1 }
+      ]
+    }
+  ]
+}

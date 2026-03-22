@@ -1,10 +1,7 @@
-import { PromptWithScenario, ProgressData } from '../types'
-import promptsData from '../data/prompts.json'
-import { Scenario } from '../types'
-
-const scenarios = promptsData.scenarios as Scenario[]
+import { PromptWithScenario, ProgressData, Scenario } from '../types'
 
 interface Props {
+  scenarios: Scenario[]
   progress: ProgressData
   streak: number
   allPrompts: PromptWithScenario[]
@@ -12,7 +9,7 @@ interface Props {
   onReset: () => void
 }
 
-export default function Progress({ progress, streak, allPrompts, onBack, onReset }: Props) {
+export default function Progress({ scenarios, progress, streak, allPrompts, onBack, onReset }: Props) {
   const totalAttempts = Object.values(progress).reduce((sum, s) => sum + s.timesShown, 0)
   const totalUnderstood = Object.values(progress).reduce((sum, s) => sum + s.timesUnderstood, 0)
   const overallRate = totalAttempts > 0 ? Math.round((totalUnderstood / totalAttempts) * 100) : 0
@@ -196,7 +193,7 @@ export default function Progress({ progress, streak, allPrompts, onBack, onReset
               >
                 <div style={{ minWidth: 0 }}>
                   <div style={{ fontSize: 14, fontWeight: 500, marginBottom: 2, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                    {prompt.spanish}
+                    {prompt.phrase}
                   </div>
                   <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)' }}>{prompt.english}</div>
                 </div>

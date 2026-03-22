@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { Speed } from '../types'
+import { Speed, Language, LANGUAGE_CONFIG } from '../types'
 
 const SPEECH_RATES: Record<Speed, number> = {
   slow: 0.7,
@@ -7,17 +7,18 @@ const SPEECH_RATES: Record<Speed, number> = {
   fast: 1.0,
 }
 
-function speakWithBrowser(text: string, rate: number): Promise<void> {
+function speakWithBrowser(text: string, rate: number, ttsLang: string): Promise<void> {
   return new Promise((resolve, reject) => {
     window.speechSynthesis.cancel()
     const utter = new SpeechSynthesisUtterance(text)
-    utter.lang = 'es-ES'
+    utter.lang = ttsLang
     utter.rate = rate
 
     const voices = window.speechSynthesis.getVoices()
-    const spanishVoice =
-      voices.find(v => v.lang === 'es-ES') || voices.find(v => v.lang.startsWith('es'))
-    if (spanishVoice) utter.voice = spanishVoice
+    const langPrefix = ttsLang.split('-')[0]
+    const voice =
+      voices.find(v => v.lang === ttsLang) || voices.find(v => v.lang.startsWith(langPrefix))
+    if (voice) utter.voice = voice
 
     utter.onend = () => resolve()
     utter.onerror = () => reject()
@@ -25,7 +26,7 @@ function speakWithBrowser(text: string, rate: number): Promise<void> {
   })
 }
 
-export function useAudio(promptId: string, speed: Speed, text?: string) {
+export function useAudio(promptId: string, speed: Speed, lang: Language, text?: string) {
   const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const stoppedRef = useRef(false)
@@ -55,6 +56,8 @@ export function useAudio(promptId: string, speed: Speed, text?: string) {
       if (!stoppedRef.current) setPlaying(false)
     }
 
+    const ttsLang = LANGUAGE_CONFIG[lang].ttsLang
+
     audio.onerror = () => {
       // mp3 not found — fall back to browser speech synthesis
       audioRef.current = null
@@ -63,7 +66,7 @@ export function useAudio(promptId: string, speed: Speed, text?: string) {
         setPlaying(false)
         return
       }
-      speakWithBrowser(text, SPEECH_RATES[speed])
+      speakWithBrowser(text, SPEECH_RATES[speed], ttsLang)
         .finally(() => {
           if (!stoppedRef.current) setPlaying(false)
         })
@@ -76,11 +79,11 @@ export function useAudio(promptId: string, speed: Speed, text?: string) {
         setPlaying(false)
         return
       }
-      speakWithBrowser(text, SPEECH_RATES[speed]).finally(() => {
+      speakWithBrowser(text, SPEECH_RATES[speed], ttsLang).finally(() => {
         if (!stoppedRef.current) setPlaying(false)
       })
     })
-  }, [audioSrc, speed, text, stop])
+  }, [audioSrc, speed, lang, text, stop])
 
   useEffect(() => {
     return () => stop()

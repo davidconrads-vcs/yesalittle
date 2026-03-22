@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import promptsData from '../data/prompts.json'
-import { Scenario, SessionMode, Speed } from '../types'
+import { Scenario, SessionMode, Speed, Language, LANGUAGE_CONFIG } from '../types'
 import SpeedControl from './SpeedControl'
 
-const scenarios = promptsData.scenarios as Scenario[]
-
 interface Props {
+  scenarios: Scenario[]
+  language: Language
+  onLanguageChange: (l: Language) => void
   onStart: (categories: Set<string>, mode: SessionMode) => void
   streak: number
   speed: Speed
@@ -13,7 +13,7 @@ interface Props {
   onProgressClick: () => void
 }
 
-export default function Home({ onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
+export default function Home({ scenarios, language, onLanguageChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [mode, setMode] = useState<SessionMode>('full')
 
@@ -72,7 +72,7 @@ export default function Home({ onStart, streak, speed, onSpeedChange, onProgress
               WebkitTextFillColor: 'transparent',
             }}
           >
-            ¿Qué te han dicho?
+            {LANGUAGE_CONFIG[language].title}
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginTop: 8, lineHeight: 1.5, margin: '8px 0 0' }}>
             Listen to what locals say in real situations.
@@ -110,6 +110,50 @@ export default function Home({ onStart, streak, speed, onSpeedChange, onProgress
           >
             📊 Progress
           </button>
+        </div>
+      </div>
+
+      {/* Language selector */}
+      <div style={{ marginBottom: 24 }}>
+        <div
+          style={{
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: 1.5,
+            color: 'rgba(255,255,255,0.3)',
+            textTransform: 'uppercase',
+            marginBottom: 10,
+            fontFamily: "'JetBrains Mono', monospace",
+          }}
+        >
+          Language
+        </div>
+        <div style={{ display: 'flex', gap: 8 }}>
+          {(['es', 'pt'] as Language[]).map(lang => (
+            <button
+              key={lang}
+              onClick={() => onLanguageChange(lang)}
+              style={{
+                flex: 1,
+                background: language === lang ? 'rgba(232, 93, 58, 0.08)' : 'rgba(255,255,255,0.03)',
+                border: `1.5px solid ${language === lang ? 'rgba(232, 93, 58, 0.4)' : 'rgba(255,255,255,0.07)'}`,
+                borderRadius: 12,
+                padding: '10px 16px',
+                color: language === lang ? '#E85D3A' : 'rgba(255,255,255,0.55)',
+                cursor: 'pointer',
+                fontSize: 14,
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 500,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+              }}
+            >
+              <span>{LANGUAGE_CONFIG[lang].flag}</span>
+              <span>{LANGUAGE_CONFIG[lang].label}</span>
+            </button>
+          ))}
         </div>
       </div>
 

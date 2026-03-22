@@ -1,6 +1,8 @@
+export type Language = 'es' | 'pt'
+
 export interface Prompt {
   id: string
-  spanish: string
+  phrase: string
   english: string
   context: string
   yourResponse: string
@@ -37,3 +39,8 @@ export type Speed = 'slow' | 'normal' | 'fast'
 export type SessionMode = 'full' | 'review' | 'new'
 
 export type Screen = 'home' | 'practice' | 'summary' | 'progress'
+
+export const LANGUAGE_CONFIG: Record<Language, { label: string; flag: string; ttsLang: string; title: string }> = {
+  es: { label: 'Spanish', flag: '🇪🇸', ttsLang: 'es-ES', title: '¿Qué te han dicho?' },
+  pt: { label: 'Portuguese', flag: '🇵🇹', ttsLang: 'pt-PT', title: 'O que te disseram?' },
+}

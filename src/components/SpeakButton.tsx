@@ -1,17 +1,18 @@
 import { useEffect } from 'react'
 import { useAudio } from '../hooks/useAudio'
-import { Speed } from '../types'
+import { Speed, Language } from '../types'
 
 interface Props {
   promptId: string
-  spanish: string
+  phrase: string
   speed: Speed
+  lang: Language
   autoPlay?: boolean
   size?: 'large' | 'small'
 }
 
-export default function SpeakButton({ promptId, spanish, speed, autoPlay = false, size = 'large' }: Props) {
-  const { playing, play } = useAudio(promptId, speed, spanish)
+export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = false, size = 'large' }: Props) {
+  const { playing, play } = useAudio(promptId, speed, lang, phrase)
   const isLarge = size === 'large'
 
   useEffect(() => {

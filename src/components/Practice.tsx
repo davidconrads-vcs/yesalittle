@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
-import { PromptWithScenario, Speed } from '../types'
+import { PromptWithScenario, Speed, Language } from '../types'
 import SpeakButton from './SpeakButton'
 import SpeedControl from './SpeedControl'
 
 interface Props {
   queue: PromptWithScenario[]
   speed: Speed
+  lang: Language
   onSpeedChange: (s: Speed) => void
   onResult: (promptId: string, understood: boolean) => void
   onExit: () => void
 }
 
-export default function Practice({ queue, speed, onSpeedChange, onResult, onExit }: Props) {
+export default function Practice({ queue, speed, lang, onSpeedChange, onResult, onExit }: Props) {
   const [index, setIndex] = useState(0)
   const [phase, setPhase] = useState<'listen' | 'reveal'>('listen')
   const [key, setKey] = useState(0) // for remounting SpeakButton
@@ -152,7 +153,7 @@ export default function Practice({ queue, speed, onSpeedChange, onResult, onExit
           ) : (
             <div style={{ animation: 'fadeUp 0.3s ease' }}>
               <div style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
-                {current.spanish}
+                {current.phrase}
               </div>
               <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
                 {current.english}
@@ -186,7 +187,7 @@ export default function Practice({ queue, speed, onSpeedChange, onResult, onExit
           )}
 
           <div style={{ marginTop: 16 }}>
-            <SpeakButton key={key} promptId={current.id} spanish={current.spanish} speed={speed} autoPlay={phase === 'listen'} size="large" />
+            <SpeakButton key={key} promptId={current.id} phrase={current.phrase} speed={speed} lang={lang} autoPlay={phase === 'listen'} size="large" />
           </div>
         </div>
 

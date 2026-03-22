@@ -1,4 +1,4 @@
-import { PromptWithScenario, Speed } from '../types'
+import { PromptWithScenario, Speed, Language } from '../types'
 import SpeakButton from './SpeakButton'
 
 interface SessionResult {
@@ -9,11 +9,12 @@ interface SessionResult {
 interface Props {
   results: SessionResult[]
   speed: Speed
+  lang: Language
   onRetryMissed: (missed: PromptWithScenario[]) => void
   onNewSession: () => void
 }
 
-export default function Summary({ results, speed, onRetryMissed, onNewSession }: Props) {
+export default function Summary({ results, speed, lang, onRetryMissed, onNewSession }: Props) {
   const correct = results.filter(r => r.understood).length
   const missed = results.filter(r => !r.understood)
   const pct = results.length > 0 ? Math.round((correct / results.length) * 100) : 0
@@ -98,9 +99,9 @@ export default function Summary({ results, speed, onRetryMissed, onNewSession }:
                   <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>
                     {r.prompt.icon} {r.prompt.context}
                   </div>
-                  <SpeakButton promptId={r.prompt.id} spanish={r.prompt.spanish} speed={speed} size="small" />
+                  <SpeakButton promptId={r.prompt.id} phrase={r.prompt.phrase} speed={speed} lang={lang} size="small" />
                 </div>
-                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{r.prompt.spanish}</div>
+                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{r.prompt.phrase}</div>
                 <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{r.prompt.english}</div>
               </div>
             ))}
