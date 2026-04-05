@@ -29,16 +29,106 @@
       "icon": "🍽️",
       "color": "#E85D3A",
       "prompts": [
-        { "id": "pt-rest-001", "phrase": "A mesa está reservada em nome de quem?", "english": "What name is the reservation under?", "context": "Hostess checking your reservation", "yourResponse": "Está em nome de [nome].", "yourResponseEnglish": "It's under the name [name].", "tags": ["greeting", "arrival"], "difficulty": 1 },
-        { "id": "pt-rest-002", "phrase": "Já escolheram o que vão querer?", "english": "Have you decided what you'll have?", "context": "Waiter taking your order", "yourResponse": "Ainda não. Pode dar-nos mais um minuto?", "yourResponseEnglish": "Not yet. Can you give us another minute?", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "pt-rest-003", "phrase": "Hoje temos bacalhau à brás como sugestão do chef.", "english": "Today we have bacalhau à brás as the chef's suggestion.", "context": "Waiter presenting the daily special", "yourResponse": "Boa, vou experimentar isso.", "yourResponseEnglish": "Great, I'll try that.", "tags": ["ordering", "specials"], "difficulty": 2 },
-        { "id": "pt-rest-004", "phrase": "O petisco vem para partilhar?", "english": "Is the appetiser for sharing?", "context": "Waiter clarifying your order", "yourResponse": "Sim, é para partilhar.", "yourResponseEnglish": "Yes, it's to share.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "pt-rest-005", "phrase": "Querem a conta juntos ou separada?", "english": "Do you want the bill together or split?", "context": "Waiter at the end of the meal", "yourResponse": "Pode ser juntos, obrigado.", "yourResponseEnglish": "Together is fine, thanks.", "tags": ["end-meal", "payment"], "difficulty": 1 },
-        { "id": "pt-rest-006", "phrase": "Está tudo bem com a refeição?", "english": "Is everything alright with your meal?", "context": "Waiter checking in mid-meal", "yourResponse": "Sim, está ótimo, obrigado.", "yourResponseEnglish": "Yes, it's great, thanks.", "tags": ["mid-meal"], "difficulty": 1 },
-        { "id": "pt-rest-007", "phrase": "Peço desculpa, mas esse prato já acabou.", "english": "I'm sorry, but that dish has sold out.", "context": "Waiter delivering disappointing news", "yourResponse": "Ah, que pena. Então traz-me o grelhado.", "yourResponseEnglish": "Oh, what a shame. Then bring me the grilled dish.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "pt-rest-008", "phrase": "Deseja sobremesa ou café?", "english": "Would you like dessert or coffee?", "context": "Waiter after the main course", "yourResponse": "Só um café, por favor.", "yourResponseEnglish": "Just a coffee, please.", "tags": ["end-meal"], "difficulty": 1 },
-        { "id": "pt-rest-009", "phrase": "O serviço está incluído na conta.", "english": "Service is included in the bill.", "context": "Waiter when you go to tip", "yourResponse": "Obrigado. Mesmo assim deixo uma gorjeta.", "yourResponseEnglish": "Thanks. I'll leave a tip anyway.", "tags": ["payment", "end-meal"], "difficulty": 2 },
-        { "id": "pt-rest-010", "phrase": "Temos vinho da casa, branco e tinto.", "english": "We have house wine, white and red.", "context": "Waiter presenting wine options", "yourResponse": "Traz-me um copo de branco, por favor.", "yourResponseEnglish": "Bring me a glass of white, please.", "tags": ["ordering", "drinks"], "difficulty": 1 }
+          {
+            "id": "pt-rest-001",
+            "phrase": "Têm reserva?",
+            "english": "Do you have a reservation?",
+            "context": "Hostess asking if you have a reservation when walking in",
+            "yourResponse": "Não temos reserva. Têm mesa para quatro pessoas?",
+            "yourResponseEnglish": "We don't have a reservation. Do you have a table for four?",
+            "tags": ["greeting", "arrival"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-002",
+            "phrase": "A mesa está reservada em nome de quem?",
+            "english": "What name is the reservation under?",
+            "context": "Hostess checking your reservation",
+            "yourResponse": "Está em nome de [nome].",
+            "yourResponseEnglish": "It's under the name [name].",
+            "tags": ["greeting", "arrival"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-003",
+            "phrase": "Para beber?",
+            "english": "To drink?",
+            "context": "Waiter asking for your drink order",
+            "yourResponse": "Água, por favor.",
+            "yourResponseEnglish": "Water, please.",
+            "tags": ["ordering", "drinks"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-004",
+            "phrase": "Com gás ou sem gás?",
+            "english": "Sparkling or still?",
+            "context": "Waiter following up on your water order",
+            "yourResponse": "Sem gás, por favor.",
+            "yourResponseEnglish": "Still, please.",
+            "tags": ["ordering", "drinks"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-005",
+            "phrase": "Já escolheram o que vão querer?",
+            "english": "Have you decided what you'll have?",
+            "context": "Waiter taking your order",
+            "yourResponse": "Ainda não. Pode dar-nos mais um minuto?",
+            "yourResponseEnglish": "Not yet. Can you give us another minute?",
+            "tags": ["ordering"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-006",
+            "phrase": "Hoje temos bacalhau à brás como sugestão do chef.",
+            "english": "Today we have bacalhau à brás as the chef's suggestion.",
+            "context": "Waiter presenting the daily special",
+            "yourResponse": "Interessante. Pode dar-nos um momento para decidir?",
+            "yourResponseEnglish": "Interesting. Can you give us a moment to decide?",
+            "tags": ["ordering", "specials"],
+            "difficulty": 2
+          },
+          {
+            "id": "pt-rest-007",
+            "phrase": "Está tudo bem com a refeição?",
+            "english": "Is everything alright with your meal?",
+            "context": "Waiter checking in mid-meal",
+            "yourResponse": "Sim, está ótimo, obrigado.",
+            "yourResponseEnglish": "Yes, it's great, thanks.",
+            "tags": ["mid-meal"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-008",
+            "phrase": "Deseja sobremesa ou café?",
+            "english": "Would you like dessert or coffee?",
+            "context": "Waiter after the main course",
+            "yourResponse": "Só uma meia de leite, por favor.",
+            "yourResponseEnglish": "Just a coffee with milk, please.",
+            "tags": ["end-meal"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-009",
+            "phrase": "Pode trazer a conta, por favor?",
+            "english": "Can you bring the bill, please?",
+            "context": "You proactively asking for the bill — in Portugal waiters won't bring it until you ask",
+            "yourResponse": "Pode trazer a conta, por favor?",
+            "yourResponseEnglish": "Can you bring the bill, please?",
+            "tags": ["end-meal", "payment"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-rest-010",
+            "phrase": "Querem a conta juntos ou separada?",
+            "english": "Do you want the bill together or split?",
+            "context": "Waiter at the end of the meal",
+            "yourResponse": "Pode ser juntos, obrigado.",
+            "yourResponseEnglish": "Together is fine, thanks.",
+            "tags": ["end-meal", "payment"],
+            "difficulty": 1
+          }
       ]
     },
     {
@@ -137,12 +227,46 @@
       "icon": "☕",
       "color": "#795548",
       "prompts": [
-        { "id": "pt-cafe-001", "phrase": "Uma bica ou prefere uma meia de leite?", "english": "An espresso or would you prefer a coffee with milk?", "context": "Barista asking about your coffee order", "yourResponse": "Uma bica, por favor. Bem quente.", "yourResponseEnglish": "An espresso, please. Nice and hot.", "tags": ["cafe", "ordering", "coffee"], "difficulty": 1 },
-        { "id": "pt-cafe-002", "phrase": "Temos pastéis de nata acabados de sair do forno.", "english": "We have pastéis de nata fresh out of the oven.", "context": "Café staff advertising their pastries", "yourResponse": "Ótimo! Dá-me dois, por favor.", "yourResponseEnglish": "Great! Give me two, please.", "tags": ["cafe", "food", "ordering"], "difficulty": 1 },
-        { "id": "pt-cafe-003", "phrase": "A imperial é de pressão ou prefere de garrafa?", "english": "Is draft beer okay or would you prefer bottled?", "context": "Bar staff asking about your beer preference", "yourResponse": "De pressão está bem. Uma caneca, por favor.", "yourResponseEnglish": "Draft is fine. A pint, please.", "tags": ["bar", "drinks", "ordering"], "difficulty": 2 },
-        { "id": "pt-cafe-004", "phrase": "A torrada vem com manteiga, quer também marmelada?", "english": "The toast comes with butter — would you also like marmalade?", "context": "Café staff about toast accompaniments", "yourResponse": "Sim, marmelada também, obrigado.", "yourResponseEnglish": "Yes, marmalade too, thanks.", "tags": ["cafe", "food", "ordering"], "difficulty": 1 },
-        { "id": "pt-cafe-005", "phrase": "Já não há croissants, só temos pão de sementes.", "english": "There are no more croissants, we only have seeded bread.", "context": "Café staff about what's available", "yourResponse": "Está bem, traz-me uma sandes de fiambre então.", "yourResponseEnglish": "OK, bring me a ham sandwich then.", "tags": ["cafe", "food", "availability"], "difficulty": 2 },
-        { "id": "pt-cafe-006", "phrase": "O pequeno-almoço inclui uma bebida quente à escolha.", "english": "The breakfast includes a hot drink of your choice.", "context": "Staff explaining what's included in breakfast", "yourResponse": "Então quero chá de limão, por favor.", "yourResponseEnglish": "Then I'd like lemon tea, please.", "tags": ["cafe", "breakfast", "ordering"], "difficulty": 1 }
+          {
+            "id": "pt-cafe-001",
+            "phrase": "O que deseja?",
+            "english": "What would you like?",
+            "context": "Barista or staff asking for your order",
+            "yourResponse": "Uma meia de leite, um pastel de nata e uma tosta mista, por favor.",
+            "yourResponseEnglish": "A coffee with milk, a custard tart, and a ham and cheese toastie, please.",
+            "tags": ["cafe", "ordering", "coffee", "food"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-cafe-002",
+            "phrase": "Quente ou morno?",
+            "english": "Hot or warm?",
+            "context": "Barista asking how you want your coffee temperature",
+            "yourResponse": "Bem quente, por favor.",
+            "yourResponseEnglish": "Nice and hot, please.",
+            "tags": ["cafe", "coffee", "ordering"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-cafe-003",
+            "phrase": "Mais alguma coisa?",
+            "english": "Anything else?",
+            "context": "Staff asking if you need anything more",
+            "yourResponse": "Não, obrigado. Pode trazer a conta?",
+            "yourResponseEnglish": "No, thanks. Can you bring the bill?",
+            "tags": ["cafe", "payment", "closing"],
+            "difficulty": 1
+          },
+          {
+            "id": "pt-cafe-004",
+            "phrase": "São quatro euros e cinquenta, por favor.",
+            "english": "That's four euros fifty, please.",
+            "context": "Staff telling you the total",
+            "yourResponse": "Aqui tem. Obrigado!",
+            "yourResponseEnglish": "Here you go. Thank you!",
+            "tags": ["cafe", "payment"],
+            "difficulty": 1
+          }
       ]
     }
   ]
