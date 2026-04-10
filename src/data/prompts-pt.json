@@ -20,7 +20,8 @@
         { "id": "pt-greet-012", "phrase": "Desculpe o incómodo.", "english": "Sorry to bother you.", "context": "Someone approaching you to ask for help or directions", "yourResponse": "Sem problema, mas não falo português.", "yourResponseEnglish": "No problem, but I don't speak Portuguese.", "tags": ["courtesy"], "difficulty": 2 },
         { "id": "pt-greet-013", "phrase": "De nada! Não tem de quê.", "english": "You're welcome! Don't mention it.", "context": "After you thank someone for their help", "yourResponse": "Até logo!", "yourResponseEnglish": "See you later!", "tags": ["courtesy"], "difficulty": 1 },
         { "id": "pt-greet-014", "phrase": "Boa sorte!", "english": "Good luck!", "context": "Someone wishing you well before something important", "yourResponse": "Obrigado! Vou precisar.", "yourResponseEnglish": "Thanks! I'll need it.", "tags": ["courtesy", "small-talk"], "difficulty": 1 },
-        { "id": "pt-greet-015", "phrase": "Tenha um bom fim de semana!", "english": "Have a good weekend!", "context": "End-of-week farewell from a local or shopkeeper", "yourResponse": "Igualmente! Bom fim de semana!", "yourResponseEnglish": "Likewise! Have a good weekend!", "tags": ["farewell", "small-talk"], "difficulty": 1 }      
+        { "id": "pt-greet-015", "phrase": "Tenha um bom fim de semana!", "english": "Have a good weekend!", "context": "End-of-week farewell from a local or shopkeeper", "yourResponse": "Igualmente! Bom fim de semana!", "yourResponseEnglish": "Likewise! Have a good weekend!", "tags": ["farewell", "small-talk"], "difficulty": 1 },      
+        { "id": "pt-greet-016", "phrase": "Não falo inglês.", "english": "No, I don't speak English.", "context": "Local responding that they don't speak English", "yourResponse": "Ok, vou tentar!", "yourResponseEnglish": "Ok, I'll try!", "tags": ["language", "courtesy"], "difficulty": 1 }
       ]
     },
     {

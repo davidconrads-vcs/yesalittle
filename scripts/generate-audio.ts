@@ -30,7 +30,7 @@ if (!ELEVENLABS_API_KEY) {
 // Portuguese: use ELEVENLABS_VOICE_ID_PT or fall back to a multilingual voice
 const VOICE_IDS: Record<string, string> = {
   es: process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',   // Valentina es-ES
-  pt: process.env.ELEVENLABS_VOICE_ID_PT ?? 'cgSgspJ2msm6clMCkdW9',   // Defaults to Valentina (multilingual v2 handles pt-PT well) — override with ELEVENLABS_VOICE_ID_PT
+  pt: process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2' //'cgSgspJ2msm6clMCkdW9',   // Defaults to Valentina (multilingual v2 handles pt-PT well) — override with ELEVENLABS_VOICE_ID_PT
 }
 
 const DATA_FILES: Record<string, string> = {
