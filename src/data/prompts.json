@@ -1,6 +1,30 @@
 {
   "scenarios": [
     {
+      "id": "greetings",
+      "category": "Greetings & Pleasantries",
+      "icon": "👋",
+      "color": "#6366F1",
+      "prompts": [
+        { "id": "greet-001", "phrase": "¡Buenas!", "english": "Hi! / Hello!", "context": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain", "yourResponse": "¡Buenas! ¿Qué tal?", "yourResponseEnglish": "Hi! How's it going?", "tags": ["greeting"], "difficulty": 1 },
+        { "id": "greet-002", "phrase": "¡Buenos días! ¿En qué os puedo ayudar?", "english": "Good morning! How can I help you?", "context": "Shop or office worker greeting you in the morning", "yourResponse": "Buenos días. Estamos buscando...", "yourResponseEnglish": "Good morning. We're looking for...", "tags": ["greeting", "morning"], "difficulty": 1 },
+        { "id": "greet-003", "phrase": "¿Qué tal? ¿Todo bien?", "english": "How's it going? All good?", "context": "Friendly local or shopkeeper doing a casual check-in", "yourResponse": "Bien, gracias. ¿Y tú?", "yourResponseEnglish": "Good, thanks. And you?", "tags": ["greeting", "small-talk"], "difficulty": 1 },
+        { "id": "greet-004", "phrase": "¡Bienvenidos a Barcelona!", "english": "Welcome to Barcelona!", "context": "Host, tour guide, or hotel staff welcoming you on arrival", "yourResponse": "¡Gracias! Estamos muy contentos de estar aquí.", "yourResponseEnglish": "Thanks! We're really happy to be here.", "tags": ["greeting", "arrival"], "difficulty": 1 },
+        { "id": "greet-005", "phrase": "¡Encantado!", "english": "Pleased to meet you!", "context": "Someone greeting you after being introduced", "yourResponse": "¡Encantado, igualmente!", "yourResponseEnglish": "Pleased to meet you, likewise!", "tags": ["introduction"], "difficulty": 1 },
+        { "id": "greet-006", "phrase": "¿De dónde sois?", "english": "Where are you from?", "context": "Friendly local making small talk", "yourResponse": "Somos de Estados Unidos, de Colorado. ¿Y tú eres de aquí?", "yourResponseEnglish": "We're from the US, from Colorado. And are you from here?", "tags": ["small-talk"], "difficulty": 1 },
+        { "id": "greet-007", "phrase": "¿Habláis español?", "english": "Do you speak Spanish?", "context": "Local checking before launching into Spanish", "yourResponse": "Un poco, sí. Estoy aprendiendo.", "yourResponseEnglish": "A little, yes. I'm learning.", "tags": ["language", "small-talk"], "difficulty": 1 },
+        { "id": "greet-008", "phrase": "No te preocupes, puedo hablar en inglés.", "english": "Don't worry, I can speak in English.", "context": "A helpful local offering to switch languages", "yourResponse": "¡Muchas gracias, muy amable!", "yourResponseEnglish": "Thank you so much, very kind!", "tags": ["language"], "difficulty": 1 },
+        { "id": "greet-009", "phrase": "No hablo inglés, lo siento.", "english": "I don't speak English, sorry.", "context": "Local letting you know they can't switch to English", "yourResponse": "No pasa nada, lo intentamos en español.", "yourResponseEnglish": "No worries, we'll try in Spanish.", "tags": ["language"], "difficulty": 1 },
+        { "id": "greet-010", "phrase": "Perdona, ¿me puedes ayudar un momento?", "english": "Excuse me, can you help me for a moment?", "context": "Someone approaching you on the street to ask for help", "yourResponse": "Claro, aunque no hablo mucho español.", "yourResponseEnglish": "Sure, though I don't speak much Spanish.", "tags": ["courtesy", "small-talk"], "difficulty": 2 },
+        { "id": "greet-011", "phrase": "Con permiso.", "english": "Excuse me. / Coming through.", "context": "Someone squeezing past you in a narrow space or crowd", "yourResponse": "Claro, adelante.", "yourResponseEnglish": "Of course, go ahead.", "tags": ["courtesy"], "difficulty": 1 },
+        { "id": "greet-012", "phrase": "De nada, para eso estamos.", "english": "You're welcome, that's what we're here for.", "context": "After you thank someone for their help", "yourResponse": "¡Muy amable, gracias!", "yourResponseEnglish": "Very kind, thank you!", "tags": ["courtesy"], "difficulty": 1 },
+        { "id": "greet-013", "phrase": "¡Hasta luego! ¡Que lo paséis bien!", "english": "See you later! Have a good time!", "context": "Friendly farewell from a shopkeeper or local", "yourResponse": "¡Igualmente! ¡Hasta luego!", "yourResponseEnglish": "Likewise! See you later!", "tags": ["farewell"], "difficulty": 1 },
+        { "id": "greet-014", "phrase": "¡Buen fin de semana!", "english": "Have a good weekend!", "context": "End-of-week farewell from a shopkeeper or neighbor", "yourResponse": "¡Igualmente! ¡Buen fin de semana!", "yourResponseEnglish": "Likewise! Have a good weekend!", "tags": ["farewell", "small-talk"], "difficulty": 1 },
+        { "id": "greet-015", "phrase": "¡Qué calor hace hoy!, ¿eh?", "english": "It's so hot today, isn't it!", "context": "Stranger making small talk about the weather", "yourResponse": "¡Sí, muchísimo! Pero el tiempo es precioso.", "yourResponseEnglish": "Yes, really hot! But the weather is gorgeous.", "tags": ["small-talk"], "difficulty": 1 },
+        { "id": "greet-016", "phrase": "Perdona, parles català?", "english": "Excuse me, do you speak Catalan?", "context": "Someone in Barcelona addressing you in Catalan first", "yourResponse": "No, lo siento. ¿Hablamos en español?", "yourResponseEnglish": "No, sorry. Shall we speak in Spanish?", "tags": ["language", "catalan"], "difficulty": 2 }        
+      ]
+    },
+    {
       "id": "restaurant",
       "category": "Restaurant",
       "icon": "🍽️",
