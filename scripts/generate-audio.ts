@@ -5,18 +5,23 @@ import { fileURLToPath } from 'url'
 const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
-interface Prompt {
-  id: string
+interface Translation {
   phrase: string
-  yourResponse: string
+  response: string
+  practiceAsTarget?: boolean
 }
 
-interface Scenario {
-  prompts: Prompt[]
+interface UnifiedPrompt {
+  id: string
+  translations: Record<string, Translation>
+}
+
+interface UnifiedScenario {
+  prompts: UnifiedPrompt[]
 }
 
 interface PromptsData {
-  scenarios: Scenario[]
+  scenarios: UnifiedScenario[]
 }
 
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY
@@ -25,18 +30,15 @@ if (!ELEVENLABS_API_KEY) {
   process.exit(1)
 }
 
-// Default voice IDs per language
+// Voice IDs keyed by full locale code
 // Spanish: "Valentina" — Peninsular Spanish female
-// Portuguese: use ELEVENLABS_VOICE_ID_PT or fall back to a multilingual voice
+// Portuguese: override with ELEVENLABS_VOICE_ID_PT env var
 const VOICE_IDS: Record<string, string> = {
-  es: process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',   // Valentina es-ES
-  pt: process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2' //'cgSgspJ2msm6clMCkdW9',   // Defaults to Valentina (multilingual v2 handles pt-PT well) — override with ELEVENLABS_VOICE_ID_PT
+  'es-ES': process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',
+  'pt-PT': process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2',
 }
 
-const DATA_FILES: Record<string, string> = {
-  es: join(ROOT, 'src', 'data', 'prompts.json'),
-  pt: join(ROOT, 'src', 'data', 'prompts-pt.json'),
-}
+const DATA_FILE = join(ROOT, 'src', 'data', 'prompts.json')
 
 const SPEEDS: Array<{ name: string; rate: number }> = [
   { name: 'slow', rate: 0.7 },
@@ -44,12 +46,12 @@ const SPEEDS: Array<{ name: string; rate: number }> = [
   { name: 'fast', rate: 1.0 },
 ]
 
-// Parse --lang flag (defaults to 'es')
+// Parse --lang flag (defaults to 'es-ES'); treated as an opaque locale string
 const langArg = process.argv.find(a => a.startsWith('--lang='))
-const lang = langArg ? langArg.split('=')[1] : 'es'
+const lang = langArg ? langArg.split('=')[1] : 'es-ES'
 
-if (!['es', 'pt'].includes(lang)) {
-  console.error(`Error: unsupported language "${lang}". Use --lang=es or --lang=pt`)
+if (!VOICE_IDS[lang]) {
+  console.error(`Error: unsupported locale "${lang}". Supported: ${Object.keys(VOICE_IDS).join(', ')}`)
   process.exit(1)
 }
 
@@ -63,15 +65,20 @@ if (!['phrase', 'response', 'all'].includes(type)) {
 }
 
 const VOICE_ID = VOICE_IDS[lang]
-const dataFile = DATA_FILES[lang]
 
 const audioDir = join(ROOT, 'public', 'audio')
 if (!existsSync(audioDir)) {
   mkdirSync(audioDir, { recursive: true })
 }
 
-const data: PromptsData = JSON.parse(readFileSync(dataFile, 'utf-8'))
-const allPrompts = data.scenarios.flatMap(s => s.prompts)
+const data: PromptsData = JSON.parse(readFileSync(DATA_FILE, 'utf-8'))
+// Availability rule: select prompts where translations[lang] exists and practiceAsTarget !== false
+const allPrompts = data.scenarios
+  .flatMap(s => s.prompts)
+  .filter(p => {
+    const t = p.translations[lang]
+    return t != null && t.practiceAsTarget !== false
+  })
 
 async function generateAudio(promptId: string, text: string, speed: string, rate: number) {
   const outputPath = join(audioDir, `${promptId}-${speed}.mp3`)
@@ -114,22 +121,23 @@ async function main() {
   const generatePhrases = type === 'phrase' || type === 'all'
   const generateResponses = type === 'response' || type === 'all'
 
-  console.log(`Language: ${lang} | Voice: ${VOICE_ID} | Type: ${type}`)
+  console.log(`Locale: ${lang} | Voice: ${VOICE_ID} | Type: ${type}`)
   console.log(`Generating audio for ${allPrompts.length} prompts × ${SPEEDS.length} speeds...`)
   console.log(`Output directory: ${audioDir}\n`)
 
   for (const prompt of allPrompts) {
+    const t = prompt.translations[lang]
     if (generatePhrases) {
-      console.log(`[${prompt.id}] phrase: "${prompt.phrase}"`)
+      console.log(`[${prompt.id}] phrase: "${t.phrase}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(prompt.id, prompt.phrase, speed.name, speed.rate)
+        await generateAudio(prompt.id, t.phrase, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }
     if (generateResponses) {
-      console.log(`[${prompt.id}] response: "${prompt.yourResponse}"`)
+      console.log(`[${prompt.id}] response: "${t.response}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(`${prompt.id}-response`, prompt.yourResponse, speed.name, speed.rate)
+        await generateAudio(`${prompt.id}-response`, t.response, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }

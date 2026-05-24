@@ -7,64 +7,137 @@
       "color": "#c0392b",
       "prompts": [
         {
-          "id": "panic-001",
-          "phrase": "Alguien dice algo que casi entiendes",
-          "english": "Someone says something you almost understood",
-          "context": "You caught most of it but need another pass",
-          "yourResponse": "¿Puedes repetir eso, por favor?",
-          "yourResponseEnglish": "Can you repeat that, please?",
-          "tags": ["panic", "comprehension"],
-          "difficulty": 1
+          "id": "es-panic-001",
+          "tags": [
+            "panic",
+            "comprehension"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "You caught most of it but need another pass"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Alguien dice algo que casi entiendes",
+              "response": "¿Puedes repetir eso, por favor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Someone says something you almost understood",
+              "response": "Can you repeat that, please?"
+            }
+          }
         },
         {
-          "id": "panic-002",
-          "phrase": "Alguien habla demasiado rápido",
-          "english": "Someone is speaking too fast",
-          "context": "The words are there but the speed is killing you",
-          "yourResponse": "¿Puedes hablar más despacio, por favor?",
-          "yourResponseEnglish": "Can you speak more slowly, please?",
-          "tags": ["panic", "comprehension"],
-          "difficulty": 1
+          "id": "es-panic-002",
+          "tags": [
+            "panic",
+            "comprehension"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "The words are there but the speed is killing you"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Alguien habla demasiado rápido",
+              "response": "¿Puedes hablar más despacio, por favor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Someone is speaking too fast",
+              "response": "Can you speak more slowly, please?"
+            }
+          }
         },
         {
-          "id": "panic-003",
-          "phrase": "Estás a mitad de conversación y te pierdes",
-          "english": "You're mid-conversation and completely lost",
-          "context": "You've gone in over your head",
-          "yourResponse": "Perdona, mi español aún no es muy bueno.",
-          "yourResponseEnglish": "Sorry, my Spanish is not very good yet.",
-          "tags": ["panic", "apology"],
-          "difficulty": 2
+          "id": "es-panic-003",
+          "tags": [
+            "panic",
+            "apology"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "You've gone in over your head"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Estás a mitad de conversación y te pierdes",
+              "response": "Perdona, mi español aún no es muy bueno.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You're mid-conversation and completely lost",
+              "response": "Sorry, my Spanish is not very good yet."
+            }
+          }
         },
         {
-          "id": "panic-004",
-          "phrase": "No entiendes una palabra clave",
-          "english": "You didn't catch a key word",
-          "context": "One word is blocking the whole meaning",
-          "yourResponse": "¿Qué quiere decir [palabra]?",
-          "yourResponseEnglish": "What does [word] mean?",
-          "tags": ["panic", "vocabulary"],
-          "difficulty": 1
+          "id": "es-panic-004",
+          "tags": [
+            "panic",
+            "vocabulary"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "One word is blocking the whole meaning"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No entiendes una palabra clave",
+              "response": "¿Qué quiere decir [palabra]?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You didn't catch a key word",
+              "response": "What does [word] mean?"
+            }
+          }
         },
         {
-          "id": "panic-005",
-          "phrase": "Necesitas que alguien lo escriba",
-          "english": "You need them to write it down",
-          "context": "Hearing it isn't working, you need to see it",
-          "yourResponse": "¿Puedes escribirlo, por favor?",
-          "yourResponseEnglish": "Can you write it down, please?",
-          "tags": ["panic", "comprehension"],
-          "difficulty": 2
+          "id": "es-panic-005",
+          "tags": [
+            "panic",
+            "comprehension"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Hearing it isn't working, you need to see it"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Necesitas que alguien lo escriba",
+              "response": "¿Puedes escribirlo, por favor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You need them to write it down",
+              "response": "Can you write it down, please?"
+            }
+          }
         },
         {
-          "id": "panic-006",
-          "phrase": "Alguien te habla y no entiendes nada",
-          "english": "Someone speaks to you and you understand nothing",
-          "context": "Complete blank — full restart needed",
-          "yourResponse": "Perdona, no entiendo. ¿Hablas inglés?",
-          "yourResponseEnglish": "Sorry, I don't understand. Do you speak English?",
-          "tags": ["panic", "english", "apology"],
-          "difficulty": 3
+          "id": "es-panic-006",
+          "tags": [
+            "panic",
+            "english",
+            "apology"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Complete blank — full restart needed"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Alguien te habla y no entiendes nada",
+              "response": "Perdona, no entiendo. ¿Hablas inglés?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Someone speaks to you and you understand nothing",
+              "response": "Sorry, I don't understand. Do you speak English?"
+            }
+          }
         }
       ]
     },
@@ -74,27 +147,804 @@
       "icon": "👋",
       "color": "#6366F1",
       "prompts": [
-        { "id": "greet-001", "phrase": "¡Buenas!", "english": "Hi! / Hello!", "context": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain", "yourResponse": "¡Buenas! ¿Qué tal?", "yourResponseEnglish": "Hi! How's it going?", "tags": ["greeting"], "difficulty": 1 },
-        { "id": "greet-002", "phrase": "¡Buenos días! ¿En qué os puedo ayudar?", "english": "Good morning! How can I help you?", "context": "Shop or office worker greeting you in the morning", "yourResponse": "Buenos días. Estamos buscando...", "yourResponseEnglish": "Good morning. We're looking for...", "tags": ["greeting", "morning"], "difficulty": 1 },
-        { "id": "greet-003", "phrase": "¿Qué tal? ¿Todo bien?", "english": "How's it going? All good?", "context": "Friendly local or shopkeeper doing a casual check-in", "yourResponse": "Bien, gracias. ¿Y tú?", "yourResponseEnglish": "Good, thanks. And you?", "tags": ["greeting", "small-talk"], "difficulty": 1 },
-        { "id": "greet-004", "phrase": "¡Bienvenidos a Barcelona!", "english": "Welcome to Barcelona!", "context": "Host, tour guide, or hotel staff welcoming you on arrival", "yourResponse": "¡Gracias! Estamos muy contentos de estar aquí.", "yourResponseEnglish": "Thanks! We're really happy to be here.", "tags": ["greeting", "arrival"], "difficulty": 1 },
-        { "id": "greet-005", "phrase": "¡Encantado!", "english": "Pleased to meet you!", "context": "Someone greeting you after being introduced", "yourResponse": "¡Encantado, igualmente!", "yourResponseEnglish": "Pleased to meet you, likewise!", "tags": ["introduction"], "difficulty": 1 },
-        { "id": "greet-006", "phrase": "¿De dónde sois?", "english": "Where are you from?", "context": "Friendly local making small talk", "yourResponse": "Somos de Estados Unidos, de Colorado. ¿Y tú eres de aquí?", "yourResponseEnglish": "We're from the US, from Colorado. And are you from here?", "tags": ["small-talk"], "difficulty": 1 },
-        { "id": "greet-007", "phrase": "¿Habláis español?", "english": "Do you speak Spanish?", "context": "Local checking before launching into Spanish", "yourResponse": "Un poco, sí. Estoy aprendiendo.", "yourResponseEnglish": "A little, yes. I'm learning.", "tags": ["language", "small-talk"], "difficulty": 1 },
-        { "id": "greet-008", "phrase": "No te preocupes, puedo hablar en inglés.", "english": "Don't worry, I can speak in English.", "context": "A helpful local offering to switch languages", "yourResponse": "¡Muchas gracias, muy amable!", "yourResponseEnglish": "Thank you so much, very kind!", "tags": ["language"], "difficulty": 1 },
-        { "id": "greet-009", "phrase": "No hablo inglés, lo siento.", "english": "I don't speak English, sorry.", "context": "Local letting you know they can't switch to English", "yourResponse": "No pasa nada, lo intentamos en español.", "yourResponseEnglish": "No worries, we'll try in Spanish.", "tags": ["language"], "difficulty": 1 },
-        { "id": "greet-010", "phrase": "Perdona, ¿me puedes ayudar un momento?", "english": "Excuse me, can you help me for a moment?", "context": "Someone approaching you on the street to ask for help", "yourResponse": "Claro, aunque no hablo mucho español.", "yourResponseEnglish": "Sure, though I don't speak much Spanish.", "tags": ["courtesy", "small-talk"], "difficulty": 2 },
-        { "id": "greet-011", "phrase": "Con permiso.", "english": "Excuse me. / Coming through.", "context": "Someone squeezing past you in a narrow space or crowd", "yourResponse": "Claro, adelante.", "yourResponseEnglish": "Of course, go ahead.", "tags": ["courtesy"], "difficulty": 1 },
-        { "id": "greet-012", "phrase": "De nada, para eso estamos.", "english": "You're welcome, that's what we're here for.", "context": "After you thank someone for their help", "yourResponse": "Venga, hasta luego.", "yourResponseEnglish": "Alright, see you later.", "tags": ["courtesy"], "difficulty": 1 },
-        { "id": "greet-013", "phrase": "¡Hasta luego! ¡Que lo paséis bien!", "english": "See you later! Have a good time!", "context": "Friendly farewell from a shopkeeper or local", "yourResponse": "¡Igualmente! ¡Hasta luego!", "yourResponseEnglish": "Likewise! See you later!", "tags": ["farewell"], "difficulty": 1 },
-        { "id": "greet-014", "phrase": "¡Buen fin de semana!", "english": "Have a good weekend!", "context": "End-of-week farewell from a shopkeeper or neighbor", "yourResponse": "¡Igualmente! ¡Buen fin de semana!", "yourResponseEnglish": "Likewise! Have a good weekend!", "tags": ["farewell", "small-talk"], "difficulty": 1 },
-        { "id": "greet-015", "phrase": "¡Qué calor hace hoy!, ¿eh?", "english": "It's so hot today, isn't it!", "context": "Stranger making small talk about the weather", "yourResponse": "¡Sí, muchísimo! Pero el tiempo es precioso.", "yourResponseEnglish": "Yes, really hot! But the weather is gorgeous.", "tags": ["small-talk"], "difficulty": 1 },
-        { "id": "greet-016", "phrase": "Perdona, parles català?", "english": "Excuse me, do you speak Catalan?", "context": "Someone in Barcelona addressing you in Catalan first", "yourResponse": "No, lo siento. ¿Hablamos en español?", "yourResponseEnglish": "No, sorry. Shall we speak in Spanish?", "tags": ["language", "catalan"], "difficulty": 2 },        
-        { "id": "greet-017", "phrase": "Pasas por una calle estrecha y hay gente en medio.", "english": "You're walking down a narrow street and there are people in the way.", "context": "Squeezing past people on a narrow El Born street", "yourResponse": "Perdón.", "yourResponseEnglish": "Excuse me.", "tags": ["courtesy", "everyday"], "difficulty": 1 },
-        { "id": "greet-018", "phrase": "El metro está lleno y tienes que bajar en la próxima parada.", "english": "The metro is crowded and you need to get off at the next stop.", "context": "Getting off a crowded metro", "yourResponse": "Perdón, perdón.", "yourResponseEnglish": "Excuse me, excuse me.", "tags": ["courtesy", "transport"], "difficulty": 1 },
-        { "id": "greet-019", "phrase": "Quieres alcanzar algo en el supermercado y hay alguien delante.", "english": "You want to reach something at the supermarket and someone is in front.", "context": "Reaching past someone at the market", "yourResponse": "Con permiso.", "yourResponseEnglish": "With your permission / Excuse me.", "tags": ["courtesy", "everyday"], "difficulty": 1 },
-        { "id": "greet-020", "phrase": "Necesitas llamar la atención del camarero en un restaurante.", "english": "You need to get the waiter's attention at a restaurant.", "context": "Flagging down a server", "yourResponse": "Disculpe.", "yourResponseEnglish": "Excuse me.", "tags": ["courtesy", "restaurant"], "difficulty": 1 },
-        { "id": "greet-021", "phrase": "Chocas sin querer con alguien por la calle.", "english": "You accidentally bump into someone on the street.", "context": "Bumping into someone accidentally", "yourResponse": "Perdón, lo siento.", "yourResponseEnglish": "Sorry, I'm sorry.", "tags": ["courtesy", "everyday"], "difficulty": 1 }        
+        {
+          "id": "es-greet-001",
+          "tags": [
+            "greeting"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Buenas!",
+              "response": "¡Buenas! ¿Qué tal?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Hi! / Hello!",
+              "response": "Hi! How's it going?"
+            }
+          }
+        },
+        {
+          "id": "es-greet-002",
+          "tags": [
+            "greeting",
+            "morning"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shop or office worker greeting you in the morning"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Buenos días! ¿En qué os puedo ayudar?",
+              "response": "Buenos días. Estamos buscando...",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good morning! How can I help you?",
+              "response": "Good morning. We're looking for..."
+            }
+          }
+        },
+        {
+          "id": "es-greet-003",
+          "tags": [
+            "greeting",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Friendly local or shopkeeper doing a casual check-in"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Qué tal? ¿Todo bien?",
+              "response": "Bien, gracias. ¿Y tú?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "How's it going? All good?",
+              "response": "Good, thanks. And you?"
+            }
+          }
+        },
+        {
+          "id": "es-greet-004",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host, tour guide, or hotel staff welcoming you on arrival"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Bienvenidos a Barcelona!",
+              "response": "¡Gracias! Estamos muy contentos de estar aquí.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Welcome to Barcelona!",
+              "response": "Thanks! We're really happy to be here."
+            }
+          }
+        },
+        {
+          "id": "es-greet-005",
+          "tags": [
+            "introduction"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone greeting you after being introduced"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Encantado!",
+              "response": "¡Encantado, igualmente!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Pleased to meet you!",
+              "response": "Pleased to meet you, likewise!"
+            }
+          }
+        },
+        {
+          "id": "es-greet-006",
+          "tags": [
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Friendly local making small talk"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿De dónde sois?",
+              "response": "Somos de Estados Unidos, de Colorado. ¿Y tú eres de aquí?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Where are you from?",
+              "response": "We're from the US, from Colorado. And are you from here?"
+            }
+          }
+        },
+        {
+          "id": "es-greet-007",
+          "tags": [
+            "language",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Local checking before launching into Spanish"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Habláis español?",
+              "response": "Un poco, sí. Estoy aprendiendo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you speak Spanish?",
+              "response": "A little, yes. I'm learning."
+            }
+          }
+        },
+        {
+          "id": "es-greet-008",
+          "tags": [
+            "language"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "A helpful local offering to switch languages"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No te preocupes, puedo hablar en inglés.",
+              "response": "¡Muchas gracias, muy amable!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Don't worry, I can speak in English.",
+              "response": "Thank you so much, very kind!"
+            }
+          }
+        },
+        {
+          "id": "es-greet-009",
+          "tags": [
+            "language"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Local letting you know they can't switch to English"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No hablo inglés, lo siento.",
+              "response": "No pasa nada, lo intentamos en español.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "I don't speak English, sorry.",
+              "response": "No worries, we'll try in Spanish."
+            }
+          }
+        },
+        {
+          "id": "es-greet-010",
+          "tags": [
+            "courtesy",
+            "small-talk"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Someone approaching you on the street to ask for help"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Perdona, ¿me puedes ayudar un momento?",
+              "response": "Claro, aunque no hablo mucho español.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Excuse me, can you help me for a moment?",
+              "response": "Sure, though I don't speak much Spanish."
+            }
+          }
+        },
+        {
+          "id": "es-greet-011",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone squeezing past you in a narrow space or crowd"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Con permiso.",
+              "response": "Claro, adelante.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Excuse me. / Coming through.",
+              "response": "Of course, go ahead."
+            }
+          }
+        },
+        {
+          "id": "es-greet-012",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "After you thank someone for their help"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "De nada, para eso estamos.",
+              "response": "Venga, hasta luego.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You're welcome, that's what we're here for.",
+              "response": "Alright, see you later."
+            }
+          }
+        },
+        {
+          "id": "es-greet-013",
+          "tags": [
+            "farewell"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Friendly farewell from a shopkeeper or local"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Hasta luego! ¡Que lo paséis bien!",
+              "response": "¡Igualmente! ¡Hasta luego!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "See you later! Have a good time!",
+              "response": "Likewise! See you later!"
+            }
+          }
+        },
+        {
+          "id": "es-greet-014",
+          "tags": [
+            "farewell",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "End-of-week farewell from a shopkeeper or neighbor"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Buen fin de semana!",
+              "response": "¡Igualmente! ¡Buen fin de semana!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Have a good weekend!",
+              "response": "Likewise! Have a good weekend!"
+            }
+          }
+        },
+        {
+          "id": "es-greet-015",
+          "tags": [
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Stranger making small talk about the weather"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Qué calor hace hoy!, ¿eh?",
+              "response": "¡Sí, muchísimo! Pero el tiempo es precioso.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "It's so hot today, isn't it!",
+              "response": "Yes, really hot! But the weather is gorgeous."
+            }
+          }
+        },
+        {
+          "id": "es-greet-016",
+          "tags": [
+            "language",
+            "catalan"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Someone in Barcelona addressing you in Catalan first"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Perdona, parles català?",
+              "response": "No, lo siento. ¿Hablamos en español?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Excuse me, do you speak Catalan?",
+              "response": "No, sorry. Shall we speak in Spanish?"
+            }
+          }
+        },
+        {
+          "id": "es-greet-017",
+          "tags": [
+            "courtesy",
+            "everyday"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Squeezing past people on a narrow El Born street"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Pasas por una calle estrecha y hay gente en medio.",
+              "response": "Perdón.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You're walking down a narrow street and there are people in the way.",
+              "response": "Excuse me."
+            }
+          }
+        },
+        {
+          "id": "es-greet-018",
+          "tags": [
+            "courtesy",
+            "transport"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Getting off a crowded metro"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "El metro está lleno y tienes que bajar en la próxima parada.",
+              "response": "Perdón, perdón.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The metro is crowded and you need to get off at the next stop.",
+              "response": "Excuse me, excuse me."
+            }
+          }
+        },
+        {
+          "id": "es-greet-019",
+          "tags": [
+            "courtesy",
+            "everyday"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Reaching past someone at the market"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Quieres alcanzar algo en el supermercado y hay alguien delante.",
+              "response": "Con permiso.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You want to reach something at the supermarket and someone is in front.",
+              "response": "With your permission / Excuse me."
+            }
+          }
+        },
+        {
+          "id": "es-greet-020",
+          "tags": [
+            "courtesy",
+            "restaurant"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Flagging down a server"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Necesitas llamar la atención del camarero en un restaurante.",
+              "response": "Disculpe.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You need to get the waiter's attention at a restaurant.",
+              "response": "Excuse me."
+            }
+          }
+        },
+        {
+          "id": "es-greet-021",
+          "tags": [
+            "courtesy",
+            "everyday"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Bumping into someone accidentally"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Chocas sin querer con alguien por la calle.",
+              "response": "Perdón, lo siento.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You accidentally bump into someone on the street.",
+              "response": "Sorry, I'm sorry."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-001",
+          "tags": [
+            "greeting",
+            "morning"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shop or office worker greeting you in the morning"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Bom dia! Em que posso ajudá-lo?",
+              "response": "Bom dia! Estava à procura de...",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good morning! How can I help you?",
+              "response": "Good morning! I was looking for..."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-002",
+          "tags": [
+            "greeting",
+            "afternoon"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "A friendly local greeting you in the afternoon"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Boa tarde! Está tudo bem?",
+              "response": "Boa tarde! Tudo bem, obrigado. E o senhor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good afternoon! Is everything well?",
+              "response": "Good afternoon! All good, thanks. And yourself?"
+            }
+          }
+        },
+        {
+          "id": "pt-greet-003",
+          "tags": [
+            "greeting",
+            "evening",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Hotel or airport staff greeting you on arrival"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Boa noite! Bem-vindo a Portugal.",
+              "response": "Boa noite! Obrigado, estou muito contente por estar cá.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good evening! Welcome to Portugal.",
+              "response": "Good evening! Thank you, I'm very happy to be here."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-004",
+          "tags": [
+            "farewell"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shopkeeper or local saying goodbye"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Até logo! Tenha um bom dia.",
+              "response": "Igualmente! Até logo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Goodbye! Have a good day.",
+              "response": "Likewise! See you later."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-005",
+          "tags": [
+            "farewell"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone you'll be seeing again the next day"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Até amanhã!",
+              "response": "Até amanhã! Boa noite.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "See you tomorrow!",
+              "response": "See you tomorrow! Good night."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-006",
+          "tags": [
+            "farewell"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Friendly parting from a local or shopkeeper"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Cuide-se!",
+              "response": "Obrigado! O senhor também.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Take care!",
+              "response": "Thanks! You too."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-007",
+          "tags": [
+            "greeting",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "A friendly local or regular check-in"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Como está? Tudo bem?",
+              "response": "Tudo bem, obrigado. E o senhor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "How are you? Everything good?",
+              "response": "All good, thanks. And yourself?"
+            }
+          }
+        },
+        {
+          "id": "pt-greet-008",
+          "tags": [
+            "introduction"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Being introduced to someone for the first time"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Prazer em conhecê-lo!",
+              "response": "O prazer é meu!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Nice to meet you!",
+              "response": "The pleasure is mine!"
+            }
+          }
+        },
+        {
+          "id": "pt-greet-009",
+          "tags": [
+            "language",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "A local asking if you speak the language"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Fala português?",
+              "response": "Não, falo muito pouco português.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you speak Portuguese?",
+              "response": "No, I speak very little Portuguese."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-010",
+          "tags": [
+            "language"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "A helpful local offering to switch languages"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Não se preocupe, consigo falar um pouco de inglês.",
+              "response": "Obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Don't worry, I can speak a little English.",
+              "response": "Thank you."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-011",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone trying to get through a crowded space"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Com licença, posso passar?",
+              "response": "Claro, com certeza.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Excuse me, can I get past?",
+              "response": "Of course, go ahead."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-012",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Someone approaching you to ask for help or directions"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Desculpe o incómodo.",
+              "response": "Sem problema, mas não falo português.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Sorry to bother you.",
+              "response": "No problem, but I don't speak Portuguese."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-013",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "After you thank someone for their help"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "De nada! Não tem de quê.",
+              "response": "Até logo!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You're welcome! Don't mention it.",
+              "response": "See you later!"
+            }
+          }
+        },
+        {
+          "id": "pt-greet-014",
+          "tags": [
+            "courtesy",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone wishing you well before something important"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Boa sorte!",
+              "response": "Obrigado! Vou precisar.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good luck!",
+              "response": "Thanks! I'll need it."
+            }
+          }
+        },
+        {
+          "id": "pt-greet-015",
+          "tags": [
+            "farewell",
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "End-of-week farewell from a local or shopkeeper"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tenha um bom fim de semana!",
+              "response": "Igualmente! Bom fim de semana!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Have a good weekend!",
+              "response": "Likewise! Have a good weekend!"
+            }
+          }
+        },
+        {
+          "id": "pt-greet-016",
+          "tags": [
+            "language",
+            "courtesy"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Local responding that they don't speak English"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Não falo inglês.",
+              "response": "Ok, vou tentar!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "No, I don't speak English.",
+              "response": "Ok, I'll try!"
+            }
+          }
+        }
       ]
     },
     {
@@ -103,33 +953,605 @@
       "icon": "🍽️",
       "color": "#E85D3A",
       "prompts": [
-        { "id": "rest-001", "phrase": "¡Hola! ¿Para cuántos?", "english": "Hi! For how many?", "context": "Hostess greeting you at the door", "yourResponse": "Para cuatro, por favor.", "yourResponseEnglish": "For four, please.", "tags": ["greeting", "arrival"], "difficulty": 1 },
-        { "id": "rest-002", "phrase": "¿Tienen reserva?", "english": "Do you have a reservation?", "context": "Hostess at a busy restaurant", "yourResponse": "No, no tenemos reserva.", "yourResponseEnglish": "No, we don't have a reservation.", "tags": ["arrival"], "difficulty": 1 },
-        { "id": "rest-003", "phrase": "Ahora mismo no tenemos mesa. ¿Podéis esperar unos diez minutos?", "english": "We don't have a table right now. Can you wait about ten minutes?", "context": "Hostess when the restaurant is full", "yourResponse": "Sí, esperamos. Gracias.", "yourResponseEnglish": "Yes, we'll wait. Thanks.", "tags": ["arrival"], "difficulty": 2 },
-        { "id": "rest-004", "phrase": "¿Queréis sentaros dentro o en la terraza?", "english": "Do you want to sit inside or on the terrace?", "context": "Hostess offering seating options", "yourResponse": "En la terraza, por favor.", "yourResponseEnglish": "On the terrace, please.", "tags": ["arrival"], "difficulty": 2 },
-        { "id": "rest-005", "phrase": "¿Qué van a tomar?", "english": "What will you have?", "context": "Server taking your order", "yourResponse": "Para mí, el/la ___.", "yourResponseEnglish": "For me, the ___.", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "rest-006", "phrase": "¿Para beber?", "english": "To drink?", "context": "Server asking about drinks", "yourResponse": "Agua del grifo, por favor.", "yourResponseEnglish": "Tap water, please.", "tags": ["ordering", "drinks"], "difficulty": 1 },
-        { "id": "rest-007", "phrase": "¿Os pongo algo para picar mientras miráis la carta?", "english": "Shall I bring you something to nibble while you look at the menu?", "context": "Server offering starters while you decide", "yourResponse": "Sí, unas aceitunas y pan, por favor.", "yourResponseEnglish": "Yes, some olives and bread, please.", "tags": ["ordering"], "difficulty": 3 },
-        { "id": "rest-008", "phrase": "¿Todo bien? ¿Necesitáis algo más?", "english": "Everything good? Do you need anything else?", "context": "Server checking on your table", "yourResponse": "Todo bien, gracias.", "yourResponseEnglish": "All good, thanks.", "tags": ["mid-meal"], "difficulty": 2 },
         {
-          "id": "rest-009",
-          "phrase": "¿Queréis postre o café?",
-          "english": "Do you want dessert or coffee?",
-          "context": "Server after you finish eating",
-          "yourResponse": "No, gracias, solo la cuenta, por favor.",
-          "yourResponseEnglish": "No thank you, just the bill please.",
-          "tags": ["end-meal"],
-          "difficulty": 1
+          "id": "es-rest-001",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Hostess greeting you at the door"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Hola! ¿Para cuántos?",
+              "response": "Para cuatro, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Hi! For how many?",
+              "response": "For four, please."
+            }
+          }
         },
-        { "id": "rest-010", "phrase": "¿Van a querer el menú del día o a la carta?", "english": "Will you want the set menu or à la carte?", "context": "Server handing you menus", "yourResponse": "El menú del día, por favor.", "yourResponseEnglish": "The set menu, please.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "rest-011", "phrase": "El menú incluye primero, segundo y postre. ¿Qué queréis de primero?", "english": "The set menu includes first course, second course, and dessert. What do you want for the first course?", "context": "Server explaining the menú del día", "yourResponse": "De primero, la sopa. De segundo, el pollo.", "yourResponseEnglish": "For the first course, the soup. For the second, the chicken.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "rest-012", "phrase": "Lo siento, no nos queda. ¿Quieres otra cosa?", "english": "Sorry, we're out of that. Do you want something else?", "context": "Server when your choice is unavailable", "yourResponse": "Sí, necesitamos un momento, por favor", "yourResponseEnglish": "Yes, we need a moment please", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "rest-013", "phrase": "Aquí tenéis. ¡Que aproveche!", "english": "Here you go. Enjoy your meal!", "context": "Server bringing your food", "yourResponse": "¡Gracias!", "yourResponseEnglish": "Thanks!", "tags": ["mid-meal"], "difficulty": 1 },
-        { "id": "rest-014", "phrase": "¿Queréis la cuenta?", "english": "Do you want the bill?", "context": "Server when you look finished", "yourResponse": "Sí, la cuenta, por favor.", "yourResponseEnglish": "Yes, the bill, please.", "tags": ["end-meal", "payment"], "difficulty": 1 },
-        { "id": "rest-015", "phrase": "¿Junto o por separado?", "english": "Together or separate?", "context": "Server asking how to split the bill", "yourResponse": "Junto, por favor.", "yourResponseEnglish": "Together, please.", "tags": ["payment"], "difficulty": 1 },
-        { "id": "rest-016", "phrase": "¿Podéis pagar con el móvil? El datáfono no lee la tarjeta.", "english": "Can you pay with your phone? The card reader isn't reading the card.", "context": "Server when the card reader has issues", "yourResponse": "Sí, puedo pagar con el móvil, o también tengo efectivo.", "yourResponseEnglish": "Yes, I can pay with my phone, or I also have cash.", "tags": ["payment"], "difficulty": 3 },
-        { "id": "rest-017", "phrase": "¿Los niños quieren carta de niños o comen del menú normal?", "english": "Do the kids want the kids' menu or will they eat from the regular menu?", "context": "Server asking about your kids' orders", "yourResponse": "Del menú normal, gracias.", "yourResponseEnglish": "From the regular menu, thanks.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "rest-018", "phrase": "La terraza tiene un suplemento de un euro por bebida.", "english": "The terrace has a surcharge of one euro per drink.", "context": "Server informing you about terrace pricing", "yourResponse": "Vale, no pasa nada.", "yourResponseEnglish": "OK, no problem.", "tags": ["arrival", "payment"], "difficulty": 2 }        
+        {
+          "id": "es-rest-002",
+          "tags": [
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Hostess at a busy restaurant"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Tienen reserva?",
+              "response": "No, no tenemos reserva.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have a reservation?",
+              "response": "No, we don't have a reservation."
+            }
+          }
+        },
+        {
+          "id": "es-rest-003",
+          "tags": [
+            "arrival"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Hostess when the restaurant is full"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Ahora mismo no tenemos mesa. ¿Podéis esperar unos diez minutos?",
+              "response": "Sí, esperamos. Gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We don't have a table right now. Can you wait about ten minutes?",
+              "response": "Yes, we'll wait. Thanks."
+            }
+          }
+        },
+        {
+          "id": "es-rest-004",
+          "tags": [
+            "arrival"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Hostess offering seating options"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Queréis sentaros dentro o en la terraza?",
+              "response": "En la terraza, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want to sit inside or on the terrace?",
+              "response": "On the terrace, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-005",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server taking your order"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Qué van a tomar?",
+              "response": "Para mí, el/la ___.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What will you have?",
+              "response": "For me, the ___."
+            }
+          }
+        },
+        {
+          "id": "es-rest-006",
+          "tags": [
+            "ordering",
+            "drinks"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server asking about drinks"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Para beber?",
+              "response": "Agua del grifo, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "To drink?",
+              "response": "Tap water, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-007",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Server offering starters while you decide"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Os pongo algo para picar mientras miráis la carta?",
+              "response": "Sí, unas aceitunas y pan, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Shall I bring you something to nibble while you look at the menu?",
+              "response": "Yes, some olives and bread, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-008",
+          "tags": [
+            "mid-meal"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server checking on your table"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Todo bien? ¿Necesitáis algo más?",
+              "response": "Todo bien, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Everything good? Do you need anything else?",
+              "response": "All good, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-rest-009",
+          "tags": [
+            "end-meal"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server after you finish eating"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Queréis postre o café?",
+              "response": "No, gracias, solo la cuenta, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want dessert or coffee?",
+              "response": "No thank you, just the bill please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-010",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server handing you menus"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Van a querer el menú del día o a la carta?",
+              "response": "El menú del día, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Will you want the set menu or à la carte?",
+              "response": "The set menu, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-011",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server explaining the menú del día"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "El menú incluye primero, segundo y postre. ¿Qué queréis de primero?",
+              "response": "De primero, la sopa. De segundo, el pollo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The set menu includes first course, second course, and dessert. What do you want for the first course?",
+              "response": "For the first course, the soup. For the second, the chicken."
+            }
+          }
+        },
+        {
+          "id": "es-rest-012",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server when your choice is unavailable"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Lo siento, no nos queda. ¿Quieres otra cosa?",
+              "response": "Sí, necesitamos un momento, por favor",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Sorry, we're out of that. Do you want something else?",
+              "response": "Yes, we need a moment please"
+            }
+          }
+        },
+        {
+          "id": "es-rest-013",
+          "tags": [
+            "mid-meal"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server bringing your food"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Aquí tenéis. ¡Que aproveche!",
+              "response": "¡Gracias!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Here you go. Enjoy your meal!",
+              "response": "Thanks!"
+            }
+          }
+        },
+        {
+          "id": "es-rest-014",
+          "tags": [
+            "end-meal",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server when you look finished"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Queréis la cuenta?",
+              "response": "Sí, la cuenta, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want the bill?",
+              "response": "Yes, the bill, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-015",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Server asking how to split the bill"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Junto o por separado?",
+              "response": "Junto, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Together or separate?",
+              "response": "Together, please."
+            }
+          }
+        },
+        {
+          "id": "es-rest-016",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Server when the card reader has issues"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Podéis pagar con el móvil? El datáfono no lee la tarjeta.",
+              "response": "Sí, puedo pagar con el móvil, o también tengo efectivo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Can you pay with your phone? The card reader isn't reading the card.",
+              "response": "Yes, I can pay with my phone, or I also have cash."
+            }
+          }
+        },
+        {
+          "id": "es-rest-017",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server asking about your kids' orders"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Los niños quieren carta de niños o comen del menú normal?",
+              "response": "Del menú normal, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do the kids want the kids' menu or will they eat from the regular menu?",
+              "response": "From the regular menu, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-rest-018",
+          "tags": [
+            "arrival",
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server informing you about terrace pricing"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "La terraza tiene un suplemento de un euro por bebida.",
+              "response": "Vale, no pasa nada.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The terrace has a surcharge of one euro per drink.",
+              "response": "OK, no problem."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-001",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Hostess asking if you have a reservation when walking in"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Têm reserva?",
+              "response": "Não temos reserva. Têm mesa para quatro pessoas?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have a reservation?",
+              "response": "We don't have a reservation. Do you have a table for four?"
+            }
+          }
+        },
+        {
+          "id": "pt-rest-002",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Hostess checking your reservation"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "A mesa está reservada em nome de quem?",
+              "response": "Está em nome de [nome].",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What name is the reservation under?",
+              "response": "It's under the name [name]."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-003",
+          "tags": [
+            "ordering",
+            "drinks"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter asking for your drink order"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Para beber?",
+              "response": "Água, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "To drink?",
+              "response": "Water, please."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-004",
+          "tags": [
+            "ordering",
+            "drinks"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter following up on your water order"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Com gás ou sem gás?",
+              "response": "Sem gás, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Sparkling or still?",
+              "response": "Still, please."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-005",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter taking your order"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Já escolheram o que vão querer?",
+              "response": "Ainda não. Pode dar-nos mais um minuto?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Have you decided what you'll have?",
+              "response": "Not yet. Can you give us another minute?"
+            }
+          }
+        },
+        {
+          "id": "pt-rest-006",
+          "tags": [
+            "ordering",
+            "specials"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Waiter presenting the daily special"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Hoje temos bacalhau à brás como sugestão do chef.",
+              "response": "Interessante. Pode dar-nos um momento para decidir?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Today we have bacalhau à brás as the chef's suggestion.",
+              "response": "Interesting. Can you give us a moment to decide?"
+            }
+          }
+        },
+        {
+          "id": "pt-rest-007",
+          "tags": [
+            "mid-meal"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter checking in mid-meal"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Está tudo bem com a refeição?",
+              "response": "Sim, está ótimo, obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Is everything alright with your meal?",
+              "response": "Yes, it's great, thanks."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-008",
+          "tags": [
+            "end-meal"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter after the main course"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Deseja sobremesa ou café?",
+              "response": "Só uma meia de leite, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Would you like dessert or coffee?",
+              "response": "Just a coffee with milk, please."
+            }
+          }
+        },
+        {
+          "id": "pt-rest-009",
+          "tags": [
+            "end-meal",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "You proactively asking for the bill — in Portugal waiters won't bring it until you ask"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Pode trazer a conta, por favor?",
+              "response": "Pode trazer a conta, por favor?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Can you bring the bill, please?",
+              "response": "Can you bring the bill, please?"
+            }
+          }
+        },
+        {
+          "id": "pt-rest-010",
+          "tags": [
+            "end-meal",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Waiter at the end of the meal"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Querem a conta juntos ou separada?",
+              "response": "Pode ser juntos, obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want the bill together or split?",
+              "response": "Together is fine, thanks."
+            }
+          }
+        }
       ]
     },
     {
@@ -138,21 +1560,537 @@
       "icon": "🛒",
       "color": "#4CAF50",
       "prompts": [
-        { "id": "groc-001", "phrase": "¡Buenos días! ¿Qué te pongo?", "english": "Good morning! What can I get you?", "context": "Deli counter worker", "yourResponse": "Ponme doscientos gramos de jamón.", "yourResponseEnglish": "Give me two hundred grams of ham.", "tags": ["greeting", "ordering"], "difficulty": 1 },
-        { "id": "groc-002", "phrase": "¿Algo más?", "english": "Anything else?", "context": "Any counter or checkout", "yourResponse": "No, eso es todo. Gracias.", "yourResponseEnglish": "No, that's everything. Thanks.", "tags": ["checkout"], "difficulty": 1 },
-        { "id": "groc-003", "phrase": "¿Quieres bolsa?", "english": "Do you want a bag?", "context": "Cashier at checkout", "yourResponse": "Sí, una bolsa, por favor.", "yourResponseEnglish": "Yes, a bag, please.", "tags": ["checkout"], "difficulty": 1 },
-        { "id": "groc-004", "phrase": "Son doce con cincuenta.", "english": "That's twelve fifty.", "context": "Cashier telling you the total", "yourResponse": "¿Se puede pagar con tarjeta?", "yourResponseEnglish": "Can I pay by card?", "tags": ["payment", "checkout"], "difficulty": 1 },
-        { "id": "groc-005", "phrase": "¿Tienes la tarjeta de cliente?", "english": "Do you have a loyalty card?", "context": "Cashier at Mercadona, Bon Preu, or Caprabo", "yourResponse": "No, no tengo.", "yourResponseEnglish": "No, I don't have one.", "tags": ["checkout"], "difficulty": 1 },
-        { "id": "groc-006", "phrase": "El pago con tarjeta es a partir de cinco euros.", "english": "Card payment is from five euros up.", "context": "Cashier when your total is small", "yourResponse": "Vale, en efectivo entonces.", "yourResponseEnglish": "OK, cash then.", "tags": ["payment"], "difficulty": 2 },
-        { "id": "groc-007", "phrase": "¿Lo quieres cortado en lonchas o en un trozo?", "english": "Do you want it sliced or in one piece?", "context": "Deli counter for cheese or ham", "yourResponse": "En lonchas, por favor.", "yourResponseEnglish": "Sliced, please.", "tags": ["ordering"], "difficulty": 2 },
-        { "id": "groc-008", "phrase": "No tenemos. Prueba en la tienda de al lado.", "english": "We don't have that. Try the store next door.", "context": "When asking for a product", "yourResponse": "Vale, gracias.", "yourResponseEnglish": "OK, thanks.", "tags": ["navigation"], "difficulty": 2 },
-        { "id": "groc-009", "phrase": "¿Llevas la bolsa de casa o quieres una?", "english": "Did you bring a bag from home or do you want one?", "context": "Cashier — bags cost money in Spain", "yourResponse": "Necesito una, por favor.", "yourResponseEnglish": "I need one, please.", "tags": ["checkout"], "difficulty": 2 },
-        { "id": "groc-010", "phrase": "La fruta hay que pesarla antes de venir a caja.", "english": "You need to weigh the fruit before coming to checkout.", "context": "Cashier when you forgot to weigh produce", "yourResponse": "Perdona, ¿dónde está la báscula?", "yourResponseEnglish": "Sorry, where is the scale?", "tags": ["navigation", "produce"], "difficulty": 2 },
-        { "id": "groc-011", "phrase": "¿Quieres el ticket?", "english": "Do you want the receipt?", "context": "Cashier after payment", "yourResponse": "Sí, por favor.", "yourResponseEnglish": "Yes, please.", "tags": ["checkout"], "difficulty": 1 },
-        { "id": "groc-012", "phrase": "Son tres euros la bolsa.", "english": "The bag is three euros.", "context": "Cashier telling you bags aren't free", "yourResponse": "Vale, no pasa nada.", "yourResponseEnglish": "OK, no problem.", "tags": ["checkout", "payment"], "difficulty": 1 },
-        { "id": "groc-013", "phrase": "¿Cómo lo quieres, muy curado o tierno?", "english": "How do you want it, aged or mild?", "context": "Deli counter for cheese", "yourResponse": "Tierno, por favor.", "yourResponseEnglish": "Mild, please.", "tags": ["ordering"], "difficulty": 3 },
-        { "id": "groc-014", "phrase": "Introduce el PIN, por favor.", "english": "Enter your PIN, please.", "context": "Card reader at checkout", "yourResponse": "— (just enter PIN) —", "yourResponseEnglish": "— (just enter PIN) —", "tags": ["payment"], "difficulty": 1 },
-        { "id": "groc-015", "phrase": "¿Contactless o con chip?", "english": "Contactless or with chip?", "context": "Cashier asking about payment method", "yourResponse": "Contactless.", "yourResponseEnglish": "Contactless.", "tags": ["payment"], "difficulty": 1 }
+        {
+          "id": "es-groc-001",
+          "tags": [
+            "greeting",
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Deli counter worker"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Buenos días! ¿Qué te pongo?",
+              "response": "Ponme doscientos gramos de jamón.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Good morning! What can I get you?",
+              "response": "Give me two hundred grams of ham."
+            }
+          }
+        },
+        {
+          "id": "es-groc-002",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Any counter or checkout"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Algo más?",
+              "response": "No, eso es todo. Gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Anything else?",
+              "response": "No, that's everything. Thanks."
+            }
+          }
+        },
+        {
+          "id": "es-groc-003",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier at checkout"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Quieres bolsa?",
+              "response": "Sí, una bolsa, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want a bag?",
+              "response": "Yes, a bag, please."
+            }
+          }
+        },
+        {
+          "id": "es-groc-004",
+          "tags": [
+            "payment",
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier telling you the total"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Son doce con cincuenta.",
+              "response": "¿Se puede pagar con tarjeta?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That's twelve fifty.",
+              "response": "Can I pay by card?"
+            }
+          }
+        },
+        {
+          "id": "es-groc-005",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier at Mercadona, Bon Preu, or Caprabo"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Tienes la tarjeta de cliente?",
+              "response": "No, no tengo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have a loyalty card?",
+              "response": "No, I don't have one."
+            }
+          }
+        },
+        {
+          "id": "es-groc-006",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Cashier when your total is small"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "El pago con tarjeta es a partir de cinco euros.",
+              "response": "Vale, en efectivo entonces.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Card payment is from five euros up.",
+              "response": "OK, cash then."
+            }
+          }
+        },
+        {
+          "id": "es-groc-007",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Deli counter for cheese or ham"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Lo quieres cortado en lonchas o en un trozo?",
+              "response": "En lonchas, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want it sliced or in one piece?",
+              "response": "Sliced, please."
+            }
+          }
+        },
+        {
+          "id": "es-groc-008",
+          "tags": [
+            "navigation"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "When asking for a product"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No tenemos. Prueba en la tienda de al lado.",
+              "response": "Vale, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We don't have that. Try the store next door.",
+              "response": "OK, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-groc-009",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Cashier — bags cost money in Spain"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Llevas la bolsa de casa o quieres una?",
+              "response": "Necesito una, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Did you bring a bag from home or do you want one?",
+              "response": "I need one, please."
+            }
+          }
+        },
+        {
+          "id": "es-groc-010",
+          "tags": [
+            "navigation",
+            "produce"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Cashier when you forgot to weigh produce"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "La fruta hay que pesarla antes de venir a caja.",
+              "response": "Perdona, ¿dónde está la báscula?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You need to weigh the fruit before coming to checkout.",
+              "response": "Sorry, where is the scale?"
+            }
+          }
+        },
+        {
+          "id": "es-groc-011",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier after payment"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Quieres el ticket?",
+              "response": "Sí, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want the receipt?",
+              "response": "Yes, please."
+            }
+          }
+        },
+        {
+          "id": "es-groc-012",
+          "tags": [
+            "checkout",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier telling you bags aren't free"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Son tres euros la bolsa.",
+              "response": "Vale, no pasa nada.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The bag is three euros.",
+              "response": "OK, no problem."
+            }
+          }
+        },
+        {
+          "id": "es-groc-013",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Deli counter for cheese"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Cómo lo quieres, muy curado o tierno?",
+              "response": "Tierno, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "How do you want it, aged or mild?",
+              "response": "Mild, please."
+            }
+          }
+        },
+        {
+          "id": "es-groc-014",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Card reader at checkout"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Introduce el PIN, por favor.",
+              "response": "— (just enter PIN) —",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Enter your PIN, please.",
+              "response": "— (just enter PIN) —"
+            }
+          }
+        },
+        {
+          "id": "es-groc-015",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier asking about payment method"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Contactless o con chip?",
+              "response": "Contactless.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Contactless or with chip?",
+              "response": "Contactless."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-001",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier asking at checkout — very common at Pingo Doce and other chains"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tem cartão de fidelidade?",
+              "response": "Não tenho, obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have a loyalty card?",
+              "response": "I don't have one, thanks."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-002",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier asking about bags — bags cost €0.10–€0.20 by law"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Quer saco?",
+              "response": "Sim, um saco, se faz favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want a bag?",
+              "response": "Yes, one bag please."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-003",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Cashier asking if you want a fiscal receipt — part of Portugal's national tax lottery system"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Quer fatura?",
+              "response": "Sim, mas não tenho NIF.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want a receipt/invoice?",
+              "response": "Yes, but I don't have a NIF."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-004",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier asking if you have exact change — cash culture is still strong in Portugal"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tem moedas?",
+              "response": "Não tenho, desculpe.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have coins?",
+              "response": "I don't, sorry."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-005",
+          "tags": [
+            "checkout",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier directing you to pay by card"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Pode passar o cartão.",
+              "response": "Posso pagar por contactless?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You can tap or swipe your card.",
+              "response": "Can I pay contactless?"
+            }
+          }
+        },
+        {
+          "id": "pt-groc-006",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier or sign indicating a register is not open"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Esta caixa está fechada.",
+              "response": "Ah, desculpe. Qual está aberta?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This checkout is closed.",
+              "response": "Oh, sorry. Which one is open?"
+            }
+          }
+        },
+        {
+          "id": "pt-groc-007",
+          "tags": [
+            "floor"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Store employee approaching you on the shop floor"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Precisa de ajuda?",
+              "response": "Estou só a ver, obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you need help?",
+              "response": "Just looking, thanks."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-008",
+          "tags": [
+            "promotions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Store employee pointing out a deal"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Esta fruta está em promoção até ao fim da semana.",
+              "response": "Então levo um quilo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This fruit is on offer until the end of the week.",
+              "response": "Then I'll take a kilo."
+            }
+          }
+        },
+        {
+          "id": "pt-groc-009",
+          "tags": [
+            "stock"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Store employee about an unavailable item"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Esse produto não está disponível neste momento.",
+              "response": "Quando esperam ter mais?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That product is currently out of stock.",
+              "response": "When do you expect to have more?"
+            }
+          }
+        },
+        {
+          "id": "pt-groc-010",
+          "tags": [
+            "checkout",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Cashier stating your total"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "São cinquenta euros, por favor.",
+              "response": "Aqui tem.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That's fifty euros, please.",
+              "response": "Here you go."
+            }
+          }
+        }
       ]
     },
     {
@@ -161,13 +2099,310 @@
       "icon": "🚶",
       "color": "#2196F3",
       "prompts": [
-        { "id": "around-001", "phrase": "Sigue todo recto y luego a la derecha.", "english": "Go straight ahead and then to the right.", "context": "Someone giving you directions", "yourResponse": "Gracias. ¿Está lejos?", "yourResponseEnglish": "Thanks. Is it far?", "tags": ["directions"], "difficulty": 2 },
-        { "id": "around-002", "phrase": "Está a unos diez minutos andando.", "english": "It's about a ten minute walk.", "context": "After asking how far something is", "yourResponse": "Perfecto, gracias.", "yourResponseEnglish": "Perfect, thanks.", "tags": ["directions", "distance"], "difficulty": 1 },
-        { "id": "around-003", "phrase": "¿Adónde vais?", "english": "Where are you going?", "context": "Taxi driver when you get in", "yourResponse": "A esta dirección, por favor.", "yourResponseEnglish": "To this address, please.", "tags": ["taxi"], "difficulty": 1 },
-        { "id": "around-004", "phrase": "Con el tráfico van a ser unos veinte minutos.", "english": "With traffic it'll be about twenty minutes.", "context": "Taxi driver estimating trip time", "yourResponse": "Vale, no hay problema.", "yourResponseEnglish": "OK, no problem.", "tags": ["taxi", "time"], "difficulty": 2 },
-        { "id": "around-005", "phrase": "No puedo parar aquí. ¿Te dejo en la esquina?", "english": "I can't stop here. Shall I drop you at the corner?", "context": "Taxi driver near your destination", "yourResponse": "Sí, en la esquina está bien.", "yourResponseEnglish": "Yes, the corner is fine.", "tags": ["taxi"], "difficulty": 2 },
-        { "id": "around-006", "phrase": "Tiene que validar el billete antes de subir.", "english": "You have to validate the ticket before boarding.", "context": "Someone at a metro/bus station", "yourResponse": "Ah vale, gracias.", "yourResponseEnglish": "Oh right, thanks.", "tags": ["metro", "bus"], "difficulty": 2 },
-        { "id": "around-007", "phrase": "Esta línea no va allí. Tienes que hacer transbordo en Passeig de Gràcia.", "english": "This line doesn't go there. You have to transfer at Passeig de Gràcia.", "context": "Helpful stranger on the metro", "yourResponse": "Gracias. ¿En qué línea?", "yourResponseEnglish": "Thanks. Which line?", "tags": ["metro", "directions"], "difficulty": 3 }
+        {
+          "id": "es-around-001",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Someone giving you directions"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Sigue todo recto y luego a la derecha.",
+              "response": "Gracias. ¿Está lejos?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Go straight ahead and then to the right.",
+              "response": "Thanks. Is it far?"
+            }
+          }
+        },
+        {
+          "id": "es-around-002",
+          "tags": [
+            "directions",
+            "distance"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "After asking how far something is"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Está a unos diez minutos andando.",
+              "response": "Perfecto, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "It's about a ten minute walk.",
+              "response": "Perfect, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-around-003",
+          "tags": [
+            "taxi"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Taxi driver when you get in"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Adónde vais?",
+              "response": "A esta dirección, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Where are you going?",
+              "response": "To this address, please."
+            }
+          }
+        },
+        {
+          "id": "es-around-004",
+          "tags": [
+            "taxi",
+            "time"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Taxi driver estimating trip time"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Con el tráfico van a ser unos veinte minutos.",
+              "response": "Vale, no hay problema.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "With traffic it'll be about twenty minutes.",
+              "response": "OK, no problem."
+            }
+          }
+        },
+        {
+          "id": "es-around-005",
+          "tags": [
+            "taxi"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Taxi driver near your destination"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No puedo parar aquí. ¿Te dejo en la esquina?",
+              "response": "Sí, en la esquina está bien.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "I can't stop here. Shall I drop you at the corner?",
+              "response": "Yes, the corner is fine."
+            }
+          }
+        },
+        {
+          "id": "es-around-006",
+          "tags": [
+            "metro",
+            "bus"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Someone at a metro/bus station"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Tiene que validar el billete antes de subir.",
+              "response": "Ah vale, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You have to validate the ticket before boarding.",
+              "response": "Oh right, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-around-007",
+          "tags": [
+            "metro",
+            "directions"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Helpful stranger on the metro"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Esta línea no va allí. Tienes que hacer transbordo en Passeig de Gràcia.",
+              "response": "Gracias. ¿En qué línea?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This line doesn't go there. You have to transfer at Passeig de Gràcia.",
+              "response": "Thanks. Which line?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-001",
+          "tags": [
+            "transport",
+            "timing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Passenger at the bus stop"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O próximo autocarro demora cerca de vinte minutos.",
+              "response": "Obrigado. Há algum metro por perto?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The next bus is about twenty minutes away.",
+              "response": "Thanks. Is there a metro nearby?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-002",
+          "tags": [
+            "transport",
+            "metro"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Metro staff warning you"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tem de validar o passe antes de entrar na carruagem.",
+              "response": "Ah, desculpe. Onde é que valido?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You need to validate your pass before boarding the carriage.",
+              "response": "Oh, sorry. Where do I validate?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-003",
+          "tags": [
+            "directions",
+            "landmark"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Bus driver or fellow passenger informing you"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Esta paragem fica mesmo ao pé do Castelo de São Jorge.",
+              "response": "Perfeito, saio aqui então. Obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This stop is right next to Castelo de São Jorge.",
+              "response": "Perfect, I'll get off here then. Thanks."
+            }
+          }
+        },
+        {
+          "id": "pt-around-004",
+          "tags": [
+            "transport",
+            "delays"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "PA announcement at the metro station"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O metro está parado por avaria na linha verde.",
+              "response": "Quanto tempo vai demorar a retomar?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The metro has stopped due to a breakdown on the green line.",
+              "response": "How long until it starts again?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-005",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pedestrian giving you directions"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Vire à esquerda no segundo semáforo e siga em frente.",
+              "response": "Muito obrigado. Fica longe daqui?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Turn left at the second traffic lights and carry on straight.",
+              "response": "Many thanks. Is it far from here?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-006",
+          "tags": [
+            "transport",
+            "directions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Taxi driver warning about road conditions"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Há obras na Avenida da Liberdade, é melhor desviar.",
+              "response": "Então como é melhor ir?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "There are roadworks on Avenida da Liberdade, better to go around.",
+              "response": "So what's the best way to go?"
+            }
+          }
+        },
+        {
+          "id": "pt-around-007",
+          "tags": [
+            "transport",
+            "tram"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Local giving you transport advice"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O elétrico 28 passa aqui de dez em dez minutos.",
+              "response": "Ótimo, vou esperar então. Obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Tram 28 comes here every ten minutes.",
+              "response": "Great, I'll wait then. Thanks."
+            }
+          }
+        }
       ]
     },
     {
@@ -176,13 +2411,306 @@
       "icon": "🏠",
       "color": "#FF9800",
       "prompts": [
-        { "id": "checkin-001", "phrase": "¡Bienvenidos! ¿Qué tal el viaje?", "english": "Welcome! How was the trip?", "context": "Host greeting you at arrival", "yourResponse": "Bien, gracias. Estamos contentos de estar aquí.", "yourResponseEnglish": "Good, thanks. We're happy to be here.", "tags": ["greeting", "arrival"], "difficulty": 1 },
-        { "id": "checkin-002", "phrase": "Os enseño el piso. Por aquí.", "english": "I'll show you the apartment. This way.", "context": "Host giving you a tour", "yourResponse": "Perfecto, gracias.", "yourResponseEnglish": "Perfect, thanks.", "tags": ["arrival"], "difficulty": 1 },
-        { "id": "checkin-003", "phrase": "El wifi es este y la contraseña está en la nevera.", "english": "The wifi is this one and the password is on the fridge.", "context": "Host explaining the apartment", "yourResponse": "Genial, gracias.", "yourResponseEnglish": "Great, thanks.", "tags": ["info"], "difficulty": 2 },
-        { "id": "checkin-004", "phrase": "Si necesitáis algo, me escribís por WhatsApp.", "english": "If you need anything, message me on WhatsApp.", "context": "Host before leaving", "yourResponse": "Vale, perfecto. Muchas gracias.", "yourResponseEnglish": "OK, perfect. Many thanks.", "tags": ["contact"], "difficulty": 2 },
-        { "id": "checkin-005", "phrase": "Hay que bajar la basura al contenedor de la esquina.", "english": "You have to take the trash down to the bin on the corner.", "context": "Host explaining house rules", "yourResponse": "¿Cuál es el contenedor para reciclar?", "yourResponseEnglish": "Which bin is for recycling?", "tags": ["rules"], "difficulty": 2 },
-        { "id": "checkin-006", "phrase": "Los vecinos son mayores, así que por la noche sin ruido.", "english": "The neighbors are elderly, so no noise at night.", "context": "Host about building rules", "yourResponse": "Claro, no hay problema.", "yourResponseEnglish": "Of course, no problem.", "tags": ["rules"], "difficulty": 2 },
-        { "id": "checkin-007", "phrase": "¿A qué hora salís el último día?", "english": "What time are you leaving on the last day?", "context": "Host asking about checkout", "yourResponse": "Salimos por la mañana, sobre las diez.", "yourResponseEnglish": "We're leaving in the morning, around ten.", "tags": ["checkout", "time"], "difficulty": 2 }
+        {
+          "id": "es-checkin-001",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host greeting you at arrival"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Bienvenidos! ¿Qué tal el viaje?",
+              "response": "Bien, gracias. Estamos contentos de estar aquí.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Welcome! How was the trip?",
+              "response": "Good, thanks. We're happy to be here."
+            }
+          }
+        },
+        {
+          "id": "es-checkin-002",
+          "tags": [
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host giving you a tour"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Os enseño el piso. Por aquí.",
+              "response": "Perfecto, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "I'll show you the apartment. This way.",
+              "response": "Perfect, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-checkin-003",
+          "tags": [
+            "info"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host explaining the apartment"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "El wifi es este y la contraseña está en la nevera.",
+              "response": "Genial, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The wifi is this one and the password is on the fridge.",
+              "response": "Great, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-checkin-004",
+          "tags": [
+            "contact"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host before leaving"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Si necesitáis algo, me escribís por WhatsApp.",
+              "response": "Vale, perfecto. Muchas gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "If you need anything, message me on WhatsApp.",
+              "response": "OK, perfect. Many thanks."
+            }
+          }
+        },
+        {
+          "id": "es-checkin-005",
+          "tags": [
+            "rules"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host explaining house rules"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Hay que bajar la basura al contenedor de la esquina.",
+              "response": "¿Cuál es el contenedor para reciclar?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You have to take the trash down to the bin on the corner.",
+              "response": "Which bin is for recycling?"
+            }
+          }
+        },
+        {
+          "id": "es-checkin-006",
+          "tags": [
+            "rules"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host about building rules"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Los vecinos son mayores, así que por la noche sin ruido.",
+              "response": "Claro, no hay problema.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The neighbors are elderly, so no noise at night.",
+              "response": "Of course, no problem."
+            }
+          }
+        },
+        {
+          "id": "es-checkin-007",
+          "tags": [
+            "checkout",
+            "time"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host asking about checkout"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿A qué hora salís el último día?",
+              "response": "Salimos por la mañana, sobre las diez.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What time are you leaving on the last day?",
+              "response": "We're leaving in the morning, around ten."
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-001",
+          "tags": [
+            "check-in",
+            "timing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host explaining arrival time"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O check-in é a partir das três da tarde.",
+              "response": "Podemos deixar a bagagem antes?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Check-in is from three in the afternoon.",
+              "response": "Can we drop off our luggage early?"
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-002",
+          "tags": [
+            "check-in",
+            "access"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host giving access instructions"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "As chaves ficam na caixa de segurança junto à porta.",
+              "response": "Qual é o código da caixa?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The keys are in the lockbox next to the door.",
+              "response": "What's the code for the lockbox?"
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-003",
+          "tags": [
+            "amenities"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host providing connectivity details"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "A palavra-passe do Wi-Fi está num papel em cima da mesa.",
+              "response": "Obrigado. E tem Netflix?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The Wi-Fi password is on a piece of paper on the table.",
+              "response": "Thanks. Does it have Netflix?"
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-004",
+          "tags": [
+            "house-rules"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Host explaining waste separation"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O lixo separa-se neste contentor verde aqui fora.",
+              "response": "Está bem. E o papel vai para o contentor azul?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The rubbish is sorted in this green bin outside.",
+              "response": "OK. And paper goes in the blue bin?"
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-005",
+          "tags": [
+            "amenities"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host explaining how to request things"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Se precisar de toalhas extra, mande-me uma mensagem.",
+              "response": "Perfeito. Obrigado pela hospitalidade.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "If you need extra towels, send me a message.",
+              "response": "Perfect. Thanks for your hospitality."
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-006",
+          "tags": [
+            "amenities",
+            "house-rules"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Host showing you how to use the heating"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O aquecimento liga-se com o botão ao lado da janela.",
+              "response": "Obrigado. E funciona a gás ou elétrico?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The heating is turned on with the button next to the window.",
+              "response": "Thanks. Is it gas or electric?"
+            }
+          }
+        },
+        {
+          "id": "pt-checkin-007",
+          "tags": [
+            "check-out",
+            "timing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Host reminding you of departure time"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O check-out tem de ser antes das onze da manhã.",
+              "response": "Sim, saímos antes disso. Obrigado.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Check-out must be before eleven in the morning.",
+              "response": "Yes, we'll be out before then. Thanks."
+            }
+          }
+        }
       ]
     },
     {
@@ -191,12 +2719,266 @@
       "icon": "🛍️",
       "color": "#9C27B0",
       "prompts": [
-        { "id": "shop-001", "phrase": "¡Hola! ¿Te puedo ayudar en algo?", "english": "Hi! Can I help you with anything?", "context": "Shop assistant greeting you", "yourResponse": "Solo estoy mirando, gracias.", "yourResponseEnglish": "Just browsing, thanks.", "tags": ["greeting"], "difficulty": 1 },
-        { "id": "shop-002", "phrase": "¿Qué talla buscas?", "english": "What size are you looking for?", "context": "Clothing store assistant", "yourResponse": "La mediana, creo.", "yourResponseEnglish": "Medium, I think.", "tags": ["clothing"], "difficulty": 1 },
-        { "id": "shop-003", "phrase": "Los probadores están al fondo a la izquierda.", "english": "The fitting rooms are in the back on the left.", "context": "Shop assistant pointing the way", "yourResponse": "Gracias.", "yourResponseEnglish": "Thanks.", "tags": ["clothing", "directions"], "difficulty": 2 },
-        { "id": "shop-004", "phrase": "Esa está rebajada. Tiene un treinta por ciento de descuento.", "english": "That one's on sale. It's thirty percent off.", "context": "Shop assistant about an item", "yourResponse": "¡Qué bien! Me lo llevo.", "yourResponseEnglish": "Great! I'll take it.", "tags": ["sale", "payment"], "difficulty": 2 },
-        { "id": "shop-005", "phrase": "¿Lo quieres para regalo? ¿Te lo envuelvo?", "english": "Do you want it as a gift? Shall I wrap it?", "context": "Shop assistant at checkout", "yourResponse": "No hace falta, gracias.", "yourResponseEnglish": "No need, thanks.", "tags": ["checkout"], "difficulty": 2 },
-        { "id": "shop-006", "phrase": "Solo aceptamos efectivo.", "english": "We only accept cash.", "context": "Small shop owner", "yourResponse": "¿Hay un cajero cerca?", "yourResponseEnglish": "Is there an ATM nearby?", "tags": ["payment"], "difficulty": 1 }
+        {
+          "id": "es-shop-001",
+          "tags": [
+            "greeting"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shop assistant greeting you"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Hola! ¿Te puedo ayudar en algo?",
+              "response": "Solo estoy mirando, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Hi! Can I help you with anything?",
+              "response": "Just browsing, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-shop-002",
+          "tags": [
+            "clothing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Clothing store assistant"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Qué talla buscas?",
+              "response": "La mediana, creo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What size are you looking for?",
+              "response": "Medium, I think."
+            }
+          }
+        },
+        {
+          "id": "es-shop-003",
+          "tags": [
+            "clothing",
+            "directions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant pointing the way"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Los probadores están al fondo a la izquierda.",
+              "response": "Gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The fitting rooms are in the back on the left.",
+              "response": "Thanks."
+            }
+          }
+        },
+        {
+          "id": "es-shop-004",
+          "tags": [
+            "sale",
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant about an item"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Esa está rebajada. Tiene un treinta por ciento de descuento.",
+              "response": "¡Qué bien! Me lo llevo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That one's on sale. It's thirty percent off.",
+              "response": "Great! I'll take it."
+            }
+          }
+        },
+        {
+          "id": "es-shop-005",
+          "tags": [
+            "checkout"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant at checkout"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Lo quieres para regalo? ¿Te lo envuelvo?",
+              "response": "No hace falta, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want it as a gift? Shall I wrap it?",
+              "response": "No need, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-shop-006",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Small shop owner"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Solo aceptamos efectivo.",
+              "response": "¿Hay un cajero cerca?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We only accept cash.",
+              "response": "Is there an ATM nearby?"
+            }
+          }
+        },
+        {
+          "id": "pt-shop-001",
+          "tags": [
+            "shopping",
+            "fitting-room"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shop assistant offering the fitting room"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Quer experimentar no provador?",
+              "response": "Sim, por favor. Onde é o provador?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Would you like to try it on in the fitting room?",
+              "response": "Yes, please. Where is the fitting room?"
+            }
+          }
+        },
+        {
+          "id": "pt-shop-002",
+          "tags": [
+            "shopping",
+            "promotions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Shop assistant about the ongoing sale"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "As promoções terminam este fim de semana.",
+              "response": "Então aproveito e levo mais um.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The sale ends this weekend.",
+              "response": "Then I'll take advantage and get another one."
+            }
+          }
+        },
+        {
+          "id": "pt-shop-003",
+          "tags": [
+            "shopping",
+            "returns"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant explaining the return policy"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Fazemos troca mas não fazemos reembolso.",
+              "response": "Está bem. Posso trocar na loja?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We do exchanges but no refunds.",
+              "response": "OK. Can I exchange it in the shop?"
+            }
+          }
+        },
+        {
+          "id": "pt-shop-004",
+          "tags": [
+            "shopping",
+            "stock"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant about stock levels"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Este modelo está esgotado, mas posso encomendar para si.",
+              "response": "Quanto tempo demora a chegar?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This model is out of stock, but I can order it for you.",
+              "response": "How long will it take to arrive?"
+            }
+          }
+        },
+        {
+          "id": "pt-shop-005",
+          "tags": [
+            "shopping",
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant clarifying pricing"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O desconto já está aplicado no preço da etiqueta.",
+              "response": "Ah, ótimo. Então fica em quanto?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The discount is already applied to the tag price.",
+              "response": "Oh, great. So how much is it?"
+            }
+          }
+        },
+        {
+          "id": "pt-shop-006",
+          "tags": [
+            "shopping",
+            "returns"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Shop assistant asking for proof of purchase"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tem o talão de compra para fazer a troca?",
+              "response": "Sim, tenho aqui.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have the receipt to make the exchange?",
+              "response": "Yes, I have it here."
+            }
+          }
+        }
       ]
     },
     {
@@ -205,12 +2987,266 @@
       "icon": "🎟️",
       "color": "#00BCD4",
       "prompts": [
-        { "id": "tickets-001", "phrase": "¿Cuántas entradas quieres?", "english": "How many tickets do you want?", "context": "Ticket window at an attraction", "yourResponse": "Cuatro, por favor. Dos adultos y dos niños.", "yourResponseEnglish": "Four, please. Two adults and two children.", "tags": ["tickets"], "difficulty": 1 },
-        { "id": "tickets-002", "phrase": "Los menores de seis años entran gratis.", "english": "Children under six get in free.", "context": "Ticket seller explaining pricing", "yourResponse": "Los nuestros tienen once y trece.", "yourResponseEnglish": "Ours are eleven and thirteen.", "tags": ["tickets", "pricing"], "difficulty": 2 },
-        { "id": "tickets-003", "phrase": "La próxima visita guiada es a las cuatro.", "english": "The next guided tour is at four.", "context": "Information desk at a museum", "yourResponse": "¿Hay visitas en inglés?", "yourResponseEnglish": "Are there tours in English?", "tags": ["tours", "time"], "difficulty": 2 },
-        { "id": "tickets-004", "phrase": "No se pueden sacar fotos aquí dentro.", "english": "You can't take photos in here.", "context": "Museum guard", "yourResponse": "Perdona, no lo sabía.", "yourResponseEnglish": "Sorry, I didn't know.", "tags": ["rules"], "difficulty": 1 },
-        { "id": "tickets-005", "phrase": "Está cerrado hoy por festivo. Abrimos mañana a las diez.", "english": "It's closed today for a holiday. We open tomorrow at ten.", "context": "Sign or staff at an attraction", "yourResponse": "Ah vale, volvemos mañana entonces.", "yourResponseEnglish": "Oh right, we'll come back tomorrow then.", "tags": ["hours"], "difficulty": 2 },
-        { "id": "tickets-006", "phrase": "¿Habéis reservado por internet?", "english": "Have you booked online?", "context": "Staff at popular attraction", "yourResponse": "Sí, aquí tengo la reserva.", "yourResponseEnglish": "Yes, I have the booking here.", "tags": ["booking"], "difficulty": 1 }
+        {
+          "id": "es-tickets-001",
+          "tags": [
+            "tickets"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Ticket window at an attraction"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Cuántas entradas quieres?",
+              "response": "Cuatro, por favor. Dos adultos y dos niños.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "How many tickets do you want?",
+              "response": "Four, please. Two adults and two children."
+            }
+          }
+        },
+        {
+          "id": "es-tickets-002",
+          "tags": [
+            "tickets",
+            "pricing"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Ticket seller explaining pricing"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Los menores de seis años entran gratis.",
+              "response": "Los nuestros tienen once y trece.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Children under six get in free.",
+              "response": "Ours are eleven and thirteen."
+            }
+          }
+        },
+        {
+          "id": "es-tickets-003",
+          "tags": [
+            "tours",
+            "time"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Information desk at a museum"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "La próxima visita guiada es a las cuatro.",
+              "response": "¿Hay visitas en inglés?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The next guided tour is at four.",
+              "response": "Are there tours in English?"
+            }
+          }
+        },
+        {
+          "id": "es-tickets-004",
+          "tags": [
+            "rules"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Museum guard"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No se pueden sacar fotos aquí dentro.",
+              "response": "Perdona, no lo sabía.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You can't take photos in here.",
+              "response": "Sorry, I didn't know."
+            }
+          }
+        },
+        {
+          "id": "es-tickets-005",
+          "tags": [
+            "hours"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Sign or staff at an attraction"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Está cerrado hoy por festivo. Abrimos mañana a las diez.",
+              "response": "Ah vale, volvemos mañana entonces.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "It's closed today for a holiday. We open tomorrow at ten.",
+              "response": "Oh right, we'll come back tomorrow then."
+            }
+          }
+        },
+        {
+          "id": "es-tickets-006",
+          "tags": [
+            "booking"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Staff at popular attraction"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Habéis reservado por internet?",
+              "response": "Sí, aquí tengo la reserva.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Have you booked online?",
+              "response": "Yes, I have the booking here."
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-001",
+          "tags": [
+            "tickets",
+            "availability"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Box office staff about availability"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Os bilhetes para amanhã já estão esgotados.",
+              "response": "E para depois de amanhã?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Tomorrow's tickets are already sold out.",
+              "response": "And for the day after tomorrow?"
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-002",
+          "tags": [
+            "tickets",
+            "discounts"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Ticket vendor about tourist pass benefits"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Com o passe turístico tem desconto de vinte por cento.",
+              "response": "Tenho sim. Aqui está.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "With the tourist pass you get a twenty percent discount.",
+              "response": "Yes, I do. Here it is."
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-003",
+          "tags": [
+            "tickets",
+            "timing"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Museum staff informing about a tour"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "A visita guiada começa daqui a meia hora.",
+              "response": "Ótimo. Fazemos a visita livre e depois juntamo-nos.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The guided tour starts in half an hour.",
+              "response": "Great. We'll do the free visit and join the tour after."
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-004",
+          "tags": [
+            "tickets",
+            "pricing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Ticket desk staff about children's entry"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Crianças com menos de doze anos não pagam entrada.",
+              "response": "Perfeito. Somos dois adultos e uma criança de oito anos.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Children under twelve don't pay admission.",
+              "response": "Perfect. We're two adults and one child aged eight."
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-005",
+          "tags": [
+            "tickets",
+            "booking"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Staff explaining the booking process"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Pode reservar online e pagar aqui na bilheteira.",
+              "response": "Não tenho reserva. Há bilhetes para hoje?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You can book online and pay here at the ticket office.",
+              "response": "I don't have a booking. Are there tickets for today?"
+            }
+          }
+        },
+        {
+          "id": "pt-tickets-006",
+          "tags": [
+            "tickets",
+            "availability"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Box office staff about show availability"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O espetáculo de hoje está completo mas há lugares para quinta.",
+              "response": "Então queria dois bilhetes para quinta-feira.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Today's show is full but there are seats for Thursday.",
+              "response": "Then I'd like two tickets for Thursday."
+            }
+          }
+        }
       ]
     },
     {
@@ -219,12 +3255,268 @@
       "icon": "💊",
       "color": "#F44336",
       "prompts": [
-        { "id": "pharm-001", "phrase": "¡Hola! ¿Qué necesitas?", "english": "Hi! What do you need?", "context": "Pharmacist greeting you", "yourResponse": "¿Tienes algo para el dolor de cabeza?", "yourResponseEnglish": "Do you have something for a headache?", "tags": ["greeting"], "difficulty": 1 },
-        { "id": "pharm-002", "phrase": "¿Es para un adulto o para un niño?", "english": "Is it for an adult or a child?", "context": "Pharmacist asking who it's for", "yourResponse": "Para mi hijo. Tiene once años.", "yourResponseEnglish": "For my son. He's eleven.", "tags": ["medical"], "difficulty": 1 },
-        { "id": "pharm-003", "phrase": "¿Tiene alguna alergia?", "english": "Does he/she have any allergies?", "context": "Pharmacist checking before recommending", "yourResponse": "No, que yo sepa.", "yourResponseEnglish": "Not that I know of.", "tags": ["medical"], "difficulty": 1 },
-        { "id": "pharm-004", "phrase": "Toma uno cada ocho horas con comida.", "english": "Take one every eight hours with food.", "context": "Pharmacist explaining dosage", "yourResponse": "¿Puedes repetirlo más despacio?", "yourResponseEnglish": "Can you repeat that more slowly?", "tags": ["medical", "instructions"], "difficulty": 2 },
-        { "id": "pharm-005", "phrase": "Para eso necesitas receta médica.", "english": "For that you need a doctor's prescription.", "context": "Pharmacist when you ask for something restricted", "yourResponse": "¿Dónde puedo encontrar un médico?", "yourResponseEnglish": "Where can I find a doctor?", "tags": ["medical", "prescription"], "difficulty": 2 },
-        { "id": "pharm-006", "phrase": "Te recomiendo este. Es muy efectivo y no necesita receta.", "english": "I recommend this one. It's very effective and doesn't need a prescription.", "context": "Pharmacist suggesting an alternative", "yourResponse": "Perfecto, me lo llevo.", "yourResponseEnglish": "Perfect, I'll take it.", "tags": ["medical", "recommendation"], "difficulty": 2 }
+        {
+          "id": "es-pharm-001",
+          "tags": [
+            "greeting"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Pharmacist greeting you"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¡Hola! ¿Qué necesitas?",
+              "response": "¿Tienes algo para el dolor de cabeza?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Hi! What do you need?",
+              "response": "Do you have something for a headache?"
+            }
+          }
+        },
+        {
+          "id": "es-pharm-002",
+          "tags": [
+            "medical"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Pharmacist asking who it's for"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Es para un adulto o para un niño?",
+              "response": "Para mi hijo. Tiene once años.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Is it for an adult or a child?",
+              "response": "For my son. He's eleven."
+            }
+          }
+        },
+        {
+          "id": "es-pharm-003",
+          "tags": [
+            "medical"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Pharmacist checking before recommending"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Tiene alguna alergia?",
+              "response": "No, que yo sepa.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Does he/she have any allergies?",
+              "response": "Not that I know of."
+            }
+          }
+        },
+        {
+          "id": "es-pharm-004",
+          "tags": [
+            "medical",
+            "instructions"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist explaining dosage"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Toma uno cada ocho horas con comida.",
+              "response": "¿Puedes repetirlo más despacio?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Take one every eight hours with food.",
+              "response": "Can you repeat that more slowly?"
+            }
+          }
+        },
+        {
+          "id": "es-pharm-005",
+          "tags": [
+            "medical",
+            "prescription"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist when you ask for something restricted"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Para eso necesitas receta médica.",
+              "response": "¿Dónde puedo encontrar un médico?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "For that you need a doctor's prescription.",
+              "response": "Where can I find a doctor?"
+            }
+          }
+        },
+        {
+          "id": "es-pharm-006",
+          "tags": [
+            "medical",
+            "recommendation"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist suggesting an alternative"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Te recomiendo este. Es muy efectivo y no necesita receta.",
+              "response": "Perfecto, me lo llevo.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "I recommend this one. It's very effective and doesn't need a prescription.",
+              "response": "Perfect, I'll take it."
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-001",
+          "tags": [
+            "pharmacy",
+            "prescription"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Pharmacist asking for a prescription"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tem receita médica para este medicamento?",
+              "response": "Não tenho. É possível comprar sem receita?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you have a prescription for this medicine?",
+              "response": "I don't have one. Is it possible to buy without a prescription?"
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-002",
+          "tags": [
+            "pharmacy",
+            "medication"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist making a recommendation"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Para a dor de cabeça, recomendo este analgésico.",
+              "response": "Tem algum mais suave? Tenho o estômago sensível.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "For the headache, I recommend this painkiller.",
+              "response": "Do you have something milder? I have a sensitive stomach."
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-003",
+          "tags": [
+            "pharmacy",
+            "dosage"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist explaining dosage instructions"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Tome um comprimido de oito em oito horas às refeições.",
+              "response": "E posso tomar com outros medicamentos?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Take one tablet every eight hours with meals.",
+              "response": "And can I take it with other medicines?"
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-004",
+          "tags": [
+            "pharmacy",
+            "side-effects"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist warning about side effects"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Este medicamento pode causar sonolência.",
+              "response": "Obrigado pelo aviso. Vou tomar só à noite.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "This medicine may cause drowsiness.",
+              "response": "Thanks for the warning. I'll only take it at night."
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-005",
+          "tags": [
+            "pharmacy",
+            "medication"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Pharmacist suggesting a cheaper alternative"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Temos a versão genérica que é mais acessível.",
+              "response": "Qual é a diferença? O genérico funciona igual?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We have the generic version which is more affordable.",
+              "response": "What's the difference? Does the generic work the same?"
+            }
+          }
+        },
+        {
+          "id": "pt-pharm-006",
+          "tags": [
+            "pharmacy",
+            "payment",
+            "prescription"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Pharmacist explaining the health service co-payment"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Com receita do SNS, paga apenas a comparticipação.",
+              "response": "Ótimo. Aqui está a receita.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "With an NHS prescription, you only pay the co-payment.",
+              "response": "Great. Here's the prescription."
+            }
+          }
+        }
       ]
     },
     {
@@ -233,21 +3525,420 @@
       "icon": "☕",
       "color": "#795548",
       "prompts": [
-        { "id": "cafe-001", "phrase": "¿Qué os pongo?", "english": "What can I get you?", "context": "Barista or bartender", "yourResponse": "Un café con leche, por favor.", "yourResponseEnglish": "A white coffee, please.", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "cafe-002", "phrase": "¿Solo o con leche?", "english": "Black or with milk?", "context": "Barista clarifying your coffee order", "yourResponse": "Con leche, por favor.", "yourResponseEnglish": "With milk, please.", "tags": ["ordering", "coffee"], "difficulty": 1 },
-        { "id": "cafe-003", "phrase": "¿Para tomar aquí o para llevar?", "english": "For here or to go?", "context": "Barista or fast food worker", "yourResponse": "Para tomar aquí.", "yourResponseEnglish": "For here.", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "cafe-004", "phrase": "¿Queréis picar algo? Tenemos tapas.", "english": "Do you want a bite to eat? We have tapas.", "context": "Bartender suggesting food", "yourResponse": "¿Qué tapas tenéis?", "yourResponseEnglish": "What tapas do you have?", "tags": ["food", "ordering"], "difficulty": 2 },
-        { "id": "cafe-005", "phrase": "Marchando.", "english": "Coming right up.", "context": "Bartender confirming your order", "yourResponse": "Gracias.", "yourResponseEnglish": "Thanks.", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "cafe-006", "phrase": "¿Cortado o con leche?", "english": "Cortado or with milk?", "context": "Barista when you just say 'un café'", "yourResponse": "Cortado, por favor.", "yourResponseEnglish": "Cortado, please.", "tags": ["ordering", "coffee"], "difficulty": 1 },
-        { "id": "cafe-007", "phrase": "¿La leche caliente, templada o fría?", "english": "The milk hot, warm, or cold?", "context": "Barista asking about milk temperature", "yourResponse": "Caliente, por favor.", "yourResponseEnglish": "Hot, please.", "tags": ["ordering", "coffee"], "difficulty": 2 },
-        { "id": "cafe-008", "phrase": "¿Quieres algo más?", "english": "Do you want anything else?", "context": "Barista after making your drink", "yourResponse": "Sí, un zumo de naranja también.", "yourResponseEnglish": "Yes, an orange juice too.", "tags": ["ordering"], "difficulty": 1 },
-        { "id": "cafe-009", "phrase": "No tenemos wifi, lo siento.", "english": "We don't have wifi, sorry.", "context": "Barista when you ask for wifi", "yourResponse": "No pasa nada, gracias.", "yourResponseEnglish": "No worries, thanks.", "tags": ["general"], "difficulty": 1 },        
-        { "id": "cafe-010", "phrase": "Se paga en barra.", "english": "You pay at the bar.", "context": "Server when you try to pay at a table", "yourResponse": "Ah vale, gracias.", "yourResponseEnglish": "Oh OK, thanks.", "tags": ["payment"], "difficulty": 2 },
-        { "id": "cafe-011", "phrase": "Son dos con sesenta.", "english": "That's two sixty.", "context": "Barista telling you the total", "yourResponse": "Aquí tienes.", "yourResponseEnglish": "Here you go.", "tags": ["payment"], "difficulty": 1 },
-        { "id": "cafe-012", "phrase": "¿Os cobro todo junto?", "english": "Shall I charge you for everything together?", "context": "Barista when you've ordered multiple rounds", "yourResponse": "Sí, todo junto, por favor.", "yourResponseEnglish": "Yes, all together, please.", "tags": ["payment"], "difficulty": 2 },
-        { "id": "cafe-013", "phrase": "La cocina cierra a las cuatro. ¿Queréis pedir algo de comer antes?", "english": "The kitchen closes at four. Do you want to order food before it closes?", "context": "Server giving you a heads up", "yourResponse": "Sí, ponme una tortilla, por favor.", "yourResponseEnglish": "Yes, give me a tortilla, please.", "tags": ["food", "ordering"], "difficulty": 3 },
-        { "id": "cafe-014", "phrase": "¿Queréis ver la carta de cervezas?", "english": "Do you want to see the beer menu?", "context": "Bartender at a craft beer spot", "yourResponse": "Sí, por favor. ¿Tenéis alguna local?", "yourResponseEnglish": "Yes, please. Do you have any local ones?", "tags": ["ordering", "drinks"], "difficulty": 2 },
-        { "id": "cafe-015", "phrase": "¿Una caña o una jarra?", "english": "A small draft or a pint?", "context": "Bartender asking about beer size", "yourResponse": "Una caña, por favor.", "yourResponseEnglish": "A small draft, please.", "tags": ["ordering", "drinks"], "difficulty": 1 }
+        {
+          "id": "es-cafe-001",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista or bartender"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Qué os pongo?",
+              "response": "Un café con leche, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What can I get you?",
+              "response": "A white coffee, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-002",
+          "tags": [
+            "ordering",
+            "coffee"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista clarifying your coffee order"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Solo o con leche?",
+              "response": "Con leche, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Black or with milk?",
+              "response": "With milk, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-003",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista or fast food worker"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Para tomar aquí o para llevar?",
+              "response": "Para tomar aquí.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "For here or to go?",
+              "response": "For here."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-004",
+          "tags": [
+            "food",
+            "ordering"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Bartender suggesting food"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Queréis picar algo? Tenemos tapas.",
+              "response": "¿Qué tapas tenéis?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want a bite to eat? We have tapas.",
+              "response": "What tapas do you have?"
+            }
+          }
+        },
+        {
+          "id": "es-cafe-005",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Bartender confirming your order"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Marchando.",
+              "response": "Gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Coming right up.",
+              "response": "Thanks."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-006",
+          "tags": [
+            "ordering",
+            "coffee"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista when you just say 'un café'"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Cortado o con leche?",
+              "response": "Cortado, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Cortado or with milk?",
+              "response": "Cortado, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-007",
+          "tags": [
+            "ordering",
+            "coffee"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Barista asking about milk temperature"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿La leche caliente, templada o fría?",
+              "response": "Caliente, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The milk hot, warm, or cold?",
+              "response": "Hot, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-008",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista after making your drink"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Quieres algo más?",
+              "response": "Sí, un zumo de naranja también.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want anything else?",
+              "response": "Yes, an orange juice too."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-009",
+          "tags": [
+            "general"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista when you ask for wifi"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "No tenemos wifi, lo siento.",
+              "response": "No pasa nada, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "We don't have wifi, sorry.",
+              "response": "No worries, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-010",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Server when you try to pay at a table"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Se paga en barra.",
+              "response": "Ah vale, gracias.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "You pay at the bar.",
+              "response": "Oh OK, thanks."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-011",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista telling you the total"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "Son dos con sesenta.",
+              "response": "Aquí tienes.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That's two sixty.",
+              "response": "Here you go."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-012",
+          "tags": [
+            "payment"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Barista when you've ordered multiple rounds"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Os cobro todo junto?",
+              "response": "Sí, todo junto, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Shall I charge you for everything together?",
+              "response": "Yes, all together, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-013",
+          "tags": [
+            "food",
+            "ordering"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Server giving you a heads up"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "La cocina cierra a las cuatro. ¿Queréis pedir algo de comer antes?",
+              "response": "Sí, ponme una tortilla, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "The kitchen closes at four. Do you want to order food before it closes?",
+              "response": "Yes, give me a tortilla, please."
+            }
+          }
+        },
+        {
+          "id": "es-cafe-014",
+          "tags": [
+            "ordering",
+            "drinks"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "Bartender at a craft beer spot"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Queréis ver la carta de cervezas?",
+              "response": "Sí, por favor. ¿Tenéis alguna local?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Do you want to see the beer menu?",
+              "response": "Yes, please. Do you have any local ones?"
+            }
+          }
+        },
+        {
+          "id": "es-cafe-015",
+          "tags": [
+            "ordering",
+            "drinks"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Bartender asking about beer size"
+          },
+          "translations": {
+            "es-ES": {
+              "phrase": "¿Una caña o una jarra?",
+              "response": "Una caña, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "A small draft or a pint?",
+              "response": "A small draft, please."
+            }
+          }
+        },
+        {
+          "id": "pt-cafe-001",
+          "tags": [
+            "cafe",
+            "ordering",
+            "coffee",
+            "food"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista or staff asking for your order"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "O que deseja?",
+              "response": "Uma meia de leite, um pastel de nata e uma tosta mista, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "What would you like?",
+              "response": "A coffee with milk, a custard tart, and a ham and cheese toastie, please."
+            }
+          }
+        },
+        {
+          "id": "pt-cafe-002",
+          "tags": [
+            "cafe",
+            "coffee",
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Barista asking how you want your coffee temperature"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Quente ou morno?",
+              "response": "Bem quente, por favor.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Hot or warm?",
+              "response": "Nice and hot, please."
+            }
+          }
+        },
+        {
+          "id": "pt-cafe-003",
+          "tags": [
+            "cafe",
+            "payment",
+            "closing"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Staff asking if you need anything more"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "Mais alguma coisa?",
+              "response": "Não, obrigado. Pode trazer a conta?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "Anything else?",
+              "response": "No, thanks. Can you bring the bill?"
+            }
+          }
+        },
+        {
+          "id": "pt-cafe-004",
+          "tags": [
+            "cafe",
+            "payment"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Staff telling you the total"
+          },
+          "translations": {
+            "pt-PT": {
+              "phrase": "São quatro euros e cinquenta, por favor.",
+              "response": "Aqui tem. Obrigado!",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "phrase": "That's four euros fifty, please.",
+              "response": "Here you go. Thank you!"
+            }
+          }
+        }
       ]
     }
   ]

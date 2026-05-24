@@ -72,7 +72,7 @@ export default function Home({ scenarios, language, onLanguageChange, onStart, s
               WebkitTextFillColor: 'transparent',
             }}
           >
-            {LANGUAGE_CONFIG[language].title}
+            yesalittle
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginTop: 8, lineHeight: 1.5, margin: '8px 0 0' }}>
             Listen to what locals say in real situations.

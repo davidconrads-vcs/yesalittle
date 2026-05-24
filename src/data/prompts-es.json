@@ -1,0 +1,254 @@
+{
+  "scenarios": [
+    {
+      "id": "panic",
+      "category": "Panic Button",
+      "icon": "🆘",
+      "color": "#c0392b",
+      "prompts": [
+        {
+          "id": "panic-001",
+          "phrase": "Alguien dice algo que casi entiendes",
+          "english": "Someone says something you almost understood",
+          "context": "You caught most of it but need another pass",
+          "yourResponse": "¿Puedes repetir eso, por favor?",
+          "yourResponseEnglish": "Can you repeat that, please?",
+          "tags": ["panic", "comprehension"],
+          "difficulty": 1
+        },
+        {
+          "id": "panic-002",
+          "phrase": "Alguien habla demasiado rápido",
+          "english": "Someone is speaking too fast",
+          "context": "The words are there but the speed is killing you",
+          "yourResponse": "¿Puedes hablar más despacio, por favor?",
+          "yourResponseEnglish": "Can you speak more slowly, please?",
+          "tags": ["panic", "comprehension"],
+          "difficulty": 1
+        },
+        {
+          "id": "panic-003",
+          "phrase": "Estás a mitad de conversación y te pierdes",
+          "english": "You're mid-conversation and completely lost",
+          "context": "You've gone in over your head",
+          "yourResponse": "Perdona, mi español aún no es muy bueno.",
+          "yourResponseEnglish": "Sorry, my Spanish is not very good yet.",
+          "tags": ["panic", "apology"],
+          "difficulty": 2
+        },
+        {
+          "id": "panic-004",
+          "phrase": "No entiendes una palabra clave",
+          "english": "You didn't catch a key word",
+          "context": "One word is blocking the whole meaning",
+          "yourResponse": "¿Qué quiere decir [palabra]?",
+          "yourResponseEnglish": "What does [word] mean?",
+          "tags": ["panic", "vocabulary"],
+          "difficulty": 1
+        },
+        {
+          "id": "panic-005",
+          "phrase": "Necesitas que alguien lo escriba",
+          "english": "You need them to write it down",
+          "context": "Hearing it isn't working, you need to see it",
+          "yourResponse": "¿Puedes escribirlo, por favor?",
+          "yourResponseEnglish": "Can you write it down, please?",
+          "tags": ["panic", "comprehension"],
+          "difficulty": 2
+        },
+        {
+          "id": "panic-006",
+          "phrase": "Alguien te habla y no entiendes nada",
+          "english": "Someone speaks to you and you understand nothing",
+          "context": "Complete blank — full restart needed",
+          "yourResponse": "Perdona, no entiendo. ¿Hablas inglés?",
+          "yourResponseEnglish": "Sorry, I don't understand. Do you speak English?",
+          "tags": ["panic", "english", "apology"],
+          "difficulty": 3
+        }
+      ]
+    },
+    {
+      "id": "greetings",
+      "category": "Greetings & Pleasantries",
+      "icon": "👋",
+      "color": "#6366F1",
+      "prompts": [
+        { "id": "greet-001", "phrase": "¡Buenas!", "english": "Hi! / Hello!", "context": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain", "yourResponse": "¡Buenas! ¿Qué tal?", "yourResponseEnglish": "Hi! How's it going?", "tags": ["greeting"], "difficulty": 1 },
+        { "id": "greet-002", "phrase": "¡Buenos días! ¿En qué os puedo ayudar?", "english": "Good morning! How can I help you?", "context": "Shop or office worker greeting you in the morning", "yourResponse": "Buenos días. Estamos buscando...", "yourResponseEnglish": "Good morning. We're looking for...", "tags": ["greeting", "morning"], "difficulty": 1 },
+        { "id": "greet-003", "phrase": "¿Qué tal? ¿Todo bien?", "english": "How's it going? All good?", "context": "Friendly local or shopkeeper doing a casual check-in", "yourResponse": "Bien, gracias. ¿Y tú?", "yourResponseEnglish": "Good, thanks. And you?", "tags": ["greeting", "small-talk"], "difficulty": 1 },
+        { "id": "greet-004", "phrase": "¡Bienvenidos a Barcelona!", "english": "Welcome to Barcelona!", "context": "Host, tour guide, or hotel staff welcoming you on arrival", "yourResponse": "¡Gracias! Estamos muy contentos de estar aquí.", "yourResponseEnglish": "Thanks! We're really happy to be here.", "tags": ["greeting", "arrival"], "difficulty": 1 },
+        { "id": "greet-005", "phrase": "¡Encantado!", "english": "Pleased to meet you!", "context": "Someone greeting you after being introduced", "yourResponse": "¡Encantado, igualmente!", "yourResponseEnglish": "Pleased to meet you, likewise!", "tags": ["introduction"], "difficulty": 1 },
+        { "id": "greet-006", "phrase": "¿De dónde sois?", "english": "Where are you from?", "context": "Friendly local making small talk", "yourResponse": "Somos de Estados Unidos, de Colorado. ¿Y tú eres de aquí?", "yourResponseEnglish": "We're from the US, from Colorado. And are you from here?", "tags": ["small-talk"], "difficulty": 1 },
+        { "id": "greet-007", "phrase": "¿Habláis español?", "english": "Do you speak Spanish?", "context": "Local checking before launching into Spanish", "yourResponse": "Un poco, sí. Estoy aprendiendo.", "yourResponseEnglish": "A little, yes. I'm learning.", "tags": ["language", "small-talk"], "difficulty": 1 },
+        { "id": "greet-008", "phrase": "No te preocupes, puedo hablar en inglés.", "english": "Don't worry, I can speak in English.", "context": "A helpful local offering to switch languages", "yourResponse": "¡Muchas gracias, muy amable!", "yourResponseEnglish": "Thank you so much, very kind!", "tags": ["language"], "difficulty": 1 },
+        { "id": "greet-009", "phrase": "No hablo inglés, lo siento.", "english": "I don't speak English, sorry.", "context": "Local letting you know they can't switch to English", "yourResponse": "No pasa nada, lo intentamos en español.", "yourResponseEnglish": "No worries, we'll try in Spanish.", "tags": ["language"], "difficulty": 1 },
+        { "id": "greet-010", "phrase": "Perdona, ¿me puedes ayudar un momento?", "english": "Excuse me, can you help me for a moment?", "context": "Someone approaching you on the street to ask for help", "yourResponse": "Claro, aunque no hablo mucho español.", "yourResponseEnglish": "Sure, though I don't speak much Spanish.", "tags": ["courtesy", "small-talk"], "difficulty": 2 },
+        { "id": "greet-011", "phrase": "Con permiso.", "english": "Excuse me. / Coming through.", "context": "Someone squeezing past you in a narrow space or crowd", "yourResponse": "Claro, adelante.", "yourResponseEnglish": "Of course, go ahead.", "tags": ["courtesy"], "difficulty": 1 },
+        { "id": "greet-012", "phrase": "De nada, para eso estamos.", "english": "You're welcome, that's what we're here for.", "context": "After you thank someone for their help", "yourResponse": "Venga, hasta luego.", "yourResponseEnglish": "Alright, see you later.", "tags": ["courtesy"], "difficulty": 1 },
+        { "id": "greet-013", "phrase": "¡Hasta luego! ¡Que lo paséis bien!", "english": "See you later! Have a good time!", "context": "Friendly farewell from a shopkeeper or local", "yourResponse": "¡Igualmente! ¡Hasta luego!", "yourResponseEnglish": "Likewise! See you later!", "tags": ["farewell"], "difficulty": 1 },
+        { "id": "greet-014", "phrase": "¡Buen fin de semana!", "english": "Have a good weekend!", "context": "End-of-week farewell from a shopkeeper or neighbor", "yourResponse": "¡Igualmente! ¡Buen fin de semana!", "yourResponseEnglish": "Likewise! Have a good weekend!", "tags": ["farewell", "small-talk"], "difficulty": 1 },
+        { "id": "greet-015", "phrase": "¡Qué calor hace hoy!, ¿eh?", "english": "It's so hot today, isn't it!", "context": "Stranger making small talk about the weather", "yourResponse": "¡Sí, muchísimo! Pero el tiempo es precioso.", "yourResponseEnglish": "Yes, really hot! But the weather is gorgeous.", "tags": ["small-talk"], "difficulty": 1 },
+        { "id": "greet-016", "phrase": "Perdona, parles català?", "english": "Excuse me, do you speak Catalan?", "context": "Someone in Barcelona addressing you in Catalan first", "yourResponse": "No, lo siento. ¿Hablamos en español?", "yourResponseEnglish": "No, sorry. Shall we speak in Spanish?", "tags": ["language", "catalan"], "difficulty": 2 },        
+        { "id": "greet-017", "phrase": "Pasas por una calle estrecha y hay gente en medio.", "english": "You're walking down a narrow street and there are people in the way.", "context": "Squeezing past people on a narrow El Born street", "yourResponse": "Perdón.", "yourResponseEnglish": "Excuse me.", "tags": ["courtesy", "everyday"], "difficulty": 1 },
+        { "id": "greet-018", "phrase": "El metro está lleno y tienes que bajar en la próxima parada.", "english": "The metro is crowded and you need to get off at the next stop.", "context": "Getting off a crowded metro", "yourResponse": "Perdón, perdón.", "yourResponseEnglish": "Excuse me, excuse me.", "tags": ["courtesy", "transport"], "difficulty": 1 },
+        { "id": "greet-019", "phrase": "Quieres alcanzar algo en el supermercado y hay alguien delante.", "english": "You want to reach something at the supermarket and someone is in front.", "context": "Reaching past someone at the market", "yourResponse": "Con permiso.", "yourResponseEnglish": "With your permission / Excuse me.", "tags": ["courtesy", "everyday"], "difficulty": 1 },
+        { "id": "greet-020", "phrase": "Necesitas llamar la atención del camarero en un restaurante.", "english": "You need to get the waiter's attention at a restaurant.", "context": "Flagging down a server", "yourResponse": "Disculpe.", "yourResponseEnglish": "Excuse me.", "tags": ["courtesy", "restaurant"], "difficulty": 1 },
+        { "id": "greet-021", "phrase": "Chocas sin querer con alguien por la calle.", "english": "You accidentally bump into someone on the street.", "context": "Bumping into someone accidentally", "yourResponse": "Perdón, lo siento.", "yourResponseEnglish": "Sorry, I'm sorry.", "tags": ["courtesy", "everyday"], "difficulty": 1 }        
+      ]
+    },
+    {
+      "id": "restaurant",
+      "category": "Restaurant",
+      "icon": "🍽️",
+      "color": "#E85D3A",
+      "prompts": [
+        { "id": "rest-001", "phrase": "¡Hola! ¿Para cuántos?", "english": "Hi! For how many?", "context": "Hostess greeting you at the door", "yourResponse": "Para cuatro, por favor.", "yourResponseEnglish": "For four, please.", "tags": ["greeting", "arrival"], "difficulty": 1 },
+        { "id": "rest-002", "phrase": "¿Tienen reserva?", "english": "Do you have a reservation?", "context": "Hostess at a busy restaurant", "yourResponse": "No, no tenemos reserva.", "yourResponseEnglish": "No, we don't have a reservation.", "tags": ["arrival"], "difficulty": 1 },
+        { "id": "rest-003", "phrase": "Ahora mismo no tenemos mesa. ¿Podéis esperar unos diez minutos?", "english": "We don't have a table right now. Can you wait about ten minutes?", "context": "Hostess when the restaurant is full", "yourResponse": "Sí, esperamos. Gracias.", "yourResponseEnglish": "Yes, we'll wait. Thanks.", "tags": ["arrival"], "difficulty": 2 },
+        { "id": "rest-004", "phrase": "¿Queréis sentaros dentro o en la terraza?", "english": "Do you want to sit inside or on the terrace?", "context": "Hostess offering seating options", "yourResponse": "En la terraza, por favor.", "yourResponseEnglish": "On the terrace, please.", "tags": ["arrival"], "difficulty": 2 },
+        { "id": "rest-005", "phrase": "¿Qué van a tomar?", "english": "What will you have?", "context": "Server taking your order", "yourResponse": "Para mí, el/la ___.", "yourResponseEnglish": "For me, the ___.", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "rest-006", "phrase": "¿Para beber?", "english": "To drink?", "context": "Server asking about drinks", "yourResponse": "Agua del grifo, por favor.", "yourResponseEnglish": "Tap water, please.", "tags": ["ordering", "drinks"], "difficulty": 1 },
+        { "id": "rest-007", "phrase": "¿Os pongo algo para picar mientras miráis la carta?", "english": "Shall I bring you something to nibble while you look at the menu?", "context": "Server offering starters while you decide", "yourResponse": "Sí, unas aceitunas y pan, por favor.", "yourResponseEnglish": "Yes, some olives and bread, please.", "tags": ["ordering"], "difficulty": 3 },
+        { "id": "rest-008", "phrase": "¿Todo bien? ¿Necesitáis algo más?", "english": "Everything good? Do you need anything else?", "context": "Server checking on your table", "yourResponse": "Todo bien, gracias.", "yourResponseEnglish": "All good, thanks.", "tags": ["mid-meal"], "difficulty": 2 },
+        {
+          "id": "rest-009",
+          "phrase": "¿Queréis postre o café?",
+          "english": "Do you want dessert or coffee?",
+          "context": "Server after you finish eating",
+          "yourResponse": "No, gracias, solo la cuenta, por favor.",
+          "yourResponseEnglish": "No thank you, just the bill please.",
+          "tags": ["end-meal"],
+          "difficulty": 1
+        },
+        { "id": "rest-010", "phrase": "¿Van a querer el menú del día o a la carta?", "english": "Will you want the set menu or à la carte?", "context": "Server handing you menus", "yourResponse": "El menú del día, por favor.", "yourResponseEnglish": "The set menu, please.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "rest-011", "phrase": "El menú incluye primero, segundo y postre. ¿Qué queréis de primero?", "english": "The set menu includes first course, second course, and dessert. What do you want for the first course?", "context": "Server explaining the menú del día", "yourResponse": "De primero, la sopa. De segundo, el pollo.", "yourResponseEnglish": "For the first course, the soup. For the second, the chicken.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "rest-012", "phrase": "Lo siento, no nos queda. ¿Quieres otra cosa?", "english": "Sorry, we're out of that. Do you want something else?", "context": "Server when your choice is unavailable", "yourResponse": "Sí, necesitamos un momento, por favor", "yourResponseEnglish": "Yes, we need a moment please", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "rest-013", "phrase": "Aquí tenéis. ¡Que aproveche!", "english": "Here you go. Enjoy your meal!", "context": "Server bringing your food", "yourResponse": "¡Gracias!", "yourResponseEnglish": "Thanks!", "tags": ["mid-meal"], "difficulty": 1 },
+        { "id": "rest-014", "phrase": "¿Queréis la cuenta?", "english": "Do you want the bill?", "context": "Server when you look finished", "yourResponse": "Sí, la cuenta, por favor.", "yourResponseEnglish": "Yes, the bill, please.", "tags": ["end-meal", "payment"], "difficulty": 1 },
+        { "id": "rest-015", "phrase": "¿Junto o por separado?", "english": "Together or separate?", "context": "Server asking how to split the bill", "yourResponse": "Junto, por favor.", "yourResponseEnglish": "Together, please.", "tags": ["payment"], "difficulty": 1 },
+        { "id": "rest-016", "phrase": "¿Podéis pagar con el móvil? El datáfono no lee la tarjeta.", "english": "Can you pay with your phone? The card reader isn't reading the card.", "context": "Server when the card reader has issues", "yourResponse": "Sí, puedo pagar con el móvil, o también tengo efectivo.", "yourResponseEnglish": "Yes, I can pay with my phone, or I also have cash.", "tags": ["payment"], "difficulty": 3 },
+        { "id": "rest-017", "phrase": "¿Los niños quieren carta de niños o comen del menú normal?", "english": "Do the kids want the kids' menu or will they eat from the regular menu?", "context": "Server asking about your kids' orders", "yourResponse": "Del menú normal, gracias.", "yourResponseEnglish": "From the regular menu, thanks.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "rest-018", "phrase": "La terraza tiene un suplemento de un euro por bebida.", "english": "The terrace has a surcharge of one euro per drink.", "context": "Server informing you about terrace pricing", "yourResponse": "Vale, no pasa nada.", "yourResponseEnglish": "OK, no problem.", "tags": ["arrival", "payment"], "difficulty": 2 }        
+      ]
+    },
+    {
+      "id": "grocery",
+      "category": "Grocery Store",
+      "icon": "🛒",
+      "color": "#4CAF50",
+      "prompts": [
+        { "id": "groc-001", "phrase": "¡Buenos días! ¿Qué te pongo?", "english": "Good morning! What can I get you?", "context": "Deli counter worker", "yourResponse": "Ponme doscientos gramos de jamón.", "yourResponseEnglish": "Give me two hundred grams of ham.", "tags": ["greeting", "ordering"], "difficulty": 1 },
+        { "id": "groc-002", "phrase": "¿Algo más?", "english": "Anything else?", "context": "Any counter or checkout", "yourResponse": "No, eso es todo. Gracias.", "yourResponseEnglish": "No, that's everything. Thanks.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "groc-003", "phrase": "¿Quieres bolsa?", "english": "Do you want a bag?", "context": "Cashier at checkout", "yourResponse": "Sí, una bolsa, por favor.", "yourResponseEnglish": "Yes, a bag, please.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "groc-004", "phrase": "Son doce con cincuenta.", "english": "That's twelve fifty.", "context": "Cashier telling you the total", "yourResponse": "¿Se puede pagar con tarjeta?", "yourResponseEnglish": "Can I pay by card?", "tags": ["payment", "checkout"], "difficulty": 1 },
+        { "id": "groc-005", "phrase": "¿Tienes la tarjeta de cliente?", "english": "Do you have a loyalty card?", "context": "Cashier at Mercadona, Bon Preu, or Caprabo", "yourResponse": "No, no tengo.", "yourResponseEnglish": "No, I don't have one.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "groc-006", "phrase": "El pago con tarjeta es a partir de cinco euros.", "english": "Card payment is from five euros up.", "context": "Cashier when your total is small", "yourResponse": "Vale, en efectivo entonces.", "yourResponseEnglish": "OK, cash then.", "tags": ["payment"], "difficulty": 2 },
+        { "id": "groc-007", "phrase": "¿Lo quieres cortado en lonchas o en un trozo?", "english": "Do you want it sliced or in one piece?", "context": "Deli counter for cheese or ham", "yourResponse": "En lonchas, por favor.", "yourResponseEnglish": "Sliced, please.", "tags": ["ordering"], "difficulty": 2 },
+        { "id": "groc-008", "phrase": "No tenemos. Prueba en la tienda de al lado.", "english": "We don't have that. Try the store next door.", "context": "When asking for a product", "yourResponse": "Vale, gracias.", "yourResponseEnglish": "OK, thanks.", "tags": ["navigation"], "difficulty": 2 },
+        { "id": "groc-009", "phrase": "¿Llevas la bolsa de casa o quieres una?", "english": "Did you bring a bag from home or do you want one?", "context": "Cashier — bags cost money in Spain", "yourResponse": "Necesito una, por favor.", "yourResponseEnglish": "I need one, please.", "tags": ["checkout"], "difficulty": 2 },
+        { "id": "groc-010", "phrase": "La fruta hay que pesarla antes de venir a caja.", "english": "You need to weigh the fruit before coming to checkout.", "context": "Cashier when you forgot to weigh produce", "yourResponse": "Perdona, ¿dónde está la báscula?", "yourResponseEnglish": "Sorry, where is the scale?", "tags": ["navigation", "produce"], "difficulty": 2 },
+        { "id": "groc-011", "phrase": "¿Quieres el ticket?", "english": "Do you want the receipt?", "context": "Cashier after payment", "yourResponse": "Sí, por favor.", "yourResponseEnglish": "Yes, please.", "tags": ["checkout"], "difficulty": 1 },
+        { "id": "groc-012", "phrase": "Son tres euros la bolsa.", "english": "The bag is three euros.", "context": "Cashier telling you bags aren't free", "yourResponse": "Vale, no pasa nada.", "yourResponseEnglish": "OK, no problem.", "tags": ["checkout", "payment"], "difficulty": 1 },
+        { "id": "groc-013", "phrase": "¿Cómo lo quieres, muy curado o tierno?", "english": "How do you want it, aged or mild?", "context": "Deli counter for cheese", "yourResponse": "Tierno, por favor.", "yourResponseEnglish": "Mild, please.", "tags": ["ordering"], "difficulty": 3 },
+        { "id": "groc-014", "phrase": "Introduce el PIN, por favor.", "english": "Enter your PIN, please.", "context": "Card reader at checkout", "yourResponse": "— (just enter PIN) —", "yourResponseEnglish": "— (just enter PIN) —", "tags": ["payment"], "difficulty": 1 },
+        { "id": "groc-015", "phrase": "¿Contactless o con chip?", "english": "Contactless or with chip?", "context": "Cashier asking about payment method", "yourResponse": "Contactless.", "yourResponseEnglish": "Contactless.", "tags": ["payment"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "around",
+      "category": "Getting Around",
+      "icon": "🚶",
+      "color": "#2196F3",
+      "prompts": [
+        { "id": "around-001", "phrase": "Sigue todo recto y luego a la derecha.", "english": "Go straight ahead and then to the right.", "context": "Someone giving you directions", "yourResponse": "Gracias. ¿Está lejos?", "yourResponseEnglish": "Thanks. Is it far?", "tags": ["directions"], "difficulty": 2 },
+        { "id": "around-002", "phrase": "Está a unos diez minutos andando.", "english": "It's about a ten minute walk.", "context": "After asking how far something is", "yourResponse": "Perfecto, gracias.", "yourResponseEnglish": "Perfect, thanks.", "tags": ["directions", "distance"], "difficulty": 1 },
+        { "id": "around-003", "phrase": "¿Adónde vais?", "english": "Where are you going?", "context": "Taxi driver when you get in", "yourResponse": "A esta dirección, por favor.", "yourResponseEnglish": "To this address, please.", "tags": ["taxi"], "difficulty": 1 },
+        { "id": "around-004", "phrase": "Con el tráfico van a ser unos veinte minutos.", "english": "With traffic it'll be about twenty minutes.", "context": "Taxi driver estimating trip time", "yourResponse": "Vale, no hay problema.", "yourResponseEnglish": "OK, no problem.", "tags": ["taxi", "time"], "difficulty": 2 },
+        { "id": "around-005", "phrase": "No puedo parar aquí. ¿Te dejo en la esquina?", "english": "I can't stop here. Shall I drop you at the corner?", "context": "Taxi driver near your destination", "yourResponse": "Sí, en la esquina está bien.", "yourResponseEnglish": "Yes, the corner is fine.", "tags": ["taxi"], "difficulty": 2 },
+        { "id": "around-006", "phrase": "Tiene que validar el billete antes de subir.", "english": "You have to validate the ticket before boarding.", "context": "Someone at a metro/bus station", "yourResponse": "Ah vale, gracias.", "yourResponseEnglish": "Oh right, thanks.", "tags": ["metro", "bus"], "difficulty": 2 },
+        { "id": "around-007", "phrase": "Esta línea no va allí. Tienes que hacer transbordo en Passeig de Gràcia.", "english": "This line doesn't go there. You have to transfer at Passeig de Gràcia.", "context": "Helpful stranger on the metro", "yourResponse": "Gracias. ¿En qué línea?", "yourResponseEnglish": "Thanks. Which line?", "tags": ["metro", "directions"], "difficulty": 3 }
+      ]
+    },
+    {
+      "id": "checkin",
+      "category": "Airbnb / Check-in",
+      "icon": "🏠",
+      "color": "#FF9800",
+      "prompts": [
+        { "id": "checkin-001", "phrase": "¡Bienvenidos! ¿Qué tal el viaje?", "english": "Welcome! How was the trip?", "context": "Host greeting you at arrival", "yourResponse": "Bien, gracias. Estamos contentos de estar aquí.", "yourResponseEnglish": "Good, thanks. We're happy to be here.", "tags": ["greeting", "arrival"], "difficulty": 1 },
+        { "id": "checkin-002", "phrase": "Os enseño el piso. Por aquí.", "english": "I'll show you the apartment. This way.", "context": "Host giving you a tour", "yourResponse": "Perfecto, gracias.", "yourResponseEnglish": "Perfect, thanks.", "tags": ["arrival"], "difficulty": 1 },
+        { "id": "checkin-003", "phrase": "El wifi es este y la contraseña está en la nevera.", "english": "The wifi is this one and the password is on the fridge.", "context": "Host explaining the apartment", "yourResponse": "Genial, gracias.", "yourResponseEnglish": "Great, thanks.", "tags": ["info"], "difficulty": 2 },
+        { "id": "checkin-004", "phrase": "Si necesitáis algo, me escribís por WhatsApp.", "english": "If you need anything, message me on WhatsApp.", "context": "Host before leaving", "yourResponse": "Vale, perfecto. Muchas gracias.", "yourResponseEnglish": "OK, perfect. Many thanks.", "tags": ["contact"], "difficulty": 2 },
+        { "id": "checkin-005", "phrase": "Hay que bajar la basura al contenedor de la esquina.", "english": "You have to take the trash down to the bin on the corner.", "context": "Host explaining house rules", "yourResponse": "¿Cuál es el contenedor para reciclar?", "yourResponseEnglish": "Which bin is for recycling?", "tags": ["rules"], "difficulty": 2 },
+        { "id": "checkin-006", "phrase": "Los vecinos son mayores, así que por la noche sin ruido.", "english": "The neighbors are elderly, so no noise at night.", "context": "Host about building rules", "yourResponse": "Claro, no hay problema.", "yourResponseEnglish": "Of course, no problem.", "tags": ["rules"], "difficulty": 2 },
+        { "id": "checkin-007", "phrase": "¿A qué hora salís el último día?", "english": "What time are you leaving on the last day?", "context": "Host asking about checkout", "yourResponse": "Salimos por la mañana, sobre las diez.", "yourResponseEnglish": "We're leaving in the morning, around ten.", "tags": ["checkout", "time"], "difficulty": 2 }
+      ]
+    },
+    {
+      "id": "shopping",
+      "category": "Shopping",
+      "icon": "🛍️",
+      "color": "#9C27B0",
+      "prompts": [
+        { "id": "shop-001", "phrase": "¡Hola! ¿Te puedo ayudar en algo?", "english": "Hi! Can I help you with anything?", "context": "Shop assistant greeting you", "yourResponse": "Solo estoy mirando, gracias.", "yourResponseEnglish": "Just browsing, thanks.", "tags": ["greeting"], "difficulty": 1 },
+        { "id": "shop-002", "phrase": "¿Qué talla buscas?", "english": "What size are you looking for?", "context": "Clothing store assistant", "yourResponse": "La mediana, creo.", "yourResponseEnglish": "Medium, I think.", "tags": ["clothing"], "difficulty": 1 },
+        { "id": "shop-003", "phrase": "Los probadores están al fondo a la izquierda.", "english": "The fitting rooms are in the back on the left.", "context": "Shop assistant pointing the way", "yourResponse": "Gracias.", "yourResponseEnglish": "Thanks.", "tags": ["clothing", "directions"], "difficulty": 2 },
+        { "id": "shop-004", "phrase": "Esa está rebajada. Tiene un treinta por ciento de descuento.", "english": "That one's on sale. It's thirty percent off.", "context": "Shop assistant about an item", "yourResponse": "¡Qué bien! Me lo llevo.", "yourResponseEnglish": "Great! I'll take it.", "tags": ["sale", "payment"], "difficulty": 2 },
+        { "id": "shop-005", "phrase": "¿Lo quieres para regalo? ¿Te lo envuelvo?", "english": "Do you want it as a gift? Shall I wrap it?", "context": "Shop assistant at checkout", "yourResponse": "No hace falta, gracias.", "yourResponseEnglish": "No need, thanks.", "tags": ["checkout"], "difficulty": 2 },
+        { "id": "shop-006", "phrase": "Solo aceptamos efectivo.", "english": "We only accept cash.", "context": "Small shop owner", "yourResponse": "¿Hay un cajero cerca?", "yourResponseEnglish": "Is there an ATM nearby?", "tags": ["payment"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "tickets",
+      "category": "Activities & Tickets",
+      "icon": "🎟️",
+      "color": "#00BCD4",
+      "prompts": [
+        { "id": "tickets-001", "phrase": "¿Cuántas entradas quieres?", "english": "How many tickets do you want?", "context": "Ticket window at an attraction", "yourResponse": "Cuatro, por favor. Dos adultos y dos niños.", "yourResponseEnglish": "Four, please. Two adults and two children.", "tags": ["tickets"], "difficulty": 1 },
+        { "id": "tickets-002", "phrase": "Los menores de seis años entran gratis.", "english": "Children under six get in free.", "context": "Ticket seller explaining pricing", "yourResponse": "Los nuestros tienen once y trece.", "yourResponseEnglish": "Ours are eleven and thirteen.", "tags": ["tickets", "pricing"], "difficulty": 2 },
+        { "id": "tickets-003", "phrase": "La próxima visita guiada es a las cuatro.", "english": "The next guided tour is at four.", "context": "Information desk at a museum", "yourResponse": "¿Hay visitas en inglés?", "yourResponseEnglish": "Are there tours in English?", "tags": ["tours", "time"], "difficulty": 2 },
+        { "id": "tickets-004", "phrase": "No se pueden sacar fotos aquí dentro.", "english": "You can't take photos in here.", "context": "Museum guard", "yourResponse": "Perdona, no lo sabía.", "yourResponseEnglish": "Sorry, I didn't know.", "tags": ["rules"], "difficulty": 1 },
+        { "id": "tickets-005", "phrase": "Está cerrado hoy por festivo. Abrimos mañana a las diez.", "english": "It's closed today for a holiday. We open tomorrow at ten.", "context": "Sign or staff at an attraction", "yourResponse": "Ah vale, volvemos mañana entonces.", "yourResponseEnglish": "Oh right, we'll come back tomorrow then.", "tags": ["hours"], "difficulty": 2 },
+        { "id": "tickets-006", "phrase": "¿Habéis reservado por internet?", "english": "Have you booked online?", "context": "Staff at popular attraction", "yourResponse": "Sí, aquí tengo la reserva.", "yourResponseEnglish": "Yes, I have the booking here.", "tags": ["booking"], "difficulty": 1 }
+      ]
+    },
+    {
+      "id": "pharmacy",
+      "category": "Pharmacy",
+      "icon": "💊",
+      "color": "#F44336",
+      "prompts": [
+        { "id": "pharm-001", "phrase": "¡Hola! ¿Qué necesitas?", "english": "Hi! What do you need?", "context": "Pharmacist greeting you", "yourResponse": "¿Tienes algo para el dolor de cabeza?", "yourResponseEnglish": "Do you have something for a headache?", "tags": ["greeting"], "difficulty": 1 },
+        { "id": "pharm-002", "phrase": "¿Es para un adulto o para un niño?", "english": "Is it for an adult or a child?", "context": "Pharmacist asking who it's for", "yourResponse": "Para mi hijo. Tiene once años.", "yourResponseEnglish": "For my son. He's eleven.", "tags": ["medical"], "difficulty": 1 },
+        { "id": "pharm-003", "phrase": "¿Tiene alguna alergia?", "english": "Does he/she have any allergies?", "context": "Pharmacist checking before recommending", "yourResponse": "No, que yo sepa.", "yourResponseEnglish": "Not that I know of.", "tags": ["medical"], "difficulty": 1 },
+        { "id": "pharm-004", "phrase": "Toma uno cada ocho horas con comida.", "english": "Take one every eight hours with food.", "context": "Pharmacist explaining dosage", "yourResponse": "¿Puedes repetirlo más despacio?", "yourResponseEnglish": "Can you repeat that more slowly?", "tags": ["medical", "instructions"], "difficulty": 2 },
+        { "id": "pharm-005", "phrase": "Para eso necesitas receta médica.", "english": "For that you need a doctor's prescription.", "context": "Pharmacist when you ask for something restricted", "yourResponse": "¿Dónde puedo encontrar un médico?", "yourResponseEnglish": "Where can I find a doctor?", "tags": ["medical", "prescription"], "difficulty": 2 },
+        { "id": "pharm-006", "phrase": "Te recomiendo este. Es muy efectivo y no necesita receta.", "english": "I recommend this one. It's very effective and doesn't need a prescription.", "context": "Pharmacist suggesting an alternative", "yourResponse": "Perfecto, me lo llevo.", "yourResponseEnglish": "Perfect, I'll take it.", "tags": ["medical", "recommendation"], "difficulty": 2 }
+      ]
+    },
+    {
+      "id": "cafe",
+      "category": "Café & Bar",
+      "icon": "☕",
+      "color": "#795548",
+      "prompts": [
+        { "id": "cafe-001", "phrase": "¿Qué os pongo?", "english": "What can I get you?", "context": "Barista or bartender", "yourResponse": "Un café con leche, por favor.", "yourResponseEnglish": "A white coffee, please.", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "cafe-002", "phrase": "¿Solo o con leche?", "english": "Black or with milk?", "context": "Barista clarifying your coffee order", "yourResponse": "Con leche, por favor.", "yourResponseEnglish": "With milk, please.", "tags": ["ordering", "coffee"], "difficulty": 1 },
+        { "id": "cafe-003", "phrase": "¿Para tomar aquí o para llevar?", "english": "For here or to go?", "context": "Barista or fast food worker", "yourResponse": "Para tomar aquí.", "yourResponseEnglish": "For here.", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "cafe-004", "phrase": "¿Queréis picar algo? Tenemos tapas.", "english": "Do you want a bite to eat? We have tapas.", "context": "Bartender suggesting food", "yourResponse": "¿Qué tapas tenéis?", "yourResponseEnglish": "What tapas do you have?", "tags": ["food", "ordering"], "difficulty": 2 },
+        { "id": "cafe-005", "phrase": "Marchando.", "english": "Coming right up.", "context": "Bartender confirming your order", "yourResponse": "Gracias.", "yourResponseEnglish": "Thanks.", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "cafe-006", "phrase": "¿Cortado o con leche?", "english": "Cortado or with milk?", "context": "Barista when you just say 'un café'", "yourResponse": "Cortado, por favor.", "yourResponseEnglish": "Cortado, please.", "tags": ["ordering", "coffee"], "difficulty": 1 },
+        { "id": "cafe-007", "phrase": "¿La leche caliente, templada o fría?", "english": "The milk hot, warm, or cold?", "context": "Barista asking about milk temperature", "yourResponse": "Caliente, por favor.", "yourResponseEnglish": "Hot, please.", "tags": ["ordering", "coffee"], "difficulty": 2 },
+        { "id": "cafe-008", "phrase": "¿Quieres algo más?", "english": "Do you want anything else?", "context": "Barista after making your drink", "yourResponse": "Sí, un zumo de naranja también.", "yourResponseEnglish": "Yes, an orange juice too.", "tags": ["ordering"], "difficulty": 1 },
+        { "id": "cafe-009", "phrase": "No tenemos wifi, lo siento.", "english": "We don't have wifi, sorry.", "context": "Barista when you ask for wifi", "yourResponse": "No pasa nada, gracias.", "yourResponseEnglish": "No worries, thanks.", "tags": ["general"], "difficulty": 1 },        
+        { "id": "cafe-010", "phrase": "Se paga en barra.", "english": "You pay at the bar.", "context": "Server when you try to pay at a table", "yourResponse": "Ah vale, gracias.", "yourResponseEnglish": "Oh OK, thanks.", "tags": ["payment"], "difficulty": 2 },
+        { "id": "cafe-011", "phrase": "Son dos con sesenta.", "english": "That's two sixty.", "context": "Barista telling you the total", "yourResponse": "Aquí tienes.", "yourResponseEnglish": "Here you go.", "tags": ["payment"], "difficulty": 1 },
+        { "id": "cafe-012", "phrase": "¿Os cobro todo junto?", "english": "Shall I charge you for everything together?", "context": "Barista when you've ordered multiple rounds", "yourResponse": "Sí, todo junto, por favor.", "yourResponseEnglish": "Yes, all together, please.", "tags": ["payment"], "difficulty": 2 },
+        { "id": "cafe-013", "phrase": "La cocina cierra a las cuatro. ¿Queréis pedir algo de comer antes?", "english": "The kitchen closes at four. Do you want to order food before it closes?", "context": "Server giving you a heads up", "yourResponse": "Sí, ponme una tortilla, por favor.", "yourResponseEnglish": "Yes, give me a tortilla, please.", "tags": ["food", "ordering"], "difficulty": 3 },
+        { "id": "cafe-014", "phrase": "¿Queréis ver la carta de cervezas?", "english": "Do you want to see the beer menu?", "context": "Bartender at a craft beer spot", "yourResponse": "Sí, por favor. ¿Tenéis alguna local?", "yourResponseEnglish": "Yes, please. Do you have any local ones?", "tags": ["ordering", "drinks"], "difficulty": 2 },
+        { "id": "cafe-015", "phrase": "¿Una caña o una jarra?", "english": "A small draft or a pint?", "context": "Bartender asking about beer size", "yourResponse": "Una caña, por favor.", "yourResponseEnglish": "A small draft, please.", "tags": ["ordering", "drinks"], "difficulty": 1 }
+      ]
+    }
+  ]
+}
