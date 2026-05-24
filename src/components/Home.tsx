@@ -1,11 +1,11 @@
 import { useState } from 'react'
-import { Scenario, SessionMode, Speed, Language, LANGUAGE_CONFIG } from '../types'
+import { Scenario, SessionMode, Speed, SUPPORTED_TARGETS, TARGET_META } from '../types'
 import SpeedControl from './SpeedControl'
 
 interface Props {
   scenarios: Scenario[]
-  language: Language
-  onLanguageChange: (l: Language) => void
+  language: string
+  onLanguageChange: (l: string) => void
   onStart: (categories: Set<string>, mode: SessionMode) => void
   streak: number
   speed: Speed
@@ -129,17 +129,17 @@ export default function Home({ scenarios, language, onLanguageChange, onStart, s
           Language
         </div>
         <div style={{ display: 'flex', gap: 8 }}>
-          {(['es', 'pt'] as Language[]).map(lang => (
+          {SUPPORTED_TARGETS.map(locale => (
             <button
-              key={lang}
-              onClick={() => onLanguageChange(lang)}
+              key={locale}
+              onClick={() => onLanguageChange(locale)}
               style={{
                 flex: 1,
-                background: language === lang ? 'rgba(232, 93, 58, 0.08)' : 'rgba(255,255,255,0.03)',
-                border: `1.5px solid ${language === lang ? 'rgba(232, 93, 58, 0.4)' : 'rgba(255,255,255,0.07)'}`,
+                background: language === locale ? 'rgba(232, 93, 58, 0.08)' : 'rgba(255,255,255,0.03)',
+                border: `1.5px solid ${language === locale ? 'rgba(232, 93, 58, 0.4)' : 'rgba(255,255,255,0.07)'}`,
                 borderRadius: 12,
                 padding: '10px 16px',
-                color: language === lang ? '#E85D3A' : 'rgba(255,255,255,0.55)',
+                color: language === locale ? '#E85D3A' : 'rgba(255,255,255,0.55)',
                 cursor: 'pointer',
                 fontSize: 14,
                 fontFamily: "'DM Sans', sans-serif",
@@ -150,8 +150,8 @@ export default function Home({ scenarios, language, onLanguageChange, onStart, s
                 gap: 8,
               }}
             >
-              <span>{LANGUAGE_CONFIG[lang].flag}</span>
-              <span>{LANGUAGE_CONFIG[lang].label}</span>
+              <span>{TARGET_META[locale].flag}</span>
+              <span>{TARGET_META[locale].label}</span>
             </button>
           ))}
         </div>

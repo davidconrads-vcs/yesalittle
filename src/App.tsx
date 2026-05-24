@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import promptsData from './data/prompts.json'
-import { UnifiedScenario, Scenario, Prompt, PromptWithScenario, SessionMode, Speed, Screen, Language } from './types'
+import { UnifiedScenario, Scenario, Prompt, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, DEFAULT_NATIVE } from './types'
+import { resolveByNativeLang } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
 import Home from './components/Home'
@@ -8,28 +9,28 @@ import Practice from './components/Practice'
 import Summary from './components/Summary'
 import Progress from './components/Progress'
 
-const LOCALE: Record<Language, string> = {
-  es: 'es-ES',
-  pt: 'pt-PT',
-}
+const PREF_TARGET_KEY = 'yesalittle:target'
 
-function buildScenarios(lang: Language): Scenario[] {
-  const locale = LOCALE[lang]
+// Builds a flat, language-specific scenario list from the unified schema.
+// resolveByNativeLang is called here at build time against the current native locale,
+// so a future native-language switcher will need to rebuild DATA when native changes.
+function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
   return (promptsData.scenarios as unknown as UnifiedScenario[])
     .map(s => ({
       ...s,
       prompts: s.prompts
         .filter(p => {
-          const t = p.translations[locale]
+          const t = p.translations[target]
           return t != null && t.practiceAsTarget !== false
         })
         .map((p): Prompt => ({
           id: p.id,
-          phrase: p.translations[locale].phrase,
+          phrase: p.translations[target].phrase,
           english: p.translations['en-US'].phrase,
-          context: p.context['en-US'],
-          yourResponse: p.translations[locale].response,
+          context: resolveByNativeLang(p.context, native) ?? '',
+          yourResponse: p.translations[target].response,
           yourResponseEnglish: p.translations['en-US'].response,
+          gloss: resolveByNativeLang(p.translations[target].gloss, native),
           tags: p.tags,
           difficulty: p.difficulty,
         })),
@@ -37,10 +38,9 @@ function buildScenarios(lang: Language): Scenario[] {
     .filter(s => s.prompts.length > 0)
 }
 
-const DATA: Record<Language, Scenario[]> = {
-  es: buildScenarios('es'),
-  pt: buildScenarios('pt'),
-}
+const DATA: Record<string, Scenario[]> = Object.fromEntries(
+  SUPPORTED_TARGETS.map(t => [t, buildScenarios(t)])
+)
 
 function buildAllPrompts(scenarios: Scenario[]): PromptWithScenario[] {
   return scenarios.flatMap(s =>
@@ -67,21 +67,22 @@ function getInitialSpeed(): Speed {
   return 'normal'
 }
 
-function getInitialLanguage(): Language {
+function getInitialTarget(): string {
   try {
-    const saved = localStorage.getItem('trainer-language')
-    if (saved === 'es' || saved === 'pt') return saved
+    const saved = localStorage.getItem(PREF_TARGET_KEY)
+    if (saved && (SUPPORTED_TARGETS as readonly string[]).includes(saved)) return saved
   } catch {}
-  return 'es'
+  return SUPPORTED_TARGETS[0]
 }
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>('home')
   const [speed, setSpeed] = useState<Speed>(getInitialSpeed)
-  const [language, setLanguage] = useState<Language>(getInitialLanguage)
+  const [language, setLanguage] = useState<string>(getInitialTarget)
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
-  const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(language)
+  const pair: LanguagePair = { native: DEFAULT_NATIVE, target: language }
+  const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(pair)
 
   const scenarios = DATA[language]
   const allPrompts = buildAllPrompts(scenarios)
@@ -91,9 +92,9 @@ export default function App() {
     try { localStorage.setItem('trainer-speed', s) } catch {}
   }
 
-  const handleLanguageChange = (l: Language) => {
+  const handleLanguageChange = (l: string) => {
     setLanguage(l)
-    try { localStorage.setItem('trainer-language', l) } catch {}
+    try { localStorage.setItem(PREF_TARGET_KEY, l) } catch {}
   }
 
   const handleStart = (categories: Set<string>, mode: SessionMode) => {
