@@ -1,5 +1,32 @@
 export type Language = 'es' | 'pt'
 
+// ── Unified schema (prompts.json) ─────────────────────────────────────────────
+
+export interface Translation {
+  phrase: string
+  response: string
+  practiceAsTarget?: boolean
+  gloss?: Record<string, string>
+}
+
+export interface UnifiedPrompt {
+  id: string
+  tags: string[]
+  difficulty: number
+  context: Record<string, string>
+  translations: Record<string, Translation>
+}
+
+export interface UnifiedScenario {
+  id: string
+  category: string
+  icon: string
+  color: string
+  prompts: UnifiedPrompt[]
+}
+
+// ── Internal working types (flat view derived per language) ───────────────────
+
 export interface Prompt {
   id: string
   phrase: string

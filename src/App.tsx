@@ -1,7 +1,6 @@
 import { useState } from 'react'
-import esPromptsData from './data/prompts.json'
-import ptPromptsData from './data/prompts-pt.json'
-import { Scenario, PromptWithScenario, SessionMode, Speed, Screen, Language } from './types'
+import promptsData from './data/prompts.json'
+import { UnifiedScenario, Scenario, Prompt, PromptWithScenario, SessionMode, Speed, Screen, Language } from './types'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
 import Home from './components/Home'
@@ -9,9 +8,38 @@ import Practice from './components/Practice'
 import Summary from './components/Summary'
 import Progress from './components/Progress'
 
+const LOCALE: Record<Language, string> = {
+  es: 'es-ES',
+  pt: 'pt-PT',
+}
+
+function buildScenarios(lang: Language): Scenario[] {
+  const locale = LOCALE[lang]
+  return (promptsData.scenarios as unknown as UnifiedScenario[])
+    .map(s => ({
+      ...s,
+      prompts: s.prompts
+        .filter(p => {
+          const t = p.translations[locale]
+          return t != null && t.practiceAsTarget !== false
+        })
+        .map((p): Prompt => ({
+          id: p.id,
+          phrase: p.translations[locale].phrase,
+          english: p.translations['en-US'].phrase,
+          context: p.context['en-US'],
+          yourResponse: p.translations[locale].response,
+          yourResponseEnglish: p.translations['en-US'].response,
+          tags: p.tags,
+          difficulty: p.difficulty,
+        })),
+    }))
+    .filter(s => s.prompts.length > 0)
+}
+
 const DATA: Record<Language, Scenario[]> = {
-  es: esPromptsData.scenarios as Scenario[],
-  pt: ptPromptsData.scenarios as Scenario[],
+  es: buildScenarios('es'),
+  pt: buildScenarios('pt'),
 }
 
 function buildAllPrompts(scenarios: Scenario[]): PromptWithScenario[] {

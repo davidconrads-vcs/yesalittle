@@ -10,7 +10,9 @@
       "Bash(ls:*)",
       "Bash(/usr/local/bin/npm --version 2>/dev/null || /opt/homebrew/bin/npm --version 2>/dev/null || ~/.nvm/versions/node/*/bin/npm --version 2>/dev/null || ~/.volta/bin/npm --version 2>/dev/null)",
       "Bash(grep -E \"\\\\.\\(ts|tsx|json|js|jsx\\)$\")",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Bash(python3 *)",
+      "Read(//tmp/**)"
     ]
   }
 }
