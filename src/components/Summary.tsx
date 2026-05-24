@@ -1,4 +1,4 @@
-import { PromptWithScenario, Speed, Language } from '../types'
+import { PromptWithScenario, Speed } from '../types'
 import SpeakButton from './SpeakButton'
 
 interface SessionResult {
@@ -9,7 +9,7 @@ interface SessionResult {
 interface Props {
   results: SessionResult[]
   speed: Speed
-  lang: Language
+  lang: string
   onRetryMissed: (missed: PromptWithScenario[]) => void
   onNewSession: () => void
 }

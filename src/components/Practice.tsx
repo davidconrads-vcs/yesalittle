@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react'
-import { PromptWithScenario, Speed, Language } from '../types'
+import { PromptWithScenario, Speed } from '../types'
 import SpeakButton from './SpeakButton'
 import SpeedControl from './SpeedControl'
 
 interface Props {
   queue: PromptWithScenario[]
   speed: Speed
-  lang: Language
+  lang: string
   onSpeedChange: (s: Speed) => void
   onResult: (promptId: string, understood: boolean) => void
   onExit: () => void
@@ -188,6 +188,23 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
                   {current.yourResponseEnglish}
                 </div>
               </div>
+              {current.gloss && (
+                <div
+                  style={{
+                    marginTop: 12,
+                    padding: '8px 12px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: 10,
+                    fontSize: 13,
+                    color: 'rgba(255,255,255,0.4)',
+                    lineHeight: 1.5,
+                    textAlign: 'left',
+                  }}
+                >
+                  <span style={{ marginRight: 6 }}>ℹ️</span>{current.gloss}
+                </div>
+              )}
             </div>
           )}
 

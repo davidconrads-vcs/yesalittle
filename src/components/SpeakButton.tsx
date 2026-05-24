@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import { useAudio } from '../hooks/useAudio'
-import { Speed, Language } from '../types'
+import { Speed } from '../types'
 
 interface Props {
   promptId: string
   phrase: string
   speed: Speed
-  lang: Language
+  lang: string
   autoPlay?: boolean
   size?: 'large' | 'small'
 }

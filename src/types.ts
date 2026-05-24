@@ -1,4 +1,18 @@
-export type Language = 'es' | 'pt'
+// ── Language pair ─────────────────────────────────────────────────────────────
+
+export interface LanguagePair {
+  native: string  // BCP 47 locale; fixed to DEFAULT_NATIVE for v1
+  target: string  // BCP 47 locale, e.g. 'es-ES' | 'pt-PT'
+}
+
+export const DEFAULT_NATIVE = 'en-US'
+
+export const SUPPORTED_TARGETS = ['es-ES', 'pt-PT'] as const
+
+export const TARGET_META: Record<string, { label: string; flag: string; ttsLang: string }> = {
+  'es-ES': { label: 'Spanish',    flag: '🇪🇸', ttsLang: 'es-ES' },
+  'pt-PT': { label: 'Portuguese', flag: '🇵🇹', ttsLang: 'pt-PT' },
+}
 
 // ── Unified schema (prompts.json) ─────────────────────────────────────────────
 
@@ -34,6 +48,7 @@ export interface Prompt {
   context: string
   yourResponse: string
   yourResponseEnglish: string
+  gloss?: string
   tags: string[]
   difficulty: number
 }
@@ -68,7 +83,3 @@ export type SessionMode = 'full' | 'review' | 'new'
 
 export type Screen = 'home' | 'practice' | 'summary' | 'progress'
 
-export const LANGUAGE_CONFIG: Record<Language, { label: string; flag: string; ttsLang: string; title: string }> = {
-  es: { label: 'Spanish', flag: '🇪🇸', ttsLang: 'es-ES', title: '¿Qué te han dicho?' },
-  pt: { label: 'Portuguese', flag: '🇵🇹', ttsLang: 'pt-PT', title: 'O que te disseram?' },
-}

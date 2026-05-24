@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react'
-import { Speed, Language, LANGUAGE_CONFIG } from '../types'
+import { Speed, TARGET_META } from '../types'
 
 const SPEECH_RATES: Record<Speed, number> = {
   slow: 0.7,
@@ -26,7 +26,7 @@ function speakWithBrowser(text: string, rate: number, ttsLang: string): Promise<
   })
 }
 
-export function useAudio(promptId: string, speed: Speed, lang: Language, text?: string) {
+export function useAudio(promptId: string, speed: Speed, lang: string, text?: string) {
   const [playing, setPlaying] = useState(false)
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const stoppedRef = useRef(false)
@@ -56,7 +56,7 @@ export function useAudio(promptId: string, speed: Speed, lang: Language, text?: 
       if (!stoppedRef.current) setPlaying(false)
     }
 
-    const ttsLang = LANGUAGE_CONFIG[lang].ttsLang
+    const ttsLang = TARGET_META[lang]?.ttsLang ?? lang
 
     audio.onerror = () => {
       // mp3 not found — fall back to browser speech synthesis

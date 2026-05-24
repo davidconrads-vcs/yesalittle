@@ -1,44 +1,60 @@
 import { useState, useCallback, useEffect } from 'react'
-import { ProgressData, PromptStats, Language } from '../types'
+import { LanguagePair, ProgressData, PromptStats } from '../types'
 
 interface StreakData {
   lastPracticed: string
   streak: number
 }
 
-function storageKey(lang: Language) {
-  return `trainer-progress-${lang}`
+// One-time cleanup of legacy keys from before Handoff 2, guarded by a flag.
+const MIGRATION_FLAG = 'yesalittle:migrated-v2'
+const LEGACY_KEYS = [
+  'trainer-progress-es',
+  'trainer-progress-pt',
+  'trainer-streak-es',
+  'trainer-streak-pt',
+  'trainer-language',
+]
+try {
+  if (!localStorage.getItem(MIGRATION_FLAG)) {
+    for (const key of LEGACY_KEYS) localStorage.removeItem(key)
+    localStorage.setItem(MIGRATION_FLAG, '1')
+  }
+} catch {}
+
+function storageKey(pair: LanguagePair) {
+  return `yesalittle:progress:${pair.native}::${pair.target}`
 }
 
-function streakKey(lang: Language) {
-  return `trainer-streak-${lang}`
+function streakKey(pair: LanguagePair) {
+  return `yesalittle:streak:${pair.native}::${pair.target}`
 }
 
-function loadProgress(lang: Language): ProgressData {
+function loadProgress(pair: LanguagePair): ProgressData {
   try {
-    const raw = localStorage.getItem(storageKey(lang))
+    const raw = localStorage.getItem(storageKey(pair))
     return raw ? JSON.parse(raw) : {}
   } catch {
     return {}
   }
 }
 
-function saveProgress(data: ProgressData, lang: Language) {
-  localStorage.setItem(storageKey(lang), JSON.stringify(data))
+function saveProgress(data: ProgressData, pair: LanguagePair) {
+  localStorage.setItem(storageKey(pair), JSON.stringify(data))
 }
 
-function loadStreak(lang: Language): StreakData {
+function loadStreak(pair: LanguagePair): StreakData {
   try {
-    const raw = localStorage.getItem(streakKey(lang))
+    const raw = localStorage.getItem(streakKey(pair))
     return raw ? JSON.parse(raw) : { lastPracticed: '', streak: 0 }
   } catch {
     return { lastPracticed: '', streak: 0 }
   }
 }
 
-function updateStreak(lang: Language): number {
+function updateStreak(pair: LanguagePair): number {
   const today = new Date().toISOString().split('T')[0]
-  const data = loadStreak(lang)
+  const data = loadStreak(pair)
   const yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0]
 
   let newStreak: number
@@ -50,18 +66,18 @@ function updateStreak(lang: Language): number {
     newStreak = 1
   }
 
-  localStorage.setItem(streakKey(lang), JSON.stringify({ lastPracticed: today, streak: newStreak }))
+  localStorage.setItem(streakKey(pair), JSON.stringify({ lastPracticed: today, streak: newStreak }))
   return newStreak
 }
 
-export function useProgress(language: Language) {
-  const [progress, setProgress] = useState<ProgressData>(() => loadProgress(language))
-  const [streak, setStreak] = useState<number>(() => loadStreak(language).streak)
+export function useProgress(pair: LanguagePair) {
+  const [progress, setProgress] = useState<ProgressData>(() => loadProgress(pair))
+  const [streak, setStreak] = useState<number>(() => loadStreak(pair).streak)
 
   useEffect(() => {
-    setProgress(loadProgress(language))
-    setStreak(loadStreak(language).streak)
-  }, [language])
+    setProgress(loadProgress(pair))
+    setStreak(loadStreak(pair).streak)
+  }, [pair.native, pair.target])
 
   const recordResult = useCallback((promptId: string, understood: boolean) => {
     setProgress(prev => {
@@ -74,22 +90,22 @@ export function useProgress(language: Language) {
         streak: newStreak,
       }
       const next = { ...prev, [promptId]: updated }
-      saveProgress(next, language)
+      saveProgress(next, pair)
       return next
     })
-  }, [language])
+  }, [pair.native, pair.target])
 
   const markSessionComplete = useCallback(() => {
-    const s = updateStreak(language)
+    const s = updateStreak(pair)
     setStreak(s)
-  }, [language])
+  }, [pair.native, pair.target])
 
   const resetProgress = useCallback(() => {
-    localStorage.removeItem(storageKey(language))
-    localStorage.removeItem(streakKey(language))
+    localStorage.removeItem(storageKey(pair))
+    localStorage.removeItem(streakKey(pair))
     setProgress({})
     setStreak(0)
-  }, [language])
+  }, [pair.native, pair.target])
 
   return { progress, streak, recordResult, markSessionComplete, resetProgress }
 }
