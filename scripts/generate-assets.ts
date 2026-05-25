@@ -37,14 +37,11 @@ console.log('Written favicon-32.png')
 await sharp(faviconBuf).resize(180, 180).png().toFile(join(PUBLIC, 'apple-touch-icon.png'))
 console.log('Written apple-touch-icon.png')
 
-// ── og-image (with emoji flags — fall back to text-only if they don't render) ─
+// ── og-image ──────────────────────────────────────────────────────────────────
+// Flag emoji don't render as color via librsvg/Cairo on this platform —
+// confirmed gray on inspection. Using text-only language line.
 
-function ogImageSvg(flags: boolean): string {
-  const langLine = flags
-    ? '🇪🇸 Spanish · 🇵🇹 Portuguese'
-    : 'Spanish · Portuguese'
-
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+const OG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
     <linearGradient id="wordmark-grad" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0%"   stop-color="#ffffff" stop-opacity="1"/>
@@ -88,54 +85,15 @@ function ogImageSvg(flags: boolean): string {
 
   <!-- Language line -->
   <text x="600" y="488"
-    font-family="${flags ? 'Apple Color Emoji, ' : ''}'Helvetica Neue', 'Arial', sans-serif"
+    font-family="'Helvetica Neue', 'Arial', sans-serif"
     font-size="19"
     font-weight="400"
     fill="rgba(255,255,255,0.3)"
     text-anchor="middle"
-  >${langLine}</text>
+  >Spanish · Portuguese</text>
 </svg>`
-}
 
-// First pass: try with emoji flags
-const svgWithEmoji = ogImageSvg(true)
-const emojiPngBuf = await sharp(Buffer.from(svgWithEmoji))
-  .resize(1200, 630)
-  .png()
-  .toBuffer()
-
-// Probe pixel variance in the language-line area to detect emoji rendering.
-// If flags rendered as color emoji the region will have high channel variance;
-// glyph fallbacks ("ES", "PT" letters) are near-monochrome.
-const { data: pixels } = await sharp(emojiPngBuf)
-  .extract({ left: 450, top: 460, width: 300, height: 40 })
-  .raw()
-  .toBuffer({ resolveWithObject: true })
-
-const rVals: number[] = []
-const gVals: number[] = []
-const bVals: number[] = []
-for (let i = 0; i < pixels.length; i += 4) {
-  rVals.push(pixels[i])
-  gVals.push(pixels[i + 1])
-  bVals.push(pixels[i + 2])
-}
-const spread = (arr: number[]) => Math.max(...arr) - Math.min(...arr)
-const rSpread = spread(rVals)
-const gSpread = spread(gVals)
-const bSpread = spread(bVals)
-const emojiRendered = rSpread > 60 && gSpread > 60 && bSpread > 60
-
-console.log(`Emoji flag probe — R spread: ${rSpread}, G spread: ${gSpread}, B spread: ${bSpread}`)
-console.log(`Emoji rendered as color: ${emojiRendered}`)
-
-if (emojiRendered) {
-  writeFileSync(join(PUBLIC, 'og-image.png'), emojiPngBuf)
-  console.log('Written og-image.png (with emoji flags)')
-} else {
-  const svgNoEmoji = ogImageSvg(false)
-  await sharp(Buffer.from(svgNoEmoji)).resize(1200, 630).png().toFile(join(PUBLIC, 'og-image.png'))
-  console.log('Written og-image.png (text-only fallback — emoji did not render)')
-}
+await sharp(Buffer.from(OG_SVG)).resize(1200, 630).png().toFile(join(PUBLIC, 'og-image.png'))
+console.log('Written og-image.png')
 
 console.log('Done!')
