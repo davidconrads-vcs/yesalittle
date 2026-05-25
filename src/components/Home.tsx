@@ -75,7 +75,7 @@ export default function Home({ scenarios, language, onLanguageChange, onStart, s
             yesalittle
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginTop: 8, lineHeight: 1.5, margin: '8px 0 0' }}>
-            Listen to what locals say in real situations.
+            Understand what locals say — and respond like one.
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
