@@ -6,13 +6,14 @@ const __dirname = dirname(fileURLToPath(import.meta.url))
 const ROOT = join(__dirname, '..')
 
 interface Translation {
-  phrase: string
+  phrase?: string
   response: string
   practiceAsTarget?: boolean
 }
 
 interface UnifiedPrompt {
   id: string
+  type?: string          // 'conversation' | 'scenario'; omitted = 'conversation'
   translations: Record<string, Translation>
 }
 
@@ -127,7 +128,7 @@ async function main() {
 
   for (const prompt of allPrompts) {
     const t = prompt.translations[lang]
-    if (generatePhrases) {
+    if (generatePhrases && prompt.type !== 'scenario' && t.phrase) {
       console.log(`[${prompt.id}] phrase: "${t.phrase}"`)
       for (const speed of SPEEDS) {
         await generateAudio(prompt.id, t.phrase, speed.name, speed.rate)

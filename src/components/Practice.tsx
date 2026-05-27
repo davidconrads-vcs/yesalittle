@@ -15,7 +15,7 @@ interface Props {
 export default function Practice({ queue, speed, lang, onSpeedChange, onResult, onExit }: Props) {
   const [index, setIndex] = useState(0)
   const [phase, setPhase] = useState<'listen' | 'reveal'>('listen')
-  const [key, setKey] = useState(0) // for remounting SpeakButton
+  const [key, setKey] = useState(0) // for remounting SpeakButton on new prompt
 
   const current = queue[index]
 
@@ -29,12 +29,230 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
     if (index + 1 < queue.length) {
       setIndex(i => i + 1)
     }
-    // else: App.tsx handles transition to summary when onResult is called for last item
   }
 
   if (!current) return null
 
+  const isScenario = current.type === 'scenario'
   const pct = queue.length > 0 ? ((index + 1) / queue.length) * 100 : 0
+
+  const sharedCardStyle = {
+    background: 'rgba(255,255,255,0.03)',
+    border: '1px solid rgba(255,255,255,0.08)',
+    borderRadius: 20,
+    padding: 28,
+    marginBottom: 20,
+    textAlign: 'center' as const,
+  }
+
+  const labelStyle = {
+    fontSize: 12,
+    color: 'rgba(255,255,255,0.35)',
+    marginBottom: 16,
+    fontFamily: "'JetBrains Mono', monospace",
+    letterSpacing: 1,
+    textTransform: 'uppercase' as const,
+  }
+
+  const responseCardStyle = {
+    background: 'rgba(76, 175, 80, 0.08)',
+    border: '1px solid rgba(76, 175, 80, 0.2)',
+    borderRadius: 12,
+    padding: '12px 16px',
+    textAlign: 'left' as const,
+  }
+
+  const responseLabelStyle = {
+    fontSize: 11,
+    color: 'rgba(76, 175, 80, 0.6)',
+    fontFamily: "'JetBrains Mono', monospace",
+    textTransform: 'uppercase' as const,
+    letterSpacing: 1,
+  }
+
+  const resultActions = (
+    <div style={{ display: 'flex', gap: 10, animation: 'fadeUp 0.3s ease' }}>
+      <button
+        onClick={() => handleResult(false)}
+        style={{
+          flex: 1,
+          padding: '18px 20px',
+          background: 'rgba(244, 67, 54, 0.1)',
+          border: '1.5px solid rgba(244, 67, 54, 0.3)',
+          borderRadius: 14,
+          color: '#F44336',
+          fontSize: 16,
+          fontWeight: 600,
+          fontFamily: "'DM Sans', sans-serif",
+          cursor: 'pointer',
+          minHeight: 56,
+        }}
+      >
+        Didn't Get It
+      </button>
+      <button
+        onClick={() => handleResult(true)}
+        style={{
+          flex: 1,
+          padding: '18px 20px',
+          background: 'rgba(76, 175, 80, 0.1)',
+          border: '1.5px solid rgba(76, 175, 80, 0.3)',
+          borderRadius: 14,
+          color: '#4CAF50',
+          fontSize: 16,
+          fontWeight: 600,
+          fontFamily: "'DM Sans', sans-serif",
+          cursor: 'pointer',
+          minHeight: 56,
+        }}
+      >
+        Understood ✓
+      </button>
+    </div>
+  )
+
+  const revealButton = (
+    <button
+      onClick={() => setPhase('reveal')}
+      style={{
+        width: '100%',
+        padding: '18px 24px',
+        background: 'linear-gradient(135deg, #E85D3A, #D4472A)',
+        border: 'none',
+        borderRadius: 16,
+        color: '#fff',
+        fontSize: 17,
+        fontWeight: 600,
+        fontFamily: "'DM Sans', sans-serif",
+        cursor: 'pointer',
+        boxShadow: '0 4px 24px rgba(232, 93, 58, 0.3)',
+        minHeight: 56,
+      }}
+    >
+      Reveal Answer
+    </button>
+  )
+
+  // ── Scenario render branch ────────────────────────────────────────────────────
+
+  const scenarioBranch = (
+    <>
+      <div style={sharedCardStyle}>
+        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 16 }}>
+          <span style={{ fontSize: 18, lineHeight: 1, userSelect: 'none' }}>🎬</span>
+          <span style={labelStyle}>The Situation</span>
+        </div>
+
+        <div style={{ animation: phase === 'reveal' ? 'none' : undefined }}>
+          <p style={{
+            fontSize: 17,
+            lineHeight: 1.6,
+            fontStyle: 'italic',
+            color: 'rgba(255,255,255,0.65)',
+            margin: '0 0 20px',
+          }}>
+            {current.context}
+          </p>
+
+          {phase === 'reveal' && (
+            <div style={{ animation: 'fadeUp 0.3s ease' }}>
+              <div style={responseCardStyle}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <div style={responseLabelStyle}>What you'd say</div>
+                  <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
+                </div>
+                <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
+                  {current.yourResponse}
+                </div>
+                <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
+                  {current.yourResponseEnglish}
+                </div>
+              </div>
+              {current.gloss && (
+                <div
+                  style={{
+                    marginTop: 12,
+                    padding: '8px 12px',
+                    background: 'rgba(255,255,255,0.03)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                    borderRadius: 10,
+                    fontSize: 13,
+                    color: 'rgba(255,255,255,0.4)',
+                    lineHeight: 1.5,
+                    textAlign: 'left',
+                  }}
+                >
+                  <span style={{ marginRight: 6 }}>ℹ️</span>{current.gloss}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {phase === 'listen' ? revealButton : resultActions}
+    </>
+  )
+
+  // ── Conversation render branch ────────────────────────────────────────────────
+
+  const conversationBranch = (
+    <>
+      <div style={sharedCardStyle}>
+        <div style={labelStyle}>
+          {phase === 'listen' ? 'Listen & try to understand' : "Here's what they said"}
+        </div>
+
+        {phase === 'listen' ? (
+          <div style={{ fontSize: 56, marginBottom: 20 }}>👂</div>
+        ) : (
+          <div style={{ animation: 'fadeUp 0.3s ease' }}>
+            <div style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
+              {current.phrase}
+            </div>
+            <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
+              {current.english}
+            </div>
+            <div style={responseCardStyle}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                <div style={responseLabelStyle}>You could respond</div>
+                <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
+              </div>
+              <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
+                {current.yourResponse}
+              </div>
+              <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
+                {current.yourResponseEnglish}
+              </div>
+            </div>
+            {current.gloss && (
+              <div
+                style={{
+                  marginTop: 12,
+                  padding: '8px 12px',
+                  background: 'rgba(255,255,255,0.03)',
+                  border: '1px solid rgba(255,255,255,0.08)',
+                  borderRadius: 10,
+                  fontSize: 13,
+                  color: 'rgba(255,255,255,0.4)',
+                  lineHeight: 1.5,
+                  textAlign: 'left',
+                }}
+              >
+                <span style={{ marginRight: 6 }}>ℹ️</span>{current.gloss}
+              </div>
+            )}
+          </div>
+        )}
+
+        <div style={{ marginTop: 16 }}>
+          <SpeakButton key={key} promptId={current.id} phrase={current.phrase ?? ''} speed={speed} lang={lang} autoPlay={phase === 'listen'} size="large" />
+        </div>
+      </div>
+
+      {phase === 'listen' ? revealButton : resultActions}
+    </>
+  )
 
   return (
     <div
@@ -120,160 +338,11 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
         >
           <span>{current.icon}</span>
           <span style={{ fontSize: 13, color: current.color, fontWeight: 500 }}>
-            {current.context}
+            {isScenario ? current.category : current.context}
           </span>
         </div>
 
-        {/* Main card */}
-        <div
-          style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(255,255,255,0.08)',
-            borderRadius: 20,
-            padding: 28,
-            marginBottom: 20,
-            textAlign: 'center',
-          }}
-        >
-          <div
-            style={{
-              fontSize: 12,
-              color: 'rgba(255,255,255,0.35)',
-              marginBottom: 16,
-              fontFamily: "'JetBrains Mono', monospace",
-              letterSpacing: 1,
-              textTransform: 'uppercase',
-            }}
-          >
-            {phase === 'listen' ? 'Listen & try to understand' : "Here's what they said"}
-          </div>
-
-          {phase === 'listen' ? (
-            <div style={{ fontSize: 56, marginBottom: 20 }}>👂</div>
-          ) : (
-            <div style={{ animation: 'fadeUp 0.3s ease' }}>
-              <div style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
-                {current.phrase}
-              </div>
-              <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
-                {current.english}
-              </div>
-              <div
-                style={{
-                  background: 'rgba(76, 175, 80, 0.08)',
-                  border: '1px solid rgba(76, 175, 80, 0.2)',
-                  borderRadius: 12,
-                  padding: '12px 16px',
-                  textAlign: 'left',
-                }}
-              >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
-                  <div
-                    style={{
-                      fontSize: 11,
-                      color: 'rgba(76, 175, 80, 0.6)',
-                      fontFamily: "'JetBrains Mono', monospace",
-                      textTransform: 'uppercase',
-                      letterSpacing: 1,
-                    }}
-                  >
-                    You could respond
-                  </div>
-                  <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
-                </div>
-                <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
-                  {current.yourResponse}
-                </div>
-                <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
-                  {current.yourResponseEnglish}
-                </div>
-              </div>
-              {current.gloss && (
-                <div
-                  style={{
-                    marginTop: 12,
-                    padding: '8px 12px',
-                    background: 'rgba(255,255,255,0.03)',
-                    border: '1px solid rgba(255,255,255,0.08)',
-                    borderRadius: 10,
-                    fontSize: 13,
-                    color: 'rgba(255,255,255,0.4)',
-                    lineHeight: 1.5,
-                    textAlign: 'left',
-                  }}
-                >
-                  <span style={{ marginRight: 6 }}>ℹ️</span>{current.gloss}
-                </div>
-              )}
-            </div>
-          )}
-
-          <div style={{ marginTop: 16 }}>
-            <SpeakButton key={key} promptId={current.id} phrase={current.phrase} speed={speed} lang={lang} autoPlay={phase === 'listen'} size="large" />
-          </div>
-        </div>
-
-        {/* Actions */}
-        {phase === 'listen' ? (
-          <button
-            onClick={() => setPhase('reveal')}
-            style={{
-              width: '100%',
-              padding: '18px 24px',
-              background: 'linear-gradient(135deg, #E85D3A, #D4472A)',
-              border: 'none',
-              borderRadius: 16,
-              color: '#fff',
-              fontSize: 17,
-              fontWeight: 600,
-              fontFamily: "'DM Sans', sans-serif",
-              cursor: 'pointer',
-              boxShadow: '0 4px 24px rgba(232, 93, 58, 0.3)',
-              minHeight: 56,
-            }}
-          >
-            Reveal Answer
-          </button>
-        ) : (
-          <div style={{ display: 'flex', gap: 10, animation: 'fadeUp 0.3s ease' }}>
-            <button
-              onClick={() => handleResult(false)}
-              style={{
-                flex: 1,
-                padding: '18px 20px',
-                background: 'rgba(244, 67, 54, 0.1)',
-                border: '1.5px solid rgba(244, 67, 54, 0.3)',
-                borderRadius: 14,
-                color: '#F44336',
-                fontSize: 16,
-                fontWeight: 600,
-                fontFamily: "'DM Sans', sans-serif",
-                cursor: 'pointer',
-                minHeight: 56,
-              }}
-            >
-              Didn't Get It
-            </button>
-            <button
-              onClick={() => handleResult(true)}
-              style={{
-                flex: 1,
-                padding: '18px 20px',
-                background: 'rgba(76, 175, 80, 0.1)',
-                border: '1.5px solid rgba(76, 175, 80, 0.3)',
-                borderRadius: 14,
-                color: '#4CAF50',
-                fontSize: 16,
-                fontWeight: 600,
-                fontFamily: "'DM Sans', sans-serif",
-                cursor: 'pointer',
-                minHeight: 56,
-              }}
-            >
-              Understood ✓
-            </button>
-          </div>
-        )}
+        {isScenario ? scenarioBranch : conversationBranch}
       </div>
     </div>
   )

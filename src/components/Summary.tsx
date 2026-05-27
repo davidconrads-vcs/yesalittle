@@ -95,14 +95,34 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
                   animation: `fadeUp 0.4s ease ${i * 0.05}s both`,
                 }}
               >
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
-                  <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>
-                    {r.prompt.icon} {r.prompt.context}
-                  </div>
-                  <SpeakButton promptId={r.prompt.id} phrase={r.prompt.phrase} speed={speed} lang={lang} size="small" />
-                </div>
-                <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{r.prompt.phrase}</div>
-                <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{r.prompt.english}</div>
+                {r.prompt.type === 'scenario' ? (
+                  <>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>
+                      <span style={{ fontSize: 14, lineHeight: 1, userSelect: 'none' }}>🎬</span>
+                      <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>The Situation</span>
+                    </div>
+                    <p style={{ fontSize: 14, fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', margin: '0 0 10px', lineHeight: 1.5 }}>
+                      {r.prompt.context}
+                    </p>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
+                      <span style={{ fontSize: 11, color: 'rgba(76, 175, 80, 0.6)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>What you'd say</span>
+                      <SpeakButton promptId={`${r.prompt.id}-response`} phrase={r.prompt.yourResponse} speed={speed} lang={lang} size="small" />
+                    </div>
+                    <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>{r.prompt.yourResponse}</div>
+                    <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 2 }}>{r.prompt.yourResponseEnglish}</div>
+                  </>
+                ) : (
+                  <>
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 8 }}>
+                      <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)' }}>
+                        {r.prompt.icon} {r.prompt.context}
+                      </div>
+                      <SpeakButton promptId={r.prompt.id} phrase={r.prompt.phrase ?? ''} speed={speed} lang={lang} size="small" />
+                    </div>
+                    <div style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{r.prompt.phrase}</div>
+                    <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{r.prompt.english}</div>
+                  </>
+                )}
               </div>
             ))}
           </div>
