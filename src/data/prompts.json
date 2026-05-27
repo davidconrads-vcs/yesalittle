@@ -14,19 +14,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You caught most of it but need another pass"
+            "en-US": "Someone has just said something to you and you almost understood — you got the gist but missed enough that you can't confidently respond. You need them to say it again."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Alguien dice algo que casi entiendes",
               "response": "¿Puedes repetir eso, por favor?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Someone says something you almost understood",
               "response": "Can you repeat that, please?"
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-panic-002",
@@ -36,19 +35,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "The words are there but the speed is killing you"
+            "en-US": "Someone is speaking to you and the speed is too fast to follow. You understand the words individually but they're coming too quickly to process. You need them to slow down."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Alguien habla demasiado rápido",
               "response": "¿Puedes hablar más despacio, por favor?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Someone is speaking too fast",
               "response": "Can you speak more slowly, please?"
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-panic-003",
@@ -58,19 +56,18 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "You've gone in over your head"
+            "en-US": "You started a conversation in Spanish and it's gotten beyond your level — you're now lost and need to gracefully signal that your Spanish isn't strong enough to keep up."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Estás a mitad de conversación y te pierdes",
               "response": "Perdona, mi español aún no es muy bueno.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You're mid-conversation and completely lost",
               "response": "Sorry, my Spanish is not very good yet."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-panic-004",
@@ -80,19 +77,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "One word is blocking the whole meaning"
+            "en-US": "You followed almost all of what someone said, but there's one specific word you didn't recognize and it's the key to understanding the whole thing. You need to ask what just that word means."
           },
           "translations": {
             "es-ES": {
-              "phrase": "No entiendes una palabra clave",
               "response": "¿Qué quiere decir [palabra]?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You didn't catch a key word",
               "response": "What does [word] mean?"
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-panic-005",
@@ -102,19 +98,18 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Hearing it isn't working, you need to see it"
+            "en-US": "Someone is trying to tell you something — a name, an address, a price — and you can't catch it by ear. You need them to write it down so you can see it."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Necesitas que alguien lo escriba",
               "response": "¿Puedes escribirlo, por favor?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You need them to write it down",
               "response": "Can you write it down, please?"
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-panic-006",
@@ -125,19 +120,18 @@
           ],
           "difficulty": 3,
           "context": {
-            "en-US": "Complete blank — full restart needed"
+            "en-US": "Someone has just spoken to you in Spanish and you understood nothing — not a single word landed. You need to acknowledge the situation and ask if they can switch to English."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Alguien te habla y no entiendes nada",
               "response": "Perdona, no entiendo. ¿Hablas inglés?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Someone speaks to you and you understand nothing",
               "response": "Sorry, I don't understand. Do you speak English?"
             }
-          }
+          },
+          "type": "scenario"
         }
       ]
     },
@@ -498,19 +492,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Squeezing past people on a narrow El Born street"
+            "en-US": "You're walking down a narrow street and a few people are blocking the way. You need to get past politely."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Pasas por una calle estrecha y hay gente en medio.",
               "response": "Perdón.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You're walking down a narrow street and there are people in the way.",
               "response": "Excuse me."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-greet-018",
@@ -520,19 +513,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Getting off a crowded metro"
+            "en-US": "The metro is packed and your stop is next. You need to work your way to the doors past several people."
           },
           "translations": {
             "es-ES": {
-              "phrase": "El metro está lleno y tienes que bajar en la próxima parada.",
               "response": "Perdón, perdón.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "The metro is crowded and you need to get off at the next stop.",
               "response": "Excuse me, excuse me."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-greet-019",
@@ -542,19 +534,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Reaching past someone at the market"
+            "en-US": "At a supermarket, the item you want is on a shelf behind another shopper. You need to lean past them to reach it."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Quieres alcanzar algo en el supermercado y hay alguien delante.",
               "response": "Con permiso.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You want to reach something at the supermarket and someone is in front.",
               "response": "With your permission / Excuse me."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-greet-020",
@@ -564,19 +555,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Flagging down a server"
+            "en-US": "You've been waiting at your table and need to catch the server's attention without being rude or loud."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Necesitas llamar la atención del camarero en un restaurante.",
               "response": "Disculpe.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You need to get the waiter's attention at a restaurant.",
               "response": "Excuse me."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "es-greet-021",
@@ -586,19 +576,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Bumping into someone accidentally"
+            "en-US": "You accidentally bump into someone on a busy street. You want to apologize quickly as you both keep moving."
           },
           "translations": {
             "es-ES": {
-              "phrase": "Chocas sin querer con alguien por la calle.",
               "response": "Perdón, lo siento.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You accidentally bump into someone on the street.",
               "response": "Sorry, I'm sorry."
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "pt-greet-001",
@@ -1516,19 +1505,18 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You proactively asking for the bill — in Portugal waiters won't bring it until you ask"
+            "en-US": "You've finished eating and are ready to leave, but the bill hasn't come. In Portugal, waiters generally won't bring the check unsolicited — you have to ask for it."
           },
           "translations": {
             "pt-PT": {
-              "phrase": "Pode trazer a conta, por favor?",
               "response": "Pode trazer a conta, por favor?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Can you bring the bill, please?",
               "response": "Can you bring the bill, please?"
             }
-          }
+          },
+          "type": "scenario"
         },
         {
           "id": "pt-rest-010",

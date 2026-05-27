@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import promptsData from './data/prompts.json'
-import { UnifiedScenario, Scenario, Prompt, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, DEFAULT_NATIVE } from './types'
+import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, DEFAULT_NATIVE } from './types'
 import { resolveByNativeLang } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
@@ -23,17 +23,29 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
           const t = p.translations[target]
           return t != null && t.practiceAsTarget !== false
         })
-        .map((p): Prompt => ({
-          id: p.id,
-          phrase: p.translations[target].phrase,
-          english: p.translations['en-US'].phrase,
-          context: resolveByNativeLang(p.context, native) ?? '',
-          yourResponse: p.translations[target].response,
-          yourResponseEnglish: p.translations['en-US'].response,
-          gloss: resolveByNativeLang(p.translations[target].gloss, native),
-          tags: p.tags,
-          difficulty: p.difficulty,
-        })),
+        .map((p): Prompt => {
+          const promptType: PromptType = p.type ?? 'conversation'
+          const t = p.translations[target]
+          const tEn = p.translations['en-US']
+          if (promptType === 'scenario' && t.phrase !== undefined) {
+            throw new Error(`Scenario prompt ${p.id} has a phrase field in ${target} — remove it from prompts.json`)
+          }
+          if (promptType === 'conversation' && !t.phrase) {
+            throw new Error(`Conversation prompt ${p.id} is missing phrase in ${target}`)
+          }
+          return {
+            id: p.id,
+            type: promptType,
+            phrase: t.phrase,
+            english: tEn.phrase,
+            context: resolveByNativeLang(p.context, native) ?? '',
+            yourResponse: t.response,
+            yourResponseEnglish: tEn.response,
+            gloss: resolveByNativeLang(t.gloss, native),
+            tags: p.tags,
+            difficulty: p.difficulty,
+          }
+        }),
     }))
     .filter(s => s.prompts.length > 0)
 }

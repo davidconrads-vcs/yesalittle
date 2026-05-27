@@ -16,8 +16,10 @@ export const TARGET_META: Record<string, { label: string; flag: string; ttsLang:
 
 // ── Unified schema (prompts.json) ─────────────────────────────────────────────
 
+export type PromptType = 'conversation' | 'scenario'
+
 export interface Translation {
-  phrase: string
+  phrase?: string        // absent for scenario prompts
   response: string
   practiceAsTarget?: boolean
   gloss?: Record<string, string>
@@ -25,6 +27,7 @@ export interface Translation {
 
 export interface UnifiedPrompt {
   id: string
+  type?: PromptType      // omitted = 'conversation'
   tags: string[]
   difficulty: number
   context: Record<string, string>
@@ -43,8 +46,9 @@ export interface UnifiedScenario {
 
 export interface Prompt {
   id: string
-  phrase: string
-  english: string
+  type?: PromptType      // omitted = 'conversation'
+  phrase?: string        // absent for scenario prompts
+  english?: string       // absent for scenario prompts
   context: string
   yourResponse: string
   yourResponseEnglish: string
