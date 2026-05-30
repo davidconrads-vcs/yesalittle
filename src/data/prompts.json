@@ -245,7 +245,7 @@
             },
             "en-US": {
               "phrase": "Pleased to meet you!",
-              "response": "Pleased to meet you, likewise!"
+              "response": "Nice to meet you too!"
             }
           }
         },
@@ -410,12 +410,12 @@
           "translations": {
             "es-ES": {
               "phrase": "¡Hasta luego! ¡Que lo paséis bien!",
-              "response": "¡Igualmente! ¡Hasta luego!",
+              "response": "Venga, hasta luego.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "See you later! Have a good time!",
-              "response": "Likewise! See you later!"
+              "response": "Alright, see you later."
             }
           }
         },
@@ -865,28 +865,6 @@
             "en-US": {
               "phrase": "You're welcome! Don't mention it.",
               "response": "See you later!"
-            }
-          }
-        },
-        {
-          "id": "pt-greet-014",
-          "tags": [
-            "courtesy",
-            "small-talk"
-          ],
-          "difficulty": 1,
-          "context": {
-            "en-US": "Someone wishing you well before something important"
-          },
-          "translations": {
-            "pt-PT": {
-              "phrase": "Boa sorte!",
-              "response": "Obrigado! Vou precisar.",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "Good luck!",
-              "response": "Thanks! I'll need it."
             }
           }
         },
@@ -1419,7 +1397,7 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Waiter taking your order"
+            "en-US": "The waiter is ready to take your order, but you haven't decided yet."
           },
           "translations": {
             "pt-PT": {
@@ -1430,28 +1408,6 @@
             "en-US": {
               "phrase": "Have you decided what you'll have?",
               "response": "Not yet. Can you give us another minute?"
-            }
-          }
-        },
-        {
-          "id": "pt-rest-006",
-          "tags": [
-            "ordering",
-            "specials"
-          ],
-          "difficulty": 2,
-          "context": {
-            "en-US": "Waiter presenting the daily special"
-          },
-          "translations": {
-            "pt-PT": {
-              "phrase": "Hoje temos bacalhau à brás como sugestão do chef.",
-              "response": "Interessante. Pode dar-nos um momento para decidir?",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "Today we have bacalhau à brás as the chef's suggestion.",
-              "response": "Interesting. Can you give us a moment to decide?"
             }
           }
         },
@@ -2185,12 +2141,12 @@
           "translations": {
             "es-ES": {
               "phrase": "No puedo parar aquí. ¿Te dejo en la esquina?",
-              "response": "Sí, en la esquina está bien.",
+              "response": "Donde sea está bien.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "I can't stop here. Shall I drop you at the corner?",
-              "response": "Yes, the corner is fine."
+              "response": "Anywhere is fine."
             }
           }
         },
@@ -2213,28 +2169,6 @@
             "en-US": {
               "phrase": "You have to validate the ticket before boarding.",
               "response": "Oh right, thanks."
-            }
-          }
-        },
-        {
-          "id": "es-around-007",
-          "tags": [
-            "metro",
-            "directions"
-          ],
-          "difficulty": 3,
-          "context": {
-            "en-US": "Helpful stranger on the metro"
-          },
-          "translations": {
-            "es-ES": {
-              "phrase": "Esta línea no va allí. Tienes que hacer transbordo en Passeig de Gràcia.",
-              "response": "Gracias. ¿En qué línea?",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "This line doesn't go there. You have to transfer at Passeig de Gràcia.",
-              "response": "Thanks. Which line?"
             }
           }
         },
@@ -2283,50 +2217,6 @@
           }
         },
         {
-          "id": "pt-around-003",
-          "tags": [
-            "directions",
-            "landmark"
-          ],
-          "difficulty": 2,
-          "context": {
-            "en-US": "Bus driver or fellow passenger informing you"
-          },
-          "translations": {
-            "pt-PT": {
-              "phrase": "Esta paragem fica mesmo ao pé do Castelo de São Jorge.",
-              "response": "Perfeito, saio aqui então. Obrigado.",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "This stop is right next to Castelo de São Jorge.",
-              "response": "Perfect, I'll get off here then. Thanks."
-            }
-          }
-        },
-        {
-          "id": "pt-around-004",
-          "tags": [
-            "transport",
-            "delays"
-          ],
-          "difficulty": 3,
-          "context": {
-            "en-US": "PA announcement at the metro station"
-          },
-          "translations": {
-            "pt-PT": {
-              "phrase": "O metro está parado por avaria na linha verde.",
-              "response": "Quanto tempo vai demorar a retomar?",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "The metro has stopped due to a breakdown on the green line.",
-              "response": "How long until it starts again?"
-            }
-          }
-        },
-        {
           "id": "pt-around-005",
           "tags": [
             "directions"
@@ -2348,48 +2238,124 @@
           }
         },
         {
-          "id": "pt-around-006",
+          "id": "es-around-008",
           "tags": [
-            "transport",
             "directions"
-          ],
-          "difficulty": 2,
-          "context": {
-            "en-US": "Taxi driver warning about road conditions"
-          },
-          "translations": {
-            "pt-PT": {
-              "phrase": "Há obras na Avenida da Liberdade, é melhor desviar.",
-              "response": "Então como é melhor ir?",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "There are roadworks on Avenida da Liberdade, better to go around.",
-              "response": "So what's the best way to go?"
-            }
-          }
-        },
-        {
-          "id": "pt-around-007",
-          "tags": [
-            "transport",
-            "tram"
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Local giving you transport advice"
+            "en-US": "You need to find the nearest metro station and want to ask a passerby."
           },
           "translations": {
-            "pt-PT": {
-              "phrase": "O elétrico 28 passa aqui de dez em dez minutos.",
-              "response": "Ótimo, vou esperar então. Obrigado.",
+            "es-ES": {
+              "response": "¿Dónde está la estación de metro más cercana?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Tram 28 comes here every ten minutes.",
-              "response": "Great, I'll wait then. Thanks."
+              "response": "Where is the nearest metro station?"
             }
-          }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "es-around-009",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "You're at a station or stop and want to know when the next train or bus leaves."
+          },
+          "translations": {
+            "es-ES": {
+              "response": "¿Cuándo sale el próximo tren?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "When does the next train leave?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "es-around-010",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone pointed you in a direction and you want to know if it's within walking distance."
+          },
+          "translations": {
+            "es-ES": {
+              "response": "¿Está lejos? ¿Se puede ir andando?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Is it far? Can I walk there?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "pt-around-008",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "You need to find the nearest metro station and want to ask a passerby."
+          },
+          "translations": {
+            "pt-PT": {
+              "response": "Onde fica a estação de metro mais próxima?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Where is the nearest metro station?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "pt-around-009",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "You're at a station or stop and want to know when the next train or bus leaves."
+          },
+          "translations": {
+            "pt-PT": {
+              "response": "Quando sai o próximo comboio?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "When does the next train leave?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "pt-around-010",
+          "tags": [
+            "directions"
+          ],
+          "difficulty": 1,
+          "context": {
+            "en-US": "Someone pointed you in a direction and you want to know if it's within walking distance."
+          },
+          "translations": {
+            "pt-PT": {
+              "response": "É longe? Dá para ir a pé?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Is it far? Can I walk there?"
+            }
+          },
+          "type": "scenario"
         }
       ]
     },
@@ -2496,12 +2462,12 @@
           "translations": {
             "es-ES": {
               "phrase": "Hay que bajar la basura al contenedor de la esquina.",
-              "response": "¿Cuál es el contenedor para reciclar?",
+              "response": "Perfecto, gracias.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "You have to take the trash down to the bin on the corner.",
-              "response": "Which bin is for recycling?"
+              "response": "Perfect, thanks."
             }
           }
         },
@@ -2604,12 +2570,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "A palavra-passe do Wi-Fi está num papel em cima da mesa.",
-              "response": "Obrigado. E tem Netflix?",
+              "response": "Obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The Wi-Fi password is on a piece of paper on the table.",
-              "response": "Thanks. Does it have Netflix?"
+              "response": "Thanks."
             }
           }
         },
@@ -2646,12 +2612,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "Se precisar de toalhas extra, mande-me uma mensagem.",
-              "response": "Perfeito. Obrigado pela hospitalidade.",
+              "response": "Perfeito, obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "If you need extra towels, send me a message.",
-              "response": "Perfect. Thanks for your hospitality."
+              "response": "Perfect, thanks."
             }
           }
         },
@@ -2668,12 +2634,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "O aquecimento liga-se com o botão ao lado da janela.",
-              "response": "Obrigado. E funciona a gás ou elétrico?",
+              "response": "Está bem.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The heating is turned on with the button next to the window.",
-              "response": "Thanks. Is it gas or electric?"
+              "response": "Okay."
             }
           }
         },
@@ -2794,27 +2760,6 @@
           }
         },
         {
-          "id": "es-shop-005",
-          "tags": [
-            "checkout"
-          ],
-          "difficulty": 2,
-          "context": {
-            "en-US": "Shop assistant at checkout"
-          },
-          "translations": {
-            "es-ES": {
-              "phrase": "¿Lo quieres para regalo? ¿Te lo envuelvo?",
-              "response": "No hace falta, gracias.",
-              "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "Do you want it as a gift? Shall I wrap it?",
-              "response": "No need, thanks."
-            }
-          }
-        },
-        {
           "id": "es-shop-006",
           "tags": [
             "payment"
@@ -2870,12 +2815,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "As promoções terminam este fim de semana.",
-              "response": "Então aproveito e levo mais um.",
+              "response": "Está bem, obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The sale ends this weekend.",
-              "response": "Then I'll take advantage and get another one."
+              "response": "Okay, thanks."
             }
           }
         },
@@ -2892,12 +2837,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "Fazemos troca mas não fazemos reembolso.",
-              "response": "Está bem. Posso trocar na loja?",
+              "response": "Está bem, obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "We do exchanges but no refunds.",
-              "response": "OK. Can I exchange it in the shop?"
+              "response": "Okay, thanks."
             }
           }
         },
@@ -2936,12 +2881,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "O desconto já está aplicado no preço da etiqueta.",
-              "response": "Ah, ótimo. Então fica em quanto?",
+              "response": "Está bem, obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The discount is already applied to the tag price.",
-              "response": "Oh, great. So how much is it?"
+              "response": "Okay, thanks."
             }
           }
         },
@@ -3009,12 +2954,12 @@
           "translations": {
             "es-ES": {
               "phrase": "Los menores de seis años entran gratis.",
-              "response": "Los nuestros tienen once y trece.",
+              "response": "Vale, cuatro entradas para nosotros.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "Children under six get in free.",
-              "response": "Ours are eleven and thirteen."
+              "response": "Okay, four tickets for us."
             }
           }
         },
@@ -3160,12 +3105,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "A visita guiada começa daqui a meia hora.",
-              "response": "Ótimo. Fazemos a visita livre e depois juntamo-nos.",
+              "response": "Está bem, obrigado.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The guided tour starts in half an hour.",
-              "response": "Great. We'll do the free visit and join the tour after."
+              "response": "Okay, thanks."
             }
           }
         },
@@ -3182,12 +3127,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "Crianças com menos de doze anos não pagam entrada.",
-              "response": "Perfeito. Somos dois adultos e uma criança de oito anos.",
+              "response": "Está bem, então precisamos de quatro bilhetes.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "Children under twelve don't pay admission.",
-              "response": "Perfect. We're two adults and one child aged eight."
+              "response": "Okay, then we need four tickets."
             }
           }
         },
@@ -3319,12 +3264,12 @@
           "translations": {
             "es-ES": {
               "phrase": "Toma uno cada ocho horas con comida.",
-              "response": "¿Puedes repetirlo más despacio?",
+              "response": "Vale, gracias.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "Take one every eight hours with food.",
-              "response": "Can you repeat that more slowly?"
+              "response": "Okay, thanks."
             }
           }
         },
@@ -3407,12 +3352,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "Para a dor de cabeça, recomendo este analgésico.",
-              "response": "Tem algum mais suave? Tenho o estômago sensível.",
+              "response": "Está bem, levo esse.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "For the headache, I recommend this painkiller.",
-              "response": "Do you have something milder? I have a sensitive stomach."
+              "response": "Okay, I'll take it."
             }
           }
         },
@@ -3495,13 +3440,13 @@
           },
           "translations": {
             "pt-PT": {
-              "phrase": "Com receita do SNS, paga apenas a comparticipação.",
-              "response": "Ótimo. Aqui está a receita.",
+              "phrase": "Tem receita do SNS ou é visitante?",
+              "response": "Sou visitante, pago o preço normal.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "With an NHS prescription, you only pay the co-payment.",
-              "response": "Great. Here's the prescription."
+              "phrase": "Do you have an SNS prescription, or are you a visitor?",
+              "response": "I'm a visitor, I'll pay full price."
             }
           }
         }
@@ -3530,7 +3475,7 @@
             },
             "en-US": {
               "phrase": "What can I get you?",
-              "response": "A white coffee, please."
+              "response": "A coffee with milk, please."
             }
           }
         },
@@ -3676,12 +3621,12 @@
           "translations": {
             "es-ES": {
               "phrase": "¿Quieres algo más?",
-              "response": "Sí, un zumo de naranja también.",
+              "response": "No, eso es todo.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "Do you want anything else?",
-              "response": "Yes, an orange juice too."
+              "response": "No, that's all."
             }
           }
         },
@@ -3782,12 +3727,12 @@
           "translations": {
             "es-ES": {
               "phrase": "La cocina cierra a las cuatro. ¿Queréis pedir algo de comer antes?",
-              "response": "Sí, ponme una tortilla, por favor.",
+              "response": "¿Nos puedes traer la carta, por favor?",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "The kitchen closes at four. Do you want to order food before it closes?",
-              "response": "Yes, give me a tortilla, please."
+              "response": "Can you bring us the menu, please?"
             }
           }
         },
@@ -3917,7 +3862,7 @@
           },
           "translations": {
             "pt-PT": {
-              "phrase": "São quatro euros e cinquenta, por favor.",
+              "phrase": "São quatro e cinquenta, por favor.",
               "response": "Aqui tem. Obrigado!",
               "practiceAsTarget": true
             },
