@@ -1,11 +1,13 @@
 import { useState } from 'react'
-import { Scenario, SessionMode, Speed, SUPPORTED_TARGETS, TARGET_META } from '../types'
+import { Scenario, SessionMode, Speed, SUPPORTED_TARGETS, TARGET_META, SUPPORTED_NATIVES, NATIVE_META } from '../types'
 import SpeedControl from './SpeedControl'
 
 interface Props {
   scenarios: Scenario[]
   language: string
   onLanguageChange: (l: string) => void
+  native: string
+  onNativeChange: (n: string) => void
   onStart: (categories: Set<string>, mode: SessionMode) => void
   streak: number
   speed: Speed
@@ -13,7 +15,17 @@ interface Props {
   onProgressClick: () => void
 }
 
-export default function Home({ scenarios, language, onLanguageChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
+const sectionLabelStyle: React.CSSProperties = {
+  fontSize: 11,
+  fontWeight: 600,
+  letterSpacing: 1.5,
+  color: 'rgba(255,255,255,0.3)',
+  textTransform: 'uppercase',
+  marginBottom: 10,
+  fontFamily: "'JetBrains Mono', monospace",
+}
+
+export default function Home({ scenarios, language, onLanguageChange, native, onNativeChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [mode, setMode] = useState<SessionMode>('full')
 
@@ -113,21 +125,41 @@ export default function Home({ scenarios, language, onLanguageChange, onStart, s
         </div>
       </div>
 
-      {/* Language selector */}
-      <div style={{ marginBottom: 24 }}>
-        <div
-          style={{
-            fontSize: 11,
-            fontWeight: 600,
-            letterSpacing: 1.5,
-            color: 'rgba(255,255,255,0.3)',
-            textTransform: 'uppercase',
-            marginBottom: 10,
-            fontFamily: "'JetBrains Mono', monospace",
-          }}
-        >
-          Language
+      {/* Native-language selector — "I speak" */}
+      <div style={{ marginBottom: 16 }}>
+        <div style={sectionLabelStyle}>I speak</div>
+        <div style={{ display: 'flex', gap: 8 }}>
+          {SUPPORTED_NATIVES.map(locale => (
+            <button
+              key={locale}
+              onClick={() => onNativeChange(locale)}
+              style={{
+                flex: 1,
+                background: native === locale ? 'rgba(232, 93, 58, 0.08)' : 'rgba(255,255,255,0.03)',
+                border: `1.5px solid ${native === locale ? 'rgba(232, 93, 58, 0.4)' : 'rgba(255,255,255,0.07)'}`,
+                borderRadius: 12,
+                padding: '10px 16px',
+                color: native === locale ? '#E85D3A' : 'rgba(255,255,255,0.55)',
+                cursor: 'pointer',
+                fontSize: 14,
+                fontFamily: "'DM Sans', sans-serif",
+                fontWeight: 500,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: 8,
+              }}
+            >
+              <span>{NATIVE_META[locale].flag}</span>
+              <span>{NATIVE_META[locale].label}</span>
+            </button>
+          ))}
         </div>
+      </div>
+
+      {/* Target-language selector — "I'm learning" */}
+      <div style={{ marginBottom: 24 }}>
+        <div style={sectionLabelStyle}>I'm learning</div>
         <div style={{ display: 'flex', gap: 8 }}>
           {SUPPORTED_TARGETS.map(locale => (
             <button

@@ -1,11 +1,20 @@
 // ── Language pair ─────────────────────────────────────────────────────────────
 
 export interface LanguagePair {
-  native: string  // BCP 47 locale; fixed to DEFAULT_NATIVE for v1
+  native: string  // BCP 47 locale, e.g. 'en-US' — the learner's language (selectable)
   target: string  // BCP 47 locale, e.g. 'es-ES' | 'pt-PT'
 }
 
 export const DEFAULT_NATIVE = 'en-US'
+
+// Single source of truth for selectable native languages. Adding a second entry
+// (e.g. 'es-ES') here — plus its NATIVE_META row — is all that's needed for the
+// native picker to offer it; no other wiring required.
+export const SUPPORTED_NATIVES = ['en-US'] as const
+
+export const NATIVE_META: Record<string, { label: string; flag: string }> = {
+  'en-US': { label: 'English', flag: '🇺🇸' },
+}
 
 export const SUPPORTED_TARGETS = ['es-ES', 'pt-PT'] as const
 

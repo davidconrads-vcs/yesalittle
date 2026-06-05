@@ -1,6 +1,6 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import promptsData from './data/prompts.json'
-import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, DEFAULT_NATIVE } from './types'
+import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, SUPPORTED_NATIVES, DEFAULT_NATIVE } from './types'
 import { resolveByNativeLang } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
@@ -10,10 +10,11 @@ import Summary from './components/Summary'
 import Progress from './components/Progress'
 
 const PREF_TARGET_KEY = 'yesalittle:target'
+const PREF_NATIVE_KEY = 'yesalittle:native'
 
 // Builds a flat, language-specific scenario list from the unified schema.
-// resolveByNativeLang is called here at build time against the current native locale,
-// so a future native-language switcher will need to rebuild DATA when native changes.
+// `native` drives which `context`/`gloss` strings are resolved, so scenarios are
+// rebuilt (via useMemo in App) whenever the selected native or target changes.
 function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
   return (promptsData.scenarios as unknown as UnifiedScenario[])
     .map(s => ({
@@ -50,10 +51,6 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
     .filter(s => s.prompts.length > 0)
 }
 
-const DATA: Record<string, Scenario[]> = Object.fromEntries(
-  SUPPORTED_TARGETS.map(t => [t, buildScenarios(t)])
-)
-
 function buildAllPrompts(scenarios: Scenario[]): PromptWithScenario[] {
   return scenarios.flatMap(s =>
     s.prompts.map(p => ({
@@ -87,17 +84,26 @@ function getInitialTarget(): string {
   return SUPPORTED_TARGETS[0]
 }
 
+function getInitialNative(): string {
+  try {
+    const saved = localStorage.getItem(PREF_NATIVE_KEY)
+    if (saved && (SUPPORTED_NATIVES as readonly string[]).includes(saved)) return saved
+  } catch {}
+  return DEFAULT_NATIVE
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>('home')
   const [speed, setSpeed] = useState<Speed>(getInitialSpeed)
   const [language, setLanguage] = useState<string>(getInitialTarget)
+  const [native, setNative] = useState<string>(getInitialNative)
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
-  const pair: LanguagePair = { native: DEFAULT_NATIVE, target: language }
+  const pair: LanguagePair = { native, target: language }
   const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(pair)
 
-  const scenarios = DATA[language]
-  const allPrompts = buildAllPrompts(scenarios)
+  const scenarios = useMemo(() => buildScenarios(language, native), [language, native])
+  const allPrompts = useMemo(() => buildAllPrompts(scenarios), [scenarios])
 
   const handleSpeedChange = (s: Speed) => {
     setSpeed(s)
@@ -107,6 +113,11 @@ export default function App() {
   const handleLanguageChange = (l: string) => {
     setLanguage(l)
     try { localStorage.setItem(PREF_TARGET_KEY, l) } catch {}
+  }
+
+  const handleNativeChange = (n: string) => {
+    setNative(n)
+    try { localStorage.setItem(PREF_NATIVE_KEY, n) } catch {}
   }
 
   const handleStart = (categories: Set<string>, mode: SessionMode) => {
@@ -151,6 +162,8 @@ export default function App() {
           scenarios={scenarios}
           language={language}
           onLanguageChange={handleLanguageChange}
+          native={native}
+          onNativeChange={handleNativeChange}
           onStart={handleStart}
           streak={streak}
           speed={speed}
