@@ -38,7 +38,7 @@ if (!ELEVENLABS_API_KEY) {
 const VOICE_IDS: Record<string, string> = {
   'es-ES': process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',
   'pt-PT': process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2',
-  'en-US': process.env.ELEVENLABS_VOICE_ID_EN ?? 'YyqkX0AHv8W5D1vxG9lR',
+  'en-US': process.env.ELEVENLABS_VOICE_ID_EN ?? 'Y02DpjDrIqEQiinPoGZG',
 }
 
 const DATA_FILE = join(ROOT, 'src', 'data', 'prompts.json')
