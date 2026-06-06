@@ -34,11 +34,11 @@ if (!ELEVENLABS_API_KEY) {
 // Voice IDs keyed by full locale code
 // Spanish: "Valentina" — Peninsular Spanish female
 // Portuguese: override with ELEVENLABS_VOICE_ID_PT env var
-// English: "Rachel" — American English female (matches the female es voice); override with ELEVENLABS_VOICE_ID_EN
+// English: American English voice (matches the female es voice); override with ELEVENLABS_VOICE_ID_EN
 const VOICE_IDS: Record<string, string> = {
   'es-ES': process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',
   'pt-PT': process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2',
-  'en-US': process.env.ELEVENLABS_VOICE_ID_EN ?? '21m00Tcm4TlvDq8ikWAM',
+  'en-US': process.env.ELEVENLABS_VOICE_ID_EN ?? 'YyqkX0AHv8W5D1vxG9lR',
 }
 
 const DATA_FILE = join(ROOT, 'src', 'data', 'prompts.json')
