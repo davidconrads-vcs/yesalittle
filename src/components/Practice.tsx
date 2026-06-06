@@ -161,12 +161,14 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
                   <div style={responseLabelStyle}>What you'd say</div>
                   <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
                 </div>
-                <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
+                <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                   {current.yourResponse}
                 </div>
-                <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
-                  {current.yourResponseEnglish}
-                </div>
+                {current.yourResponseEnglish && (
+                  <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
+                    {current.yourResponseEnglish}
+                  </div>
+                )}
               </div>
               {current.gloss && (
                 <div
@@ -207,23 +209,27 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
           <div style={{ fontSize: 56, marginBottom: 20 }}>👂</div>
         ) : (
           <div style={{ animation: 'fadeUp 0.3s ease' }}>
-            <div style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
+            <div translate="no" className="notranslate" style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
               {current.phrase}
             </div>
-            <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
-              {current.english}
-            </div>
+            {current.english && (
+              <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
+                {current.english}
+              </div>
+            )}
             <div style={responseCardStyle}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
                 <div style={responseLabelStyle}>You could respond</div>
                 <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
               </div>
-              <div style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
+              <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                 {current.yourResponse}
               </div>
-              <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
-                {current.yourResponseEnglish}
-              </div>
+              {current.yourResponseEnglish && (
+                <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
+                  {current.yourResponseEnglish}
+                </div>
+              )}
             </div>
             {current.gloss && (
               <div

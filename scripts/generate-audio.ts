@@ -34,9 +34,11 @@ if (!ELEVENLABS_API_KEY) {
 // Voice IDs keyed by full locale code
 // Spanish: "Valentina" — Peninsular Spanish female
 // Portuguese: override with ELEVENLABS_VOICE_ID_PT env var
+// English: American English voice (matches the female es voice); override with ELEVENLABS_VOICE_ID_EN
 const VOICE_IDS: Record<string, string> = {
   'es-ES': process.env.ELEVENLABS_VOICE_ID_ES ?? 'cgSgspJ2msm6clMCkdW9',
   'pt-PT': process.env.ELEVENLABS_VOICE_ID_PT ?? 'c0rzOw18hxEhaSybUod2',
+  'en-US': process.env.ELEVENLABS_VOICE_ID_EN ?? 'Y02DpjDrIqEQiinPoGZG',
 }
 
 const DATA_FILE = join(ROOT, 'src', 'data', 'prompts.json')
@@ -67,18 +69,25 @@ if (!['phrase', 'response', 'all'].includes(type)) {
 
 const VOICE_ID = VOICE_IDS[lang]
 
+// es-ES/pt-PT audio uses the flat `{id}-{speed}` name — their prompt-id prefix
+// (es-*/pt-*) already keeps them apart. en-US is an overlay target that reuses
+// those same ids, so its files carry an `-en-US` qualifier to avoid overwriting
+// the prompt's primary-language audio. Keep this rule in sync with useAudio.ts.
+const langSuffix = lang === 'en-US' ? '-en-US' : ''
+
 const audioDir = join(ROOT, 'public', 'audio')
 if (!existsSync(audioDir)) {
   mkdirSync(audioDir, { recursive: true })
 }
 
 const data: PromptsData = JSON.parse(readFileSync(DATA_FILE, 'utf-8'))
-// Availability rule: select prompts where translations[lang] exists and practiceAsTarget !== false
+// Availability rule: select prompts explicitly opted into this target.
+// (Every es-ES/pt-PT entry sets practiceAsTarget:true; for en-US only the ES→EN set does.)
 const allPrompts = data.scenarios
   .flatMap(s => s.prompts)
   .filter(p => {
     const t = p.translations[lang]
-    return t != null && t.practiceAsTarget !== false
+    return t != null && t.practiceAsTarget === true
   })
 
 async function generateAudio(promptId: string, text: string, speed: string, rate: number) {
@@ -131,14 +140,14 @@ async function main() {
     if (generatePhrases && prompt.type !== 'scenario' && t.phrase) {
       console.log(`[${prompt.id}] phrase: "${t.phrase}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(prompt.id, t.phrase, speed.name, speed.rate)
+        await generateAudio(`${prompt.id}${langSuffix}`, t.phrase, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }
     if (generateResponses) {
       console.log(`[${prompt.id}] response: "${t.response}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(`${prompt.id}-response`, t.response, speed.name, speed.rate)
+        await generateAudio(`${prompt.id}-response${langSuffix}`, t.response, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }

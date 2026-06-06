@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Scenario, SessionMode, Speed, SUPPORTED_TARGETS, TARGET_META, SUPPORTED_NATIVES, NATIVE_META } from '../types'
+import { Scenario, SessionMode, Speed, getAvailableTargets, TARGET_META, SUPPORTED_NATIVES, NATIVE_META } from '../types'
 import SpeedControl from './SpeedControl'
 
 interface Props {
@@ -161,7 +161,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
       <div style={{ marginBottom: 24 }}>
         <div style={sectionLabelStyle}>I'm learning</div>
         <div style={{ display: 'flex', gap: 8 }}>
-          {SUPPORTED_TARGETS.map(locale => (
+          {getAvailableTargets(native).map(locale => (
             <button
               key={locale}
               onClick={() => onLanguageChange(locale)}

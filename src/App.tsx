@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import promptsData from './data/prompts.json'
-import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_TARGETS, SUPPORTED_NATIVES, DEFAULT_NATIVE } from './types'
+import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
 import { resolveByNativeLang } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue } from './hooks/useSpacedQueue'
@@ -21,8 +21,11 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
       ...s,
       prompts: s.prompts
         .filter(p => {
+          // A prompt is drillable in a target only when explicitly opted in.
+          // Every es-ES/pt-PT entry sets this; for en-US only the ES→EN set does,
+          // so English yields exactly its authored target prompts (not every en gloss).
           const t = p.translations[target]
-          return t != null && t.practiceAsTarget !== false
+          return t != null && t.practiceAsTarget === true
         })
         .map((p): Prompt => {
           const promptType: PromptType = p.type ?? 'conversation'
@@ -38,10 +41,12 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
             id: p.id,
             type: promptType,
             phrase: t.phrase,
-            english: tEn.phrase,
+            // The English gloss line is meaningless when English IS the target
+            // (it would just duplicate the phrase/response), so suppress it there.
+            english: target === 'en-US' ? undefined : tEn.phrase,
             context: resolveByNativeLang(p.context, native) ?? '',
             yourResponse: t.response,
-            yourResponseEnglish: tEn.response,
+            yourResponseEnglish: target === 'en-US' ? undefined : tEn.response,
             gloss: resolveByNativeLang(t.gloss, native),
             tags: p.tags,
             difficulty: p.difficulty,
@@ -76,14 +81,6 @@ function getInitialSpeed(): Speed {
   return 'normal'
 }
 
-function getInitialTarget(): string {
-  try {
-    const saved = localStorage.getItem(PREF_TARGET_KEY)
-    if (saved && (SUPPORTED_TARGETS as readonly string[]).includes(saved)) return saved
-  } catch {}
-  return SUPPORTED_TARGETS[0]
-}
-
 function getInitialNative(): string {
   try {
     const saved = localStorage.getItem(PREF_NATIVE_KEY)
@@ -92,11 +89,21 @@ function getInitialNative(): string {
   return DEFAULT_NATIVE
 }
 
+// Target must be one this native can actually learn; otherwise fall back to its first.
+function getInitialTarget(native: string): string {
+  const avail = getAvailableTargets(native)
+  try {
+    const saved = localStorage.getItem(PREF_TARGET_KEY)
+    if (saved && avail.includes(saved)) return saved
+  } catch {}
+  return avail[0]
+}
+
 export default function App() {
   const [screen, setScreen] = useState<Screen>('home')
   const [speed, setSpeed] = useState<Speed>(getInitialSpeed)
-  const [language, setLanguage] = useState<string>(getInitialTarget)
   const [native, setNative] = useState<string>(getInitialNative)
+  const [language, setLanguage] = useState<string>(() => getInitialTarget(native))
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
   const pair: LanguagePair = { native, target: language }
@@ -118,6 +125,12 @@ export default function App() {
   const handleNativeChange = (n: string) => {
     setNative(n)
     try { localStorage.setItem(PREF_NATIVE_KEY, n) } catch {}
+    // If the current target isn't learnable from the new native, switch to its first.
+    const avail = getAvailableTargets(n)
+    if (!avail.includes(language)) {
+      setLanguage(avail[0])
+      try { localStorage.setItem(PREF_TARGET_KEY, avail[0]) } catch {}
+    }
   }
 
   const handleStart = (categories: Set<string>, mode: SessionMode) => {
