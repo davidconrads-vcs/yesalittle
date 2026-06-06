@@ -60,3 +60,25 @@ used as intended.
 - **Author separate prompts** when the content is direction-sensitive (the (b) case). The test, per
   prompt: "Is this the same speech act in the same situation regardless of who's learning, and does it
   translate cleanly?" Yes → extend. No → author fresh.
+
+---
+
+## Handoff 7 — deferred items (logged when the ES→EN pair shipped)
+
+Handoff 7 activated the ES→EN pair by extending 66 direction-neutral prompts (the (a) set) with
+Spanish `context` + a drillable `en-US` target. The items below were **excluded from that release**
+and are logged here for the fresh-authoring round (per the (b)/NA distinction above).
+
+### FRESH-author for EN (direction-sensitive — author separate en-* content later)
+- **es-groc-001** — units: grams → half pound (US customary)
+- **es-groc-006** — currency: euros → dollars
+- **es-checkin-006** — noise-rule framing: neighbors → time-based (US "quiet hours")
+- **es-cafe-009** — wifi premise: assumes US shops have wifi
+
+### NA for EN target (stay ES-only — no clean EN equivalent)
+- **es-groc-010** — weigh-produce (self-weigh stations uncommon in US)
+- **es-groc-015** — contactless-or-chip prompt
+- **es-around-006** — validate-ticket (ticket validation uncommon in US transit)
+- **es-pharm-005** — find-a-doctor via pharmacist (role differs in US)
+
+These are in addition to the original (b)/NA lists above.

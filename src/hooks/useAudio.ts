@@ -31,7 +31,11 @@ export function useAudio(promptId: string, speed: Speed, lang: string, text?: st
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const stoppedRef = useRef(false)
 
-  const audioSrc = `audio/${promptId}-${speed}.mp3`
+  // en-US is an overlay target reusing es-*/pt-* prompt ids, so its audio files
+  // carry an `-en-US` qualifier to avoid colliding with the prompt's primary-language
+  // audio. es-ES/pt-PT keep the flat name. Keep in sync with generate-audio.ts.
+  const langSuffix = lang === 'en-US' ? '-en-US' : ''
+  const audioSrc = `audio/${promptId}${langSuffix}-${speed}.mp3`
 
   const stop = useCallback(() => {
     stoppedRef.current = true
@@ -67,6 +71,7 @@ export function useAudio(promptId: string, speed: Speed, lang: string, text?: st
         return
       }
       speakWithBrowser(text, SPEECH_RATES[speed], ttsLang)
+        .catch(() => {})  // TTS unavailable (e.g. no voices) — nothing more to do
         .finally(() => {
           if (!stoppedRef.current) setPlaying(false)
         })
@@ -79,9 +84,11 @@ export function useAudio(promptId: string, speed: Speed, lang: string, text?: st
         setPlaying(false)
         return
       }
-      speakWithBrowser(text, SPEECH_RATES[speed], ttsLang).finally(() => {
-        if (!stoppedRef.current) setPlaying(false)
-      })
+      speakWithBrowser(text, SPEECH_RATES[speed], ttsLang)
+        .catch(() => {})  // TTS unavailable (e.g. no voices) — nothing more to do
+        .finally(() => {
+          if (!stoppedRef.current) setPlaying(false)
+        })
     })
   }, [audioSrc, speed, lang, text, stop])
 

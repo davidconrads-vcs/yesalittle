@@ -10,17 +10,32 @@ export const DEFAULT_NATIVE = 'en-US'
 // Single source of truth for selectable native languages. Adding a second entry
 // (e.g. 'es-ES') here — plus its NATIVE_META row — is all that's needed for the
 // native picker to offer it; no other wiring required.
-export const SUPPORTED_NATIVES = ['en-US'] as const
+export const SUPPORTED_NATIVES = ['en-US', 'es-ES'] as const
 
 export const NATIVE_META: Record<string, { label: string; flag: string }> = {
   'en-US': { label: 'English', flag: '🇺🇸' },
+  'es-ES': { label: 'Español', flag: '🇪🇸' },
 }
 
-export const SUPPORTED_TARGETS = ['es-ES', 'pt-PT'] as const
+// Registry of every target locale the app knows (meta + validation).
+export const SUPPORTED_TARGETS = ['es-ES', 'pt-PT', 'en-US'] as const
 
 export const TARGET_META: Record<string, { label: string; flag: string; ttsLang: string }> = {
   'es-ES': { label: 'Spanish',    flag: '🇪🇸', ttsLang: 'es-ES' },
   'pt-PT': { label: 'Portuguese', flag: '🇵🇹', ttsLang: 'pt-PT' },
+  'en-US': { label: 'English',    flag: '🇺🇸', ttsLang: 'en-US' },
+}
+
+// Single source of truth for available language pairs: which targets each native
+// can currently learn, gated by authored content. A native never lists itself.
+// Adding a pair (e.g. pt-PT speakers learning English) is a one-line change here.
+export const TARGETS_BY_NATIVE: Record<string, readonly string[]> = {
+  'en-US': ['es-ES', 'pt-PT'],
+  'es-ES': ['en-US'],
+}
+
+export function getAvailableTargets(native: string): readonly string[] {
+  return TARGETS_BY_NATIVE[native] ?? TARGETS_BY_NATIVE[DEFAULT_NATIVE]
 }
 
 // ── Unified schema (prompts.json) ─────────────────────────────────────────────
@@ -60,7 +75,7 @@ export interface Prompt {
   english?: string       // absent for scenario prompts
   context: string
   yourResponse: string
-  yourResponseEnglish: string
+  yourResponseEnglish?: string  // native-language gloss; absent when target is the native's own English
   gloss?: string
   tags: string[]
   difficulty: number

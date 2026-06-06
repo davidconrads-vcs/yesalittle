@@ -148,7 +148,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain"
+            "en-US": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain",
+            "es-ES": "Un tendero, camarero o vecino te saluda."
           },
           "translations": {
             "es-ES": {
@@ -158,7 +159,8 @@
             },
             "en-US": {
               "phrase": "Hi! / Hello!",
-              "response": "Hi! How's it going?"
+              "response": "Hi! How's it going?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -170,7 +172,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Shop or office worker greeting you in the morning"
+            "en-US": "Shop or office worker greeting you in the morning",
+            "es-ES": "Un empleado te saluda por la mañana."
           },
           "translations": {
             "es-ES": {
@@ -180,7 +183,8 @@
             },
             "en-US": {
               "phrase": "Good morning! How can I help you?",
-              "response": "Good morning. We're looking for..."
+              "response": "Good morning. We're looking for...",
+              "practiceAsTarget": true
             }
           }
         },
@@ -192,7 +196,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Friendly local or shopkeeper doing a casual check-in"
+            "en-US": "Friendly local or shopkeeper doing a casual check-in",
+            "es-ES": "Un local te saluda de manera informal."
           },
           "translations": {
             "es-ES": {
@@ -201,8 +206,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "How's it going? All good?",
-              "response": "Good, thanks. And you?"
+              "phrase": "How's it going?",
+              "response": "Good, thanks. And you?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -235,7 +241,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Someone greeting you after being introduced"
+            "en-US": "Someone greeting you after being introduced",
+            "es-ES": "Al conocer a alguien por primera vez."
           },
           "translations": {
             "es-ES": {
@@ -245,7 +252,8 @@
             },
             "en-US": {
               "phrase": "Pleased to meet you!",
-              "response": "Nice to meet you too!"
+              "response": "Nice to meet you too!",
+              "practiceAsTarget": true
             }
           }
         },
@@ -363,7 +371,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Someone squeezing past you in a narrow space or crowd"
+            "en-US": "Someone squeezing past you in a narrow space or crowd",
+            "es-ES": "Alguien intenta pasar a tu lado en un sitio estrecho."
           },
           "translations": {
             "es-ES": {
@@ -373,7 +382,8 @@
             },
             "en-US": {
               "phrase": "Excuse me. / Coming through.",
-              "response": "Of course, go ahead."
+              "response": "Of course, go ahead.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -384,7 +394,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "After you thank someone for their help"
+            "en-US": "After you thank someone for their help",
+            "es-ES": "Después de que des las gracias por la ayuda."
           },
           "translations": {
             "es-ES": {
@@ -393,8 +404,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "You're welcome, that's what we're here for.",
-              "response": "Alright, see you later."
+              "phrase": "You're welcome, no problem.",
+              "response": "Alright, see you later.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -405,7 +417,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Friendly farewell from a shopkeeper or local"
+            "en-US": "Friendly farewell from a shopkeeper or local",
+            "es-ES": "Un tendero o local se despide amablemente."
           },
           "translations": {
             "es-ES": {
@@ -415,7 +428,8 @@
             },
             "en-US": {
               "phrase": "See you later! Have a good time!",
-              "response": "Alright, see you later."
+              "response": "Alright, see you later.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -427,7 +441,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "End-of-week farewell from a shopkeeper or neighbor"
+            "en-US": "End-of-week farewell from a shopkeeper or neighbor",
+            "es-ES": "Un tendero o vecino se despide al final de la semana."
           },
           "translations": {
             "es-ES": {
@@ -437,7 +452,8 @@
             },
             "en-US": {
               "phrase": "Have a good weekend!",
-              "response": "Likewise! Have a good weekend!"
+              "response": "You too! Have a good weekend!",
+              "practiceAsTarget": true
             }
           }
         },
@@ -448,7 +464,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Stranger making small talk about the weather"
+            "en-US": "Stranger making small talk about the weather",
+            "es-ES": "Un desconocido comenta sobre el tiempo."
           },
           "translations": {
             "es-ES": {
@@ -458,7 +475,8 @@
             },
             "en-US": {
               "phrase": "It's so hot today, isn't it!",
-              "response": "Yes, really hot! But the weather is gorgeous."
+              "response": "Yes, really hot! But the weather is gorgeous.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -928,7 +946,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Hostess greeting you at the door"
+            "en-US": "Hostess greeting you at the door",
+            "es-ES": "La anfitriona te recibe en la puerta."
           },
           "translations": {
             "es-ES": {
@@ -938,7 +957,8 @@
             },
             "en-US": {
               "phrase": "Hi! For how many?",
-              "response": "For four, please."
+              "response": "For four, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -949,7 +969,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Hostess at a busy restaurant"
+            "en-US": "Hostess at a busy restaurant",
+            "es-ES": "La anfitriona en un restaurante concurrido."
           },
           "translations": {
             "es-ES": {
@@ -959,7 +980,8 @@
             },
             "en-US": {
               "phrase": "Do you have a reservation?",
-              "response": "No, we don't have a reservation."
+              "response": "No, we don't have a reservation.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -970,7 +992,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Hostess when the restaurant is full"
+            "en-US": "Hostess when the restaurant is full",
+            "es-ES": "La anfitriona cuando el restaurante está lleno."
           },
           "translations": {
             "es-ES": {
@@ -980,7 +1003,8 @@
             },
             "en-US": {
               "phrase": "We don't have a table right now. Can you wait about ten minutes?",
-              "response": "Yes, we'll wait. Thanks."
+              "response": "Yes, we'll wait. Thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1012,7 +1036,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Server taking your order"
+            "en-US": "Server taking your order",
+            "es-ES": "El camarero toma tu pedido."
           },
           "translations": {
             "es-ES": {
@@ -1021,8 +1046,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "What will you have?",
-              "response": "For me, the ___."
+              "phrase": "What can I get you?",
+              "response": "For me, the ___.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1076,7 +1102,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Server checking on your table"
+            "en-US": "Server checking on your table",
+            "es-ES": "El camarero revisa cómo va tu mesa."
           },
           "translations": {
             "es-ES": {
@@ -1086,7 +1113,8 @@
             },
             "en-US": {
               "phrase": "Everything good? Do you need anything else?",
-              "response": "All good, thanks."
+              "response": "All good, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1097,7 +1125,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Server after you finish eating"
+            "en-US": "Server after you finish eating",
+            "es-ES": "El camarero al terminar de comer."
           },
           "translations": {
             "es-ES": {
@@ -1107,7 +1136,8 @@
             },
             "en-US": {
               "phrase": "Do you want dessert or coffee?",
-              "response": "No thank you, just the bill please."
+              "response": "No thank you, just the bill please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1160,7 +1190,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Server when your choice is unavailable"
+            "en-US": "Server when your choice is unavailable",
+            "es-ES": "El camarero cuando lo que pediste no está disponible."
           },
           "translations": {
             "es-ES": {
@@ -1170,7 +1201,8 @@
             },
             "en-US": {
               "phrase": "Sorry, we're out of that. Do you want something else?",
-              "response": "Yes, we need a moment please"
+              "response": "Yes, we need a moment, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1181,7 +1213,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Server bringing your food"
+            "en-US": "Server bringing your food",
+            "es-ES": "El camarero trae la comida."
           },
           "translations": {
             "es-ES": {
@@ -1191,7 +1224,8 @@
             },
             "en-US": {
               "phrase": "Here you go. Enjoy your meal!",
-              "response": "Thanks!"
+              "response": "Thanks!",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1203,7 +1237,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Server when you look finished"
+            "en-US": "Server when you look finished",
+            "es-ES": "El camarero cuando parece que has terminado."
           },
           "translations": {
             "es-ES": {
@@ -1213,7 +1248,8 @@
             },
             "en-US": {
               "phrase": "Do you want the bill?",
-              "response": "Yes, the bill, please."
+              "response": "Yes, the bill, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1224,7 +1260,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Server asking how to split the bill"
+            "en-US": "Server asking how to split the bill",
+            "es-ES": "El camarero pregunta cómo dividir la cuenta."
           },
           "translations": {
             "es-ES": {
@@ -1234,7 +1271,8 @@
             },
             "en-US": {
               "phrase": "Together or separate?",
-              "response": "Together, please."
+              "response": "Together, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1245,7 +1283,8 @@
           ],
           "difficulty": 3,
           "context": {
-            "en-US": "Server when the card reader has issues"
+            "en-US": "Server when the card reader has issues",
+            "es-ES": "El camarero cuando el datáfono no funciona."
           },
           "translations": {
             "es-ES": {
@@ -1255,7 +1294,8 @@
             },
             "en-US": {
               "phrase": "Can you pay with your phone? The card reader isn't reading the card.",
-              "response": "Yes, I can pay with my phone, or I also have cash."
+              "response": "Yes, I can pay with my phone, or I also have cash.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1266,7 +1306,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Server asking about your kids' orders"
+            "en-US": "Server asking about your kids' orders",
+            "es-ES": "El camarero pregunta por el pedido de los niños."
           },
           "translations": {
             "es-ES": {
@@ -1276,7 +1317,8 @@
             },
             "en-US": {
               "phrase": "Do the kids want the kids' menu or will they eat from the regular menu?",
-              "response": "From the regular menu, thanks."
+              "response": "From the regular menu, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1533,7 +1575,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Any counter or checkout"
+            "en-US": "Any counter or checkout",
+            "es-ES": "En cualquier mostrador o caja."
           },
           "translations": {
             "es-ES": {
@@ -1543,7 +1586,8 @@
             },
             "en-US": {
               "phrase": "Anything else?",
-              "response": "No, that's everything. Thanks."
+              "response": "No, that's everything. Thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1554,7 +1598,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Cashier at checkout"
+            "en-US": "Cashier at checkout",
+            "es-ES": "El cajero en la caja."
           },
           "translations": {
             "es-ES": {
@@ -1564,7 +1609,8 @@
             },
             "en-US": {
               "phrase": "Do you want a bag?",
-              "response": "Yes, a bag, please."
+              "response": "Yes, one bag please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1576,7 +1622,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Cashier telling you the total"
+            "en-US": "Cashier telling you the total",
+            "es-ES": "El cajero te dice el total."
           },
           "translations": {
             "es-ES": {
@@ -1586,7 +1633,8 @@
             },
             "en-US": {
               "phrase": "That's twelve fifty.",
-              "response": "Can I pay by card?"
+              "response": "Can I pay by card?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1597,7 +1645,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Cashier at Mercadona, Bon Preu, or Caprabo"
+            "en-US": "Cashier at Mercadona, Bon Preu, or Caprabo",
+            "es-ES": "El cajero del supermercado."
           },
           "translations": {
             "es-ES": {
@@ -1607,7 +1656,8 @@
             },
             "en-US": {
               "phrase": "Do you have a loyalty card?",
-              "response": "No, I don't have one."
+              "response": "No, I don't have one.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1639,7 +1689,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Deli counter for cheese or ham"
+            "en-US": "Deli counter for cheese or ham",
+            "es-ES": "En la charcutería, para queso o jamón."
           },
           "translations": {
             "es-ES": {
@@ -1649,7 +1700,8 @@
             },
             "en-US": {
               "phrase": "Do you want it sliced or in one piece?",
-              "response": "Sliced, please."
+              "response": "Sliced, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1660,7 +1712,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "When asking for a product"
+            "en-US": "When asking for a product",
+            "es-ES": "Cuando preguntas por un producto."
           },
           "translations": {
             "es-ES": {
@@ -1670,28 +1723,8 @@
             },
             "en-US": {
               "phrase": "We don't have that. Try the store next door.",
-              "response": "OK, thanks."
-            }
-          }
-        },
-        {
-          "id": "es-groc-009",
-          "tags": [
-            "checkout"
-          ],
-          "difficulty": 2,
-          "context": {
-            "en-US": "Cashier — bags cost money in Spain"
-          },
-          "translations": {
-            "es-ES": {
-              "phrase": "¿Llevas la bolsa de casa o quieres una?",
-              "response": "Necesito una, por favor.",
+              "response": "OK, thanks.",
               "practiceAsTarget": true
-            },
-            "en-US": {
-              "phrase": "Did you bring a bag from home or do you want one?",
-              "response": "I need one, please."
             }
           }
         },
@@ -1724,7 +1757,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Cashier after payment"
+            "en-US": "Cashier after payment",
+            "es-ES": "El cajero después de pagar."
           },
           "translations": {
             "es-ES": {
@@ -1734,7 +1768,8 @@
             },
             "en-US": {
               "phrase": "Do you want the receipt?",
-              "response": "Yes, please."
+              "response": "Yes, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1750,12 +1785,12 @@
           },
           "translations": {
             "es-ES": {
-              "phrase": "Son tres euros la bolsa.",
+              "phrase": "Son quince céntimos la bolsa.",
               "response": "Vale, no pasa nada.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "The bag is three euros.",
+              "phrase": "The bag is fifteen cents.",
               "response": "OK, no problem."
             }
           }
@@ -1767,7 +1802,8 @@
           ],
           "difficulty": 3,
           "context": {
-            "en-US": "Deli counter for cheese"
+            "en-US": "Deli counter for cheese",
+            "es-ES": "En la charcutería, para el queso."
           },
           "translations": {
             "es-ES": {
@@ -1777,7 +1813,8 @@
             },
             "en-US": {
               "phrase": "How do you want it, aged or mild?",
-              "response": "Mild, please."
+              "response": "Mild, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -1788,17 +1825,19 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Card reader at checkout"
+            "en-US": "Card reader at checkout",
+            "es-ES": "El datáfono en la caja."
           },
           "translations": {
             "es-ES": {
               "phrase": "Introduce el PIN, por favor.",
-              "response": "— (just enter PIN) —",
+              "response": "Vale.",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "Enter your PIN, please.",
-              "response": "— (just enter PIN) —"
+              "response": "Okay.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2050,7 +2089,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Someone giving you directions"
+            "en-US": "Someone giving you directions",
+            "es-ES": "Alguien te da indicaciones."
           },
           "translations": {
             "es-ES": {
@@ -2060,7 +2100,8 @@
             },
             "en-US": {
               "phrase": "Go straight ahead and then to the right.",
-              "response": "Thanks. Is it far?"
+              "response": "Thanks. Is it far?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2072,7 +2113,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "After asking how far something is"
+            "en-US": "After asking how far something is",
+            "es-ES": "Después de preguntar a qué distancia está algo."
           },
           "translations": {
             "es-ES": {
@@ -2082,7 +2124,8 @@
             },
             "en-US": {
               "phrase": "It's about a ten minute walk.",
-              "response": "Perfect, thanks."
+              "response": "Perfect, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2093,7 +2136,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Taxi driver when you get in"
+            "en-US": "Taxi driver when you get in",
+            "es-ES": "El taxista cuando te subes."
           },
           "translations": {
             "es-ES": {
@@ -2103,7 +2147,8 @@
             },
             "en-US": {
               "phrase": "Where are you going?",
-              "response": "To this address, please."
+              "response": "To this address, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2115,7 +2160,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Taxi driver estimating trip time"
+            "en-US": "Taxi driver estimating trip time",
+            "es-ES": "El taxista calcula el tiempo del viaje."
           },
           "translations": {
             "es-ES": {
@@ -2125,7 +2171,8 @@
             },
             "en-US": {
               "phrase": "With traffic it'll be about twenty minutes.",
-              "response": "OK, no problem."
+              "response": "OK, no problem.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2136,7 +2183,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Taxi driver near your destination"
+            "en-US": "Taxi driver near your destination",
+            "es-ES": "El taxista cerca de tu destino."
           },
           "translations": {
             "es-ES": {
@@ -2145,8 +2193,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "I can't stop here. Shall I drop you at the corner?",
-              "response": "Anywhere is fine."
+              "phrase": "I can't stop here. Can I drop you at the corner?",
+              "response": "Anywhere is fine.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2373,7 +2422,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Host greeting you at arrival"
+            "en-US": "Host greeting you at arrival",
+            "es-ES": "El anfitrión te recibe a tu llegada."
           },
           "translations": {
             "es-ES": {
@@ -2383,7 +2433,8 @@
             },
             "en-US": {
               "phrase": "Welcome! How was the trip?",
-              "response": "Good, thanks. We're happy to be here."
+              "response": "Good, thanks. We're happy to be here.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2394,7 +2445,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Host giving you a tour"
+            "en-US": "Host giving you a tour",
+            "es-ES": "El anfitrión te enseña el piso."
           },
           "translations": {
             "es-ES": {
@@ -2404,7 +2456,8 @@
             },
             "en-US": {
               "phrase": "I'll show you the apartment. This way.",
-              "response": "Perfect, thanks."
+              "response": "Perfect, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2415,7 +2468,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Host explaining the apartment"
+            "en-US": "Host explaining the apartment",
+            "es-ES": "El anfitrión te explica el piso."
           },
           "translations": {
             "es-ES": {
@@ -2424,8 +2478,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "The wifi is this one and the password is on the fridge.",
-              "response": "Great, thanks."
+              "phrase": "The wifi and password are on the fridge.",
+              "response": "Great, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2436,7 +2491,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Host before leaving"
+            "en-US": "Host before leaving",
+            "es-ES": "El anfitrión antes de marcharse."
           },
           "translations": {
             "es-ES": {
@@ -2446,7 +2502,8 @@
             },
             "en-US": {
               "phrase": "If you need anything, message me on WhatsApp.",
-              "response": "OK, perfect. Many thanks."
+              "response": "OK, perfect. Thanks so much.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2457,7 +2514,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Host explaining house rules"
+            "en-US": "Host explaining house rules",
+            "es-ES": "El anfitrión explica las normas de la casa."
           },
           "translations": {
             "es-ES": {
@@ -2467,7 +2525,8 @@
             },
             "en-US": {
               "phrase": "You have to take the trash down to the bin on the corner.",
-              "response": "Perfect, thanks."
+              "response": "Perfect, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2500,7 +2559,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Host asking about checkout"
+            "en-US": "Host asking about checkout",
+            "es-ES": "El anfitrión pregunta por la hora de salida."
           },
           "translations": {
             "es-ES": {
@@ -2510,7 +2570,8 @@
             },
             "en-US": {
               "phrase": "What time are you leaving on the last day?",
-              "response": "We're leaving in the morning, around ten."
+              "response": "We're leaving in the morning, around ten.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2680,7 +2741,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Shop assistant greeting you"
+            "en-US": "Shop assistant greeting you",
+            "es-ES": "El dependiente te saluda."
           },
           "translations": {
             "es-ES": {
@@ -2690,7 +2752,8 @@
             },
             "en-US": {
               "phrase": "Hi! Can I help you with anything?",
-              "response": "Just browsing, thanks."
+              "response": "Just browsing, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2701,7 +2764,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Clothing store assistant"
+            "en-US": "Clothing store assistant",
+            "es-ES": "El dependiente de una tienda de ropa."
           },
           "translations": {
             "es-ES": {
@@ -2711,7 +2775,8 @@
             },
             "en-US": {
               "phrase": "What size are you looking for?",
-              "response": "Medium, I think."
+              "response": "Medium, I think.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2723,7 +2788,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Shop assistant pointing the way"
+            "en-US": "Shop assistant pointing the way",
+            "es-ES": "El dependiente te indica el camino."
           },
           "translations": {
             "es-ES": {
@@ -2733,7 +2799,8 @@
             },
             "en-US": {
               "phrase": "The fitting rooms are in the back on the left.",
-              "response": "Thanks."
+              "response": "Thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2745,7 +2812,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Shop assistant about an item"
+            "en-US": "Shop assistant about an item",
+            "es-ES": "El dependiente sobre un artículo."
           },
           "translations": {
             "es-ES": {
@@ -2755,7 +2823,8 @@
             },
             "en-US": {
               "phrase": "That one's on sale. It's thirty percent off.",
-              "response": "Great! I'll take it."
+              "response": "Great! I'll take it.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2766,7 +2835,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Small shop owner"
+            "en-US": "Small shop owner",
+            "es-ES": "El dueño de una tienda pequeña."
           },
           "translations": {
             "es-ES": {
@@ -2776,7 +2846,8 @@
             },
             "en-US": {
               "phrase": "We only accept cash.",
-              "response": "Is there an ATM nearby?"
+              "response": "Is there an ATM nearby?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2927,7 +2998,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Ticket window at an attraction"
+            "en-US": "Ticket window at an attraction",
+            "es-ES": "La taquilla de una atracción."
           },
           "translations": {
             "es-ES": {
@@ -2937,7 +3009,8 @@
             },
             "en-US": {
               "phrase": "How many tickets do you want?",
-              "response": "Four, please. Two adults and two children."
+              "response": "Four, please. Two adults and two children.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2949,7 +3022,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Ticket seller explaining pricing"
+            "en-US": "Ticket seller explaining pricing",
+            "es-ES": "El taquillero explica los precios."
           },
           "translations": {
             "es-ES": {
@@ -2959,7 +3033,8 @@
             },
             "en-US": {
               "phrase": "Children under six get in free.",
-              "response": "Okay, four tickets for us."
+              "response": "Okay, four tickets for us.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -2992,7 +3067,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Museum guard"
+            "en-US": "Museum guard",
+            "es-ES": "El guardia de un museo."
           },
           "translations": {
             "es-ES": {
@@ -3002,7 +3078,8 @@
             },
             "en-US": {
               "phrase": "You can't take photos in here.",
-              "response": "Sorry, I didn't know."
+              "response": "Sorry, I didn't know.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3013,7 +3090,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Sign or staff at an attraction"
+            "en-US": "Sign or staff at an attraction",
+            "es-ES": "Un cartel o el personal de una atracción."
           },
           "translations": {
             "es-ES": {
@@ -3022,8 +3100,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "It's closed today for a holiday. We open tomorrow at ten.",
-              "response": "Oh right, we'll come back tomorrow then."
+              "phrase": "We're closed today for a holiday. We open tomorrow at ten.",
+              "response": "Oh right, we'll come back tomorrow then.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3034,7 +3113,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Staff at popular attraction"
+            "en-US": "Staff at popular attraction",
+            "es-ES": "El personal de una atracción popular."
           },
           "translations": {
             "es-ES": {
@@ -3044,7 +3124,8 @@
             },
             "en-US": {
               "phrase": "Have you booked online?",
-              "response": "Yes, I have the booking here."
+              "response": "Yes, I have the reservation here.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3195,7 +3276,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Pharmacist greeting you"
+            "en-US": "Pharmacist greeting you",
+            "es-ES": "El farmacéutico te saluda."
           },
           "translations": {
             "es-ES": {
@@ -3205,7 +3287,8 @@
             },
             "en-US": {
               "phrase": "Hi! What do you need?",
-              "response": "Do you have something for a headache?"
+              "response": "Do you have something for a headache?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3216,7 +3299,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Pharmacist asking who it's for"
+            "en-US": "Pharmacist asking who it's for",
+            "es-ES": "El farmacéutico pregunta para quién es."
           },
           "translations": {
             "es-ES": {
@@ -3226,7 +3310,8 @@
             },
             "en-US": {
               "phrase": "Is it for an adult or a child?",
-              "response": "For my son. He's eleven."
+              "response": "For my son. He's eleven.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3237,7 +3322,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Pharmacist checking before recommending"
+            "en-US": "Pharmacist checking before recommending",
+            "es-ES": "El farmacéutico comprueba antes de recomendar."
           },
           "translations": {
             "es-ES": {
@@ -3246,8 +3332,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Does he/she have any allergies?",
-              "response": "Not that I know of."
+              "phrase": "Do they have any allergies?",
+              "response": "Not that I know of.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3259,7 +3346,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Pharmacist explaining dosage"
+            "en-US": "Pharmacist explaining dosage",
+            "es-ES": "El farmacéutico explica la dosis."
           },
           "translations": {
             "es-ES": {
@@ -3269,7 +3357,8 @@
             },
             "en-US": {
               "phrase": "Take one every eight hours with food.",
-              "response": "Okay, thanks."
+              "response": "Okay, thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3303,7 +3392,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Pharmacist suggesting an alternative"
+            "en-US": "Pharmacist suggesting an alternative",
+            "es-ES": "El farmacéutico sugiere una alternativa."
           },
           "translations": {
             "es-ES": {
@@ -3313,7 +3403,8 @@
             },
             "en-US": {
               "phrase": "I recommend this one. It's very effective and doesn't need a prescription.",
-              "response": "Perfect, I'll take it."
+              "response": "Perfect, I'll take it.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3487,7 +3578,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Barista clarifying your coffee order"
+            "en-US": "Barista clarifying your coffee order",
+            "es-ES": "El barista aclara tu pedido de café."
           },
           "translations": {
             "es-ES": {
@@ -3497,7 +3589,8 @@
             },
             "en-US": {
               "phrase": "Black or with milk?",
-              "response": "With milk, please."
+              "response": "With milk, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3508,7 +3601,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Barista or fast food worker"
+            "en-US": "Barista or fast food worker",
+            "es-ES": "Un barista o empleado de comida rápida."
           },
           "translations": {
             "es-ES": {
@@ -3518,7 +3612,8 @@
             },
             "en-US": {
               "phrase": "For here or to go?",
-              "response": "For here."
+              "response": "For here.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3551,7 +3646,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Bartender confirming your order"
+            "en-US": "Bartender confirming your order",
+            "es-ES": "El camarero confirma tu pedido."
           },
           "translations": {
             "es-ES": {
@@ -3561,7 +3657,8 @@
             },
             "en-US": {
               "phrase": "Coming right up.",
-              "response": "Thanks."
+              "response": "Thanks.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3595,7 +3692,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Barista asking about milk temperature"
+            "en-US": "Barista asking about milk temperature",
+            "es-ES": "El barista pregunta por la temperatura de la leche."
           },
           "translations": {
             "es-ES": {
@@ -3604,8 +3702,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "The milk hot, warm, or cold?",
-              "response": "Hot, please."
+              "phrase": "Hot, warm, or cold milk?",
+              "response": "Hot, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3616,7 +3715,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Barista after making your drink"
+            "en-US": "Barista after making your drink",
+            "es-ES": "El barista después de preparar tu bebida."
           },
           "translations": {
             "es-ES": {
@@ -3626,7 +3726,8 @@
             },
             "en-US": {
               "phrase": "Do you want anything else?",
-              "response": "No, that's all."
+              "response": "No, that's all.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3679,7 +3780,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Barista telling you the total"
+            "en-US": "Barista telling you the total",
+            "es-ES": "El barista te dice el total."
           },
           "translations": {
             "es-ES": {
@@ -3689,7 +3791,8 @@
             },
             "en-US": {
               "phrase": "That's two sixty.",
-              "response": "Here you go."
+              "response": "Here you go.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3700,7 +3803,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Barista when you've ordered multiple rounds"
+            "en-US": "Barista when you've ordered multiple rounds",
+            "es-ES": "El barista cuando has pedido varias rondas."
           },
           "translations": {
             "es-ES": {
@@ -3709,8 +3813,9 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Shall I charge you for everything together?",
-              "response": "Yes, all together, please."
+              "phrase": "Should I charge everything together?",
+              "response": "Yes, all together, please.",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3722,7 +3827,8 @@
           ],
           "difficulty": 3,
           "context": {
-            "en-US": "Server giving you a heads up"
+            "en-US": "Server giving you a heads up",
+            "es-ES": "El camarero te avisa de algo."
           },
           "translations": {
             "es-ES": {
@@ -3732,7 +3838,8 @@
             },
             "en-US": {
               "phrase": "The kitchen closes at four. Do you want to order food before it closes?",
-              "response": "Can you bring us the menu, please?"
+              "response": "Can you bring us the menu, please?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3744,7 +3851,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Bartender at a craft beer spot"
+            "en-US": "Bartender at a craft beer spot",
+            "es-ES": "El camarero en un bar de cervezas artesanales."
           },
           "translations": {
             "es-ES": {
@@ -3754,7 +3862,8 @@
             },
             "en-US": {
               "phrase": "Do you want to see the beer menu?",
-              "response": "Yes, please. Do you have any local ones?"
+              "response": "Yes, please. Do you have any local ones?",
+              "practiceAsTarget": true
             }
           }
         },
@@ -3766,7 +3875,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Bartender asking about beer size"
+            "en-US": "Bartender asking about beer size",
+            "es-ES": "El camarero pregunta por el tamaño de la cerveza."
           },
           "translations": {
             "es-ES": {
@@ -3776,7 +3886,8 @@
             },
             "en-US": {
               "phrase": "A small draft or a pint?",
-              "response": "A small draft, please."
+              "response": "A small draft, please.",
+              "practiceAsTarget": true
             }
           }
         },
