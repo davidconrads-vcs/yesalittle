@@ -1,6 +1,10 @@
 import { useMemo } from 'react'
 import { PromptWithScenario, ProgressData, SessionMode } from '../types'
 
+// Max number of phrases in a Quick Review session. Single source of truth so the
+// UI description ("up to {n}") can't drift from the actual cap.
+export const REVIEW_LIMIT = 15
+
 function weightedShuffle(items: Array<{ prompt: PromptWithScenario; weight: number }>): PromptWithScenario[] {
   const result: PromptWithScenario[] = []
   const pool = [...items]
@@ -76,7 +80,7 @@ export function useSpacedQueue(
   mode: SessionMode
 ) {
   return useMemo(() => {
-    const limit = mode === 'review' ? 15 : undefined
+    const limit = mode === 'review' ? REVIEW_LIMIT : undefined
     return buildQueue(prompts, progress, mode, limit)
   }, [prompts, progress, mode])
 }

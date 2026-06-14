@@ -1,9 +1,10 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
 import { resolveByNativeLang } from './utils'
 import { useProgress } from './hooks/useProgress'
-import { buildQueue } from './hooks/useSpacedQueue'
+import { buildQueue, REVIEW_LIMIT } from './hooks/useSpacedQueue'
+import { I18nProvider, translate } from './i18n'
 import Home from './components/Home'
 import Practice from './components/Practice'
 import Summary from './components/Summary'
@@ -17,8 +18,12 @@ const PREF_NATIVE_KEY = 'yesalittle:native'
 // rebuilt (via useMemo in App) whenever the selected native or target changes.
 function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
   return (promptsData.scenarios as unknown as UnifiedScenario[])
-    .map(s => ({
-      ...s,
+    .map((s): Scenario => ({
+      id: s.id,
+      // Localized display name; `id` remains the stable selection/filter key.
+      category: resolveByNativeLang(s.categoryName, native) ?? '',
+      icon: s.icon,
+      color: s.color,
       prompts: s.prompts
         .filter(p => {
           // A prompt is drillable in a target only when explicitly opted in.
@@ -112,6 +117,12 @@ export default function App() {
   const scenarios = useMemo(() => buildScenarios(language, native), [language, native])
   const allPrompts = useMemo(() => buildAllPrompts(scenarios), [scenarios])
 
+  // Keep the document language in sync with the UI language (= selected native),
+  // for screen-reader correctness. Other index.html metadata stays English by design.
+  useEffect(() => {
+    document.documentElement.lang = native.split('-')[0]
+  }, [native])
+
   const handleSpeedChange = (s: Speed) => {
     setSpeed(s)
     try { localStorage.setItem('trainer-speed', s) } catch {}
@@ -134,12 +145,13 @@ export default function App() {
   }
 
   const handleStart = (categories: Set<string>, mode: SessionMode) => {
+    // `categories` holds stable scenario ids, not (localizable) display names.
     const pool = categories.size === 0
       ? allPrompts
-      : allPrompts.filter(p => categories.has(p.category))
-    const q = buildQueue(pool, progress, mode, mode === 'review' ? 15 : undefined)
+      : allPrompts.filter(p => categories.has(p.scenarioId))
+    const q = buildQueue(pool, progress, mode, mode === 'review' ? REVIEW_LIMIT : undefined)
     if (q.length === 0) {
-      alert(mode === 'new' ? "No new phrases in this selection!" : "No phrases to review!")
+      alert(translate(native, mode === 'new' ? 'app.no_new' : 'app.no_review'))
       return
     }
     setQueue(q)
@@ -165,7 +177,7 @@ export default function App() {
   }
 
   return (
-    <>
+    <I18nProvider lang={native}>
       <style>{`
         @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.5; } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
@@ -213,6 +225,6 @@ export default function App() {
           onReset={() => { resetProgress(); setScreen('home') }}
         />
       )}
-    </>
+    </I18nProvider>
   )
 }

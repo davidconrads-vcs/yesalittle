@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { useAudio } from '../hooks/useAudio'
 import { Speed } from '../types'
+import { useI18n } from '../i18n'
 
 interface Props {
   promptId: string
@@ -13,6 +14,7 @@ interface Props {
 
 export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = false, size = 'large' }: Props) {
   const { playing, play } = useAudio(promptId, speed, lang, phrase)
+  const { t } = useI18n()
   const isLarge = size === 'large'
 
   useEffect(() => {
@@ -51,7 +53,7 @@ export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = 
         {playing ? '🔊' : '🔈'}
       </span>
       <span style={{ fontWeight: 500 }}>
-        {isLarge ? (playing ? 'Playing...' : 'Play Again') : (playing ? '...' : 'Listen')}
+        {isLarge ? (playing ? t('speak.playing') : t('speak.play_again')) : (playing ? '...' : t('speak.listen'))}
       </span>
     </button>
   )

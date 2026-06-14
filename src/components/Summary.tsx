@@ -1,5 +1,6 @@
 import { PromptWithScenario, Speed } from '../types'
 import SpeakButton from './SpeakButton'
+import { useI18n } from '../i18n'
 
 interface SessionResult {
   prompt: PromptWithScenario
@@ -15,6 +16,7 @@ interface Props {
 }
 
 export default function Summary({ results, speed, lang, onRetryMissed, onNewSession }: Props) {
+  const { t } = useI18n()
   const correct = results.filter(r => r.understood).length
   const missed = results.filter(r => !r.understood)
   const pct = results.length > 0 ? Math.round((correct / results.length) * 100) : 0
@@ -35,7 +37,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
     >
       <div style={{ textAlign: 'center', marginBottom: 40, animation: 'fadeUp 0.5s ease' }}>
         <div style={{ fontSize: 52, marginBottom: 16 }}>{emoji}</div>
-        <h2 style={{ fontSize: 28, fontWeight: 700, margin: '0 0 16px' }}>Session Complete</h2>
+        <h2 style={{ fontSize: 28, fontWeight: 700, margin: '0 0 16px' }}>{t('summary.complete')}</h2>
         <div
           style={{
             fontSize: 48,
@@ -49,7 +51,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
           {correct}/{results.length}
         </div>
         <div style={{ color: 'rgba(255,255,255,0.4)', fontSize: 14, marginTop: 4 }}>
-          understood on first listen
+          {t('summary.understood_first')}
         </div>
         <div
           style={{
@@ -64,7 +66,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
             color: 'rgba(255,255,255,0.4)',
           }}
         >
-          {pct}% comprehension
+          {t('summary.comprehension', { pct })}
         </div>
       </div>
 
@@ -81,7 +83,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            Review these ({missed.length})
+            {t('summary.review_these', { n: missed.length })}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 10 }}>
             {missed.map((r, i) => (
@@ -99,13 +101,13 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
                   <>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 6, marginBottom: 6 }}>
                       <span style={{ fontSize: 14, lineHeight: 1, userSelect: 'none' }}>🎬</span>
-                      <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>The Situation</span>
+                      <span style={{ fontSize: 11, color: 'rgba(255,255,255,0.35)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>{t('practice.situation')}</span>
                     </div>
                     <p style={{ fontSize: 14, fontStyle: 'italic', color: 'rgba(255,255,255,0.6)', margin: '0 0 10px', lineHeight: 1.5 }}>
                       {r.prompt.context}
                     </p>
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
-                      <span style={{ fontSize: 11, color: 'rgba(76, 175, 80, 0.6)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>What you'd say</span>
+                      <span style={{ fontSize: 11, color: 'rgba(76, 175, 80, 0.6)', fontFamily: "'JetBrains Mono', monospace", letterSpacing: 1, textTransform: 'uppercase' }}>{t('practice.what_youd_say')}</span>
                       <SpeakButton promptId={`${r.prompt.id}-response`} phrase={r.prompt.yourResponse} speed={speed} lang={lang} size="small" />
                     </div>
                     <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>{r.prompt.yourResponse}</div>
@@ -147,7 +149,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
               minHeight: 52,
             }}
           >
-            Retry Missed
+            {t('summary.retry_missed')}
           </button>
         )}
         <button
@@ -166,7 +168,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
             minHeight: 52,
           }}
         >
-          New Session
+          {t('summary.new_session')}
         </button>
       </div>
     </div>

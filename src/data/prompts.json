@@ -2,7 +2,10 @@
   "scenarios": [
     {
       "id": "panic",
-      "category": "Panic Button",
+      "categoryName": {
+        "en-US": "Panic Button",
+        "es-ES": "Botón de pánico"
+      },
       "icon": "🆘",
       "color": "#c0392b",
       "prompts": [
@@ -137,7 +140,10 @@
     },
     {
       "id": "greetings",
-      "category": "Greetings & Pleasantries",
+      "categoryName": {
+        "en-US": "Greetings & Pleasantries",
+        "es-ES": "Saludos y cortesías"
+      },
       "icon": "👋",
       "color": "#6366F1",
       "prompts": [
@@ -934,7 +940,10 @@
     },
     {
       "id": "restaurant",
-      "category": "Restaurant",
+      "categoryName": {
+        "en-US": "Restaurant",
+        "es-ES": "Restaurante"
+      },
       "icon": "🍽️",
       "color": "#E85D3A",
       "prompts": [
@@ -1542,7 +1551,10 @@
     },
     {
       "id": "grocery",
-      "category": "Grocery Store",
+      "categoryName": {
+        "en-US": "Grocery Store",
+        "es-ES": "Supermercado"
+      },
       "icon": "🛒",
       "color": "#4CAF50",
       "prompts": [
@@ -2078,7 +2090,10 @@
     },
     {
       "id": "around",
-      "category": "Getting Around",
+      "categoryName": {
+        "en-US": "Getting Around",
+        "es-ES": "Moverse por la ciudad"
+      },
       "icon": "🚶",
       "color": "#2196F3",
       "prompts": [
@@ -2410,7 +2425,10 @@
     },
     {
       "id": "checkin",
-      "category": "Airbnb / Check-in",
+      "categoryName": {
+        "en-US": "Airbnb / Check-in",
+        "es-ES": "Airbnb / Llegada"
+      },
       "icon": "🏠",
       "color": "#FF9800",
       "prompts": [
@@ -2730,7 +2748,10 @@
     },
     {
       "id": "shopping",
-      "category": "Shopping",
+      "categoryName": {
+        "en-US": "Shopping",
+        "es-ES": "Compras"
+      },
       "icon": "🛍️",
       "color": "#9C27B0",
       "prompts": [
@@ -2987,7 +3008,10 @@
     },
     {
       "id": "tickets",
-      "category": "Activities & Tickets",
+      "categoryName": {
+        "en-US": "Activities & Tickets",
+        "es-ES": "Actividades y entradas"
+      },
       "icon": "🎟️",
       "color": "#00BCD4",
       "prompts": [
@@ -3265,7 +3289,10 @@
     },
     {
       "id": "pharmacy",
-      "category": "Pharmacy",
+      "categoryName": {
+        "en-US": "Pharmacy",
+        "es-ES": "Farmacia"
+      },
       "icon": "💊",
       "color": "#F44336",
       "prompts": [
@@ -3545,7 +3572,10 @@
     },
     {
       "id": "cafe",
-      "category": "Café & Bar",
+      "categoryName": {
+        "en-US": "Café & Bar",
+        "es-ES": "Café y bar"
+      },
       "icon": "☕",
       "color": "#795548",
       "prompts": [
