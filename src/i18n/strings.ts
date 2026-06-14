@@ -86,8 +86,82 @@ const EN: UIStrings = {
   'lang.en-US': 'English',
 }
 
-// Populated in Part 8 from the reviewed Spanish worksheet. Empty → falls back to EN.
-const ES: UIStrings = {}
+// Peninsular Spanish, informal (tú) register. Values are the reviewed worksheet
+// primaries (SPANISH-UI-WORKSHEET.md). Any key omitted here falls back to en-US.
+const ES: UIStrings = {
+  // ── Home ────────────────────────────────────────────────────────────────────
+  'home.eyebrow': 'Entrenador de escucha',
+  'home.tagline': 'Entiende lo que dicen los locales y responde como uno más.',
+  'home.progress': '📊 Progreso',
+  'home.i_speak': 'Hablo',
+  'home.im_learning': 'Estoy aprendiendo',
+  'home.playback_speed': 'Velocidad de reproducción',
+  'home.session_mode': 'Modo de sesión',
+  'home.mode.full': 'Práctica completa',
+  'home.mode.full_desc': 'Todas las frases, según tu progreso',
+  'home.mode.quick': 'Repaso rápido',
+  'home.mode.quick_desc': 'Las que has fallado, hasta {n}',
+  'home.mode.new': 'Frases nuevas',
+  'home.mode.new_desc': 'Solo las frases que no has visto',
+  'home.scenarios': 'Escenarios (o empieza con todos)',
+  'home.start_practice': 'Empezar práctica — {n} {unit}',
+  'home.streak': '🔥 {streak} {unit}',
+
+  'unit.phrase.one': 'frase',
+  'unit.phrase.other': 'frases',
+  'unit.day.one': 'día',
+  'unit.day.other': 'días',
+
+  // ── SpeedControl ──────────────────────────────────────────────────────────────
+  'speed.slow': 'Lento',
+  'speed.normal': 'Normal',
+  'speed.fast': 'Rápido',
+
+  // ── Practice ────────────────────────────────────────────────────────────────
+  'practice.exit': '← Salir',
+  'practice.situation': 'La situación',
+  'practice.what_youd_say': 'Qué dirías',
+  'practice.you_could_respond': 'Podrías responder',
+  'practice.listen_try': 'Escucha e intenta entender',
+  'practice.heres_what': 'Esto es lo que han dicho',
+  'practice.reveal': 'Mostrar respuesta',
+  'practice.didnt_get': 'No lo he pillado',
+  'practice.understood': 'Entendido ✓',
+
+  // ── SpeakButton ───────────────────────────────────────────────────────────────
+  'speak.playing': 'Reproduciendo...',
+  'speak.play_again': 'Reproducir otra vez',
+  'speak.listen': 'Escuchar',
+
+  // ── Summary ─────────────────────────────────────────────────────────────────
+  'summary.complete': 'Sesión completada',
+  'summary.understood_first': 'entendidas a la primera',
+  'summary.comprehension': '{pct}% de comprensión',
+  'summary.review_these': 'Repasa estas ({n})',
+  'summary.retry_missed': 'Reintentar falladas',
+  'summary.new_session': 'Nueva sesión',
+
+  // ── Progress ────────────────────────────────────────────────────────────────
+  'progress.back': '← Volver',
+  'progress.title': 'Progreso',
+  'progress.comprehension': 'Comprensión',
+  'progress.day_streak': 'Racha de días',
+  'progress.total_attempts': 'Intentos totales',
+  'progress.by_category': 'Por categoría',
+  'progress.not_started': 'Sin empezar',
+  'progress.weakest': 'Frases más difíciles',
+  'progress.reset': 'Borrar todo el progreso',
+  'progress.reset_confirm': '¿Borrar todo el progreso? Esto no se puede deshacer.',
+
+  // ── App (browser alerts) ──────────────────────────────────────────────────────
+  'app.no_new': '¡No hay frases nuevas en esta selección!',
+  'app.no_review': '¡No hay frases para repasar!',
+
+  // ── Target language names (localized) ─────────────────────────────────────────
+  'lang.es-ES': 'Español',
+  'lang.pt-PT': 'Portugués',
+  'lang.en-US': 'Inglés',
+}
 
 export const UI_STRINGS: Record<string, UIStrings> = {
   'en-US': EN,

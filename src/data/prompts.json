@@ -3,7 +3,8 @@
     {
       "id": "panic",
       "categoryName": {
-        "en-US": "Panic Button"
+        "en-US": "Panic Button",
+        "es-ES": "Botón de pánico"
       },
       "icon": "🆘",
       "color": "#c0392b",
@@ -140,7 +141,8 @@
     {
       "id": "greetings",
       "categoryName": {
-        "en-US": "Greetings & Pleasantries"
+        "en-US": "Greetings & Pleasantries",
+        "es-ES": "Saludos y cortesías"
       },
       "icon": "👋",
       "color": "#6366F1",
@@ -939,7 +941,8 @@
     {
       "id": "restaurant",
       "categoryName": {
-        "en-US": "Restaurant"
+        "en-US": "Restaurant",
+        "es-ES": "Restaurante"
       },
       "icon": "🍽️",
       "color": "#E85D3A",
@@ -1549,7 +1552,8 @@
     {
       "id": "grocery",
       "categoryName": {
-        "en-US": "Grocery Store"
+        "en-US": "Grocery Store",
+        "es-ES": "Supermercado"
       },
       "icon": "🛒",
       "color": "#4CAF50",
@@ -2087,7 +2091,8 @@
     {
       "id": "around",
       "categoryName": {
-        "en-US": "Getting Around"
+        "en-US": "Getting Around",
+        "es-ES": "Moverse por la ciudad"
       },
       "icon": "🚶",
       "color": "#2196F3",
@@ -2421,7 +2426,8 @@
     {
       "id": "checkin",
       "categoryName": {
-        "en-US": "Airbnb / Check-in"
+        "en-US": "Airbnb / Check-in",
+        "es-ES": "Airbnb / Llegada"
       },
       "icon": "🏠",
       "color": "#FF9800",
@@ -2743,7 +2749,8 @@
     {
       "id": "shopping",
       "categoryName": {
-        "en-US": "Shopping"
+        "en-US": "Shopping",
+        "es-ES": "Compras"
       },
       "icon": "🛍️",
       "color": "#9C27B0",
@@ -3002,7 +3009,8 @@
     {
       "id": "tickets",
       "categoryName": {
-        "en-US": "Activities & Tickets"
+        "en-US": "Activities & Tickets",
+        "es-ES": "Actividades y entradas"
       },
       "icon": "🎟️",
       "color": "#00BCD4",
@@ -3282,7 +3290,8 @@
     {
       "id": "pharmacy",
       "categoryName": {
-        "en-US": "Pharmacy"
+        "en-US": "Pharmacy",
+        "es-ES": "Farmacia"
       },
       "icon": "💊",
       "color": "#F44336",
@@ -3564,7 +3573,8 @@
     {
       "id": "cafe",
       "categoryName": {
-        "en-US": "Café & Bar"
+        "en-US": "Café & Bar",
+        "es-ES": "Café y bar"
       },
       "icon": "☕",
       "color": "#795548",
