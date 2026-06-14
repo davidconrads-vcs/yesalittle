@@ -1,4 +1,5 @@
 import { PromptWithScenario, ProgressData, Scenario } from '../types'
+import { useI18n } from '../i18n'
 
 interface Props {
   scenarios: Scenario[]
@@ -10,6 +11,7 @@ interface Props {
 }
 
 export default function Progress({ scenarios, progress, streak, allPrompts, onBack, onReset }: Props) {
+  const { t } = useI18n()
   const totalAttempts = Object.values(progress).reduce((sum, s) => sum + s.timesShown, 0)
   const totalUnderstood = Object.values(progress).reduce((sum, s) => sum + s.timesUnderstood, 0)
   const overallRate = totalAttempts > 0 ? Math.round((totalUnderstood / totalAttempts) * 100) : 0
@@ -62,17 +64,17 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
             cursor: 'pointer',
           }}
         >
-          ← Back
+          {t('progress.back')}
         </button>
-        <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0 }}>Progress</h2>
+        <h2 style={{ fontSize: 20, fontWeight: 700, margin: 0 }}>{t('progress.title')}</h2>
       </div>
 
       {/* Overall stats */}
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 28 }}>
         {[
-          { label: 'Comprehension', value: `${overallRate}%`, color: '#4CAF50' },
-          { label: 'Day Streak', value: streak > 0 ? `🔥 ${streak}` : '—', color: '#FF9800' },
-          { label: 'Total Attempts', value: String(totalAttempts), color: '#2196F3' },
+          { label: t('progress.comprehension'), value: `${overallRate}%`, color: '#4CAF50' },
+          { label: t('progress.day_streak'), value: streak > 0 ? `🔥 ${streak}` : '—', color: '#FF9800' },
+          { label: t('progress.total_attempts'), value: String(totalAttempts), color: '#2196F3' },
         ].map(stat => (
           <div
             key={stat.label}
@@ -107,7 +109,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
             fontFamily: "'JetBrains Mono', monospace",
           }}
         >
-          By Category
+          {t('progress.by_category')}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
           {categoryStats.map(cat => (
@@ -134,7 +136,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
                     color: cat.rate !== null ? cat.color : 'rgba(255,255,255,0.2)',
                   }}
                 >
-                  {cat.rate !== null ? `${Math.round(cat.rate * 100)}%` : 'Not started'}
+                  {cat.rate !== null ? `${Math.round(cat.rate * 100)}%` : t('progress.not_started')}
                 </span>
               </div>
               <div
@@ -174,7 +176,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            Weakest Phrases
+            {t('progress.weakest')}
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: 8 }}>
             {weakest.map(({ prompt, rate }) => (
@@ -219,7 +221,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
       {/* Reset */}
       <button
         onClick={() => {
-          if (confirm('Reset all progress? This cannot be undone.')) onReset()
+          if (confirm(t('progress.reset_confirm'))) onReset()
         }}
         style={{
           width: '100%',
@@ -234,7 +236,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
           cursor: 'pointer',
         }}
       >
-        Reset All Progress
+        {t('progress.reset')}
       </button>
     </div>
   )

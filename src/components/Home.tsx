@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import { Scenario, SessionMode, Speed, getAvailableTargets, TARGET_META, SUPPORTED_NATIVES, NATIVE_META } from '../types'
+import { REVIEW_LIMIT } from '../hooks/useSpacedQueue'
+import { useI18n } from '../i18n'
 import SpeedControl from './SpeedControl'
 
 interface Props {
@@ -26,23 +28,25 @@ const sectionLabelStyle: React.CSSProperties = {
 }
 
 export default function Home({ scenarios, language, onLanguageChange, native, onNativeChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
+  const { t, pluralize } = useI18n()
+  // `selected` holds stable scenario ids, never the (localizable) display name.
   const [selected, setSelected] = useState<Set<string>>(new Set())
   const [mode, setMode] = useState<SessionMode>('full')
 
   const totalPrompts = selected.size === 0
     ? scenarios.reduce((sum, s) => sum + s.prompts.length, 0)
-    : scenarios.filter(s => selected.has(s.category)).reduce((sum, s) => sum + s.prompts.length, 0)
+    : scenarios.filter(s => selected.has(s.id)).reduce((sum, s) => sum + s.prompts.length, 0)
 
-  const toggleCategory = (category: string) => {
+  const toggleCategory = (id: string) => {
     const next = new Set(selected)
-    next.has(category) ? next.delete(category) : next.add(category)
+    next.has(id) ? next.delete(id) : next.add(id)
     setSelected(next)
   }
 
   const SESSION_MODES: { value: SessionMode; label: string; desc: string }[] = [
-    { value: 'full', label: 'Full Practice', desc: 'All phrases, weighted by progress' },
-    { value: 'review', label: 'Quick Review', desc: 'Previously missed, up to 15' },
-    { value: 'new', label: 'New Phrases', desc: "Only phrases you haven't seen" },
+    { value: 'full', label: t('home.mode.full'), desc: t('home.mode.full_desc') },
+    { value: 'review', label: t('home.mode.quick'), desc: t('home.mode.quick_desc', { n: REVIEW_LIMIT }) },
+    { value: 'new', label: t('home.mode.new'), desc: t('home.mode.new_desc') },
   ]
 
   return (
@@ -71,7 +75,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
               fontFamily: "'JetBrains Mono', monospace",
             }}
           >
-            Listening Trainer
+            {t('home.eyebrow')}
           </div>
           <h1
             style={{
@@ -87,7 +91,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
             yesalittle
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.45)', fontSize: 15, marginTop: 8, lineHeight: 1.5, margin: '8px 0 0' }}>
-            Understand what locals say — and respond like one.
+            {t('home.tagline')}
           </p>
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 8 }}>
@@ -104,7 +108,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
                 whiteSpace: 'nowrap',
               }}
             >
-              🔥 {streak} day{streak !== 1 ? 's' : ''}
+              {t('home.streak', { streak, unit: pluralize(streak, { one: t('unit.day.one'), other: t('unit.day.other') }) })}
             </div>
           )}
           <button
@@ -120,14 +124,14 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
               cursor: 'pointer',
             }}
           >
-            📊 Progress
+            {t('home.progress')}
           </button>
         </div>
       </div>
 
       {/* Native-language selector — "I speak" */}
       <div style={{ marginBottom: 16 }}>
-        <div style={sectionLabelStyle}>I speak</div>
+        <div style={sectionLabelStyle}>{t('home.i_speak')}</div>
         <div style={{ display: 'flex', gap: 8 }}>
           {SUPPORTED_NATIVES.map(locale => (
             <button
@@ -151,7 +155,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
               }}
             >
               <span>{NATIVE_META[locale].flag}</span>
-              <span>{NATIVE_META[locale].label}</span>
+              <span>{NATIVE_META[locale].autonym}</span>
             </button>
           ))}
         </div>
@@ -159,7 +163,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
 
       {/* Target-language selector — "I'm learning" */}
       <div style={{ marginBottom: 24 }}>
-        <div style={sectionLabelStyle}>I'm learning</div>
+        <div style={sectionLabelStyle}>{t('home.im_learning')}</div>
         <div style={{ display: 'flex', gap: 8 }}>
           {getAvailableTargets(native).map(locale => (
             <button
@@ -183,7 +187,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
               }}
             >
               <span>{TARGET_META[locale].flag}</span>
-              <span>{TARGET_META[locale].label}</span>
+              <span>{t(`lang.${locale}`)}</span>
             </button>
           ))}
         </div>
@@ -202,7 +206,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
             fontFamily: "'JetBrains Mono', monospace",
           }}
         >
-          Playback Speed
+          {t('home.playback_speed')}
         </div>
         <SpeedControl speed={speed} onChange={onSpeedChange} />
       </div>
@@ -220,7 +224,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
             fontFamily: "'JetBrains Mono', monospace",
           }}
         >
-          Session Mode
+          {t('home.session_mode')}
         </div>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {SESSION_MODES.map(m => (
@@ -268,15 +272,15 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
             fontFamily: "'JetBrains Mono', monospace",
           }}
         >
-          Scenarios (or start with all)
+          {t('home.scenarios')}
         </div>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
           {scenarios.map(s => {
-            const isSelected = selected.has(s.category)
+            const isSelected = selected.has(s.id)
             return (
               <button
-                key={s.category}
-                onClick={() => toggleCategory(s.category)}
+                key={s.id}
+                onClick={() => toggleCategory(s.id)}
                 style={{
                   background: isSelected ? `${s.color}20` : 'rgba(255,255,255,0.04)',
                   border: `1.5px solid ${isSelected ? s.color : 'rgba(255,255,255,0.08)'}`,
@@ -330,7 +334,7 @@ export default function Home({ scenarios, language, onLanguageChange, native, on
           minHeight: 56,
         }}
       >
-        Start Practice — {totalPrompts} phrase{totalPrompts !== 1 ? 's' : ''}
+        {t('home.start_practice', { n: totalPrompts, unit: pluralize(totalPrompts, { one: t('unit.phrase.one'), other: t('unit.phrase.other') }) })}
       </button>
     </div>
   )

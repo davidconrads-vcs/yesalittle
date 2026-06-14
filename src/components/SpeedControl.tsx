@@ -1,17 +1,21 @@
 import { Speed } from '../types'
+import { useI18n } from '../i18n'
 
 interface Props {
   speed: Speed
   onChange: (speed: Speed) => void
 }
 
-const SPEEDS: { value: Speed; label: string }[] = [
-  { value: 'slow', label: 'Slow' },
-  { value: 'normal', label: 'Normal' },
-  { value: 'fast', label: 'Fast' },
+// Labels resolved via t() inside render (was a module-level constant — would not
+// have reacted to a language switch).
+const SPEEDS: { value: Speed }[] = [
+  { value: 'slow' },
+  { value: 'normal' },
+  { value: 'fast' },
 ]
 
 export default function SpeedControl({ speed, onChange }: Props) {
+  const { t } = useI18n()
   return (
     <div className="flex items-center gap-1 bg-white/5 rounded-xl p-1">
       {SPEEDS.map(s => (
@@ -27,7 +31,7 @@ export default function SpeedControl({ speed, onChange }: Props) {
             fontSize: 12,
           }}
         >
-          {s.label}
+          {t(`speed.${s.value}`)}
         </button>
       ))}
     </div>

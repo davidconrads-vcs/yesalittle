@@ -12,18 +12,22 @@ export const DEFAULT_NATIVE = 'en-US'
 // native picker to offer it; no other wiring required.
 export const SUPPORTED_NATIVES = ['en-US', 'es-ES'] as const
 
-export const NATIVE_META: Record<string, { label: string; flag: string }> = {
-  'en-US': { label: 'English', flag: '🇺🇸' },
-  'es-ES': { label: 'Español', flag: '🇪🇸' },
+// Native-picker names are AUTONYMS: each language in its own name/script, fixed
+// (not translated per UI language). Shown on the "I speak" buttons.
+export const NATIVE_META: Record<string, { autonym: string; flag: string }> = {
+  'en-US': { autonym: 'English', flag: '🇺🇸' },
+  'es-ES': { autonym: 'Español', flag: '🇪🇸' },
 }
 
 // Registry of every target locale the app knows (meta + validation).
 export const SUPPORTED_TARGETS = ['es-ES', 'pt-PT', 'en-US'] as const
 
-export const TARGET_META: Record<string, { label: string; flag: string; ttsLang: string }> = {
-  'es-ES': { label: 'Spanish',    flag: '🇪🇸', ttsLang: 'es-ES' },
-  'pt-PT': { label: 'Portuguese', flag: '🇵🇹', ttsLang: 'pt-PT' },
-  'en-US': { label: 'English',    flag: '🇺🇸', ttsLang: 'en-US' },
+// Target display names are LOCALIZED per UI language — they live in the i18n string
+// table under `lang.<locale>`, not here. TARGET_META holds only language-neutral metadata.
+export const TARGET_META: Record<string, { flag: string; ttsLang: string }> = {
+  'es-ES': { flag: '🇪🇸', ttsLang: 'es-ES' },
+  'pt-PT': { flag: '🇵🇹', ttsLang: 'pt-PT' },
+  'en-US': { flag: '🇺🇸', ttsLang: 'en-US' },
 }
 
 // Single source of truth for available language pairs: which targets each native
@@ -60,7 +64,9 @@ export interface UnifiedPrompt {
 
 export interface UnifiedScenario {
   id: string
-  category: string
+  // Localized category display names (resolved like `context` via the native lang).
+  // `id` is the stable selection/filter key — never the display string.
+  categoryName: Record<string, string>
   icon: string
   color: string
   prompts: UnifiedPrompt[]

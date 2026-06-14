@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { PromptWithScenario, Speed } from '../types'
 import SpeakButton from './SpeakButton'
 import SpeedControl from './SpeedControl'
+import { useI18n } from '../i18n'
 
 interface Props {
   queue: PromptWithScenario[]
@@ -13,6 +14,7 @@ interface Props {
 }
 
 export default function Practice({ queue, speed, lang, onSpeedChange, onResult, onExit }: Props) {
+  const { t } = useI18n()
   const [index, setIndex] = useState(0)
   const [phase, setPhase] = useState<'listen' | 'reveal'>('listen')
   const [key, setKey] = useState(0) // for remounting SpeakButton on new prompt
@@ -88,7 +90,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
           minHeight: 56,
         }}
       >
-        Didn't Get It
+        {t('practice.didnt_get')}
       </button>
       <button
         onClick={() => handleResult(true)}
@@ -106,7 +108,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
           minHeight: 56,
         }}
       >
-        Understood ✓
+        {t('practice.understood')}
       </button>
     </div>
   )
@@ -129,7 +131,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
         minHeight: 56,
       }}
     >
-      Reveal Answer
+      {t('practice.reveal')}
     </button>
   )
 
@@ -140,7 +142,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
       <div style={sharedCardStyle}>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 8, marginBottom: 16 }}>
           <span style={{ fontSize: 18, lineHeight: 1, userSelect: 'none' }}>🎬</span>
-          <span style={labelStyle}>The Situation</span>
+          <span style={labelStyle}>{t('practice.situation')}</span>
         </div>
 
         <div style={{ animation: phase === 'reveal' ? 'none' : undefined }}>
@@ -158,7 +160,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
             <div style={{ animation: 'fadeUp 0.3s ease' }}>
               <div style={responseCardStyle}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
-                  <div style={responseLabelStyle}>What you'd say</div>
+                  <div style={responseLabelStyle}>{t('practice.what_youd_say')}</div>
                   <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
                 </div>
                 <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
@@ -202,7 +204,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
     <>
       <div style={sharedCardStyle}>
         <div style={labelStyle}>
-          {phase === 'listen' ? 'Listen & try to understand' : "Here's what they said"}
+          {phase === 'listen' ? t('practice.listen_try') : t('practice.heres_what')}
         </div>
 
         {phase === 'listen' ? (
@@ -219,7 +221,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
             )}
             <div style={responseCardStyle}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 4 }}>
-                <div style={responseLabelStyle}>You could respond</div>
+                <div style={responseLabelStyle}>{t('practice.you_could_respond')}</div>
                 <SpeakButton promptId={`${current.id}-response`} phrase={current.yourResponse} speed={speed} lang={lang} size="small" />
               </div>
               <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
@@ -288,7 +290,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
             minHeight: 36,
           }}
         >
-          ← Exit
+          {t('practice.exit')}
         </button>
         <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
           <SpeedControl speed={speed} onChange={onSpeedChange} />
