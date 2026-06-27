@@ -55,7 +55,7 @@ const OG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" w
   <!-- Top orange accent bar -->
   <rect width="1200" height="6" fill="${ACCENT}"/>
 
-  <!-- "LISTENING TRAINER" chip label -->
+  <!-- "TRAVEL SITUATION TRAINER" chip label -->
   <text x="600" y="218"
     font-family="'Courier New', 'Lucida Console', monospace"
     font-size="15"
@@ -63,7 +63,7 @@ const OG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" w
     fill="${ACCENT}"
     letter-spacing="3"
     text-anchor="middle"
-  >LISTENING TRAINER</text>
+  >TRAVEL SITUATION TRAINER</text>
 
   <!-- "yesalittle" wordmark -->
   <text x="600" y="315"
@@ -82,15 +82,6 @@ const OG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" w
     fill="rgba(255,255,255,0.55)"
     text-anchor="middle"
   >Understand what locals say — and respond like one.</text>
-
-  <!-- Language line -->
-  <text x="600" y="488"
-    font-family="'Helvetica Neue', 'Arial', sans-serif"
-    font-size="19"
-    font-weight="400"
-    fill="rgba(255,255,255,0.3)"
-    text-anchor="middle"
-  >Spanish · Portuguese</text>
 </svg>`
 
 await sharp(Buffer.from(OG_SVG)).resize(1200, 630).png().toFile(join(PUBLIC, 'og-image.png'))

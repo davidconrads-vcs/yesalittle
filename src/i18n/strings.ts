@@ -12,7 +12,7 @@ export type UIStrings = Record<string, string>
 
 const EN: UIStrings = {
   // ── Home ────────────────────────────────────────────────────────────────────
-  'home.eyebrow': 'Listening Trainer',
+  'home.eyebrow': 'Travel Situation Trainer',
   'home.tagline': 'Understand what locals say — and respond like one.',
   'home.progress': '📊 Progress',
   'home.i_speak': 'I speak',
@@ -90,7 +90,7 @@ const EN: UIStrings = {
 // primaries (SPANISH-UI-WORKSHEET.md). Any key omitted here falls back to en-US.
 const ES: UIStrings = {
   // ── Home ────────────────────────────────────────────────────────────────────
-  'home.eyebrow': 'Entrenador de escucha',
+  'home.eyebrow': 'Entrenador de situaciones de viaje',
   'home.tagline': 'Entiende lo que dicen los locales y responde como uno más.',
   'home.progress': '📊 Progreso',
   'home.i_speak': 'Hablo',
