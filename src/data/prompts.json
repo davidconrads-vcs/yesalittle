@@ -17,7 +17,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Someone has just said something to you and you almost understood — you got the gist but missed enough that you can't confidently respond. You need them to say it again."
+            "en-US": "Someone has just said something to you and you almost understood — you got the gist but missed enough that you can't confidently respond. You need them to say it again.",
+            "es-ES": "Alguien acaba de decirte algo y casi lo has entendido — has pillado la idea general, pero se te han escapado suficientes palabras como para no poder responder con seguridad. Necesitas que te lo repitan."
           },
           "translations": {
             "es-ES": {
@@ -25,7 +26,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Can you repeat that, please?"
+              "response": "Can you repeat that, please?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -38,7 +40,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "Someone is speaking to you and the speed is too fast to follow. You understand the words individually but they're coming too quickly to process. You need them to slow down."
+            "en-US": "Someone is speaking to you and the speed is too fast to follow. You understand the words individually but they're coming too quickly to process. You need them to slow down.",
+            "es-ES": "Alguien te está hablando demasiado rápido para seguirle. Entiendes las palabras por separado, pero llegan tan seguidas que no te da tiempo a procesarlas. Necesitas que hable más despacio."
           },
           "translations": {
             "es-ES": {
@@ -46,7 +49,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Can you speak more slowly, please?"
+              "response": "Can you speak more slowly, please?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -80,15 +84,17 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You followed almost all of what someone said, but there's one specific word you didn't recognize and it's the key to understanding the whole thing. You need to ask what just that word means."
+            "en-US": "You followed almost all of what someone said, but there's one specific word you didn't recognize and it's the key to understanding the whole thing. You need to ask what just that word means.",
+            "es-ES": "Has seguido casi todo lo que ha dicho alguien, pero hay una palabra concreta que no reconoces y es la clave para entenderlo todo. Necesitas preguntar qué significa solo esa palabra."
           },
           "translations": {
             "es-ES": {
-              "response": "¿Qué quiere decir [palabra]?",
+              "response": "Perdona, ¿qué significa esa palabra?",
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "What does [word] mean?"
+              "response": "Sorry, what does that word mean?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -101,7 +107,8 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Someone is trying to tell you something — a name, an address, a price — and you can't catch it by ear. You need them to write it down so you can see it."
+            "en-US": "Someone is trying to tell you something — a name, an address, a price — and you can't catch it by ear. You need them to write it down so you can see it.",
+            "es-ES": "Alguien intenta decirte algo — un nombre, una dirección, un precio — y no consigues captarlo de oído. Necesitas que te lo escriba para poder verlo."
           },
           "translations": {
             "es-ES": {
@@ -109,7 +116,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Can you write it down, please?"
+              "response": "Can you write it down, please?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -132,6 +140,45 @@
             },
             "en-US": {
               "response": "Sorry, I don't understand. Do you speak English?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "en-panic-001",
+          "tags": [
+            "panic",
+            "english"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "Has empezado una conversación en inglés y se te ha ido de las manos — ahora estás perdido y necesitas indicar con educación que tu inglés no da para tanto.",
+            "en-US": "You started a conversation in English and it's gotten beyond your level — you're lost and need to gracefully signal your English isn't strong enough."
+          },
+          "translations": {
+            "en-US": {
+              "response": "Sorry, my English isn't very good yet.",
+              "practiceAsTarget": true
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "en-panic-002",
+          "tags": [
+            "panic",
+            "english",
+            "comprehension"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "Alguien te acaba de hablar en inglés y no has entendido nada — ni una sola palabra. Necesitas reconocerlo y preguntar si hay alguien que hable español.",
+            "en-US": "Someone just spoke to you in English and you understood nothing. You need to acknowledge it and ask if anyone there speaks Spanish."
+          },
+          "translations": {
+            "en-US": {
+              "response": "Sorry, I don't understand. Is there someone who speaks Spanish?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -516,7 +563,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You're walking down a narrow street and a few people are blocking the way. You need to get past politely."
+            "en-US": "You're walking down a narrow street and a few people are blocking the way. You need to get past politely.",
+            "es-ES": "Vas por una calle estrecha y hay varias personas bloqueando el paso. Necesitas pasar con educación."
           },
           "translations": {
             "es-ES": {
@@ -524,7 +572,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Excuse me."
+              "response": "Excuse me.",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -537,7 +586,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "The metro is packed and your stop is next. You need to work your way to the doors past several people."
+            "en-US": "The metro is packed and your stop is next. You need to work your way to the doors past several people.",
+            "es-ES": "El metro va lleno y tu parada es la siguiente. Tienes que abrirte paso hasta las puertas entre varias personas."
           },
           "translations": {
             "es-ES": {
@@ -545,7 +595,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Excuse me, excuse me."
+              "response": "Excuse me, excuse me.",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -558,7 +609,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "At a supermarket, the item you want is on a shelf behind another shopper. You need to lean past them to reach it."
+            "en-US": "At a supermarket, the item you want is on a shelf behind another shopper. You need to lean past them to reach it.",
+            "es-ES": "En el supermercado, el producto que quieres está en una estantería detrás de otro cliente. Tienes que estirarte por delante de esa persona para alcanzarlo."
           },
           "translations": {
             "es-ES": {
@@ -566,7 +618,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "With your permission / Excuse me."
+              "response": "Excuse me, can I reach past you?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -579,7 +632,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You've been waiting at your table and need to catch the server's attention without being rude or loud."
+            "en-US": "You've been waiting at your table and need to catch the server's attention without being rude or loud.",
+            "es-ES": "Llevas un rato esperando en tu mesa y necesitas llamar la atención del camarero sin ser maleducado ni levantar la voz."
           },
           "translations": {
             "es-ES": {
@@ -587,7 +641,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Excuse me."
+              "response": "Excuse me.",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -600,7 +655,8 @@
           ],
           "difficulty": 1,
           "context": {
-            "en-US": "You accidentally bump into someone on a busy street. You want to apologize quickly as you both keep moving."
+            "en-US": "You accidentally bump into someone on a busy street. You want to apologize quickly as you both keep moving.",
+            "es-ES": "Chocas sin querer con alguien en una calle concurrida. Quieres disculparte rápidamente mientras los dos seguís caminando."
           },
           "translations": {
             "es-ES": {
@@ -608,7 +664,8 @@
               "practiceAsTarget": true
             },
             "en-US": {
-              "response": "Sorry, I'm sorry."
+              "response": "Sorry about that!",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -933,6 +990,97 @@
             "en-US": {
               "phrase": "No, I don't speak English.",
               "response": "Ok, I'll try!"
+            }
+          }
+        },
+        {
+          "id": "en-greet-001",
+          "tags": [
+            "greeting",
+            "arrival"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "El anfitrión o el personal del hotel te da la bienvenida al llegar.",
+            "en-US": "Host or hotel staff welcoming you on arrival."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Welcome! Is this your first time here?",
+              "response": "Yes, first time. We're excited to be here.",
+              "practiceAsTarget": true
+            }
+          }
+        },
+        {
+          "id": "en-greet-002",
+          "tags": [
+            "small-talk"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "Un local entabla conversación.",
+            "en-US": "A local making small talk."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Where are you from?",
+              "response": "We're from Spain, from Barcelona. Are you from around here?",
+              "practiceAsTarget": true
+            }
+          }
+        },
+        {
+          "id": "en-greet-003",
+          "tags": [
+            "small-talk"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "Un local comprueba antes de seguir hablando.",
+            "en-US": "A local checking before continuing."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Do you speak English?",
+              "response": "A little, yes. I'm learning.",
+              "practiceAsTarget": true
+            }
+          }
+        },
+        {
+          "id": "en-greet-004",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "Un local te dice que no puede cambiar de idioma.",
+            "en-US": "A local telling you they can't switch languages."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Sorry, I don't speak Spanish.",
+              "response": "That's okay, I'll try in English.",
+              "practiceAsTarget": true
+            }
+          }
+        },
+        {
+          "id": "en-greet-005",
+          "tags": [
+            "courtesy"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "Alguien se te acerca en la calle para pedirte ayuda.",
+            "en-US": "Someone approaching you on the street for help."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Excuse me, can you help me for a second?",
+              "response": "Sure, though I don't speak much English.",
+              "practiceAsTarget": true
             }
           }
         }
@@ -2085,6 +2233,24 @@
               "response": "Here you go."
             }
           }
+        },
+        {
+          "id": "en-groc-001",
+          "tags": [
+            "ordering"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "El empleado de la charcutería.",
+            "en-US": "Deli counter worker."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Morning! What can I get you?",
+              "response": "Can I get half a pound of ham?",
+              "practiceAsTarget": true
+            }
+          }
         }
       ]
     },
@@ -2743,6 +2909,24 @@
               "response": "Yes, we'll be out before then. Thanks."
             }
           }
+        },
+        {
+          "id": "en-checkin-001",
+          "tags": [
+            "house-rules"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "El anfitrión te explica las normas del edificio.",
+            "en-US": "Host explaining building rules."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "Quiet hours are after ten, so keep it down at night.",
+              "response": "Of course, no problem.",
+              "practiceAsTarget": true
+            }
+          }
         }
       ]
     },
@@ -3282,6 +3466,25 @@
             "en-US": {
               "phrase": "Today's show is full but there are seats for Thursday.",
               "response": "Then I'd like two tickets for Thursday."
+            }
+          }
+        },
+        {
+          "id": "en-tickets-001",
+          "tags": [
+            "tours",
+            "time"
+          ],
+          "difficulty": 2,
+          "context": {
+            "es-ES": "El mostrador de información de un museo.",
+            "en-US": "Museum information desk."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "The next guided tour starts at four.",
+              "response": "Are there any tours in Spanish?",
+              "practiceAsTarget": true
             }
           }
         }
@@ -4012,6 +4215,47 @@
               "response": "Here you go. Thank you!"
             }
           }
+        },
+        {
+          "id": "en-cafe-001",
+          "tags": [
+            "ordering",
+            "coffee"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "El barista te toma el pedido.",
+            "en-US": "Barista taking your order."
+          },
+          "translations": {
+            "en-US": {
+              "phrase": "What can I get started for you?",
+              "response": "A latte, please.",
+              "practiceAsTarget": true
+            }
+          }
+        },
+        {
+          "id": "es-cafe-016",
+          "tags": [
+            "general"
+          ],
+          "difficulty": 1,
+          "context": {
+            "es-ES": "Estás en una cafetería y quieres conectarte a internet. Necesitas preguntar si hay wifi y conseguir la contraseña.",
+            "en-US": "You're at a café and want to get online. You need to ask whether they have wifi and get the password."
+          },
+          "translations": {
+            "es-ES": {
+              "response": "¿Hay wifi? ¿Cuál es la contraseña?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Do you have wifi? What's the password?",
+              "practiceAsTarget": true
+            }
+          },
+          "type": "scenario"
         }
       ]
     }
