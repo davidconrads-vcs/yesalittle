@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
+// Vite/React app, not Next.js — the `/react` entry is the correct one here.
+import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
 import { resolveByNativeLang } from './utils'
@@ -225,6 +227,7 @@ export default function App() {
           onReset={() => { resetProgress(); setScreen('home') }}
         />
       )}
+      <Analytics />
     </I18nProvider>
   )
 }
