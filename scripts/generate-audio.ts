@@ -69,12 +69,10 @@ if (!['phrase', 'response', 'all'].includes(type)) {
 
 const VOICE_ID = VOICE_IDS[lang]
 
-// es-ES/pt-PT audio uses the flat `{id}-{speed}` name — their prompt-id prefix
-// (es-*/pt-*) already keeps them apart. en-US is an overlay target that reuses
-// those same ids, so its files carry an `-en-US` qualifier to avoid overwriting
-// the prompt's primary-language audio. Keep this rule in sync with useAudio.ts.
-const langSuffix = lang === 'en-US' ? '-en-US' : ''
-
+// Every audio file carries its target language explicitly:
+// `{id}-{lang}-{speed}.mp3` / `{id}-response-{lang}-{speed}.mp3`. Prompt ids are
+// language-neutral ({category}-{NNN}), so the language segment is what keeps the
+// three targets apart. Keep this rule in sync with useAudio.ts.
 const audioDir = join(ROOT, 'public', 'audio')
 if (!existsSync(audioDir)) {
   mkdirSync(audioDir, { recursive: true })
@@ -140,14 +138,14 @@ async function main() {
     if (generatePhrases && prompt.type !== 'scenario' && t.phrase) {
       console.log(`[${prompt.id}] phrase: "${t.phrase}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(`${prompt.id}${langSuffix}`, t.phrase, speed.name, speed.rate)
+        await generateAudio(`${prompt.id}-${lang}`, t.phrase, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }
     if (generateResponses) {
       console.log(`[${prompt.id}] response: "${t.response}"`)
       for (const speed of SPEEDS) {
-        await generateAudio(`${prompt.id}-response${langSuffix}`, t.response, speed.name, speed.rate)
+        await generateAudio(`${prompt.id}-response-${lang}`, t.response, speed.name, speed.rate)
         await new Promise(resolve => setTimeout(resolve, 300))
       }
     }

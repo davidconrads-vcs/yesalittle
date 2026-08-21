@@ -1,0 +1,948 @@
+{
+  "_comment": "Prompt ID migration map — Handoff 11 (tech debt round).",
+  "date": "2026-08-21",
+  "reason": "The es-/pt-/en- prefix originally meant \"target language\" but drifted to mean \"origin set\" once prompts became multi-target (a prompt with an es- prefix may be drillable in English). The prefix carried a claim that was no longer true. New convention is {category}-{NNN}: the category segment is stable and carries no false claim. practiceAsTarget is, and always was, the authoritative signal for what is drillable in which language — the ID is just a stable identifier. Numbers follow the order prompts appeared in prompts.json at migration time, and are never reused after a deletion.",
+  "count": 188,
+  "mappings": [
+    {
+      "old": "es-panic-001",
+      "new": "panic-001",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-panic-002",
+      "new": "panic-002",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-panic-003",
+      "new": "panic-003",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-panic-004",
+      "new": "panic-004",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-panic-005",
+      "new": "panic-005",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-panic-006",
+      "new": "panic-006",
+      "scenario": "panic"
+    },
+    {
+      "old": "en-panic-001",
+      "new": "panic-007",
+      "scenario": "panic"
+    },
+    {
+      "old": "en-panic-002",
+      "new": "panic-008",
+      "scenario": "panic"
+    },
+    {
+      "old": "es-greet-001",
+      "new": "greet-001",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-002",
+      "new": "greet-002",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-003",
+      "new": "greet-003",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-004",
+      "new": "greet-004",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-005",
+      "new": "greet-005",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-006",
+      "new": "greet-006",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-007",
+      "new": "greet-007",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-008",
+      "new": "greet-008",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-009",
+      "new": "greet-009",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-010",
+      "new": "greet-010",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-011",
+      "new": "greet-011",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-012",
+      "new": "greet-012",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-013",
+      "new": "greet-013",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-014",
+      "new": "greet-014",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-015",
+      "new": "greet-015",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-016",
+      "new": "greet-016",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-017",
+      "new": "greet-017",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-018",
+      "new": "greet-018",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-019",
+      "new": "greet-019",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-020",
+      "new": "greet-020",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-greet-021",
+      "new": "greet-021",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-001",
+      "new": "greet-022",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-002",
+      "new": "greet-023",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-003",
+      "new": "greet-024",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-004",
+      "new": "greet-025",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-005",
+      "new": "greet-026",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-006",
+      "new": "greet-027",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-007",
+      "new": "greet-028",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-008",
+      "new": "greet-029",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-009",
+      "new": "greet-030",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-010",
+      "new": "greet-031",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-011",
+      "new": "greet-032",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-012",
+      "new": "greet-033",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-013",
+      "new": "greet-034",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-015",
+      "new": "greet-035",
+      "scenario": "greetings"
+    },
+    {
+      "old": "pt-greet-016",
+      "new": "greet-036",
+      "scenario": "greetings"
+    },
+    {
+      "old": "en-greet-001",
+      "new": "greet-037",
+      "scenario": "greetings"
+    },
+    {
+      "old": "en-greet-002",
+      "new": "greet-038",
+      "scenario": "greetings"
+    },
+    {
+      "old": "en-greet-003",
+      "new": "greet-039",
+      "scenario": "greetings"
+    },
+    {
+      "old": "en-greet-004",
+      "new": "greet-040",
+      "scenario": "greetings"
+    },
+    {
+      "old": "en-greet-005",
+      "new": "greet-041",
+      "scenario": "greetings"
+    },
+    {
+      "old": "es-rest-001",
+      "new": "rest-001",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-002",
+      "new": "rest-002",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-003",
+      "new": "rest-003",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-004",
+      "new": "rest-004",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-005",
+      "new": "rest-005",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-006",
+      "new": "rest-006",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-007",
+      "new": "rest-007",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-008",
+      "new": "rest-008",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-009",
+      "new": "rest-009",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-010",
+      "new": "rest-010",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-011",
+      "new": "rest-011",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-012",
+      "new": "rest-012",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-013",
+      "new": "rest-013",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-014",
+      "new": "rest-014",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-015",
+      "new": "rest-015",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-016",
+      "new": "rest-016",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-017",
+      "new": "rest-017",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-rest-018",
+      "new": "rest-018",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-001",
+      "new": "rest-019",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-002",
+      "new": "rest-020",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-003",
+      "new": "rest-021",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-004",
+      "new": "rest-022",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-005",
+      "new": "rest-023",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-007",
+      "new": "rest-024",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-008",
+      "new": "rest-025",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-009",
+      "new": "rest-026",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "pt-rest-010",
+      "new": "rest-027",
+      "scenario": "restaurant"
+    },
+    {
+      "old": "es-groc-001",
+      "new": "groc-001",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-002",
+      "new": "groc-002",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-003",
+      "new": "groc-003",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-004",
+      "new": "groc-004",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-005",
+      "new": "groc-005",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-006",
+      "new": "groc-006",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-007",
+      "new": "groc-007",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-008",
+      "new": "groc-008",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-010",
+      "new": "groc-009",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-011",
+      "new": "groc-010",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-012",
+      "new": "groc-011",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-013",
+      "new": "groc-012",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-014",
+      "new": "groc-013",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-groc-015",
+      "new": "groc-014",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-001",
+      "new": "groc-015",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-002",
+      "new": "groc-016",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-003",
+      "new": "groc-017",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-004",
+      "new": "groc-018",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-005",
+      "new": "groc-019",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-006",
+      "new": "groc-020",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-007",
+      "new": "groc-021",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-008",
+      "new": "groc-022",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-009",
+      "new": "groc-023",
+      "scenario": "grocery"
+    },
+    {
+      "old": "pt-groc-010",
+      "new": "groc-024",
+      "scenario": "grocery"
+    },
+    {
+      "old": "en-groc-001",
+      "new": "groc-025",
+      "scenario": "grocery"
+    },
+    {
+      "old": "es-around-001",
+      "new": "around-001",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-002",
+      "new": "around-002",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-003",
+      "new": "around-003",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-004",
+      "new": "around-004",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-005",
+      "new": "around-005",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-006",
+      "new": "around-006",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-001",
+      "new": "around-007",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-002",
+      "new": "around-008",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-005",
+      "new": "around-009",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-008",
+      "new": "around-010",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-009",
+      "new": "around-011",
+      "scenario": "around"
+    },
+    {
+      "old": "es-around-010",
+      "new": "around-012",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-008",
+      "new": "around-013",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-009",
+      "new": "around-014",
+      "scenario": "around"
+    },
+    {
+      "old": "pt-around-010",
+      "new": "around-015",
+      "scenario": "around"
+    },
+    {
+      "old": "es-checkin-001",
+      "new": "checkin-001",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-002",
+      "new": "checkin-002",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-003",
+      "new": "checkin-003",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-004",
+      "new": "checkin-004",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-005",
+      "new": "checkin-005",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-006",
+      "new": "checkin-006",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-checkin-007",
+      "new": "checkin-007",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-001",
+      "new": "checkin-008",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-002",
+      "new": "checkin-009",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-003",
+      "new": "checkin-010",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-004",
+      "new": "checkin-011",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-005",
+      "new": "checkin-012",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-006",
+      "new": "checkin-013",
+      "scenario": "checkin"
+    },
+    {
+      "old": "pt-checkin-007",
+      "new": "checkin-014",
+      "scenario": "checkin"
+    },
+    {
+      "old": "en-checkin-001",
+      "new": "checkin-015",
+      "scenario": "checkin"
+    },
+    {
+      "old": "es-shop-001",
+      "new": "shop-001",
+      "scenario": "shopping"
+    },
+    {
+      "old": "es-shop-002",
+      "new": "shop-002",
+      "scenario": "shopping"
+    },
+    {
+      "old": "es-shop-003",
+      "new": "shop-003",
+      "scenario": "shopping"
+    },
+    {
+      "old": "es-shop-004",
+      "new": "shop-004",
+      "scenario": "shopping"
+    },
+    {
+      "old": "es-shop-006",
+      "new": "shop-005",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-001",
+      "new": "shop-006",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-002",
+      "new": "shop-007",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-003",
+      "new": "shop-008",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-004",
+      "new": "shop-009",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-005",
+      "new": "shop-010",
+      "scenario": "shopping"
+    },
+    {
+      "old": "pt-shop-006",
+      "new": "shop-011",
+      "scenario": "shopping"
+    },
+    {
+      "old": "es-tickets-001",
+      "new": "tickets-001",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-tickets-002",
+      "new": "tickets-002",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-tickets-003",
+      "new": "tickets-003",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-tickets-004",
+      "new": "tickets-004",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-tickets-005",
+      "new": "tickets-005",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-tickets-006",
+      "new": "tickets-006",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-001",
+      "new": "tickets-007",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-002",
+      "new": "tickets-008",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-003",
+      "new": "tickets-009",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-004",
+      "new": "tickets-010",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-005",
+      "new": "tickets-011",
+      "scenario": "tickets"
+    },
+    {
+      "old": "pt-tickets-006",
+      "new": "tickets-012",
+      "scenario": "tickets"
+    },
+    {
+      "old": "en-tickets-001",
+      "new": "tickets-013",
+      "scenario": "tickets"
+    },
+    {
+      "old": "es-pharm-001",
+      "new": "pharm-001",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-pharm-002",
+      "new": "pharm-002",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-pharm-003",
+      "new": "pharm-003",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-pharm-004",
+      "new": "pharm-004",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-pharm-005",
+      "new": "pharm-005",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-pharm-006",
+      "new": "pharm-006",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-001",
+      "new": "pharm-007",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-002",
+      "new": "pharm-008",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-003",
+      "new": "pharm-009",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-004",
+      "new": "pharm-010",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-005",
+      "new": "pharm-011",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "pt-pharm-006",
+      "new": "pharm-012",
+      "scenario": "pharmacy"
+    },
+    {
+      "old": "es-cafe-001",
+      "new": "cafe-001",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-002",
+      "new": "cafe-002",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-003",
+      "new": "cafe-003",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-004",
+      "new": "cafe-004",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-005",
+      "new": "cafe-005",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-006",
+      "new": "cafe-006",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-007",
+      "new": "cafe-007",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-008",
+      "new": "cafe-008",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-009",
+      "new": "cafe-009",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-010",
+      "new": "cafe-010",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-011",
+      "new": "cafe-011",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-012",
+      "new": "cafe-012",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-013",
+      "new": "cafe-013",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-014",
+      "new": "cafe-014",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-015",
+      "new": "cafe-015",
+      "scenario": "cafe"
+    },
+    {
+      "old": "pt-cafe-001",
+      "new": "cafe-016",
+      "scenario": "cafe"
+    },
+    {
+      "old": "pt-cafe-002",
+      "new": "cafe-017",
+      "scenario": "cafe"
+    },
+    {
+      "old": "pt-cafe-003",
+      "new": "cafe-018",
+      "scenario": "cafe"
+    },
+    {
+      "old": "pt-cafe-004",
+      "new": "cafe-019",
+      "scenario": "cafe"
+    },
+    {
+      "old": "en-cafe-001",
+      "new": "cafe-020",
+      "scenario": "cafe"
+    },
+    {
+      "old": "es-cafe-016",
+      "new": "cafe-021",
+      "scenario": "cafe"
+    }
+  ]
+}

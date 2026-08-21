@@ -10,7 +10,7 @@
       "color": "#c0392b",
       "prompts": [
         {
-          "id": "es-panic-001",
+          "id": "panic-001",
           "tags": [
             "panic",
             "comprehension"
@@ -33,7 +33,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-panic-002",
+          "id": "panic-002",
           "tags": [
             "panic",
             "comprehension"
@@ -56,7 +56,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-panic-003",
+          "id": "panic-003",
           "tags": [
             "panic",
             "apology"
@@ -77,7 +77,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-panic-004",
+          "id": "panic-004",
           "tags": [
             "panic",
             "vocabulary"
@@ -100,7 +100,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-panic-005",
+          "id": "panic-005",
           "tags": [
             "panic",
             "comprehension"
@@ -123,7 +123,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-panic-006",
+          "id": "panic-006",
           "tags": [
             "panic",
             "english",
@@ -145,7 +145,7 @@
           "type": "scenario"
         },
         {
-          "id": "en-panic-001",
+          "id": "panic-007",
           "tags": [
             "panic",
             "english"
@@ -164,7 +164,7 @@
           "type": "scenario"
         },
         {
-          "id": "en-panic-002",
+          "id": "panic-008",
           "tags": [
             "panic",
             "english",
@@ -195,7 +195,7 @@
       "color": "#6366F1",
       "prompts": [
         {
-          "id": "es-greet-001",
+          "id": "greet-001",
           "tags": [
             "greeting"
           ],
@@ -218,7 +218,7 @@
           }
         },
         {
-          "id": "es-greet-002",
+          "id": "greet-002",
           "tags": [
             "greeting",
             "morning"
@@ -242,7 +242,7 @@
           }
         },
         {
-          "id": "es-greet-003",
+          "id": "greet-003",
           "tags": [
             "greeting",
             "small-talk"
@@ -266,7 +266,7 @@
           }
         },
         {
-          "id": "es-greet-004",
+          "id": "greet-004",
           "tags": [
             "greeting",
             "arrival"
@@ -288,7 +288,7 @@
           }
         },
         {
-          "id": "es-greet-005",
+          "id": "greet-005",
           "tags": [
             "introduction"
           ],
@@ -311,7 +311,7 @@
           }
         },
         {
-          "id": "es-greet-006",
+          "id": "greet-006",
           "tags": [
             "small-talk"
           ],
@@ -332,7 +332,7 @@
           }
         },
         {
-          "id": "es-greet-007",
+          "id": "greet-007",
           "tags": [
             "language",
             "small-talk"
@@ -354,7 +354,7 @@
           }
         },
         {
-          "id": "es-greet-008",
+          "id": "greet-008",
           "tags": [
             "language"
           ],
@@ -375,7 +375,7 @@
           }
         },
         {
-          "id": "es-greet-009",
+          "id": "greet-009",
           "tags": [
             "language"
           ],
@@ -396,7 +396,7 @@
           }
         },
         {
-          "id": "es-greet-010",
+          "id": "greet-010",
           "tags": [
             "courtesy",
             "small-talk"
@@ -418,7 +418,7 @@
           }
         },
         {
-          "id": "es-greet-011",
+          "id": "greet-011",
           "tags": [
             "courtesy"
           ],
@@ -441,7 +441,7 @@
           }
         },
         {
-          "id": "es-greet-012",
+          "id": "greet-012",
           "tags": [
             "courtesy"
           ],
@@ -464,7 +464,7 @@
           }
         },
         {
-          "id": "es-greet-013",
+          "id": "greet-013",
           "tags": [
             "farewell"
           ],
@@ -487,7 +487,7 @@
           }
         },
         {
-          "id": "es-greet-014",
+          "id": "greet-014",
           "tags": [
             "farewell",
             "small-talk"
@@ -511,7 +511,7 @@
           }
         },
         {
-          "id": "es-greet-015",
+          "id": "greet-015",
           "tags": [
             "small-talk"
           ],
@@ -534,7 +534,7 @@
           }
         },
         {
-          "id": "es-greet-016",
+          "id": "greet-016",
           "tags": [
             "language",
             "catalan"
@@ -556,7 +556,7 @@
           }
         },
         {
-          "id": "es-greet-017",
+          "id": "greet-017",
           "tags": [
             "courtesy",
             "everyday"
@@ -579,7 +579,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-greet-018",
+          "id": "greet-018",
           "tags": [
             "courtesy",
             "transport"
@@ -602,7 +602,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-greet-019",
+          "id": "greet-019",
           "tags": [
             "courtesy",
             "everyday"
@@ -625,7 +625,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-greet-020",
+          "id": "greet-020",
           "tags": [
             "courtesy",
             "restaurant"
@@ -648,7 +648,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-greet-021",
+          "id": "greet-021",
           "tags": [
             "courtesy",
             "everyday"
@@ -671,7 +671,7 @@
           "type": "scenario"
         },
         {
-          "id": "pt-greet-001",
+          "id": "greet-022",
           "tags": [
             "greeting",
             "morning"
@@ -693,7 +693,7 @@
           }
         },
         {
-          "id": "pt-greet-002",
+          "id": "greet-023",
           "tags": [
             "greeting",
             "afternoon"
@@ -715,7 +715,7 @@
           }
         },
         {
-          "id": "pt-greet-003",
+          "id": "greet-024",
           "tags": [
             "greeting",
             "evening",
@@ -738,7 +738,7 @@
           }
         },
         {
-          "id": "pt-greet-004",
+          "id": "greet-025",
           "tags": [
             "farewell"
           ],
@@ -759,7 +759,7 @@
           }
         },
         {
-          "id": "pt-greet-005",
+          "id": "greet-026",
           "tags": [
             "farewell"
           ],
@@ -780,7 +780,7 @@
           }
         },
         {
-          "id": "pt-greet-006",
+          "id": "greet-027",
           "tags": [
             "farewell"
           ],
@@ -801,7 +801,7 @@
           }
         },
         {
-          "id": "pt-greet-007",
+          "id": "greet-028",
           "tags": [
             "greeting",
             "small-talk"
@@ -823,7 +823,7 @@
           }
         },
         {
-          "id": "pt-greet-008",
+          "id": "greet-029",
           "tags": [
             "introduction"
           ],
@@ -844,7 +844,7 @@
           }
         },
         {
-          "id": "pt-greet-009",
+          "id": "greet-030",
           "tags": [
             "language",
             "small-talk"
@@ -866,7 +866,7 @@
           }
         },
         {
-          "id": "pt-greet-010",
+          "id": "greet-031",
           "tags": [
             "language"
           ],
@@ -887,7 +887,7 @@
           }
         },
         {
-          "id": "pt-greet-011",
+          "id": "greet-032",
           "tags": [
             "courtesy"
           ],
@@ -908,7 +908,7 @@
           }
         },
         {
-          "id": "pt-greet-012",
+          "id": "greet-033",
           "tags": [
             "courtesy"
           ],
@@ -929,7 +929,7 @@
           }
         },
         {
-          "id": "pt-greet-013",
+          "id": "greet-034",
           "tags": [
             "courtesy"
           ],
@@ -950,7 +950,7 @@
           }
         },
         {
-          "id": "pt-greet-015",
+          "id": "greet-035",
           "tags": [
             "farewell",
             "small-talk"
@@ -972,7 +972,7 @@
           }
         },
         {
-          "id": "pt-greet-016",
+          "id": "greet-036",
           "tags": [
             "language",
             "courtesy"
@@ -994,7 +994,7 @@
           }
         },
         {
-          "id": "en-greet-001",
+          "id": "greet-037",
           "tags": [
             "greeting",
             "arrival"
@@ -1013,7 +1013,7 @@
           }
         },
         {
-          "id": "en-greet-002",
+          "id": "greet-038",
           "tags": [
             "small-talk"
           ],
@@ -1031,7 +1031,7 @@
           }
         },
         {
-          "id": "en-greet-003",
+          "id": "greet-039",
           "tags": [
             "small-talk"
           ],
@@ -1049,7 +1049,7 @@
           }
         },
         {
-          "id": "en-greet-004",
+          "id": "greet-040",
           "tags": [
             "courtesy"
           ],
@@ -1067,7 +1067,7 @@
           }
         },
         {
-          "id": "en-greet-005",
+          "id": "greet-041",
           "tags": [
             "courtesy"
           ],
@@ -1096,7 +1096,7 @@
       "color": "#E85D3A",
       "prompts": [
         {
-          "id": "es-rest-001",
+          "id": "rest-001",
           "tags": [
             "greeting",
             "arrival"
@@ -1120,7 +1120,7 @@
           }
         },
         {
-          "id": "es-rest-002",
+          "id": "rest-002",
           "tags": [
             "arrival"
           ],
@@ -1143,7 +1143,7 @@
           }
         },
         {
-          "id": "es-rest-003",
+          "id": "rest-003",
           "tags": [
             "arrival"
           ],
@@ -1166,7 +1166,7 @@
           }
         },
         {
-          "id": "es-rest-004",
+          "id": "rest-004",
           "tags": [
             "arrival"
           ],
@@ -1187,7 +1187,7 @@
           }
         },
         {
-          "id": "es-rest-005",
+          "id": "rest-005",
           "tags": [
             "ordering"
           ],
@@ -1210,7 +1210,7 @@
           }
         },
         {
-          "id": "es-rest-006",
+          "id": "rest-006",
           "tags": [
             "ordering",
             "drinks"
@@ -1232,7 +1232,7 @@
           }
         },
         {
-          "id": "es-rest-007",
+          "id": "rest-007",
           "tags": [
             "ordering"
           ],
@@ -1253,7 +1253,7 @@
           }
         },
         {
-          "id": "es-rest-008",
+          "id": "rest-008",
           "tags": [
             "mid-meal"
           ],
@@ -1276,7 +1276,7 @@
           }
         },
         {
-          "id": "es-rest-009",
+          "id": "rest-009",
           "tags": [
             "end-meal"
           ],
@@ -1299,7 +1299,7 @@
           }
         },
         {
-          "id": "es-rest-010",
+          "id": "rest-010",
           "tags": [
             "ordering"
           ],
@@ -1320,7 +1320,7 @@
           }
         },
         {
-          "id": "es-rest-011",
+          "id": "rest-011",
           "tags": [
             "ordering"
           ],
@@ -1341,7 +1341,7 @@
           }
         },
         {
-          "id": "es-rest-012",
+          "id": "rest-012",
           "tags": [
             "ordering"
           ],
@@ -1364,7 +1364,7 @@
           }
         },
         {
-          "id": "es-rest-013",
+          "id": "rest-013",
           "tags": [
             "mid-meal"
           ],
@@ -1387,7 +1387,7 @@
           }
         },
         {
-          "id": "es-rest-014",
+          "id": "rest-014",
           "tags": [
             "end-meal",
             "payment"
@@ -1411,7 +1411,7 @@
           }
         },
         {
-          "id": "es-rest-015",
+          "id": "rest-015",
           "tags": [
             "payment"
           ],
@@ -1434,7 +1434,7 @@
           }
         },
         {
-          "id": "es-rest-016",
+          "id": "rest-016",
           "tags": [
             "payment"
           ],
@@ -1457,7 +1457,7 @@
           }
         },
         {
-          "id": "es-rest-017",
+          "id": "rest-017",
           "tags": [
             "ordering"
           ],
@@ -1480,7 +1480,7 @@
           }
         },
         {
-          "id": "es-rest-018",
+          "id": "rest-018",
           "tags": [
             "arrival",
             "payment"
@@ -1502,7 +1502,7 @@
           }
         },
         {
-          "id": "pt-rest-001",
+          "id": "rest-019",
           "tags": [
             "greeting",
             "arrival"
@@ -1524,7 +1524,7 @@
           }
         },
         {
-          "id": "pt-rest-002",
+          "id": "rest-020",
           "tags": [
             "greeting",
             "arrival"
@@ -1546,7 +1546,7 @@
           }
         },
         {
-          "id": "pt-rest-003",
+          "id": "rest-021",
           "tags": [
             "ordering",
             "drinks"
@@ -1568,7 +1568,7 @@
           }
         },
         {
-          "id": "pt-rest-004",
+          "id": "rest-022",
           "tags": [
             "ordering",
             "drinks"
@@ -1590,7 +1590,7 @@
           }
         },
         {
-          "id": "pt-rest-005",
+          "id": "rest-023",
           "tags": [
             "ordering"
           ],
@@ -1611,7 +1611,7 @@
           }
         },
         {
-          "id": "pt-rest-007",
+          "id": "rest-024",
           "tags": [
             "mid-meal"
           ],
@@ -1632,7 +1632,7 @@
           }
         },
         {
-          "id": "pt-rest-008",
+          "id": "rest-025",
           "tags": [
             "end-meal"
           ],
@@ -1653,7 +1653,7 @@
           }
         },
         {
-          "id": "pt-rest-009",
+          "id": "rest-026",
           "tags": [
             "end-meal",
             "payment"
@@ -1674,7 +1674,7 @@
           "type": "scenario"
         },
         {
-          "id": "pt-rest-010",
+          "id": "rest-027",
           "tags": [
             "end-meal",
             "payment"
@@ -1707,7 +1707,7 @@
       "color": "#4CAF50",
       "prompts": [
         {
-          "id": "es-groc-001",
+          "id": "groc-001",
           "tags": [
             "greeting",
             "ordering"
@@ -1729,7 +1729,7 @@
           }
         },
         {
-          "id": "es-groc-002",
+          "id": "groc-002",
           "tags": [
             "checkout"
           ],
@@ -1752,7 +1752,7 @@
           }
         },
         {
-          "id": "es-groc-003",
+          "id": "groc-003",
           "tags": [
             "checkout"
           ],
@@ -1775,7 +1775,7 @@
           }
         },
         {
-          "id": "es-groc-004",
+          "id": "groc-004",
           "tags": [
             "payment",
             "checkout"
@@ -1799,7 +1799,7 @@
           }
         },
         {
-          "id": "es-groc-005",
+          "id": "groc-005",
           "tags": [
             "checkout"
           ],
@@ -1822,7 +1822,7 @@
           }
         },
         {
-          "id": "es-groc-006",
+          "id": "groc-006",
           "tags": [
             "payment"
           ],
@@ -1843,7 +1843,7 @@
           }
         },
         {
-          "id": "es-groc-007",
+          "id": "groc-007",
           "tags": [
             "ordering"
           ],
@@ -1866,7 +1866,7 @@
           }
         },
         {
-          "id": "es-groc-008",
+          "id": "groc-008",
           "tags": [
             "navigation"
           ],
@@ -1889,7 +1889,7 @@
           }
         },
         {
-          "id": "es-groc-010",
+          "id": "groc-009",
           "tags": [
             "navigation",
             "produce"
@@ -1911,7 +1911,7 @@
           }
         },
         {
-          "id": "es-groc-011",
+          "id": "groc-010",
           "tags": [
             "checkout"
           ],
@@ -1934,7 +1934,7 @@
           }
         },
         {
-          "id": "es-groc-012",
+          "id": "groc-011",
           "tags": [
             "checkout",
             "payment"
@@ -1956,7 +1956,7 @@
           }
         },
         {
-          "id": "es-groc-013",
+          "id": "groc-012",
           "tags": [
             "ordering"
           ],
@@ -1979,7 +1979,7 @@
           }
         },
         {
-          "id": "es-groc-014",
+          "id": "groc-013",
           "tags": [
             "payment"
           ],
@@ -2002,7 +2002,7 @@
           }
         },
         {
-          "id": "es-groc-015",
+          "id": "groc-014",
           "tags": [
             "payment"
           ],
@@ -2023,7 +2023,7 @@
           }
         },
         {
-          "id": "pt-groc-001",
+          "id": "groc-015",
           "tags": [
             "checkout"
           ],
@@ -2044,7 +2044,7 @@
           }
         },
         {
-          "id": "pt-groc-002",
+          "id": "groc-016",
           "tags": [
             "checkout"
           ],
@@ -2065,7 +2065,7 @@
           }
         },
         {
-          "id": "pt-groc-003",
+          "id": "groc-017",
           "tags": [
             "checkout"
           ],
@@ -2086,7 +2086,7 @@
           }
         },
         {
-          "id": "pt-groc-004",
+          "id": "groc-018",
           "tags": [
             "checkout"
           ],
@@ -2107,7 +2107,7 @@
           }
         },
         {
-          "id": "pt-groc-005",
+          "id": "groc-019",
           "tags": [
             "checkout",
             "payment"
@@ -2129,7 +2129,7 @@
           }
         },
         {
-          "id": "pt-groc-006",
+          "id": "groc-020",
           "tags": [
             "checkout"
           ],
@@ -2150,7 +2150,7 @@
           }
         },
         {
-          "id": "pt-groc-007",
+          "id": "groc-021",
           "tags": [
             "floor"
           ],
@@ -2171,7 +2171,7 @@
           }
         },
         {
-          "id": "pt-groc-008",
+          "id": "groc-022",
           "tags": [
             "promotions"
           ],
@@ -2192,7 +2192,7 @@
           }
         },
         {
-          "id": "pt-groc-009",
+          "id": "groc-023",
           "tags": [
             "stock"
           ],
@@ -2213,7 +2213,7 @@
           }
         },
         {
-          "id": "pt-groc-010",
+          "id": "groc-024",
           "tags": [
             "checkout",
             "payment"
@@ -2235,7 +2235,7 @@
           }
         },
         {
-          "id": "en-groc-001",
+          "id": "groc-025",
           "tags": [
             "ordering"
           ],
@@ -2264,7 +2264,7 @@
       "color": "#2196F3",
       "prompts": [
         {
-          "id": "es-around-001",
+          "id": "around-001",
           "tags": [
             "directions"
           ],
@@ -2287,7 +2287,7 @@
           }
         },
         {
-          "id": "es-around-002",
+          "id": "around-002",
           "tags": [
             "directions",
             "distance"
@@ -2311,7 +2311,7 @@
           }
         },
         {
-          "id": "es-around-003",
+          "id": "around-003",
           "tags": [
             "taxi"
           ],
@@ -2334,7 +2334,7 @@
           }
         },
         {
-          "id": "es-around-004",
+          "id": "around-004",
           "tags": [
             "taxi",
             "time"
@@ -2358,7 +2358,7 @@
           }
         },
         {
-          "id": "es-around-005",
+          "id": "around-005",
           "tags": [
             "taxi"
           ],
@@ -2381,7 +2381,7 @@
           }
         },
         {
-          "id": "es-around-006",
+          "id": "around-006",
           "tags": [
             "metro",
             "bus"
@@ -2403,7 +2403,7 @@
           }
         },
         {
-          "id": "pt-around-001",
+          "id": "around-007",
           "tags": [
             "transport",
             "timing"
@@ -2425,7 +2425,7 @@
           }
         },
         {
-          "id": "pt-around-002",
+          "id": "around-008",
           "tags": [
             "transport",
             "metro"
@@ -2447,7 +2447,7 @@
           }
         },
         {
-          "id": "pt-around-005",
+          "id": "around-009",
           "tags": [
             "directions"
           ],
@@ -2468,7 +2468,7 @@
           }
         },
         {
-          "id": "es-around-008",
+          "id": "around-010",
           "tags": [
             "directions"
           ],
@@ -2488,7 +2488,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-around-009",
+          "id": "around-011",
           "tags": [
             "directions"
           ],
@@ -2508,7 +2508,7 @@
           "type": "scenario"
         },
         {
-          "id": "es-around-010",
+          "id": "around-012",
           "tags": [
             "directions"
           ],
@@ -2528,7 +2528,7 @@
           "type": "scenario"
         },
         {
-          "id": "pt-around-008",
+          "id": "around-013",
           "tags": [
             "directions"
           ],
@@ -2548,7 +2548,7 @@
           "type": "scenario"
         },
         {
-          "id": "pt-around-009",
+          "id": "around-014",
           "tags": [
             "directions"
           ],
@@ -2568,7 +2568,7 @@
           "type": "scenario"
         },
         {
-          "id": "pt-around-010",
+          "id": "around-015",
           "tags": [
             "directions"
           ],
@@ -2599,7 +2599,7 @@
       "color": "#FF9800",
       "prompts": [
         {
-          "id": "es-checkin-001",
+          "id": "checkin-001",
           "tags": [
             "greeting",
             "arrival"
@@ -2623,7 +2623,7 @@
           }
         },
         {
-          "id": "es-checkin-002",
+          "id": "checkin-002",
           "tags": [
             "arrival"
           ],
@@ -2646,7 +2646,7 @@
           }
         },
         {
-          "id": "es-checkin-003",
+          "id": "checkin-003",
           "tags": [
             "info"
           ],
@@ -2669,7 +2669,7 @@
           }
         },
         {
-          "id": "es-checkin-004",
+          "id": "checkin-004",
           "tags": [
             "contact"
           ],
@@ -2692,7 +2692,7 @@
           }
         },
         {
-          "id": "es-checkin-005",
+          "id": "checkin-005",
           "tags": [
             "rules"
           ],
@@ -2715,7 +2715,7 @@
           }
         },
         {
-          "id": "es-checkin-006",
+          "id": "checkin-006",
           "tags": [
             "rules"
           ],
@@ -2736,7 +2736,7 @@
           }
         },
         {
-          "id": "es-checkin-007",
+          "id": "checkin-007",
           "tags": [
             "checkout",
             "time"
@@ -2760,7 +2760,7 @@
           }
         },
         {
-          "id": "pt-checkin-001",
+          "id": "checkin-008",
           "tags": [
             "check-in",
             "timing"
@@ -2782,7 +2782,7 @@
           }
         },
         {
-          "id": "pt-checkin-002",
+          "id": "checkin-009",
           "tags": [
             "check-in",
             "access"
@@ -2804,7 +2804,7 @@
           }
         },
         {
-          "id": "pt-checkin-003",
+          "id": "checkin-010",
           "tags": [
             "amenities"
           ],
@@ -2825,7 +2825,7 @@
           }
         },
         {
-          "id": "pt-checkin-004",
+          "id": "checkin-011",
           "tags": [
             "house-rules"
           ],
@@ -2846,7 +2846,7 @@
           }
         },
         {
-          "id": "pt-checkin-005",
+          "id": "checkin-012",
           "tags": [
             "amenities"
           ],
@@ -2867,7 +2867,7 @@
           }
         },
         {
-          "id": "pt-checkin-006",
+          "id": "checkin-013",
           "tags": [
             "amenities",
             "house-rules"
@@ -2889,7 +2889,7 @@
           }
         },
         {
-          "id": "pt-checkin-007",
+          "id": "checkin-014",
           "tags": [
             "check-out",
             "timing"
@@ -2911,7 +2911,7 @@
           }
         },
         {
-          "id": "en-checkin-001",
+          "id": "checkin-015",
           "tags": [
             "house-rules"
           ],
@@ -2940,7 +2940,7 @@
       "color": "#9C27B0",
       "prompts": [
         {
-          "id": "es-shop-001",
+          "id": "shop-001",
           "tags": [
             "greeting"
           ],
@@ -2963,7 +2963,7 @@
           }
         },
         {
-          "id": "es-shop-002",
+          "id": "shop-002",
           "tags": [
             "clothing"
           ],
@@ -2986,7 +2986,7 @@
           }
         },
         {
-          "id": "es-shop-003",
+          "id": "shop-003",
           "tags": [
             "clothing",
             "directions"
@@ -3010,7 +3010,7 @@
           }
         },
         {
-          "id": "es-shop-004",
+          "id": "shop-004",
           "tags": [
             "sale",
             "payment"
@@ -3034,7 +3034,7 @@
           }
         },
         {
-          "id": "es-shop-006",
+          "id": "shop-005",
           "tags": [
             "payment"
           ],
@@ -3057,7 +3057,7 @@
           }
         },
         {
-          "id": "pt-shop-001",
+          "id": "shop-006",
           "tags": [
             "shopping",
             "fitting-room"
@@ -3079,7 +3079,7 @@
           }
         },
         {
-          "id": "pt-shop-002",
+          "id": "shop-007",
           "tags": [
             "shopping",
             "promotions"
@@ -3101,7 +3101,7 @@
           }
         },
         {
-          "id": "pt-shop-003",
+          "id": "shop-008",
           "tags": [
             "shopping",
             "returns"
@@ -3123,7 +3123,7 @@
           }
         },
         {
-          "id": "pt-shop-004",
+          "id": "shop-009",
           "tags": [
             "shopping",
             "stock"
@@ -3145,7 +3145,7 @@
           }
         },
         {
-          "id": "pt-shop-005",
+          "id": "shop-010",
           "tags": [
             "shopping",
             "payment"
@@ -3167,7 +3167,7 @@
           }
         },
         {
-          "id": "pt-shop-006",
+          "id": "shop-011",
           "tags": [
             "shopping",
             "returns"
@@ -3200,7 +3200,7 @@
       "color": "#00BCD4",
       "prompts": [
         {
-          "id": "es-tickets-001",
+          "id": "tickets-001",
           "tags": [
             "tickets"
           ],
@@ -3223,7 +3223,7 @@
           }
         },
         {
-          "id": "es-tickets-002",
+          "id": "tickets-002",
           "tags": [
             "tickets",
             "pricing"
@@ -3247,7 +3247,7 @@
           }
         },
         {
-          "id": "es-tickets-003",
+          "id": "tickets-003",
           "tags": [
             "tours",
             "time"
@@ -3269,7 +3269,7 @@
           }
         },
         {
-          "id": "es-tickets-004",
+          "id": "tickets-004",
           "tags": [
             "rules"
           ],
@@ -3292,7 +3292,7 @@
           }
         },
         {
-          "id": "es-tickets-005",
+          "id": "tickets-005",
           "tags": [
             "hours"
           ],
@@ -3315,7 +3315,7 @@
           }
         },
         {
-          "id": "es-tickets-006",
+          "id": "tickets-006",
           "tags": [
             "booking"
           ],
@@ -3338,7 +3338,7 @@
           }
         },
         {
-          "id": "pt-tickets-001",
+          "id": "tickets-007",
           "tags": [
             "tickets",
             "availability"
@@ -3360,7 +3360,7 @@
           }
         },
         {
-          "id": "pt-tickets-002",
+          "id": "tickets-008",
           "tags": [
             "tickets",
             "discounts"
@@ -3382,7 +3382,7 @@
           }
         },
         {
-          "id": "pt-tickets-003",
+          "id": "tickets-009",
           "tags": [
             "tickets",
             "timing"
@@ -3404,7 +3404,7 @@
           }
         },
         {
-          "id": "pt-tickets-004",
+          "id": "tickets-010",
           "tags": [
             "tickets",
             "pricing"
@@ -3426,7 +3426,7 @@
           }
         },
         {
-          "id": "pt-tickets-005",
+          "id": "tickets-011",
           "tags": [
             "tickets",
             "booking"
@@ -3448,7 +3448,7 @@
           }
         },
         {
-          "id": "pt-tickets-006",
+          "id": "tickets-012",
           "tags": [
             "tickets",
             "availability"
@@ -3470,7 +3470,7 @@
           }
         },
         {
-          "id": "en-tickets-001",
+          "id": "tickets-013",
           "tags": [
             "tours",
             "time"
@@ -3500,7 +3500,7 @@
       "color": "#F44336",
       "prompts": [
         {
-          "id": "es-pharm-001",
+          "id": "pharm-001",
           "tags": [
             "greeting"
           ],
@@ -3523,7 +3523,7 @@
           }
         },
         {
-          "id": "es-pharm-002",
+          "id": "pharm-002",
           "tags": [
             "medical"
           ],
@@ -3546,7 +3546,7 @@
           }
         },
         {
-          "id": "es-pharm-003",
+          "id": "pharm-003",
           "tags": [
             "medical"
           ],
@@ -3569,7 +3569,7 @@
           }
         },
         {
-          "id": "es-pharm-004",
+          "id": "pharm-004",
           "tags": [
             "medical",
             "instructions"
@@ -3593,7 +3593,7 @@
           }
         },
         {
-          "id": "es-pharm-005",
+          "id": "pharm-005",
           "tags": [
             "medical",
             "prescription"
@@ -3615,7 +3615,7 @@
           }
         },
         {
-          "id": "es-pharm-006",
+          "id": "pharm-006",
           "tags": [
             "medical",
             "recommendation"
@@ -3639,7 +3639,7 @@
           }
         },
         {
-          "id": "pt-pharm-001",
+          "id": "pharm-007",
           "tags": [
             "pharmacy",
             "prescription"
@@ -3661,7 +3661,7 @@
           }
         },
         {
-          "id": "pt-pharm-002",
+          "id": "pharm-008",
           "tags": [
             "pharmacy",
             "medication"
@@ -3683,7 +3683,7 @@
           }
         },
         {
-          "id": "pt-pharm-003",
+          "id": "pharm-009",
           "tags": [
             "pharmacy",
             "dosage"
@@ -3705,7 +3705,7 @@
           }
         },
         {
-          "id": "pt-pharm-004",
+          "id": "pharm-010",
           "tags": [
             "pharmacy",
             "side-effects"
@@ -3727,7 +3727,7 @@
           }
         },
         {
-          "id": "pt-pharm-005",
+          "id": "pharm-011",
           "tags": [
             "pharmacy",
             "medication"
@@ -3749,7 +3749,7 @@
           }
         },
         {
-          "id": "pt-pharm-006",
+          "id": "pharm-012",
           "tags": [
             "pharmacy",
             "payment",
@@ -3783,7 +3783,7 @@
       "color": "#795548",
       "prompts": [
         {
-          "id": "es-cafe-001",
+          "id": "cafe-001",
           "tags": [
             "ordering"
           ],
@@ -3804,7 +3804,7 @@
           }
         },
         {
-          "id": "es-cafe-002",
+          "id": "cafe-002",
           "tags": [
             "ordering",
             "coffee"
@@ -3828,7 +3828,7 @@
           }
         },
         {
-          "id": "es-cafe-003",
+          "id": "cafe-003",
           "tags": [
             "ordering"
           ],
@@ -3851,7 +3851,7 @@
           }
         },
         {
-          "id": "es-cafe-004",
+          "id": "cafe-004",
           "tags": [
             "food",
             "ordering"
@@ -3873,7 +3873,7 @@
           }
         },
         {
-          "id": "es-cafe-005",
+          "id": "cafe-005",
           "tags": [
             "ordering"
           ],
@@ -3896,7 +3896,7 @@
           }
         },
         {
-          "id": "es-cafe-006",
+          "id": "cafe-006",
           "tags": [
             "ordering",
             "coffee"
@@ -3918,7 +3918,7 @@
           }
         },
         {
-          "id": "es-cafe-007",
+          "id": "cafe-007",
           "tags": [
             "ordering",
             "coffee"
@@ -3942,7 +3942,7 @@
           }
         },
         {
-          "id": "es-cafe-008",
+          "id": "cafe-008",
           "tags": [
             "ordering"
           ],
@@ -3965,7 +3965,7 @@
           }
         },
         {
-          "id": "es-cafe-009",
+          "id": "cafe-009",
           "tags": [
             "general"
           ],
@@ -3986,7 +3986,7 @@
           }
         },
         {
-          "id": "es-cafe-010",
+          "id": "cafe-010",
           "tags": [
             "payment"
           ],
@@ -4007,7 +4007,7 @@
           }
         },
         {
-          "id": "es-cafe-011",
+          "id": "cafe-011",
           "tags": [
             "payment"
           ],
@@ -4030,7 +4030,7 @@
           }
         },
         {
-          "id": "es-cafe-012",
+          "id": "cafe-012",
           "tags": [
             "payment"
           ],
@@ -4053,7 +4053,7 @@
           }
         },
         {
-          "id": "es-cafe-013",
+          "id": "cafe-013",
           "tags": [
             "food",
             "ordering"
@@ -4077,7 +4077,7 @@
           }
         },
         {
-          "id": "es-cafe-014",
+          "id": "cafe-014",
           "tags": [
             "ordering",
             "drinks"
@@ -4101,7 +4101,7 @@
           }
         },
         {
-          "id": "es-cafe-015",
+          "id": "cafe-015",
           "tags": [
             "ordering",
             "drinks"
@@ -4125,7 +4125,7 @@
           }
         },
         {
-          "id": "pt-cafe-001",
+          "id": "cafe-016",
           "tags": [
             "cafe",
             "ordering",
@@ -4149,7 +4149,7 @@
           }
         },
         {
-          "id": "pt-cafe-002",
+          "id": "cafe-017",
           "tags": [
             "cafe",
             "coffee",
@@ -4172,7 +4172,7 @@
           }
         },
         {
-          "id": "pt-cafe-003",
+          "id": "cafe-018",
           "tags": [
             "cafe",
             "payment",
@@ -4195,7 +4195,7 @@
           }
         },
         {
-          "id": "pt-cafe-004",
+          "id": "cafe-019",
           "tags": [
             "cafe",
             "payment"
@@ -4217,7 +4217,7 @@
           }
         },
         {
-          "id": "en-cafe-001",
+          "id": "cafe-020",
           "tags": [
             "ordering",
             "coffee"
@@ -4236,7 +4236,7 @@
           }
         },
         {
-          "id": "es-cafe-016",
+          "id": "cafe-021",
           "tags": [
             "general"
           ],
