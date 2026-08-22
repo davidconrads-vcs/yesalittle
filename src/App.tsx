@@ -1,4 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
+// Vite/React app, not Next.js — the `/react` entry is the correct one here.
+import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
 import { resolveByNativeLang } from './utils'
@@ -35,7 +37,10 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
         .map((p): Prompt => {
           const promptType: PromptType = p.type ?? 'conversation'
           const t = p.translations[target]
-          const tEn = p.translations['en-US']
+          // The support line is read in the learner's OWN language, so it comes from
+          // translations[native] — not a hardcoded en-US. Optional: the ES→EN set was
+          // authored English-first and has no es-ES block, so this can be absent.
+          const tNative = p.translations[native]
           if (promptType === 'scenario' && t.phrase !== undefined) {
             throw new Error(`Scenario prompt ${p.id} has a phrase field in ${target} — remove it from prompts.json`)
           }
@@ -46,12 +51,14 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
             id: p.id,
             type: promptType,
             phrase: t.phrase,
-            // The English gloss line is meaningless when English IS the target
-            // (it would just duplicate the phrase/response), so suppress it there.
-            english: target === 'en-US' ? undefined : tEn.phrase,
+            // Suppress only when the support line would duplicate the target line
+            // verbatim — i.e. when the learner's native language IS the target.
+            // (Keyed on native === target, NOT on a specific locale: keying this to
+            // en-US blanked the line for every ES→EN learner.)
+            nativePhrase: native === target ? undefined : tNative?.phrase,
             context: resolveByNativeLang(p.context, native) ?? '',
             yourResponse: t.response,
-            yourResponseEnglish: target === 'en-US' ? undefined : tEn.response,
+            nativeResponse: native === target ? undefined : tNative?.response,
             gloss: resolveByNativeLang(t.gloss, native),
             tags: p.tags,
             difficulty: p.difficulty,
@@ -225,6 +232,7 @@ export default function App() {
           onReset={() => { resetProgress(); setScreen('home') }}
         />
       )}
+      <Analytics />
     </I18nProvider>
   )
 }

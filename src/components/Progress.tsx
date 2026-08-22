@@ -198,7 +198,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
                     {prompt.type === 'scenario' ? prompt.yourResponse : prompt.phrase}
                   </div>
                   <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.35)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                    {prompt.type === 'scenario' ? prompt.context : prompt.english}
+                    {prompt.type === 'scenario' ? prompt.context : prompt.nativePhrase}
                   </div>
                 </div>
                 <div

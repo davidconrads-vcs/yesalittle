@@ -31,11 +31,11 @@ export function useAudio(promptId: string, speed: Speed, lang: string, text?: st
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const stoppedRef = useRef(false)
 
-  // en-US is an overlay target reusing es-*/pt-* prompt ids, so its audio files
-  // carry an `-en-US` qualifier to avoid colliding with the prompt's primary-language
-  // audio. es-ES/pt-PT keep the flat name. Keep in sync with generate-audio.ts.
-  const langSuffix = lang === 'en-US' ? '-en-US' : ''
-  const audioSrc = `audio/${promptId}${langSuffix}-${speed}.mp3`
+  // Every audio file carries its target language explicitly:
+  // `{id}-{lang}-{speed}.mp3` (responses use `{id}-response-{lang}-{speed}.mp3`,
+  // the `-response` already baked into promptId by the caller).
+  // Keep in sync with generate-audio.ts.
+  const audioSrc = `audio/${promptId}-${lang}-${speed}.mp3`
 
   const stop = useCallback(() => {
     stoppedRef.current = true

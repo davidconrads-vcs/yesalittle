@@ -78,10 +78,13 @@ export interface Prompt {
   id: string
   type?: PromptType      // omitted = 'conversation'
   phrase?: string        // absent for scenario prompts
-  english?: string       // absent for scenario prompts
+  // The phrase/response rendered in the LEARNER'S native language — the support line
+  // shown beneath the target text. Absent when native === target (it would duplicate
+  // the target line) or when the prompt has no block in the learner's native language.
+  nativePhrase?: string  // also absent for scenario prompts
   context: string
   yourResponse: string
-  yourResponseEnglish?: string  // native-language gloss; absent when target is the native's own English
+  nativeResponse?: string
   gloss?: string
   tags: string[]
   difficulty: number

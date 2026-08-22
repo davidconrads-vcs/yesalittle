@@ -166,9 +166,9 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
                 <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                   {current.yourResponse}
                 </div>
-                {current.yourResponseEnglish && (
+                {current.nativeResponse && (
                   <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
-                    {current.yourResponseEnglish}
+                    {current.nativeResponse}
                   </div>
                 )}
               </div>
@@ -214,9 +214,9 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
             <div translate="no" className="notranslate" style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
               {current.phrase}
             </div>
-            {current.english && (
+            {current.nativePhrase && (
               <div style={{ fontSize: 16, color: 'rgba(255,255,255,0.5)', marginBottom: 20, lineHeight: 1.5 }}>
-                {current.english}
+                {current.nativePhrase}
               </div>
             )}
             <div style={responseCardStyle}>
@@ -227,9 +227,9 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
               <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>
                 {current.yourResponse}
               </div>
-              {current.yourResponseEnglish && (
+              {current.nativeResponse && (
                 <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 4 }}>
-                  {current.yourResponseEnglish}
+                  {current.nativeResponse}
                 </div>
               )}
             </div>

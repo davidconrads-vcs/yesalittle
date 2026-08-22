@@ -38,8 +38,8 @@ await sharp(faviconBuf).resize(180, 180).png().toFile(join(PUBLIC, 'apple-touch-
 console.log('Written apple-touch-icon.png')
 
 // ── og-image ──────────────────────────────────────────────────────────────────
-// Flag emoji don't render as color via librsvg/Cairo on this platform —
-// confirmed gray on inspection. Using text-only language line.
+// Deliberately language-agnostic: no flags, no language names. The share image
+// never dates and needs no regeneration when a language is added or removed.
 
 const OG_SVG = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
   <defs>
