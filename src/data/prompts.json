@@ -3909,11 +3909,14 @@
             "es-ES": {
               "phrase": "¿Cortado o con leche?",
               "response": "Cortado, por favor.",
+              "gloss": {
+                "en-US": "Both have milk — a cortado is espresso with just a splash, while a café con leche is about half coffee, half milk."
+              },
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "Cortado or with milk?",
-              "response": "Cortado, please."
+              "phrase": "A cortado, or a coffee with milk?",
+              "response": "A cortado, please."
             }
           }
         },
