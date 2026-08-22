@@ -111,7 +111,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
                       <SpeakButton promptId={`${r.prompt.id}-response`} phrase={r.prompt.yourResponse} speed={speed} lang={lang} size="small" />
                     </div>
                     <div translate="no" className="notranslate" style={{ fontSize: 15, color: 'rgba(76, 175, 80, 0.9)', fontWeight: 500 }}>{r.prompt.yourResponse}</div>
-                    {r.prompt.yourResponseEnglish && <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 2 }}>{r.prompt.yourResponseEnglish}</div>}
+                    {r.prompt.nativeResponse && <div style={{ fontSize: 13, color: 'rgba(76, 175, 80, 0.5)', marginTop: 2 }}>{r.prompt.nativeResponse}</div>}
                   </>
                 ) : (
                   <>
@@ -122,7 +122,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
                       <SpeakButton promptId={r.prompt.id} phrase={r.prompt.phrase ?? ''} speed={speed} lang={lang} size="small" />
                     </div>
                     <div translate="no" className="notranslate" style={{ fontSize: 16, fontWeight: 600, marginBottom: 4 }}>{r.prompt.phrase}</div>
-                    {r.prompt.english && <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{r.prompt.english}</div>}
+                    {r.prompt.nativePhrase && <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>{r.prompt.nativePhrase}</div>}
                   </>
                 )}
               </div>
