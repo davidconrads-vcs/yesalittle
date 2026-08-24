@@ -159,6 +159,9 @@
             "en-US": {
               "response": "Sorry, my English isn't very good yet.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "response": "Perdona, mi inglés todavía no es muy bueno."
             }
           },
           "type": "scenario"
@@ -179,6 +182,9 @@
             "en-US": {
               "response": "Sorry, I don't understand. Is there someone who speaks Spanish?",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "response": "Perdona, no entiendo. ¿Hay alguien que hable español?"
             }
           },
           "type": "scenario"
@@ -1009,6 +1015,10 @@
               "phrase": "Welcome! Is this your first time here?",
               "response": "Yes, first time. We're excited to be here.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "¡Bienvenidos! ¿Es su primera vez aquí?",
+              "response": "Sí, la primera vez. Estamos encantados de estar aquí."
             }
           }
         },
@@ -1027,6 +1037,10 @@
               "phrase": "Where are you from?",
               "response": "We're from Spain, from Barcelona. Are you from around here?",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "¿De dónde son?",
+              "response": "Somos de España, de Barcelona. ¿Usted es de aquí?"
             }
           }
         },
@@ -1045,6 +1059,10 @@
               "phrase": "Do you speak English?",
               "response": "A little, yes. I'm learning.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "¿Habla inglés?",
+              "response": "Un poco, sí. Estoy aprendiendo."
             }
           }
         },
@@ -1063,6 +1081,10 @@
               "phrase": "Sorry, I don't speak Spanish.",
               "response": "That's okay, I'll try in English.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "Lo siento, no hablo español.",
+              "response": "No pasa nada, lo intento en inglés."
             }
           }
         },
@@ -1081,6 +1103,10 @@
               "phrase": "Excuse me, can you help me for a second?",
               "response": "Sure, though I don't speak much English.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "Perdone, ¿me puede ayudar un momento?",
+              "response": "Claro, aunque no hablo mucho inglés."
             }
           }
         }
@@ -2248,7 +2274,14 @@
             "en-US": {
               "phrase": "Morning! What can I get you?",
               "response": "Can I get half a pound of ham?",
-              "practiceAsTarget": true
+              "practiceAsTarget": true,
+              "gloss": {
+                "es-ES": "Media libra son unos 225 gramos. En Estados Unidos se pide la charcutería por libras, no por gramos."
+              }
+            },
+            "es-ES": {
+              "phrase": "¡Buenos días! ¿Qué le pongo?",
+              "response": "¿Me pone media libra de jamón?"
             }
           }
         }
@@ -2925,6 +2958,10 @@
               "phrase": "Quiet hours are after ten, so keep it down at night.",
               "response": "Of course, no problem.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "A partir de las diez hay que guardar silencio, así que no hagan ruido por la noche.",
+              "response": "Claro, no hay problema."
             }
           }
         }
@@ -3485,6 +3522,10 @@
               "phrase": "The next guided tour starts at four.",
               "response": "Are there any tours in Spanish?",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "La próxima visita guiada empieza a las cuatro.",
+              "response": "¿Hay visitas en español?"
             }
           }
         }
@@ -4235,6 +4276,10 @@
               "phrase": "What can I get started for you?",
               "response": "A latte, please.",
               "practiceAsTarget": true
+            },
+            "es-ES": {
+              "phrase": "¿Qué le preparo?",
+              "response": "Un latte, por favor."
             }
           }
         },
