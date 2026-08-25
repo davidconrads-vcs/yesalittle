@@ -28,6 +28,10 @@
             "en-US": {
               "response": "Can you repeat that, please?",
               "practiceAsTarget": true
+            },
+            "pt-PT": {
+              "response": "Pode repetir, por favor?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -50,6 +54,10 @@
             },
             "en-US": {
               "response": "Can you speak more slowly, please?",
+              "practiceAsTarget": true
+            },
+            "pt-PT": {
+              "response": "Pode falar mais devagar, por favor?",
               "practiceAsTarget": true
             }
           },
@@ -95,6 +103,10 @@
             "en-US": {
               "response": "Sorry, what does that word mean?",
               "practiceAsTarget": true
+            },
+            "pt-PT": {
+              "response": "Desculpe, o que significa essa palavra?",
+              "practiceAsTarget": true
             }
           },
           "type": "scenario"
@@ -117,6 +129,10 @@
             },
             "en-US": {
               "response": "Can you write it down, please?",
+              "practiceAsTarget": true
+            },
+            "pt-PT": {
+              "response": "Pode escrever, por favor?",
               "practiceAsTarget": true
             }
           },
@@ -185,6 +201,49 @@
             },
             "es-ES": {
               "response": "Perdona, no entiendo. ¿Hay alguien que hable español?"
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "panic-009",
+          "tags": [
+            "panic",
+            "apology"
+          ],
+          "difficulty": 2,
+          "context": {
+            "en-US": "You started a conversation in Portuguese and it's gotten beyond your level — you're now lost and need to gracefully signal that your Portuguese isn't strong enough to keep up."
+          },
+          "translations": {
+            "pt-PT": {
+              "response": "Desculpe, o meu português ainda não é muito bom.",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Sorry, my Portuguese isn't very good yet."
+            }
+          },
+          "type": "scenario"
+        },
+        {
+          "id": "panic-010",
+          "tags": [
+            "panic",
+            "english",
+            "apology"
+          ],
+          "difficulty": 3,
+          "context": {
+            "en-US": "Someone has just spoken to you in Portuguese and you understood nothing — not a single word landed. You need to acknowledge the situation and ask if they can switch to English."
+          },
+          "translations": {
+            "pt-PT": {
+              "response": "Desculpe, não percebi nada. Fala inglês?",
+              "practiceAsTarget": true
+            },
+            "en-US": {
+              "response": "Sorry, I didn't understand. Do you speak English?"
             }
           },
           "type": "scenario"
@@ -1225,12 +1284,12 @@
           "translations": {
             "es-ES": {
               "phrase": "¿Qué van a tomar?",
-              "response": "Para mí, el/la ___.",
+              "response": "Para mí, el...",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "What can I get you?",
-              "response": "For me, the ___.",
+              "response": "For me, the...",
               "practiceAsTarget": true
             }
           }
@@ -1562,12 +1621,12 @@
           "translations": {
             "pt-PT": {
               "phrase": "A mesa está reservada em nome de quem?",
-              "response": "Está em nome de [nome].",
+              "response": "Está em nome de...",
               "practiceAsTarget": true
             },
             "en-US": {
               "phrase": "What name is the reservation under?",
-              "response": "It's under the name [name]."
+              "response": "It's under the name..."
             }
           }
         },
@@ -3404,16 +3463,16 @@
           ],
           "difficulty": 2,
           "context": {
-            "en-US": "Ticket vendor about tourist pass benefits"
+            "en-US": "Ticket vendor asking whether you have a tourist pass"
           },
           "translations": {
             "pt-PT": {
-              "phrase": "Com o passe turístico tem desconto de vinte por cento.",
+              "phrase": "Tem passe turístico? Tem vinte por cento de desconto.",
               "response": "Tenho sim. Aqui está.",
               "practiceAsTarget": true
             },
             "en-US": {
-              "phrase": "With the tourist pass you get a twenty percent discount.",
+              "phrase": "Do you have a tourist pass? There's a twenty percent discount.",
               "response": "Yes, I do. Here it is."
             }
           }
