@@ -6,6 +6,9 @@ import SpeedControl from './SpeedControl'
 
 interface Props {
   scenarios: Scenario[]
+  // Scenario ids to start selected, from a content-page entry link. Read once on
+  // mount; App clears its source when a session starts, so this is empty thereafter.
+  initialCategories?: readonly string[]
   language: string
   onLanguageChange: (l: string) => void
   native: string
@@ -27,10 +30,10 @@ const sectionLabelStyle: React.CSSProperties = {
   fontFamily: "'JetBrains Mono', monospace",
 }
 
-export default function Home({ scenarios, language, onLanguageChange, native, onNativeChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
+export default function Home({ scenarios, initialCategories, language, onLanguageChange, native, onNativeChange, onStart, streak, speed, onSpeedChange, onProgressClick }: Props) {
   const { t, pluralize } = useI18n()
   // `selected` holds stable scenario ids, never the (localizable) display name.
-  const [selected, setSelected] = useState<Set<string>>(new Set())
+  const [selected, setSelected] = useState<Set<string>>(() => new Set(initialCategories))
   const [mode, setMode] = useState<SessionMode>('full')
 
   const totalPrompts = selected.size === 0

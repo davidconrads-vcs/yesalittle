@@ -1,0 +1,78 @@
+/* Content-page styles. Independent of the SPA's inline-style approach — these pages
+   are a separate static surface. Brand values below MIRROR the app (see index.html
+   theme-color and src/index.css); keep them in step by hand. */
+:root{
+  --bg:#0D0D0F; --card:#141417; --line:rgba(255,255,255,.08);
+  --text:#fff; --muted:rgba(255,255,255,.55); --faint:rgba(255,255,255,.38);
+  --brand:#E85D3A; --green:#4CAF50; --greenbg:rgba(76,175,80,.07);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:'DM Sans',system-ui,sans-serif;
+     line-height:1.6;padding:0 20px 80px}
+.wrap{max-width:720px;margin:0 auto}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;
+         text-transform:uppercase;color:var(--brand);padding-top:44px}
+h1{font-size:38px;line-height:1.15;font-weight:700;margin:14px 0 18px;letter-spacing:-.02em}
+.standfirst{font-size:19px;color:var(--muted);margin-bottom:14px}
+.byline{font-size:13px;color:var(--faint);border-bottom:1px solid var(--line);
+        padding-bottom:26px;margin-bottom:30px}
+h2{font-size:15px;font-family:'JetBrains Mono',monospace;letter-spacing:.1em;
+   text-transform:uppercase;color:var(--brand);margin:52px 0 8px}
+.sectnote{color:var(--muted);font-size:15px;margin-bottom:22px}
+p{margin-bottom:16px;color:rgba(255,255,255,.82)}
+.lead p{font-size:17px}
+.heads-up{background:rgba(232,93,58,.07);border:1px solid rgba(232,93,58,.25);
+          border-radius:12px;padding:18px 20px;margin:26px 0}
+.heads-up strong.hdr{color:var(--brand);display:block;margin-bottom:8px;font-size:14px;
+                 font-family:'JetBrains Mono',monospace;letter-spacing:.06em;text-transform:uppercase}
+.heads-up ul{margin:0;padding-left:20px;color:rgba(255,255,255,.82)}
+.heads-up li{margin-bottom:7px}
+
+.x{background:var(--card);border:1px solid var(--line);border-radius:14px;
+   padding:20px;margin-bottom:14px}
+.ctx{font-size:12.5px;color:var(--faint);font-family:'JetBrains Mono',monospace;
+     letter-spacing:.05em;text-transform:uppercase;margin-bottom:13px}
+.they{font-size:22px;font-weight:600;line-height:1.35;margin-bottom:5px}
+.they-en{color:var(--muted);font-size:15px;margin-bottom:15px}
+.reply{background:var(--greenbg);border:1px solid rgba(76,175,80,.22);
+       border-radius:11px;padding:14px 16px}
+.reply-label{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.1em;
+             text-transform:uppercase;color:var(--green);margin-bottom:8px}
+.reply-es{color:#7ED07E;font-size:17px;font-weight:500}
+.reply-en{color:rgba(255,255,255,.45);font-size:14px;margin-top:3px}
+.note{margin-top:13px;padding:11px 14px;background:rgba(255,255,255,.03);
+      border:1px solid var(--line);border-radius:9px;font-size:13.5px;color:var(--faint);line-height:1.55}
+
+/* Play buttons are the only JS-dependent element on the page, so they stay hidden
+   until the inline head script marks the document as scripted. Everything else
+   reads fine without JS. */
+.audio{display:none}
+.js .audio{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.05);
+       border:1px solid var(--line);border-radius:20px;padding:5px 13px;font-size:12.5px;
+       line-height:1.4;font-family:inherit;color:var(--muted);margin-left:10px;
+       vertical-align:middle;cursor:pointer}
+.js .audio:hover{color:var(--text);border-color:rgba(255,255,255,.2)}
+.js .audio:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.js .audio.playing{color:var(--brand);border-color:rgba(232,93,58,.45);
+       background:rgba(232,93,58,.1)}
+
+/* mid-page lightweight hook */
+.hook{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+      padding:24px 0;margin:32px 0 44px;text-align:center}
+.hook p{font-size:16px;color:var(--muted);margin-bottom:12px}
+.hook a{color:var(--brand);text-decoration:none;font-weight:600;font-size:16px;
+        border-bottom:1px solid rgba(232,93,58,.4);padding-bottom:2px}
+
+.cta{background:linear-gradient(135deg,rgba(232,93,58,.14),rgba(232,93,58,.05));
+     border:1px solid rgba(232,93,58,.3);border-radius:16px;padding:30px;margin:56px 0 40px;
+     text-align:center}
+.cta h3{font-size:23px;margin-bottom:10px;font-weight:700}
+.cta p{color:var(--muted);font-size:15px;margin-bottom:20px}
+.btn{display:inline-block;background:var(--brand);color:#fff;text-decoration:none;
+     padding:14px 30px;border-radius:11px;font-weight:600;font-size:16px}
+.related{border-top:1px solid var(--line);padding-top:26px;margin-top:44px}
+.related h4{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;
+            text-transform:uppercase;color:var(--faint);margin-bottom:14px}
+.related a{display:block;color:rgba(255,255,255,.75);text-decoration:none;padding:8px 0;
+           font-size:15px;border-bottom:1px solid rgba(255,255,255,.04)}
+.related a:hover{color:var(--brand)}
