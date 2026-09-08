@@ -5,9 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "tsc && vite build && tsx scripts/build-content-pages.ts",
     "preview": "vite preview",
-    "generate-assets": "tsx scripts/generate-assets.ts"
+    "generate-assets": "tsx scripts/generate-assets.ts",
+    "build-content": "tsx scripts/build-content-pages.ts"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

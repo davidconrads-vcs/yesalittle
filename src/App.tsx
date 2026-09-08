@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
-import { resolveByNativeLang } from './utils'
+import { resolveByNativeLang, readEntryParams } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue, REVIEW_LIMIT } from './hooks/useSpacedQueue'
 import { I18nProvider, translate } from './i18n'
@@ -14,6 +14,12 @@ import Progress from './components/Progress'
 
 const PREF_TARGET_KEY = 'yesalittle:target'
 const PREF_NATIVE_KEY = 'yesalittle:native'
+
+// Read once at startup. The query string is how the static content pages hand off a
+// reader (`/?scenario=restaurant&target=es-ES`); it never changes while the app runs.
+const ENTRY = readEntryParams(
+  (promptsData.scenarios as unknown as UnifiedScenario[]).map(s => s.id)
+)
 
 // Builds a flat, language-specific scenario list from the unified schema.
 // `native` drives which `context`/`gloss` strings are resolved, so scenarios are
@@ -104,6 +110,10 @@ function getInitialNative(): string {
 // Target must be one this native can actually learn; otherwise fall back to its first.
 function getInitialTarget(native: string): string {
   const avail = getAvailableTargets(native)
+  // A content-page link outranks the saved preference — the reader arrived for that
+  // language. Still gated on `avail`, so an entry target this native can't learn is
+  // ignored like any other bad param rather than breaking the picker's invariant.
+  if (ENTRY.target && avail.includes(ENTRY.target)) return ENTRY.target
   try {
     const saved = localStorage.getItem(PREF_TARGET_KEY)
     if (saved && avail.includes(saved)) return saved
@@ -118,11 +128,23 @@ export default function App() {
   const [language, setLanguage] = useState<string>(() => getInitialTarget(native))
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
+  // Preselection only — Home still waits for the user to press start. Cleared once a
+  // session begins so coming back Home gives the normal empty selection, matching how
+  // a hand-picked category resets. Never persisted.
+  const [entryScenario, setEntryScenario] = useState<string | undefined>(ENTRY.scenario)
   const pair: LanguagePair = { native, target: language }
   const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(pair)
 
   const scenarios = useMemo(() => buildScenarios(language, native), [language, native])
   const allPrompts = useMemo(() => buildAllPrompts(scenarios), [scenarios])
+
+  // A scenario id can be real in the data yet absent here, because buildScenarios
+  // drops scenarios with no prompts in the chosen target. Preselecting one of those
+  // would filter the session down to nothing, so drop it.
+  const entryCategories = useMemo(
+    () => (entryScenario && scenarios.some(s => s.id === entryScenario) ? [entryScenario] : []),
+    [entryScenario, scenarios]
+  )
 
   // Keep the document language in sync with the UI language (= selected native),
   // for screen-reader correctness. Other index.html metadata stays English by design.
@@ -163,6 +185,7 @@ export default function App() {
     }
     setQueue(q)
     setResults([])
+    setEntryScenario(undefined)
     setScreen('practice')
   }
 
@@ -192,6 +215,7 @@ export default function App() {
       {screen === 'home' && (
         <Home
           scenarios={scenarios}
+          initialCategories={entryCategories}
           language={language}
           onLanguageChange={handleLanguageChange}
           native={native}
