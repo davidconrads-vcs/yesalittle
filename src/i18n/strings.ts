@@ -56,6 +56,8 @@ const EN: UIStrings = {
 
   // ── SpeakButton ───────────────────────────────────────────────────────────────
   'speak.playing': 'Playing...',
+  // Shown until the audio has actually played once; 'speak.play_again' after.
+  'speak.play': 'Play',
   'speak.play_again': 'Play Again',
   'speak.listen': 'Listen',
 
@@ -134,6 +136,7 @@ const ES: UIStrings = {
 
   // ── SpeakButton ───────────────────────────────────────────────────────────────
   'speak.playing': 'Reproduciendo...',
+  'speak.play': 'Reproducir',
   'speak.play_again': 'Reproducir otra vez',
   'speak.listen': 'Escuchar',
 
