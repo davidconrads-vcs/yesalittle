@@ -62,3 +62,42 @@ export function readEntryParams(
     prompt: target && rawPrompt && isDrillable(rawPrompt, target) ? rawPrompt : undefined,
   }
 }
+
+/**
+ * Which target the app opens with. An entry link outranks the saved preference — the
+ * reader arrived for that language — but both are gated on `available`, so a target
+ * this native can't learn is ignored like any other bad param rather than breaking
+ * the picker's invariant.
+ */
+export function pickInitialTarget(
+  available: readonly string[],
+  entryTarget: string | undefined,
+  savedTarget: string | null,
+): string {
+  if (entryTarget && available.includes(entryTarget)) return entryTarget
+  if (savedTarget && available.includes(savedTarget)) return savedTarget
+  return available[0]
+}
+
+export interface EntryLanding {
+  // The single prompt to land on directly, if the deep link survived every gate.
+  promptId?: string
+  // The category to preselect on Home. Never set alongside `promptId`.
+  scenarioId?: string
+}
+
+/**
+ * Turns validated entry params into what the app actually opens with, once the
+ * starting target is known. Two rules live here:
+ *
+ * 1. The native gate. `readEntryParams` only checked `target` against the registry;
+ *    `initialTarget` is what pickInitialTarget actually settled on, so a mismatch
+ *    means this native can't learn the link's language — and the prompt goes with it.
+ * 2. Precedence. A surviving `prompt` outranks `scenario`: the single-prompt landing
+ *    is the more specific intent, so the category preselection is dropped rather than
+ *    queued up behind it.
+ */
+export function resolveEntryLanding(entry: EntryParams, initialTarget: string): EntryLanding {
+  if (entry.prompt && entry.target === initialTarget) return { promptId: entry.prompt }
+  return { scenarioId: entry.scenario }
+}

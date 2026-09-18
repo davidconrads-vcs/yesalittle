@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
-import { resolveByNativeLang, readEntryParams } from './utils'
+import { resolveByNativeLang, readEntryParams, pickInitialTarget, resolveEntryLanding } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue, REVIEW_LIMIT } from './hooks/useSpacedQueue'
 import { I18nProvider, translate } from './i18n'
@@ -116,17 +116,11 @@ function getInitialNative(): string {
 }
 
 // Target must be one this native can actually learn; otherwise fall back to its first.
+// The precedence itself lives in pickInitialTarget; this only supplies the stored half.
 function getInitialTarget(native: string): string {
-  const avail = getAvailableTargets(native)
-  // A content-page link outranks the saved preference — the reader arrived for that
-  // language. Still gated on `avail`, so an entry target this native can't learn is
-  // ignored like any other bad param rather than breaking the picker's invariant.
-  if (ENTRY.target && avail.includes(ENTRY.target)) return ENTRY.target
-  try {
-    const saved = localStorage.getItem(PREF_TARGET_KEY)
-    if (saved && avail.includes(saved)) return saved
-  } catch {}
-  return avail[0]
+  let saved: string | null = null
+  try { saved = localStorage.getItem(PREF_TARGET_KEY) } catch {}
+  return pickInitialTarget(getAvailableTargets(native), ENTRY.target, saved)
 }
 
 // The starting pair, resolved once so the deep link below is validated against the
@@ -134,18 +128,19 @@ function getInitialTarget(native: string): string {
 const INITIAL_NATIVE = getInitialNative()
 const INITIAL_TARGET = getInitialTarget(INITIAL_NATIVE)
 
-// A `?prompt=&target=` deep link: one prompt, drilled on its own, as a shareable
-// entry point and a verification shortcut. Resolved here rather than in an effect so
-// the first paint is already the practice screen — no flash of Home.
-//
-// `ENTRY.target === INITIAL_TARGET` is the native gate: getInitialTarget only honors
-// an entry target this native can actually learn, so any other value means the link's
-// language was rejected, and the prompt goes with it. A `find` miss can't happen after
-// readEntryParams' practiceAsTarget check, but undefined degrades to Home either way.
-const ENTRY_PROMPT: PromptWithScenario | undefined =
-  ENTRY.prompt && ENTRY.target === INITIAL_TARGET
-    ? buildAllPrompts(buildScenarios(INITIAL_TARGET, INITIAL_NATIVE)).find(p => p.id === ENTRY.prompt)
-    : undefined
+// What this visit opens with: a single-prompt deep link, a category preselection, or
+// neither. The native gate and the prompt-over-scenario precedence both live in
+// resolveEntryLanding.
+const LANDING = resolveEntryLanding(ENTRY, INITIAL_TARGET)
+
+// A `?prompt=&target=` deep link: one prompt, drilled on its own, as a shareable entry
+// point and a verification shortcut. Resolved here rather than in an effect so the
+// first paint is already the practice screen — no flash of Home. A `find` miss can't
+// happen after readEntryParams' practiceAsTarget check (buildScenarios filters on the
+// same flag), but undefined degrades to Home either way.
+const ENTRY_PROMPT: PromptWithScenario | undefined = LANDING.promptId
+  ? buildAllPrompts(buildScenarios(INITIAL_TARGET, INITIAL_NATIVE)).find(p => p.id === LANDING.promptId)
+  : undefined
 
 export default function App() {
   const [screen, setScreen] = useState<Screen>(ENTRY_PROMPT ? 'practice' : 'home')
@@ -160,12 +155,7 @@ export default function App() {
   // Preselection only — Home still waits for the user to press start. Cleared once a
   // session begins so coming back Home gives the normal empty selection, matching how
   // a hand-picked category resets. Never persisted.
-  // A valid `prompt` outranks `scenario`: the single-prompt landing is the more
-  // specific intent, so the category preselection is dropped rather than queued up
-  // behind it.
-  const [entryScenario, setEntryScenario] = useState<string | undefined>(
-    ENTRY_PROMPT ? undefined : ENTRY.scenario
-  )
+  const [entryScenario, setEntryScenario] = useState<string | undefined>(LANDING.scenarioId)
   const pair: LanguagePair = { native, target: language }
   const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(pair)
 

@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && tsx scripts/build-content-pages.ts",
+    "test": "node --import tsx --test \"src/**/*.test.ts\"",
+    "build": "npm test && tsc && tsc -p tsconfig.test.json && vite build && tsx scripts/build-content-pages.ts",
     "preview": "vite preview",
     "generate-assets": "tsx scripts/generate-assets.ts",
     "build-content": "tsx scripts/build-content-pages.ts"
