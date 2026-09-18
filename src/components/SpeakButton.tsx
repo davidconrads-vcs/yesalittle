@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = false, size = 'large' }: Props) {
-  const { playing, play } = useAudio(promptId, speed, lang, phrase)
+  const { playing, hasPlayed, play } = useAudio(promptId, speed, lang, phrase)
   const { t } = useI18n()
   const isLarge = size === 'large'
 
@@ -53,7 +53,11 @@ export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = 
         {playing ? '🔊' : '🔈'}
       </span>
       <span style={{ fontWeight: 500 }}>
-        {isLarge ? (playing ? t('speak.playing') : t('speak.play_again')) : (playing ? '...' : t('speak.listen'))}
+        {isLarge
+          // "Play Again" only once it actually has played. A blocked autoplay leaves
+          // this false, so the control still reads as an invitation to press it.
+          ? (playing ? t('speak.playing') : hasPlayed ? t('speak.play_again') : t('speak.play'))
+          : (playing ? '...' : t('speak.listen'))}
       </span>
     </button>
   )

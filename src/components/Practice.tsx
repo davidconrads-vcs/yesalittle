@@ -11,9 +11,13 @@ interface Props {
   onSpeedChange: (s: Speed) => void
   onResult: (promptId: string, understood: boolean) => void
   onExit: () => void
+  // Set only for a `?prompt=` deep link, where the queue is one prompt and the visit
+  // is a preview, not practice. Replaces the grade buttons, so `onResult` is never
+  // called in this mode — which is exactly what keeps stored progress untouched.
+  deepLinkAction?: { label: string; onClick: () => void }
 }
 
-export default function Practice({ queue, speed, lang, onSpeedChange, onResult, onExit }: Props) {
+export default function Practice({ queue, speed, lang, onSpeedChange, onResult, onExit, deepLinkAction }: Props) {
   const { t } = useI18n()
   const [index, setIndex] = useState(0)
   const [phase, setPhase] = useState<'listen' | 'reveal'>('listen')
@@ -113,6 +117,32 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
     </div>
   )
 
+  const practiceMoreButton = deepLinkAction && (
+    <button
+      onClick={deepLinkAction.onClick}
+      style={{
+        width: '100%',
+        padding: '18px 20px',
+        background: 'rgba(232, 93, 58, 0.1)',
+        border: '1.5px solid rgba(232, 93, 58, 0.35)',
+        borderRadius: 14,
+        color: '#E85D3A',
+        fontSize: 16,
+        fontWeight: 600,
+        fontFamily: "'DM Sans', sans-serif",
+        cursor: 'pointer',
+        minHeight: 56,
+        animation: 'fadeUp 0.3s ease',
+      }}
+    >
+      {deepLinkAction.label}
+    </button>
+  )
+
+  // What sits below the card once the answer is revealed. A deep link gets the
+  // single call to action instead of the grade pair — never both.
+  const revealedActions = practiceMoreButton ?? resultActions
+
   const revealButton = (
     <button
       onClick={() => setPhase('reveal')}
@@ -194,7 +224,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
         </div>
       </div>
 
-      {phase === 'listen' ? revealButton : resultActions}
+      {phase === 'listen' ? revealButton : revealedActions}
     </>
   )
 
@@ -258,7 +288,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
         </div>
       </div>
 
-      {phase === 'listen' ? revealButton : resultActions}
+      {phase === 'listen' ? revealButton : revealedActions}
     </>
   )
 
