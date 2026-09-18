@@ -160,6 +160,20 @@ test('a prompt is dropped when the app did not open on that target', () => {
   assert.deepEqual(resolveEntryLanding(entry, 'en-US'), { scenarioId: 'restaurant' })
 })
 
+test('a rejected prompt leaves a valid scenario intact', () => {
+  // Deliberate: precedence is "prompt wins when BOTH are valid". Once the prompt is
+  // out, `scenario` is just an ordinary valid param and keeps its Handoff 15 meaning,
+  // so these three links agree rather than diverging on which way the prompt failed.
+  const gatedByNative = resolveEntryLanding(
+    { target: 'es-ES', scenario: 'restaurant', prompt: CONVERSATION }, 'en-US')
+  const promptIdRejectedEarlier = resolveEntryLanding(
+    { target: 'es-ES', scenario: 'restaurant' }, 'en-US')
+  const scenarioLinkAlone = resolveEntryLanding({ target: 'es-ES', scenario: 'restaurant' }, 'en-US')
+  assert.deepEqual(gatedByNative, { scenarioId: 'restaurant' })
+  assert.deepEqual(promptIdRejectedEarlier, gatedByNative)
+  assert.deepEqual(scenarioLinkAlone, gatedByNative)
+})
+
 test('a scenario preselection survives on its own', () => {
   assert.deepEqual(resolveEntryLanding({ target: 'es-ES', scenario: 'restaurant' }, 'es-ES'), {
     scenarioId: 'restaurant',
