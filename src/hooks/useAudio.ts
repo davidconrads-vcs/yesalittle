@@ -95,8 +95,13 @@ export function useAudio(promptId: string, speed: Speed, lang: string, text?: st
         setPlaying(false)
         return
       }
-      setHasPlayed(true)
       speakWithBrowser(text, SPEECH_RATES[speed], ttsLang)
+        // Only once a voice has actually spoken. If synthesis is unavailable the
+        // rejection below is swallowed, and marking it played first would leave the
+        // control reading "Play Again" for audio nobody heard.
+        .then(() => {
+          if (!stoppedRef.current) setHasPlayed(true)
+        })
         .catch(() => {})  // TTS unavailable (e.g. no voices) — nothing more to do
         .finally(() => {
           if (!stoppedRef.current) setPlaying(false)
