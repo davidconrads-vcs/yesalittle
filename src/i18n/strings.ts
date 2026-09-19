@@ -50,9 +50,14 @@ const EN: UIStrings = {
   'practice.reveal': 'Reveal Answer',
   'practice.didnt_get': "Didn't Get It",
   'practice.understood': 'Understood ✓',
+  // Deep-linked single prompt only, in place of the two grade buttons above.
+  // {category} is the scenario's localized display name (e.g. "Restaurant").
+  'practice.practice_more': 'Practice more {category} situations',
 
   // ── SpeakButton ───────────────────────────────────────────────────────────────
   'speak.playing': 'Playing...',
+  // Shown until the audio has actually played once; 'speak.play_again' after.
+  'speak.play': 'Play',
   'speak.play_again': 'Play Again',
   'speak.listen': 'Listen',
 
@@ -127,9 +132,11 @@ const ES: UIStrings = {
   'practice.reveal': 'Mostrar respuesta',
   'practice.didnt_get': 'No lo he pillado',
   'practice.understood': 'Entendido ✓',
+  'practice.practice_more': 'Practica más situaciones de {category}',
 
   // ── SpeakButton ───────────────────────────────────────────────────────────────
   'speak.playing': 'Reproduciendo...',
+  'speak.play': 'Reproducir',
   'speak.play_again': 'Reproducir otra vez',
   'speak.listen': 'Escuchar',
 

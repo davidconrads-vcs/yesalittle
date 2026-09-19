@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
-import { resolveByNativeLang, readEntryParams } from './utils'
+import { resolveByNativeLang, readEntryParams, pickInitialTarget, resolveEntryLanding } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue, REVIEW_LIMIT } from './hooks/useSpacedQueue'
 import { I18nProvider, translate } from './i18n'
@@ -15,17 +15,25 @@ import Progress from './components/Progress'
 const PREF_TARGET_KEY = 'yesalittle:target'
 const PREF_NATIVE_KEY = 'yesalittle:native'
 
+const SCENARIOS_DATA = promptsData.scenarios as unknown as UnifiedScenario[]
+
+// Every prompt by id, for the entry-param lookup only. Ids are unique across scenarios.
+const PROMPTS_BY_ID = new Map(SCENARIOS_DATA.flatMap(s => s.prompts.map(p => [p.id, p] as const)))
+
 // Read once at startup. The query string is how the static content pages hand off a
 // reader (`/?scenario=restaurant&target=es-ES`); it never changes while the app runs.
 const ENTRY = readEntryParams(
-  (promptsData.scenarios as unknown as UnifiedScenario[]).map(s => s.id)
+  SCENARIOS_DATA.map(s => s.id),
+  // Same `practiceAsTarget` gate buildScenarios filters on, so a validated id is
+  // guaranteed to be present in the built list below.
+  (id, target) => PROMPTS_BY_ID.get(id)?.translations[target]?.practiceAsTarget === true
 )
 
 // Builds a flat, language-specific scenario list from the unified schema.
 // `native` drives which `context`/`gloss` strings are resolved, so scenarios are
 // rebuilt (via useMemo in App) whenever the selected native or target changes.
 function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
-  return (promptsData.scenarios as unknown as UnifiedScenario[])
+  return SCENARIOS_DATA
     .map((s): Scenario => ({
       id: s.id,
       // Localized display name; `id` remains the stable selection/filter key.
@@ -108,30 +116,46 @@ function getInitialNative(): string {
 }
 
 // Target must be one this native can actually learn; otherwise fall back to its first.
+// The precedence itself lives in pickInitialTarget; this only supplies the stored half.
 function getInitialTarget(native: string): string {
-  const avail = getAvailableTargets(native)
-  // A content-page link outranks the saved preference — the reader arrived for that
-  // language. Still gated on `avail`, so an entry target this native can't learn is
-  // ignored like any other bad param rather than breaking the picker's invariant.
-  if (ENTRY.target && avail.includes(ENTRY.target)) return ENTRY.target
-  try {
-    const saved = localStorage.getItem(PREF_TARGET_KEY)
-    if (saved && avail.includes(saved)) return saved
-  } catch {}
-  return avail[0]
+  let saved: string | null = null
+  try { saved = localStorage.getItem(PREF_TARGET_KEY) } catch {}
+  return pickInitialTarget(getAvailableTargets(native), ENTRY.target, saved)
 }
 
+// The starting pair, resolved once so the deep link below is validated against the
+// exact same native/target the app opens with.
+const INITIAL_NATIVE = getInitialNative()
+const INITIAL_TARGET = getInitialTarget(INITIAL_NATIVE)
+
+// What this visit opens with: a single-prompt deep link, a category preselection, or
+// neither. The native gate and the prompt-over-scenario precedence both live in
+// resolveEntryLanding.
+const LANDING = resolveEntryLanding(ENTRY, INITIAL_TARGET)
+
+// A `?prompt=&target=` deep link: one prompt, drilled on its own, as a shareable entry
+// point and a verification shortcut. Resolved here rather than in an effect so the
+// first paint is already the practice screen — no flash of Home. A `find` miss can't
+// happen after readEntryParams' practiceAsTarget check (buildScenarios filters on the
+// same flag), but undefined degrades to Home either way.
+const ENTRY_PROMPT: PromptWithScenario | undefined = LANDING.promptId
+  ? buildAllPrompts(buildScenarios(INITIAL_TARGET, INITIAL_NATIVE)).find(p => p.id === LANDING.promptId)
+  : undefined
+
 export default function App() {
-  const [screen, setScreen] = useState<Screen>('home')
+  const [screen, setScreen] = useState<Screen>(ENTRY_PROMPT ? 'practice' : 'home')
   const [speed, setSpeed] = useState<Speed>(getInitialSpeed)
-  const [native, setNative] = useState<string>(getInitialNative)
-  const [language, setLanguage] = useState<string>(() => getInitialTarget(native))
+  const [native, setNative] = useState<string>(INITIAL_NATIVE)
+  const [language, setLanguage] = useState<string>(INITIAL_TARGET)
   const [queue, setQueue] = useState<PromptWithScenario[]>([])
   const [results, setResults] = useState<SessionResult[]>([])
+  // The single deep-linked prompt, while one is being shown. Cleared on Exit so the
+  // app reverts to its normal behavior from then on. Never persisted.
+  const [deepLinkPrompt, setDeepLinkPrompt] = useState<PromptWithScenario | undefined>(ENTRY_PROMPT)
   // Preselection only — Home still waits for the user to press start. Cleared once a
   // session begins so coming back Home gives the normal empty selection, matching how
   // a hand-picked category resets. Never persisted.
-  const [entryScenario, setEntryScenario] = useState<string | undefined>(ENTRY.scenario)
+  const [entryScenario, setEntryScenario] = useState<string | undefined>(LANDING.scenarioId)
   const pair: LanguagePair = { native, target: language }
   const { progress, streak, recordResult, markSessionComplete, resetProgress } = useProgress(pair)
 
@@ -186,6 +210,7 @@ export default function App() {
     setQueue(q)
     setResults([])
     setEntryScenario(undefined)
+    setDeepLinkPrompt(undefined)
     setScreen('practice')
   }
 
@@ -198,6 +223,14 @@ export default function App() {
       markSessionComplete()
       setScreen('summary')
     }
+  }
+
+  // Hands the visitor from a single-prompt landing to the real thing: Home, with that
+  // prompt's category and language already selected (the Handoff 15 entry params). A
+  // full navigation, so the app re-reads the query string from scratch.
+  const handlePracticeMore = (scenarioId: string) => {
+    const params = new URLSearchParams({ scenario: scenarioId, target: language })
+    window.location.assign(`/?${params.toString()}`)
   }
 
   const handleRetryMissed = (missed: PromptWithScenario[]) => {
@@ -229,12 +262,17 @@ export default function App() {
       )}
       {screen === 'practice' && (
         <Practice
-          queue={queue}
+          queue={deepLinkPrompt ? [deepLinkPrompt] : queue}
           speed={speed}
           lang={language}
           onSpeedChange={handleSpeedChange}
           onResult={handleResult}
-          onExit={() => setScreen('home')}
+          onExit={() => { setDeepLinkPrompt(undefined); setScreen('home') }}
+          deepLinkAction={deepLinkPrompt && {
+            // `category` is already the name localized for the active native.
+            label: translate(native, 'practice.practice_more', { category: deepLinkPrompt.category }),
+            onClick: () => handlePracticeMore(deepLinkPrompt.scenarioId),
+          }}
         />
       )}
       {screen === 'summary' && (
