@@ -38,13 +38,13 @@ jobs:
           node-version: 22
           cache: npm
 
-      - run: npm ci
-
       - name: Mark in progress
         run: |
           gh issue edit "$ISSUE" \
             --remove-label "status:ready-for-dev" \
             --add-label "status:in-progress"
+
+      - run: npm ci
 
       - name: Implement story
         # Same pinned SHA you used in claude.yml
