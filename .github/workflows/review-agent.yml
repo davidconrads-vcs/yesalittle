@@ -95,7 +95,7 @@ jobs:
       - name: Enforce verdict
         if: success() || failure()
         run: |
-          if [ -f "$VERDICT_FILE" ] && jq -e '.verdict == "pass" and (.blocking | length == 0)' "$VERDICT_FILE" > /dev/null; then
+          if [ -f "$VERDICT_FILE" ] && jq -e '.verdict == "pass" and (.blocking | type == "array" and length == 0) and (.non_blocking | type == "array")' "$VERDICT_FILE" > /dev/null; then
             echo "Review passed"
             gh issue edit "$ISSUE" --remove-label "status:needs-human" --add-label "status:in-review" || echo "::warning::Could not update labels on issue #$ISSUE"
           else
