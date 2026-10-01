@@ -14,7 +14,9 @@ jobs:
     # This job name is the check you'll mark Required in the ruleset.
     # Non-agent PRs (yours, Dependabot) skip it, which counts as passing.
     name: claude-review
-    if: startsWith(github.head_ref, 'agent/issue-')
+    if: >
+      startsWith(github.head_ref, 'agent/issue-') &&
+      github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 20
     permissions:
@@ -39,6 +41,9 @@ jobs:
           ISSUE="${HEAD_REF#agent/issue-}"
           [[ "$ISSUE" =~ ^[0-9]+$ ]] || { echo "Branch is not agent/issue-<number>"; exit 1; }
           echo "ISSUE=$ISSUE" >> "$GITHUB_ENV"
+
+      - name: Clear any stale verdict
+        run: rm -f "$VERDICT_FILE"
 
       - name: Review against story
         # Same pinned SHA as claude.yml and dev-agent.yml
@@ -90,12 +95,12 @@ jobs:
       - name: Enforce verdict
         if: success() || failure()
         run: |
-          if [ -f "$VERDICT_FILE" ] && jq -e '.verdict == "pass"' "$VERDICT_FILE" > /dev/null; then
+          if [ -f "$VERDICT_FILE" ] && jq -e '.verdict == "pass" and (.blocking | length == 0)' "$VERDICT_FILE" > /dev/null; then
             echo "Review passed"
-            gh issue edit "$ISSUE" --remove-label "status:needs-human" --add-label "status:in-review" || true
+            gh issue edit "$ISSUE" --remove-label "status:needs-human" --add-label "status:in-review" || echo "::warning::Could not update labels on issue #$ISSUE"
           else
             echo "Review blocked or verdict missing"
             cat "$VERDICT_FILE" 2>/dev/null || true
-            gh issue edit "$ISSUE" --remove-label "status:in-review" --add-label "status:needs-human" || true
+            gh issue edit "$ISSUE" --remove-label "status:in-review" --add-label "status:needs-human" || echo "::warning::Could not update labels on issue #$ISSUE"
             exit 1
           fi
