@@ -36,14 +36,25 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Clear any stale verdict
+        run: rm -f "$VERDICT_FILE"
+
       - name: Find linked issue
         run: |
           ISSUE="${HEAD_REF#agent/issue-}"
           [[ "$ISSUE" =~ ^[0-9]+$ ]] || { echo "Branch is not agent/issue-<number>"; exit 1; }
           echo "ISSUE=$ISSUE" >> "$GITHUB_ENV"
 
-      - name: Clear any stale verdict
-        run: rm -f "$VERDICT_FILE"
+      - name: Block workflow changes from agents
+        run: |
+          # Fail closed: if the file list can't be fetched, don't treat it as clean
+          FILES=$(gh pr diff "$PR" --name-only) || { echo "Could not list PR files"; exit 1; }
+          if grep -q '^\.github/' <<< "$FILES"; then
+            echo "Agent PRs may not modify .github/"
+            gh issue edit "$ISSUE" --remove-label "status:in-review" --add-label "status:needs-human" \
+              || echo "::warning::Could not update labels on issue #$ISSUE"
+            exit 1
+          fi
 
       - name: Review against story
         # Same pinned SHA as claude.yml and dev-agent.yml
