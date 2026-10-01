@@ -1,0 +1,103 @@
+name: Dev Agent
+
+on:
+  issues:
+    types: [labeled]
+
+# One story at a time. Note: GitHub keeps at most ONE pending run per group,
+# so label issues one at a time for now or a queued one can be dropped.
+concurrency:
+  group: dev-agent
+  cancel-in-progress: false
+
+jobs:
+  implement:
+    if: >
+      github.event.label.name == 'status:ready-for-dev' &&
+      github.actor == 'davidconrads-vcs'
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+      id-token: write
+    env:
+      ISSUE: ${{ github.event.issue.number }}
+      BRANCH: agent/issue-${{ github.event.issue.number }}
+      GH_TOKEN: ${{ github.token }}
+
+    steps:
+      # Match these versions to whatever Dependabot bumped ci.yml to
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Mark in progress
+        run: |
+          gh issue edit "$ISSUE" \
+            --remove-label "status:ready-for-dev" \
+            --add-label "status:in-progress"
+
+      - name: Implement story
+        # Same pinned SHA you used in claude.yml
+        uses: anthropics/claude-code-action@fd1c128679612beff4ca259c78021c506e8aa7a7  # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            ISSUE NUMBER: ${{ github.event.issue.number }}
+            BRANCH: agent/issue-${{ github.event.issue.number }}
+
+            You are implementing a single backlog story for yesalittle.com
+            (Vite + React + TypeScript + Tailwind, deployed on Vercel).
+
+            1. Read the story: `gh issue view ${{ github.event.issue.number }}`.
+               The "Spec" section is your source of truth. Meet every
+               acceptance criterion. Do not touch anything listed under
+               "Out of scope".
+            2. If the spec is ambiguous, contradictory, or blocked, do NOT
+               guess. Post specific questions with
+               `gh issue comment ${{ github.event.issue.number }} --body "..."`
+               and stop without opening a PR.
+            3. Create branch agent/issue-${{ github.event.issue.number }}
+               from main and make the changes. Keep the diff focused on the
+               story; no drive-by refactors.
+            4. Add or update tests (src/**/*.test.ts, node:test) for any new
+               logic.
+            5. Run `npm run build` (it runs tests, both typechecks, the Vite
+               build, and content-page generation). It must pass before you
+               push. Fix failures; do not weaken or delete tests to pass.
+            6. Commit with a clear message, push the branch, and open a PR:
+               `gh pr create --base main --head agent/issue-${{ github.event.issue.number }}`
+               Title: the issue title. Body: "Closes #${{ github.event.issue.number }}",
+               a short summary of the change, and how you verified it.
+
+            Never modify files under .github/. Never merge the PR.
+          claude_args: |
+            --model claude-sonnet-5-5
+            --max-turns 80
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*)"
+
+      - name: Advance status
+        if: always()
+        run: |
+          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$PR" ]; then
+            gh issue edit "$ISSUE" \
+              --remove-label "status:in-progress" \
+              --add-label "status:in-review"
+          else
+            gh issue edit "$ISSUE" \
+              --remove-label "status:in-progress" \
+              --add-label "status:needs-human"
+            gh issue comment "$ISSUE" --body \
+              "Dev agent finished without opening a PR. Check the questions above or the [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
+          fi
