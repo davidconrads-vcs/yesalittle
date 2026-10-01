@@ -1,0 +1,101 @@
+name: Claude Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+# A new push to the PR cancels any review still running on the old commit
+concurrency:
+  group: claude-review-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # This job name is the check you'll mark Required in the ruleset.
+    # Non-agent PRs (yours, Dependabot) skip it, which counts as passing.
+    name: claude-review
+    if: startsWith(github.head_ref, 'agent/issue-')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    env:
+      PR: ${{ github.event.pull_request.number }}
+      HEAD_REF: ${{ github.head_ref }}
+      GH_TOKEN: ${{ github.token }}
+      VERDICT_FILE: .claude-review.json
+
+    steps:
+      # Match versions to ci.yml
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - name: Find linked issue
+        run: |
+          ISSUE="${HEAD_REF#agent/issue-}"
+          [[ "$ISSUE" =~ ^[0-9]+$ ]] || { echo "Branch is not agent/issue-<number>"; exit 1; }
+          echo "ISSUE=$ISSUE" >> "$GITHUB_ENV"
+
+      - name: Review against story
+        # Same pinned SHA as claude.yml and dev-agent.yml
+        uses: anthropics/claude-code-action@fd1c128679612beff4ca259c78021c506e8aa7a7  # v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ github.event.pull_request.number }}
+            ISSUE NUMBER: ${{ env.ISSUE }}
+
+            You are the reviewer for an AI-authored pull request on
+            yesalittle.com. You did not write this code. Judge it strictly
+            against the story it implements.
+
+            1. Read the story: `gh issue view ${{ env.ISSUE }}`. Note the
+               Acceptance criteria, Spec, and Out of scope sections.
+            2. Read the change: `gh pr diff ${{ github.event.pull_request.number }}`.
+               Read surrounding files only as needed for context.
+            3. Classify every finding.
+               BLOCKING only if one of these is true:
+                 - an acceptance criterion is not met
+                 - the change contradicts the Spec
+                 - something listed under Out of scope was changed
+                 - a likely bug or regression
+                 - new logic was added without tests
+                 - a security problem
+               NON-BLOCKING: style, naming, alternative approaches, and
+               anything a reasonable reviewer could disagree with.
+               Do not invent requirements the story does not state. If the
+               story is silent on something, it is not blocking.
+            4. Write your verdict as JSON to .claude-review.json in the repo
+               root, exactly this shape:
+               {"verdict": "pass" | "block", "blocking": [string], "non_blocking": [string]}
+               verdict is "block" if and only if blocking is non-empty.
+            5. Post one summary comment with
+               `gh pr comment ${{ github.event.pull_request.number }} --body "..."`.
+               Start it with "Claude review: PASS" or "Claude review: BLOCK",
+               then list blocking and non-blocking findings.
+
+            Do not modify any file other than .claude-review.json. Do not push.
+          claude_args: |
+            --model claude-opus-5-5
+            --max-turns 30
+            --allowedTools "Read,Glob,Grep,Write,Bash(gh issue view:*),Bash(gh pr view:*),Bash(gh pr diff:*),Bash(gh pr comment:*)"
+
+      # Fails closed: a missing or malformed verdict blocks the merge.
+      # Skips on cancellation so a superseded run doesn't flag needs-human.
+      - name: Enforce verdict
+        if: success() || failure()
+        run: |
+          if [ -f "$VERDICT_FILE" ] && jq -e '.verdict == "pass"' "$VERDICT_FILE" > /dev/null; then
+            echo "Review passed"
+            gh issue edit "$ISSUE" --remove-label "status:needs-human" --add-label "status:in-review" || true
+          else
+            echo "Review blocked or verdict missing"
+            cat "$VERDICT_FILE" 2>/dev/null || true
+            gh issue edit "$ISSUE" --remove-label "status:in-review" --add-label "status:needs-human" || true
+            exit 1
+          fi
