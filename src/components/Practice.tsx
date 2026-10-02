@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { PromptWithScenario, Speed } from '../types'
 import SpeakButton from './SpeakButton'
 import SpeedControl from './SpeedControl'
+import ListeningIcon from './ListeningIcon'
 import { useI18n } from '../i18n'
 
 interface Props {
@@ -238,7 +239,7 @@ export default function Practice({ queue, speed, lang, onSpeedChange, onResult, 
         </div>
 
         {phase === 'listen' ? (
-          <div style={{ fontSize: 56, marginBottom: 20 }}>👂</div>
+          <div style={{ fontSize: 56, lineHeight: 1, marginBottom: 20 }}><ListeningIcon /></div>
         ) : (
           <div style={{ animation: 'fadeUp 0.3s ease' }}>
             <div translate="no" className="notranslate" style={{ fontSize: 22, fontWeight: 600, marginBottom: 10, lineHeight: 1.4 }}>
