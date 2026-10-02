@@ -96,6 +96,8 @@ jobs:
                Start it with "Claude review: PASS" or "Claude review: BLOCK",
                then list blocking and non-blocking findings.
 
+            CI runs the build and tests separately. Do not attempt to run them and do not comment on them.
+
             Do not modify any file other than .claude-review.json. Do not push.
           claude_args: |
             --model claude-opus-5-5
