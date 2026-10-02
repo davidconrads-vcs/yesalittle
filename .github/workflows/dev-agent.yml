@@ -101,3 +101,11 @@ jobs:
             gh issue comment "$ISSUE" --body \
               "Dev agent finished without opening a PR. Check the questions above or the [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
           fi
+
+      - name: Enable auto-merge
+        if: success() && vars.AUTO_MERGE == 'true'
+        run: |
+          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
+          if [ -n "$PR" ]; then
+            gh pr merge "$PR" --auto --squash --delete-branch
+          fi
