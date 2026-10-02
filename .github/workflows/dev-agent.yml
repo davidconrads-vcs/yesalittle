@@ -51,12 +51,12 @@ jobs:
         # Same pinned SHA you used in claude.yml
         uses: anthropics/claude-code-action@fd1c128679612beff4ca259c78021c506e8aa7a7  # v1
         with:
-          show_full_output: true
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
             REPO: ${{ github.repository }}
             ISSUE NUMBER: ${{ github.event.issue.number }}
             BRANCH: agent/issue-${{ github.event.issue.number }}
+            AUTO_MERGE: ${{ vars.AUTO_MERGE }}
 
             You are implementing a single backlog story for yesalittle.com
             (Vite + React + TypeScript + Tailwind, deployed on Vercel).
@@ -81,16 +81,17 @@ jobs:
                `gh pr create --base main --head agent/issue-${{ github.event.issue.number }}`
                Title: the issue title. Body: "Closes #${{ github.event.issue.number }}",
                a short summary of the change, and how you verified it.
+            7. If AUTO_MERGE is "true", after opening the PR run `gh pr merge <PR number> --auto --squash`.
 
             If you stop for any reason without opening a PR, first post a
             comment on the issue explaining exactly why, including any tool
             you needed but were denied.
 
-            Never modify files under .github/. Never merge the PR.
+            Never modify files under .github/. Never merge the PR except by enabling auto-merge as in step 7.
           claude_args: |
             --model claude-sonnet-5-5
             --max-turns 80
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(mkdir:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(mkdir:*),Bash(gh pr merge:*)"
 
       - name: Advance status
         if: always()
@@ -106,12 +107,4 @@ jobs:
               --add-label "status:needs-human"
             gh issue comment "$ISSUE" --body \
               "Dev agent finished without opening a PR. Check the questions above or the [run log](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})."
-          fi
-
-      - name: Enable auto-merge
-        if: success() && vars.AUTO_MERGE == 'true'
-        run: |
-          PR=$(gh pr list --head "$BRANCH" --state open --json number --jq '.[0].number')
-          if [ -n "$PR" ]; then
-            gh pr merge "$PR" --auto --squash --delete-branch
           fi
