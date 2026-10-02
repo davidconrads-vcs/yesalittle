@@ -42,6 +42,7 @@ jobs:
         run: |
           gh issue edit "$ISSUE" \
             --remove-label "status:ready-for-dev" \
+            --remove-label "status:needs-human" \
             --add-label "status:in-progress"
 
       - run: npm ci
@@ -50,6 +51,7 @@ jobs:
         # Same pinned SHA you used in claude.yml
         uses: anthropics/claude-code-action@fd1c128679612beff4ca259c78021c506e8aa7a7  # v1
         with:
+          show_full_output: true
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           prompt: |
             REPO: ${{ github.repository }}
@@ -80,11 +82,15 @@ jobs:
                Title: the issue title. Body: "Closes #${{ github.event.issue.number }}",
                a short summary of the change, and how you verified it.
 
+            If you stop for any reason without opening a PR, first post a
+            comment on the issue explaining exactly why, including any tool
+            you needed but were denied.
+
             Never modify files under .github/. Never merge the PR.
           claude_args: |
             --model claude-sonnet-5-5
             --max-turns 80
-            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*)"
+            --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(mkdir:*)"
 
       - name: Advance status
         if: always()
