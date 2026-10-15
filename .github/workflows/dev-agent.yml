@@ -16,7 +16,7 @@ jobs:
       github.event.label.name == 'status:ready-for-dev' &&
       github.actor == 'davidconrads-vcs'
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     permissions:
       contents: write
       issues: write
@@ -90,7 +90,7 @@ jobs:
             Never modify files under .github/. Never merge the PR except by enabling auto-merge as in step 7.
           claude_args: |
             --model claude-sonnet-5-5
-            --max-turns 80
+            --max-turns 200
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(mkdir:*),Bash(gh pr merge:*)"
 
       - name: Advance status
