@@ -4,7 +4,8 @@
       "id": "panic",
       "categoryName": {
         "en-US": "Panic Button",
-        "es-ES": "Botón de pánico"
+        "es-ES": "Botón de pánico",
+        "zh-CN": "救急按钮"
       },
       "icon": "🆘",
       "color": "#c0392b",
@@ -17,10 +18,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "对方刚跟你说了一句话，你差不多听懂了大意，但漏掉的部分让你没把握回应。你需要请对方再说一遍。",
             "en-US": "Someone has just said something to you and you almost understood — you got the gist but missed enough that you can't confidently respond. You need them to say it again.",
             "es-ES": "Alguien acaba de decirte algo y casi lo has entendido — has pillado la idea general, pero se te han escapado suficientes palabras como para no poder responder con seguridad. Necesitas que te lo repitan."
           },
           "translations": {
+            "zh-CN": {
+              "response": "请问能再说一遍吗？"
+            },
             "es-ES": {
               "response": "¿Puedes repetir eso, por favor?",
               "practiceAsTarget": true
@@ -44,10 +49,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "有人在跟你说话，语速太快你跟不上。单个词你都懂，但来得太快，反应不过来。你需要请对方说慢一点。",
             "en-US": "Someone is speaking to you and the speed is too fast to follow. You understand the words individually but they're coming too quickly to process. You need them to slow down.",
             "es-ES": "Alguien te está hablando demasiado rápido para seguirle. Entiendes las palabras por separado, pero llegan tan seguidas que no te da tiempo a procesarlas. Necesitas que hable más despacio."
           },
           "translations": {
+            "zh-CN": {
+              "response": "请您说慢一点好吗？"
+            },
             "es-ES": {
               "response": "¿Puedes hablar más despacio, por favor?",
               "practiceAsTarget": true
@@ -92,10 +101,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "对方说的你几乎都听懂了，但有一个词不认识，而它恰恰是理解整句话的关键。你需要问问这个词是什么意思。",
             "en-US": "You followed almost all of what someone said, but there's one specific word you didn't recognize and it's the key to understanding the whole thing. You need to ask what just that word means.",
             "es-ES": "Has seguido casi todo lo que ha dicho alguien, pero hay una palabra concreta que no reconoces y es la clave para entenderlo todo. Necesitas preguntar qué significa solo esa palabra."
           },
           "translations": {
+            "zh-CN": {
+              "response": "不好意思，这个词是什么意思？"
+            },
             "es-ES": {
               "response": "Perdona, ¿qué significa esa palabra?",
               "practiceAsTarget": true
@@ -119,10 +132,14 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "对方想告诉你一个名字、地址或价格，但你光靠听抓不住。你需要请对方写下来，好让你看清楚。",
             "en-US": "Someone is trying to tell you something — a name, an address, a price — and you can't catch it by ear. You need them to write it down so you can see it.",
             "es-ES": "Alguien intenta decirte algo — un nombre, una dirección, un precio — y no consigues captarlo de oído. Necesitas que te lo escriba para poder verlo."
           },
           "translations": {
+            "zh-CN": {
+              "response": "能请您写下来吗？"
+            },
             "es-ES": {
               "response": "¿Puedes escribirlo, por favor?",
               "practiceAsTarget": true
@@ -168,10 +185,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你用英语开始了对话，但内容超出了你的水平——你跟不上了，需要得体地表示自己的英语还不够好。",
             "es-ES": "Has empezado una conversación en inglés y se te ha ido de las manos — ahora estás perdido y necesitas indicar con educación que tu inglés no da para tanto.",
             "en-US": "You started a conversation in English and it's gotten beyond your level — you're lost and need to gracefully signal your English isn't strong enough."
           },
           "translations": {
+            "zh-CN": {
+              "response": "不好意思，我的英语还不太好。"
+            },
             "en-US": {
               "response": "Sorry, my English isn't very good yet.",
               "practiceAsTarget": true
@@ -254,7 +275,8 @@
       "id": "greetings",
       "categoryName": {
         "en-US": "Greetings & Pleasantries",
-        "es-ES": "Saludos y cortesías"
+        "es-ES": "Saludos y cortesías",
+        "zh-CN": "问候与寒暄"
       },
       "icon": "👋",
       "color": "#6366F1",
@@ -266,10 +288,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "店员、咖啡师或邻居——美国人什么时候都能用的万能招呼",
             "en-US": "Shopkeeper, barista, or neighbor — the all-purpose greeting used at any hour in Spain",
             "es-ES": "Un tendero, camarero o vecino te saluda."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "嗨！/ 你好！",
+              "response": "嗨！最近怎么样？"
+            },
             "es-ES": {
               "phrase": "¡Buenas!",
               "response": "¡Buenas! ¿Qué tal?",
@@ -290,10 +317,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "商店或办公室的工作人员早上跟你打招呼",
             "en-US": "Shop or office worker greeting you in the morning",
             "es-ES": "Un empleado te saluda por la mañana."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "早上好！有什么可以帮您？",
+              "response": "早上好。我们在找……"
+            },
             "es-ES": {
               "phrase": "¡Buenos días! ¿En qué os puedo ayudar?",
               "response": "Buenos días. Estamos buscando...",
@@ -314,10 +346,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "友好的当地人或店员随口问候",
             "en-US": "Friendly local or shopkeeper doing a casual check-in",
             "es-ES": "Un local te saluda de manera informal."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "最近怎么样？",
+              "response": "挺好的，谢谢。你呢？"
+            },
             "es-ES": {
               "phrase": "¿Qué tal? ¿Todo bien?",
               "response": "Bien, gracias. ¿Y tú?",
@@ -359,10 +396,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "经人介绍后对方跟你打招呼",
             "en-US": "Someone greeting you after being introduced",
             "es-ES": "Al conocer a alguien por primera vez."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "很高兴认识你！",
+              "response": "我也很高兴认识你！"
+            },
             "es-ES": {
               "phrase": "¡Encantado!",
               "response": "¡Encantado, igualmente!",
@@ -489,10 +531,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "有人在狭窄的地方或人群中要从你身边挤过去",
             "en-US": "Someone squeezing past you in a narrow space or crowd",
             "es-ES": "Alguien intenta pasar a tu lado en un sitio estrecho."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "不好意思，借过一下。",
+              "response": "没问题，你先请。"
+            },
             "es-ES": {
               "phrase": "Con permiso.",
               "response": "Claro, adelante.",
@@ -512,10 +559,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你感谢别人的帮助之后",
             "en-US": "After you thank someone for their help",
             "es-ES": "Después de que des las gracias por la ayuda."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "不客气，没事。",
+              "response": "好的，回头见。"
+            },
             "es-ES": {
               "phrase": "De nada, para eso estamos.",
               "response": "Venga, hasta luego.",
@@ -535,10 +587,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "店员或当地人友好地道别",
             "en-US": "Friendly farewell from a shopkeeper or local",
             "es-ES": "Un tendero o local se despide amablemente."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "回头见！玩得开心！",
+              "response": "好的，回头见。"
+            },
             "es-ES": {
               "phrase": "¡Hasta luego! ¡Que lo paséis bien!",
               "response": "Venga, hasta luego.",
@@ -559,10 +616,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "店员或邻居在周末前道别",
             "en-US": "End-of-week farewell from a shopkeeper or neighbor",
             "es-ES": "Un tendero o vecino se despide al final de la semana."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "周末愉快！",
+              "response": "你也是！周末愉快！"
+            },
             "es-ES": {
               "phrase": "¡Buen fin de semana!",
               "response": "¡Igualmente! ¡Buen fin de semana!",
@@ -582,10 +644,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "陌生人跟你聊天气",
             "en-US": "Stranger making small talk about the weather",
             "es-ES": "Un desconocido comenta sobre el tiempo."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "今天真热啊，是吧！",
+              "response": "是啊，真热！不过天气真好。"
+            },
             "es-ES": {
               "phrase": "¡Qué calor hace hoy!, ¿eh?",
               "response": "¡Sí, muchísimo! Pero el tiempo es precioso.",
@@ -628,10 +695,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你走在一条窄街上，有几个人挡住了路。你需要礼貌地借过。",
             "en-US": "You're walking down a narrow street and a few people are blocking the way. You need to get past politely.",
             "es-ES": "Vas por una calle estrecha y hay varias personas bloqueando el paso. Necesitas pasar con educación."
           },
           "translations": {
+            "zh-CN": {
+              "response": "不好意思，借过。"
+            },
             "es-ES": {
               "response": "Perdón.",
               "practiceAsTarget": true
@@ -651,10 +722,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "地铁里挤满了人，下一站就是你要下的。你需要从好几个人身边挤到门口。",
             "en-US": "The metro is packed and your stop is next. You need to work your way to the doors past several people.",
             "es-ES": "El metro va lleno y tu parada es la siguiente. Tienes que abrirte paso hasta las puertas entre varias personas."
           },
           "translations": {
+            "zh-CN": {
+              "response": "借过，借过。"
+            },
             "es-ES": {
               "response": "Perdón, perdón.",
               "practiceAsTarget": true
@@ -674,10 +749,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "在超市里，你想要的商品在另一位顾客身后的货架上。你需要从对方身边伸手去拿。",
             "en-US": "At a supermarket, the item you want is on a shelf behind another shopper. You need to lean past them to reach it.",
             "es-ES": "En el supermercado, el producto que quieres está en una estantería detrás de otro cliente. Tienes que estirarte por delante de esa persona para alcanzarlo."
           },
           "translations": {
+            "zh-CN": {
+              "response": "不好意思，我从您这边拿一下可以吗？"
+            },
             "es-ES": {
               "response": "Con permiso.",
               "practiceAsTarget": true
@@ -697,10 +776,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你在餐桌旁等了一会儿，需要引起服务员的注意，又不想显得没礼貌或太大声。",
             "en-US": "You've been waiting at your table and need to catch the server's attention without being rude or loud.",
             "es-ES": "Llevas un rato esperando en tu mesa y necesitas llamar la atención del camarero sin ser maleducado ni levantar la voz."
           },
           "translations": {
+            "zh-CN": {
+              "response": "打扰一下。"
+            },
             "es-ES": {
               "response": "Disculpe.",
               "practiceAsTarget": true
@@ -720,10 +803,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你在热闹的街上不小心撞到了别人。你们都还在往前走，你想快速道个歉。",
             "en-US": "You accidentally bump into someone on a busy street. You want to apologize quickly as you both keep moving.",
             "es-ES": "Chocas sin querer con alguien en una calle concurrida. Quieres disculparte rápidamente mientras los dos seguís caminando."
           },
           "translations": {
+            "zh-CN": {
+              "response": "不好意思！"
+            },
             "es-ES": {
               "response": "Perdón, lo siento.",
               "practiceAsTarget": true
@@ -1066,10 +1153,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你到达时，房东或酒店工作人员欢迎你。",
             "es-ES": "El anfitrión o el personal del hotel te da la bienvenida al llegar.",
             "en-US": "Host or hotel staff welcoming you on arrival."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "欢迎！您是第一次来这里吗？",
+              "response": "是的，第一次来。我们很期待。"
+            },
             "en-US": {
               "phrase": "Welcome! Is this your first time here?",
               "response": "Yes, first time. We're excited to be here.",
@@ -1110,10 +1202,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "当地人在继续说之前先确认一下。",
             "es-ES": "Un local comprueba antes de seguir hablando.",
             "en-US": "A local checking before continuing."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "你会说英语吗？",
+              "response": "会一点。我正在学。"
+            },
             "en-US": {
               "phrase": "Do you speak English?",
               "response": "A little, yes. I'm learning.",
@@ -1154,10 +1251,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "有人在街上走过来向你求助。",
             "es-ES": "Alguien se te acerca en la calle para pedirte ayuda.",
             "en-US": "Someone approaching you on the street for help."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "不好意思，能帮我一下吗？",
+              "response": "可以，不过我英语说得不太好。"
+            },
             "en-US": {
               "phrase": "Excuse me, can you help me for a second?",
               "response": "Sure, though I don't speak much English.",
@@ -1175,7 +1277,8 @@
       "id": "restaurant",
       "categoryName": {
         "en-US": "Restaurant",
-        "es-ES": "Restaurante"
+        "es-ES": "Restaurante",
+        "zh-CN": "餐厅"
       },
       "icon": "🍽️",
       "color": "#E85D3A",
@@ -1188,10 +1291,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "门口的迎宾员接待你",
             "en-US": "Hostess greeting you at the door",
             "es-ES": "La anfitriona te recibe en la puerta."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您好！几位？",
+              "response": "四位，谢谢。"
+            },
             "es-ES": {
               "phrase": "¡Hola! ¿Para cuántos?",
               "response": "Para cuatro, por favor.",
@@ -1211,10 +1319,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "生意火爆的餐厅里的迎宾员",
             "en-US": "Hostess at a busy restaurant",
             "es-ES": "La anfitriona en un restaurante concurrido."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您有预订吗？",
+              "response": "没有，我们没有预订。"
+            },
             "es-ES": {
               "phrase": "¿Tienen reserva?",
               "response": "No, no tenemos reserva.",
@@ -1234,10 +1347,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "餐厅客满时的迎宾员",
             "en-US": "Hostess when the restaurant is full",
             "es-ES": "La anfitriona cuando el restaurante está lleno."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "现在没有空桌。您能等十分钟左右吗？",
+              "response": "好的，我们等。谢谢。"
+            },
             "es-ES": {
               "phrase": "Ahora mismo no tenemos mesa. ¿Podéis esperar unos diez minutos?",
               "response": "Sí, esperamos. Gracias.",
@@ -1278,10 +1396,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "服务员给你点菜",
             "en-US": "Server taking your order",
             "es-ES": "El camarero toma tu pedido."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您想点什么？",
+              "response": "我要……"
+            },
             "es-ES": {
               "phrase": "¿Qué van a tomar?",
               "response": "Para mí, el...",
@@ -1344,10 +1467,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "服务员过来看看你们这桌",
             "en-US": "Server checking on your table",
             "es-ES": "El camarero revisa cómo va tu mesa."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "一切都好吗？还需要别的吗？",
+              "response": "都很好，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Todo bien? ¿Necesitáis algo más?",
               "response": "Todo bien, gracias.",
@@ -1367,10 +1495,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你吃完后的服务员",
             "en-US": "Server after you finish eating",
             "es-ES": "El camarero al terminar de comer."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要甜点或咖啡吗？",
+              "response": "不用了，谢谢，买单就好。"
+            },
             "es-ES": {
               "phrase": "¿Queréis postre o café?",
               "response": "No, gracias, solo la cuenta, por favor.",
@@ -1432,10 +1565,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "你点的菜没有了的时候",
             "en-US": "Server when your choice is unavailable",
             "es-ES": "El camarero cuando lo que pediste no está disponible."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "抱歉，那个卖完了。您要换别的吗？",
+              "response": "好的，请给我们一点时间。"
+            },
             "es-ES": {
               "phrase": "Lo siento, no nos queda. ¿Quieres otra cosa?",
               "response": "Sí, necesitamos un momento, por favor",
@@ -1455,10 +1593,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "服务员上菜",
             "en-US": "Server bringing your food",
             "es-ES": "El camarero trae la comida."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您的菜来了，请慢用！",
+              "response": "谢谢！"
+            },
             "es-ES": {
               "phrase": "Aquí tenéis. ¡Que aproveche!",
               "response": "¡Gracias!",
@@ -1479,10 +1622,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "看你吃完了的服务员",
             "en-US": "Server when you look finished",
             "es-ES": "El camarero cuando parece que has terminado."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要买单吗？",
+              "response": "好的，请买单。"
+            },
             "es-ES": {
               "phrase": "¿Queréis la cuenta?",
               "response": "Sí, la cuenta, por favor.",
@@ -1502,10 +1650,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "服务员问怎么结账",
             "en-US": "Server asking how to split the bill",
             "es-ES": "El camarero pregunta cómo dividir la cuenta."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "一起付还是分开付？",
+              "response": "一起付，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Junto o por separado?",
               "response": "Junto, por favor.",
@@ -1525,10 +1678,15 @@
           ],
           "difficulty": 3,
           "context": {
+            "zh-CN": "刷卡机出问题时的服务员",
             "en-US": "Server when the card reader has issues",
             "es-ES": "El camarero cuando el datáfono no funciona."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您能用手机付款吗？刷卡机读不了卡。",
+              "response": "可以，我能用手机付，我也有现金。"
+            },
             "es-ES": {
               "phrase": "¿Podéis pagar con el móvil? El datáfono no lee la tarjeta.",
               "response": "Sí, puedo pagar con el móvil, o también tengo efectivo.",
@@ -1548,10 +1706,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "服务员问孩子们点什么",
             "en-US": "Server asking about your kids' orders",
             "es-ES": "El camarero pregunta por el pedido de los niños."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "孩子们要儿童菜单，还是从普通菜单里点？",
+              "response": "从普通菜单里点，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Los niños quieren carta de niños o comen del menú normal?",
               "response": "Del menú normal, gracias.",
@@ -1786,7 +1949,8 @@
       "id": "grocery",
       "categoryName": {
         "en-US": "Grocery Store",
-        "es-ES": "Supermercado"
+        "es-ES": "Supermercado",
+        "zh-CN": "超市"
       },
       "icon": "🛒",
       "color": "#4CAF50",
@@ -1820,10 +1984,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "任何柜台或收银台",
             "en-US": "Any counter or checkout",
             "es-ES": "En cualquier mostrador o caja."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "还要别的吗？",
+              "response": "不用了，就这些。谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Algo más?",
               "response": "No, eso es todo. Gracias.",
@@ -1843,10 +2012,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "收银台的收银员",
             "en-US": "Cashier at checkout",
             "es-ES": "El cajero en la caja."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要袋子吗？",
+              "response": "要，一个袋子，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Quieres bolsa?",
               "response": "Sí, una bolsa, por favor.",
@@ -1867,10 +2041,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "收银员告诉你总价",
             "en-US": "Cashier telling you the total",
             "es-ES": "El cajero te dice el total."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "一共十二块五。",
+              "response": "可以刷卡吗？"
+            },
             "es-ES": {
               "phrase": "Son doce con cincuenta.",
               "response": "¿Se puede pagar con tarjeta?",
@@ -1890,10 +2069,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "超市收银员",
             "en-US": "Cashier at Mercadona, Bon Preu, or Caprabo",
             "es-ES": "El cajero del supermercado."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您有会员卡吗？",
+              "response": "没有。"
+            },
             "es-ES": {
               "phrase": "¿Tienes la tarjeta de cliente?",
               "response": "No, no tengo.",
@@ -1934,10 +2118,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "在熟食柜台买奶酪或火腿",
             "en-US": "Deli counter for cheese or ham",
             "es-ES": "En la charcutería, para queso o jamón."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要切片还是整块？",
+              "response": "切片，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Lo quieres cortado en lonchas o en un trozo?",
               "response": "En lonchas, por favor.",
@@ -1957,10 +2146,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "你询问某件商品时",
             "en-US": "When asking for a product",
             "es-ES": "Cuando preguntas por un producto."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "我们没有那个。去隔壁那家店看看吧。",
+              "response": "好的，谢谢。"
+            },
             "es-ES": {
               "phrase": "No tenemos. Prueba en la tienda de al lado.",
               "response": "Vale, gracias.",
@@ -2002,10 +2196,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "付款后的收银员",
             "en-US": "Cashier after payment",
             "es-ES": "El cajero después de pagar."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要小票吗？",
+              "response": "要，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Quieres el ticket?",
               "response": "Sí, por favor.",
@@ -2047,10 +2246,15 @@
           ],
           "difficulty": 3,
           "context": {
+            "zh-CN": "在熟食柜台买奶酪",
             "en-US": "Deli counter for cheese",
             "es-ES": "En la charcutería, para el queso."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您要味道浓的还是淡的？",
+              "response": "淡的，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Cómo lo quieres, muy curado o tierno?",
               "response": "Tierno, por favor.",
@@ -2070,10 +2274,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "收银台的刷卡机",
             "en-US": "Card reader at checkout",
             "es-ES": "El datáfono en la caja."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "请输入密码。",
+              "response": "好的。"
+            },
             "es-ES": {
               "phrase": "Introduce el PIN, por favor.",
               "response": "Vale.",
@@ -2326,16 +2535,22 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "熟食柜台的店员。",
             "es-ES": "El empleado de la charcutería.",
             "en-US": "Deli counter worker."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "早上好！您要点什么？",
+              "response": "能给我半磅火腿吗？"
+            },
             "en-US": {
               "phrase": "Morning! What can I get you?",
               "response": "Can I get half a pound of ham?",
               "practiceAsTarget": true,
               "gloss": {
-                "es-ES": "Media libra son unos 225 gramos. En Estados Unidos se pide la charcutería por libras, no por gramos."
+                "es-ES": "Media libra son unos 225 gramos. En Estados Unidos se pide la charcutería por libras, no por gramos.",
+                "zh-CN": "半磅约合 227 克。在美国，熟食按磅买，而不是按克。"
               }
             },
             "es-ES": {
@@ -2350,7 +2565,8 @@
       "id": "around",
       "categoryName": {
         "en-US": "Getting Around",
-        "es-ES": "Moverse por la ciudad"
+        "es-ES": "Moverse por la ciudad",
+        "zh-CN": "出行交通"
       },
       "icon": "🚶",
       "color": "#2196F3",
@@ -2362,10 +2578,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "有人给你指路",
             "en-US": "Someone giving you directions",
             "es-ES": "Alguien te da indicaciones."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "一直往前走，然后右转。",
+              "response": "谢谢。远吗？"
+            },
             "es-ES": {
               "phrase": "Sigue todo recto y luego a la derecha.",
               "response": "Gracias. ¿Está lejos?",
@@ -2386,10 +2607,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你问了某个地方有多远之后",
             "en-US": "After asking how far something is",
             "es-ES": "Después de preguntar a qué distancia está algo."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "走路大概十分钟。",
+              "response": "太好了，谢谢。"
+            },
             "es-ES": {
               "phrase": "Está a unos diez minutos andando.",
               "response": "Perfecto, gracias.",
@@ -2409,10 +2635,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你上车时的出租车司机",
             "en-US": "Taxi driver when you get in",
             "es-ES": "El taxista cuando te subes."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您去哪儿？",
+              "response": "请去这个地址。"
+            },
             "es-ES": {
               "phrase": "¿Adónde vais?",
               "response": "A esta dirección, por favor.",
@@ -2433,10 +2664,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "出租车司机估算行程时间",
             "en-US": "Taxi driver estimating trip time",
             "es-ES": "El taxista calcula el tiempo del viaje."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "堵车的话大概要二十分钟。",
+              "response": "好的，没问题。"
+            },
             "es-ES": {
               "phrase": "Con el tráfico van a ser unos veinte minutos.",
               "response": "Vale, no hay problema.",
@@ -2456,10 +2692,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "快到目的地时的出租车司机",
             "en-US": "Taxi driver near your destination",
             "es-ES": "El taxista cerca de tu destino."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "这里不能停车。我在街角放您下来可以吗？",
+              "response": "哪儿都行。"
+            },
             "es-ES": {
               "phrase": "No puedo parar aquí. ¿Te dejo en la esquina?",
               "response": "Donde sea está bien.",
@@ -2685,7 +2926,8 @@
       "id": "checkin",
       "categoryName": {
         "en-US": "Airbnb / Check-in",
-        "es-ES": "Airbnb / Llegada"
+        "es-ES": "Airbnb / Llegada",
+        "zh-CN": "Airbnb / 入住"
       },
       "icon": "🏠",
       "color": "#FF9800",
@@ -2698,10 +2940,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你到达时房东迎接你",
             "en-US": "Host greeting you at arrival",
             "es-ES": "El anfitrión te recibe a tu llegada."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "欢迎！路上还顺利吗？",
+              "response": "挺好的，谢谢。很高兴来到这里。"
+            },
             "es-ES": {
               "phrase": "¡Bienvenidos! ¿Qué tal el viaje?",
               "response": "Bien, gracias. Estamos contentos de estar aquí.",
@@ -2721,10 +2968,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "房东带你参观",
             "en-US": "Host giving you a tour",
             "es-ES": "El anfitrión te enseña el piso."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "我带您看看房子。这边请。",
+              "response": "好的，谢谢。"
+            },
             "es-ES": {
               "phrase": "Os enseño el piso. Por aquí.",
               "response": "Perfecto, gracias.",
@@ -2744,10 +2996,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "房东介绍房子",
             "en-US": "Host explaining the apartment",
             "es-ES": "El anfitrión te explica el piso."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "Wi-Fi 名称和密码贴在冰箱上。",
+              "response": "太好了，谢谢。"
+            },
             "es-ES": {
               "phrase": "El wifi es este y la contraseña está en la nevera.",
               "response": "Genial, gracias.",
@@ -2767,10 +3024,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "房东离开前",
             "en-US": "Host before leaving",
             "es-ES": "El anfitrión antes de marcharse."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "如果需要什么，就在 WhatsApp 上给我发消息。",
+              "response": "好的，没问题。非常感谢。"
+            },
             "es-ES": {
               "phrase": "Si necesitáis algo, me escribís por WhatsApp.",
               "response": "Vale, perfecto. Muchas gracias.",
@@ -2790,10 +3052,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "房东讲解房屋规定",
             "en-US": "Host explaining house rules",
             "es-ES": "El anfitrión explica las normas de la casa."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "垃圾要拿到街角的垃圾桶。",
+              "response": "好的，谢谢。"
+            },
             "es-ES": {
               "phrase": "Hay que bajar la basura al contenedor de la esquina.",
               "response": "Perfecto, gracias.",
@@ -2835,10 +3102,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "房东问你退房时间",
             "en-US": "Host asking about checkout",
             "es-ES": "El anfitrión pregunta por la hora de salida."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "最后一天你们几点走？",
+              "response": "我们早上走，大概十点。"
+            },
             "es-ES": {
               "phrase": "¿A qué hora salís el último día?",
               "response": "Salimos por la mañana, sobre las diez.",
@@ -3009,10 +3281,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "房东讲解楼里的规定。",
             "es-ES": "El anfitrión te explica las normas del edificio.",
             "en-US": "Host explaining building rules."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "晚上十点以后是安静时间，晚上请小声一点。",
+              "response": "当然，没问题。"
+            },
             "en-US": {
               "phrase": "Quiet hours are after ten, so keep it down at night.",
               "response": "Of course, no problem.",
@@ -3030,7 +3307,8 @@
       "id": "shopping",
       "categoryName": {
         "en-US": "Shopping",
-        "es-ES": "Compras"
+        "es-ES": "Compras",
+        "zh-CN": "购物"
       },
       "icon": "🛍️",
       "color": "#9C27B0",
@@ -3042,10 +3320,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "店员跟你打招呼",
             "en-US": "Shop assistant greeting you",
             "es-ES": "El dependiente te saluda."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您好！有什么需要帮忙的吗？",
+              "response": "我随便看看，谢谢。"
+            },
             "es-ES": {
               "phrase": "¡Hola! ¿Te puedo ayudar en algo?",
               "response": "Solo estoy mirando, gracias.",
@@ -3065,10 +3348,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "服装店店员",
             "en-US": "Clothing store assistant",
             "es-ES": "El dependiente de una tienda de ropa."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您要什么尺码？",
+              "response": "应该是中号。"
+            },
             "es-ES": {
               "phrase": "¿Qué talla buscas?",
               "response": "La mediana, creo.",
@@ -3089,10 +3377,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "店员给你指路",
             "en-US": "Shop assistant pointing the way",
             "es-ES": "El dependiente te indica el camino."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "试衣间在后面左边。",
+              "response": "谢谢。"
+            },
             "es-ES": {
               "phrase": "Los probadores están al fondo a la izquierda.",
               "response": "Gracias.",
@@ -3113,10 +3406,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "店员介绍某件商品",
             "en-US": "Shop assistant about an item",
             "es-ES": "El dependiente sobre un artículo."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "那件在打折，打七折。",
+              "response": "太好了！我要了。"
+            },
             "es-ES": {
               "phrase": "Esa está rebajada. Tiene un treinta por ciento de descuento.",
               "response": "¡Qué bien! Me lo llevo.",
@@ -3136,10 +3434,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "小店老板",
             "en-US": "Small shop owner",
             "es-ES": "El dueño de una tienda pequeña."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "我们只收现金。",
+              "response": "附近有 ATM 吗？"
+            },
             "es-ES": {
               "phrase": "Solo aceptamos efectivo.",
               "response": "¿Hay un cajero cerca?",
@@ -3290,7 +3593,8 @@
       "id": "tickets",
       "categoryName": {
         "en-US": "Activities & Tickets",
-        "es-ES": "Actividades y entradas"
+        "es-ES": "Actividades y entradas",
+        "zh-CN": "活动与门票"
       },
       "icon": "🎟️",
       "color": "#00BCD4",
@@ -3302,10 +3606,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "景点的售票窗口",
             "en-US": "Ticket window at an attraction",
             "es-ES": "La taquilla de una atracción."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您要几张票？",
+              "response": "四张，谢谢。两个大人，两个小孩。"
+            },
             "es-ES": {
               "phrase": "¿Cuántas entradas quieres?",
               "response": "Cuatro, por favor. Dos adultos y dos niños.",
@@ -3326,10 +3635,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "售票员介绍票价",
             "en-US": "Ticket seller explaining pricing",
             "es-ES": "El taquillero explica los precios."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "六岁以下儿童免费。",
+              "response": "好的，那我们买四张票。"
+            },
             "es-ES": {
               "phrase": "Los menores de seis años entran gratis.",
               "response": "Vale, cuatro entradas para nosotros.",
@@ -3371,10 +3685,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "博物馆保安",
             "en-US": "Museum guard",
             "es-ES": "El guardia de un museo."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "这里面不能拍照。",
+              "response": "对不起，我不知道。"
+            },
             "es-ES": {
               "phrase": "No se pueden sacar fotos aquí dentro.",
               "response": "Perdona, no lo sabía.",
@@ -3394,10 +3713,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "景点的告示或工作人员",
             "en-US": "Sign or staff at an attraction",
             "es-ES": "Un cartel o el personal de una atracción."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "今天放假闭馆。明天十点开门。",
+              "response": "哦，好的，那我们明天再来。"
+            },
             "es-ES": {
               "phrase": "Está cerrado hoy por festivo. Abrimos mañana a las diez.",
               "response": "Ah vale, volvemos mañana entonces.",
@@ -3417,10 +3741,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "热门景点的工作人员",
             "en-US": "Staff at popular attraction",
             "es-ES": "El personal de una atracción popular."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您在网上预订了吗？",
+              "response": "订了，预订信息在这里。"
+            },
             "es-ES": {
               "phrase": "¿Habéis reservado por internet?",
               "response": "Sí, aquí tengo la reserva.",
@@ -3594,7 +3923,8 @@
       "id": "pharmacy",
       "categoryName": {
         "en-US": "Pharmacy",
-        "es-ES": "Farmacia"
+        "es-ES": "Farmacia",
+        "zh-CN": "药店"
       },
       "icon": "💊",
       "color": "#F44336",
@@ -3606,10 +3936,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "药剂师跟你打招呼",
             "en-US": "Pharmacist greeting you",
             "es-ES": "El farmacéutico te saluda."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您好！需要什么？",
+              "response": "有治头痛的药吗？"
+            },
             "es-ES": {
               "phrase": "¡Hola! ¿Qué necesitas?",
               "response": "¿Tienes algo para el dolor de cabeza?",
@@ -3629,10 +3964,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "药剂师问药是给谁用的",
             "en-US": "Pharmacist asking who it's for",
             "es-ES": "El farmacéutico pregunta para quién es."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "是给大人还是小孩？",
+              "response": "给我儿子。他十一岁。"
+            },
             "es-ES": {
               "phrase": "¿Es para un adulto o para un niño?",
               "response": "Para mi hijo. Tiene once años.",
@@ -3652,10 +3992,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "药剂师推荐药品前先确认",
             "en-US": "Pharmacist checking before recommending",
             "es-ES": "El farmacéutico comprueba antes de recomendar."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "有什么过敏吗？",
+              "response": "据我所知没有。"
+            },
             "es-ES": {
               "phrase": "¿Tiene alguna alergia?",
               "response": "No, que yo sepa.",
@@ -3676,10 +4021,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "药剂师讲解用量",
             "en-US": "Pharmacist explaining dosage",
             "es-ES": "El farmacéutico explica la dosis."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "每八小时吃一片，随餐服用。",
+              "response": "好的，谢谢。"
+            },
             "es-ES": {
               "phrase": "Toma uno cada ocho horas con comida.",
               "response": "Vale, gracias.",
@@ -3722,10 +4072,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "药剂师推荐替代品",
             "en-US": "Pharmacist suggesting an alternative",
             "es-ES": "El farmacéutico sugiere una alternativa."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "我推荐这个。效果很好，而且不需要处方。",
+              "response": "太好了，我就要这个。"
+            },
             "es-ES": {
               "phrase": "Te recomiendo este. Es muy efectivo y no necesita receta.",
               "response": "Perfecto, me lo llevo.",
@@ -3877,7 +4232,8 @@
       "id": "cafe",
       "categoryName": {
         "en-US": "Café & Bar",
-        "es-ES": "Café y bar"
+        "es-ES": "Café y bar",
+        "zh-CN": "咖啡馆与酒吧"
       },
       "icon": "☕",
       "color": "#795548",
@@ -3911,10 +4267,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "咖啡师确认你点的咖啡",
             "en-US": "Barista clarifying your coffee order",
             "es-ES": "El barista aclara tu pedido de café."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要黑咖啡还是加奶？",
+              "response": "加奶，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Solo o con leche?",
               "response": "Con leche, por favor.",
@@ -3934,10 +4295,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "咖啡师或快餐店员工",
             "en-US": "Barista or fast food worker",
             "es-ES": "Un barista o empleado de comida rápida."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "在这儿吃还是带走？",
+              "response": "在这儿吃。"
+            },
             "es-ES": {
               "phrase": "¿Para tomar aquí o para llevar?",
               "response": "Para tomar aquí.",
@@ -3979,10 +4345,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "酒保确认你点的东西",
             "en-US": "Bartender confirming your order",
             "es-ES": "El camarero confirma tu pedido."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "马上就来。",
+              "response": "谢谢。"
+            },
             "es-ES": {
               "phrase": "Marchando.",
               "response": "Gracias.",
@@ -4028,10 +4399,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "咖啡师问牛奶温度",
             "en-US": "Barista asking about milk temperature",
             "es-ES": "El barista pregunta por la temperatura de la leche."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "牛奶要热的、温的还是冷的？",
+              "response": "热的，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿La leche caliente, templada o fría?",
               "response": "Caliente, por favor.",
@@ -4051,10 +4427,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "咖啡师做好饮料后",
             "en-US": "Barista after making your drink",
             "es-ES": "El barista después de preparar tu bebida."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "还要别的吗？",
+              "response": "不用了，就这些。"
+            },
             "es-ES": {
               "phrase": "¿Quieres algo más?",
               "response": "No, eso es todo.",
@@ -4116,10 +4497,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "咖啡师告诉你总价",
             "en-US": "Barista telling you the total",
             "es-ES": "El barista te dice el total."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "一共两块六。",
+              "response": "给您。"
+            },
             "es-ES": {
               "phrase": "Son dos con sesenta.",
               "response": "Aquí tienes.",
@@ -4139,10 +4525,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "你点了好几轮之后的咖啡师",
             "en-US": "Barista when you've ordered multiple rounds",
             "es-ES": "El barista cuando has pedido varias rondas."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "全部一起结吗？",
+              "response": "对，全部一起，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Os cobro todo junto?",
               "response": "Sí, todo junto, por favor.",
@@ -4163,10 +4554,15 @@
           ],
           "difficulty": 3,
           "context": {
+            "zh-CN": "服务员提醒你",
             "en-US": "Server giving you a heads up",
             "es-ES": "El camarero te avisa de algo."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "厨房四点关门。要在关门前点些吃的吗？",
+              "response": "能给我们拿一下菜单吗？"
+            },
             "es-ES": {
               "phrase": "La cocina cierra a las cuatro. ¿Queréis pedir algo de comer antes?",
               "response": "¿Nos puedes traer la carta, por favor?",
@@ -4187,10 +4583,15 @@
           ],
           "difficulty": 2,
           "context": {
+            "zh-CN": "精酿啤酒吧的酒保",
             "en-US": "Bartender at a craft beer spot",
             "es-ES": "El camarero en un bar de cervezas artesanales."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "要看看啤酒单吗？",
+              "response": "好的，谢谢。有本地啤酒吗？"
+            },
             "es-ES": {
               "phrase": "¿Queréis ver la carta de cervezas?",
               "response": "Sí, por favor. ¿Tenéis alguna local?",
@@ -4211,10 +4612,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "酒保问啤酒要多大杯",
             "en-US": "Bartender asking about beer size",
             "es-ES": "El camarero pregunta por el tamaño de la cerveza."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "小杯生啤还是一品脱？",
+              "response": "小杯生啤，谢谢。"
+            },
             "es-ES": {
               "phrase": "¿Una caña o una jarra?",
               "response": "Una caña, por favor.",
@@ -4327,10 +4733,15 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "咖啡师给你点单。",
             "es-ES": "El barista te toma el pedido.",
             "en-US": "Barista taking your order."
           },
           "translations": {
+            "zh-CN": {
+              "phrase": "您想来点什么？",
+              "response": "一杯拿铁，谢谢。"
+            },
             "en-US": {
               "phrase": "What can I get started for you?",
               "response": "A latte, please.",
@@ -4349,10 +4760,14 @@
           ],
           "difficulty": 1,
           "context": {
+            "zh-CN": "你在咖啡馆里想上网。你需要问问他们有没有 Wi-Fi，并要到密码。",
             "es-ES": "Estás en una cafetería y quieres conectarte a internet. Necesitas preguntar si hay wifi y conseguir la contraseña.",
             "en-US": "You're at a café and want to get online. You need to ask whether they have wifi and get the password."
           },
           "translations": {
+            "zh-CN": {
+              "response": "你们有 Wi-Fi 吗？密码是多少？"
+            },
             "es-ES": {
               "response": "¿Hay wifi? ¿Cuál es la contraseña?",
               "practiceAsTarget": true
