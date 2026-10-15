@@ -16,6 +16,8 @@ type PluralCategory = 'one' | 'other'
 const PLURAL_RULES: Record<string, (n: number) => PluralCategory> = {
   'en-US': n => (n === 1 ? 'one' : 'other'),
   'es-ES': n => (n === 1 ? 'one' : 'other'),
+  // CJK has a single plural form.
+  'zh-CN': () => 'other',
 }
 
 export function pluralize(lang: string, n: number, forms: PluralForms): string {

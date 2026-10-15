@@ -1,4 +1,11 @@
-import { SUPPORTED_TARGETS } from './types'
+import { SUPPORTED_TARGETS, UnifiedPrompt } from './types'
+
+// A prompt is drillable in a pair only when the target explicitly opts in AND the
+// learner's native language has a context line to show. The single gate used by
+// buildScenarios and the deep-link check.
+export function isDrillable(prompt: UnifiedPrompt, native: string, target: string): boolean {
+  return prompt.translations[target]?.practiceAsTarget === true && prompt.context[native] != null
+}
 
 export function resolveByNativeLang(
   field: Record<string, string> | undefined,
