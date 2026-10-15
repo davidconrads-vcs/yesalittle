@@ -90,7 +90,7 @@ jobs:
             Never modify files under .github/. Never merge the PR except by enabling auto-merge as in step 7.
           claude_args: |
             --model claude-sonnet-5-5
-            --max-turns 200
+            --max-turns 300
             --allowedTools "Read,Write,Edit,Glob,Grep,Bash(npm ci),Bash(npm test),Bash(npm run build),Bash(git:*),Bash(gh issue view:*),Bash(gh issue comment:*),Bash(gh pr create:*),Bash(mkdir:*),Bash(gh pr merge:*)"
 
       - name: Advance status
