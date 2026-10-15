@@ -10,8 +10,8 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
 import promptsData from './data/prompts.json'
-import { readEntryParams, pickInitialTarget, resolveEntryLanding, EntryParams } from './utils'
-import { UnifiedScenario, getAvailableTargets } from './types'
+import { isDrillable as isPromptDrillable, readEntryParams, pickInitialTarget, resolveEntryLanding, EntryParams } from './utils'
+import { UnifiedPrompt, UnifiedScenario, getAvailableTargets } from './types'
 
 const SCENARIOS = promptsData.scenarios as unknown as UnifiedScenario[]
 const SCENARIO_IDS = SCENARIOS.map(s => s.id)
@@ -182,4 +182,27 @@ test('a scenario preselection survives on its own', () => {
 
 test('empty entry params land on a plain Home screen', () => {
   assert.deepEqual(resolveEntryLanding({}, 'es-ES'), { scenarioId: undefined })
+})
+
+// ── isDrillable (native gate) ────────────────────────────────────────────────
+
+const gatePrompt = (over: Record<string, unknown> = {}): UnifiedPrompt => ({
+  id: 'gate-001',
+  context: { 'en-US': 'ctx' },
+  translations: { 'es-ES': { practiceAsTarget: true } },
+  ...over,
+} as unknown as UnifiedPrompt)
+
+test('isDrillable: true with target opt-in and native context', () => {
+  assert.equal(isPromptDrillable(gatePrompt(), 'en-US', 'es-ES'), true)
+})
+
+test('isDrillable: false when the native context is missing', () => {
+  assert.equal(isPromptDrillable(gatePrompt(), 'zh-CN', 'es-ES'), false)
+})
+
+test('isDrillable: false when practiceAsTarget is missing', () => {
+  const p = gatePrompt({ translations: { 'es-ES': {} } })
+  assert.equal(isPromptDrillable(p, 'en-US', 'es-ES'), false)
+  assert.equal(isPromptDrillable(p, 'en-US', 'pt-PT'), false)
 })

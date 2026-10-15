@@ -58,7 +58,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
         minHeight: '100vh',
         background: '#0D0D0F',
         color: '#fff',
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
         padding: '32px 20px 40px',
         maxWidth: 520,
         margin: '0 auto',
@@ -123,7 +123,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
               padding: '6px 12px',
               color: 'rgba(255,255,255,0.5)',
               fontSize: 13,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
               cursor: 'pointer',
             }}
           >
@@ -149,7 +149,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
                 color: native === locale ? '#E85D3A' : 'rgba(255,255,255,0.55)',
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
                 fontWeight: 500,
                 display: 'flex',
                 alignItems: 'center',
@@ -181,7 +181,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
                 color: language === locale ? '#E85D3A' : 'rgba(255,255,255,0.55)',
                 cursor: 'pointer',
                 fontSize: 14,
-                fontFamily: "'DM Sans', sans-serif",
+                fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
                 fontWeight: 500,
                 display: 'flex',
                 alignItems: 'center',
@@ -247,10 +247,10 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
               }}
             >
               <div>
-                <div style={{ color: mode === m.value ? '#E85D3A' : 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 600, fontFamily: "'DM Sans', sans-serif" }}>
+                <div style={{ color: mode === m.value ? '#E85D3A' : 'rgba(255,255,255,0.8)', fontSize: 14, fontWeight: 600, fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" }}>
                   {m.label}
                 </div>
-                <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, marginTop: 2, fontFamily: "'DM Sans', sans-serif" }}>
+                <div style={{ color: 'rgba(255,255,255,0.35)', fontSize: 12, marginTop: 2, fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif" }}>
                   {m.desc}
                 </div>
               </div>
@@ -292,7 +292,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
                   color: isSelected ? s.color : 'rgba(255,255,255,0.55)',
                   cursor: 'pointer',
                   fontSize: 14,
-                  fontFamily: "'DM Sans', sans-serif",
+                  fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
                   fontWeight: 500,
                   transition: 'all 0.2s ease',
                   display: 'flex',
@@ -330,7 +330,7 @@ export default function Home({ scenarios, initialCategories, language, onLanguag
           color: '#fff',
           fontSize: 17,
           fontWeight: 600,
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
           cursor: 'pointer',
           transition: 'all 0.2s ease',
           boxShadow: '0 4px 24px rgba(232, 93, 58, 0.3)',

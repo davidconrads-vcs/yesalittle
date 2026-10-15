@@ -170,9 +170,89 @@ const ES: UIStrings = {
   'lang.en-US': 'Inglés',
 }
 
+// Simplified Chinese. Not selectable yet (zh-CN is not in SUPPORTED_NATIVES); kept
+// complete so the follow-up story only has to turn it on.
+const ZH: UIStrings = {
+  // ── Home ────────────────────────────────────────────────────────────────────
+  'home.eyebrow': '旅行情景训练',
+  'home.tagline': '听懂当地人说什么——并像当地人一样回应。',
+  'home.progress': '📊 进度',
+  'home.i_speak': '我的母语',
+  'home.im_learning': '我在学',
+  'home.playback_speed': '播放速度',
+  'home.session_mode': '练习模式',
+  'home.mode.full': '完整练习',
+  'home.mode.full_desc': '全部句子，根据你的进度安排',
+  'home.mode.quick': '快速复习',
+  'home.mode.quick_desc': '之前没听懂的，最多 {n} 句',
+  'home.mode.new': '新句子',
+  'home.mode.new_desc': '只练没见过的句子',
+  'home.scenarios': '情景（不选则练全部）',
+  'home.start_practice': '开始练习 — {n} {unit}',
+  'home.streak': '🔥 {streak} {unit}',
+
+  'unit.phrase.one': '句',
+  'unit.phrase.other': '句',
+  'unit.day.one': '天',
+  'unit.day.other': '天',
+
+  // ── SpeedControl ──────────────────────────────────────────────────────────────
+  'speed.slow': '慢速',
+  'speed.normal': '正常',
+  'speed.fast': '快速',
+
+  // ── Practice ────────────────────────────────────────────────────────────────
+  'practice.exit': '← 退出',
+  'practice.situation': '情景',
+  'practice.what_youd_say': '你可以说',
+  'practice.you_could_respond': '你可以这样回答',
+  'practice.listen_try': '听一听，试着理解',
+  'practice.heres_what': '对方说的是',
+  'practice.reveal': '显示答案',
+  'practice.didnt_get': '没听懂',
+  'practice.understood': '听懂了 ✓',
+  'practice.practice_more': '继续练习更多「{category}」情景',
+
+  // ── SpeakButton ───────────────────────────────────────────────────────────────
+  'speak.playing': '播放中...',
+  'speak.play': '播放',
+  'speak.play_again': '再听一遍',
+  'speak.listen': '听',
+
+  // ── Summary ─────────────────────────────────────────────────────────────────
+  'summary.complete': '练习完成',
+  'summary.understood_first': '第一遍就听懂',
+  'summary.comprehension': '理解率 {pct}%',
+  'summary.review_these': '复习这些（{n}）',
+  'summary.retry_missed': '重练没听懂的',
+  'summary.new_session': '新的练习',
+
+  // ── Progress ────────────────────────────────────────────────────────────────
+  'progress.back': '← 返回',
+  'progress.title': '进度',
+  'progress.comprehension': '理解率',
+  'progress.day_streak': '连续天数',
+  'progress.total_attempts': '总练习次数',
+  'progress.by_category': '按类别',
+  'progress.not_started': '未开始',
+  'progress.weakest': '最难的句子',
+  'progress.reset': '清除全部进度',
+  'progress.reset_confirm': '确定清除全部进度吗？此操作无法撤销。',
+
+  // ── App (browser alerts) ──────────────────────────────────────────────────────
+  'app.no_new': '所选范围内没有新句子！',
+  'app.no_review': '没有需要复习的句子！',
+
+  // ── Target language names (localized) ─────────────────────────────────────────
+  'lang.es-ES': '西班牙语',
+  'lang.pt-PT': '葡萄牙语',
+  'lang.en-US': '英语',
+}
+
 export const UI_STRINGS: Record<string, UIStrings> = {
   'en-US': EN,
   'es-ES': ES,
+  'zh-CN': ZH,
 }
 
 export const DEFAULT_UI_LANG = 'en-US'

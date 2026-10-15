@@ -38,7 +38,7 @@ export default function SpeakButton({ promptId, phrase, speed, lang, autoPlay = 
         gap: isLarge ? 14 : 8,
         color: '#fff',
         fontSize: isLarge ? 17 : 14,
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
         transition: 'all 0.25s ease',
         width: isLarge ? '100%' : 'auto',
         justifyContent: 'center',

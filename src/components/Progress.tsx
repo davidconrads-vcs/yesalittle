@@ -44,7 +44,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
         minHeight: '100vh',
         background: '#0D0D0F',
         color: '#fff',
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
         padding: '24px 20px 40px',
         maxWidth: 520,
         margin: '0 auto',
@@ -60,7 +60,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
             padding: '8px 14px',
             color: 'rgba(255,255,255,0.5)',
             fontSize: 13,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
             cursor: 'pointer',
           }}
         >
@@ -232,7 +232,7 @@ export default function Progress({ scenarios, progress, streak, allPrompts, onBa
           color: 'rgba(244, 67, 54, 0.7)',
           fontSize: 14,
           fontWeight: 500,
-          fontFamily: "'DM Sans', sans-serif",
+          fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
           cursor: 'pointer',
         }}
       >

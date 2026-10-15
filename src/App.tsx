@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Analytics } from '@vercel/analytics/react'
 import promptsData from './data/prompts.json'
 import { UnifiedScenario, Scenario, Prompt, PromptType, PromptWithScenario, LanguagePair, SessionMode, Speed, Screen, SUPPORTED_NATIVES, DEFAULT_NATIVE, getAvailableTargets } from './types'
-import { resolveByNativeLang, readEntryParams, pickInitialTarget, resolveEntryLanding } from './utils'
+import { resolveByNativeLang, isDrillable, readEntryParams, pickInitialTarget, resolveEntryLanding } from './utils'
 import { useProgress } from './hooks/useProgress'
 import { buildQueue, REVIEW_LIMIT } from './hooks/useSpacedQueue'
 import { I18nProvider, translate } from './i18n'
@@ -20,13 +20,26 @@ const SCENARIOS_DATA = promptsData.scenarios as unknown as UnifiedScenario[]
 // Every prompt by id, for the entry-param lookup only. Ids are unique across scenarios.
 const PROMPTS_BY_ID = new Map(SCENARIOS_DATA.flatMap(s => s.prompts.map(p => [p.id, p] as const)))
 
+function getInitialNative(): string {
+  try {
+    const saved = localStorage.getItem(PREF_NATIVE_KEY)
+    if (saved && (SUPPORTED_NATIVES as readonly string[]).includes(saved)) return saved
+  } catch {}
+  return DEFAULT_NATIVE
+}
+
 // Read once at startup. The query string is how the static content pages hand off a
 // reader (`/?scenario=restaurant&target=es-ES`); it never changes while the app runs.
+// The native is resolved first so the drillable gate can use it.
+const INITIAL_NATIVE = getInitialNative()
 const ENTRY = readEntryParams(
   SCENARIOS_DATA.map(s => s.id),
-  // Same `practiceAsTarget` gate buildScenarios filters on, so a validated id is
+  // Same isDrillable gate buildScenarios filters on, so a validated id is
   // guaranteed to be present in the built list below.
-  (id, target) => PROMPTS_BY_ID.get(id)?.translations[target]?.practiceAsTarget === true
+  (id, target) => {
+    const p = PROMPTS_BY_ID.get(id)
+    return p != null && isDrillable(p, INITIAL_NATIVE, target)
+  }
 )
 
 // Builds a flat, language-specific scenario list from the unified schema.
@@ -41,13 +54,8 @@ function buildScenarios(target: string, native = DEFAULT_NATIVE): Scenario[] {
       icon: s.icon,
       color: s.color,
       prompts: s.prompts
-        .filter(p => {
-          // A prompt is drillable in a target only when explicitly opted in.
-          // Every es-ES/pt-PT entry sets this; for en-US only the ES→EN set does,
-          // so English yields exactly its authored target prompts (not every en gloss).
-          const t = p.translations[target]
-          return t != null && t.practiceAsTarget === true
-        })
+        // Target opt-in plus native context; see isDrillable.
+        .filter(p => isDrillable(p, native, target))
         .map((p): Prompt => {
           const promptType: PromptType = p.type ?? 'conversation'
           const t = p.translations[target]
@@ -107,14 +115,6 @@ function getInitialSpeed(): Speed {
   return 'normal'
 }
 
-function getInitialNative(): string {
-  try {
-    const saved = localStorage.getItem(PREF_NATIVE_KEY)
-    if (saved && (SUPPORTED_NATIVES as readonly string[]).includes(saved)) return saved
-  } catch {}
-  return DEFAULT_NATIVE
-}
-
 // Target must be one this native can actually learn; otherwise fall back to its first.
 // The precedence itself lives in pickInitialTarget; this only supplies the stored half.
 function getInitialTarget(native: string): string {
@@ -125,7 +125,6 @@ function getInitialTarget(native: string): string {
 
 // The starting pair, resolved once so the deep link below is validated against the
 // exact same native/target the app opens with.
-const INITIAL_NATIVE = getInitialNative()
 const INITIAL_TARGET = getInitialTarget(INITIAL_NATIVE)
 
 // What this visit opens with: a single-prompt deep link, a category preselection, or
@@ -136,8 +135,8 @@ const LANDING = resolveEntryLanding(ENTRY, INITIAL_TARGET)
 // A `?prompt=&target=` deep link: one prompt, drilled on its own, as a shareable entry
 // point and a verification shortcut. Resolved here rather than in an effect so the
 // first paint is already the practice screen — no flash of Home. A `find` miss can't
-// happen after readEntryParams' practiceAsTarget check (buildScenarios filters on the
-// same flag), but undefined degrades to Home either way.
+// happen after readEntryParams' isDrillable check (buildScenarios filters on the
+// same gate), but undefined degrades to Home either way.
 const ENTRY_PROMPT: PromptWithScenario | undefined = LANDING.promptId
   ? buildAllPrompts(buildScenarios(INITIAL_TARGET, INITIAL_NATIVE)).find(p => p.id === LANDING.promptId)
   : undefined
@@ -173,7 +172,7 @@ export default function App() {
   // Keep the document language in sync with the UI language (= selected native),
   // for screen-reader correctness. Other index.html metadata stays English by design.
   useEffect(() => {
-    document.documentElement.lang = native.split('-')[0]
+    document.documentElement.lang = native === 'zh-CN' ? native : native.split('-')[0]
   }, [native])
 
   const handleSpeedChange = (s: Speed) => {

@@ -29,7 +29,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
         minHeight: '100vh',
         background: '#0D0D0F',
         color: '#fff',
-        fontFamily: "'DM Sans', sans-serif",
+        fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
         padding: '32px 20px 40px',
         maxWidth: 520,
         margin: '0 auto',
@@ -144,7 +144,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
               color: '#E85D3A',
               fontSize: 15,
               fontWeight: 600,
-              fontFamily: "'DM Sans', sans-serif",
+              fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
               cursor: 'pointer',
               minHeight: 52,
             }}
@@ -163,7 +163,7 @@ export default function Summary({ results, speed, lang, onRetryMissed, onNewSess
             color: '#fff',
             fontSize: 15,
             fontWeight: 600,
-            fontFamily: "'DM Sans', sans-serif",
+            fontFamily: "'DM Sans', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', sans-serif",
             cursor: 'pointer',
             minHeight: 52,
           }}
