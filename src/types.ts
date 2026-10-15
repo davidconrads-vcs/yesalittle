@@ -10,13 +10,14 @@ export const DEFAULT_NATIVE = 'en-US'
 // Single source of truth for selectable native languages. Adding a second entry
 // (e.g. 'es-ES') here — plus its NATIVE_META row — is all that's needed for the
 // native picker to offer it; no other wiring required.
-export const SUPPORTED_NATIVES = ['en-US', 'es-ES'] as const
+export const SUPPORTED_NATIVES = ['en-US', 'es-ES', 'zh-CN'] as const
 
 // Native-picker names are AUTONYMS: each language in its own name/script, fixed
 // (not translated per UI language). Shown on the "I speak" buttons.
 export const NATIVE_META: Record<string, { autonym: string; flag: string }> = {
   'en-US': { autonym: 'English', flag: '🇺🇸' },
   'es-ES': { autonym: 'Español', flag: '🇪🇸' },
+  'zh-CN': { autonym: '中文', flag: '🇨🇳' },
 }
 
 // Registry of every target locale the app knows (meta + validation).
@@ -36,6 +37,7 @@ export const TARGET_META: Record<string, { flag: string; ttsLang: string }> = {
 export const TARGETS_BY_NATIVE: Record<string, readonly string[]> = {
   'en-US': ['es-ES', 'pt-PT'],
   'es-ES': ['en-US'],
+  'zh-CN': ['en-US'],
 }
 
 export function getAvailableTargets(native: string): readonly string[] {
